@@ -1,0 +1,35 @@
+
+200+ Systems in the bank
+Read-
+Collector
+• Connections to the bank systems (JDBC
+connections)
+• Collect the data from each system.
+• Validate the structure of the data and the data itself.
+• Manipulate and handle cases where the data could be missing or in wrong format.
+• Write output into the UAM centralized DB.
+Request & response
+ex: Run manual job
+Brain/Orchestrator
+• Read & write on UAM centralized DB
+• Contains many services that handle different responsibilities (ex: Authentication, mailing, data manipulation... etc.)
+• Contains business logic.
+Contains scheduled jobs that can be configured.
+Request & response
+ex: Login, Configuration, Connections
+Front-end (Console)
+• Reads from the centralized DB
+Displays the data through tables and reports.
+• Makes requests to the brain (REST APIs) for certain operations like the authentication.
+• Allows interfacing with configuration options.
+UAM Centralized DB
+-Write
+UAM Centralized DB
+Contains all the tables that are used in the modules of the system.
+• Tables are filled from the Collector and Brain.
+• Data from the Collector will be used directly by the front-end or it will be taken as "input" to the brain.
+• Brain will take "input" data and apply business logic and write it on the DB, this is called "output" data.
+• Table name standard is all capitalized separated with underscore.
+• There are table types according to the information they hold (ex: log, imported, lookup... etc.)
+Read & Write
+Read
