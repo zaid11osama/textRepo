@@ -1,5 +1,4 @@
-ergeg
-ergergeg
-gergergergerg
-gergergergergerg
-gergerg
+   @Bean
+    public TextEncryptor textEncryptor() {
+        return Encryptors.text(encryptionPassword, encryptionSalt);
+    }
