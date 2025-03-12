@@ -1,0 +1,8 @@
+    private void processDomainColumn(SqlTableStruct tableStruct) {
+        tableStruct.edit(
+                new TableStructEditor<>()
+                        .editCol(Columns.UserInfo.DOMAIN,
+                                (row, colName) -> processDomainValue(String.valueOf(row.get(colName)))
+                        )
+        );
+    }
