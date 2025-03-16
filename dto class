@@ -1,0 +1,34 @@
+  private RoleDTO role;
+    private OrganizationDTO organization;
+    private RelationCountryDTO relationCountry;
+    private int relationshipSequence;
+    private String originalGlobalId;
+    private String withGlobalId;
+    private String withProduct;
+    private String globalId;
+    private String relatedProduct;
+    private String requestedBy;
+    private String reasons;
+    private String loggedInUser;
+    private String generatedUniqueReference;
+
+    @Getter
+    @Setter
+    public static class RoleDTO {
+        private String code;
+        private String description;
+    }
+
+    @Getter
+    @Setter
+    public static class OrganizationDTO {
+        private String code;
+        private String description;
+    }
+
+    @Getter
+    @Setter
+    public static class RelationCountryDTO {
+        private String code;
+        private String description;
+    }
