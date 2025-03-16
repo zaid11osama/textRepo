@@ -1,0 +1,218 @@
+[
+    {
+        "role": {
+            "code": "SIG",
+            "description": "Authorized Signatory"
+        },
+        "organization": {
+            "code": "AB",
+            "description": "Arab Bank"
+        },
+        "relationCountry": {
+            "code": "BH",
+            "description": "Bahrain"
+        },
+        "relationshipSequence": 1,
+        "originalGlobalId": "I2501000058051",
+        "withGlobalId": "C2501000002851",
+        "withProduct": null,
+        "globalId": "I2501000058051",
+        "relatedProduct": "000332",
+        "requestedBy": null,
+        "reasons": null,
+        "loggedInUser": null,
+        "generatedUniqueReference": null
+    },
+    {
+        "role": {
+            "code": "SIG",
+            "description": "Authorized Signatory"
+        },
+        "organization": {
+            "code": "AB",
+            "description": "Arab Bank"
+        },
+        "relationCountry": {
+            "code": "BH",
+            "description": "Bahrain"
+        },
+        "relationshipSequence": 2,
+        "originalGlobalId": "I2501000058051",
+        "withGlobalId": "C2501000002851",
+        "withProduct": null,
+        "globalId": "I2501000058051",
+        "relatedProduct": "000332",
+        "requestedBy": null,
+        "reasons": null,
+        "loggedInUser": null,
+        "generatedUniqueReference": null
+    },
+    {
+        "role": {
+            "code": "SIG",
+            "description": "Authorized Signatory"
+        },
+        "organization": {
+            "code": "AB",
+            "description": "Arab Bank"
+        },
+        "relationCountry": {
+            "code": "BH",
+            "description": "Bahrain"
+        },
+        "relationshipSequence": 3,
+        "originalGlobalId": "I2501000058051",
+        "withGlobalId": "C2501000002851",
+        "withProduct": null,
+        "globalId": "I2501000058051",
+        "relatedProduct": "000332",
+        "requestedBy": null,
+        "reasons": null,
+        "loggedInUser": null,
+        "generatedUniqueReference": null
+    },
+    {
+        "role": {
+            "code": "SIG",
+            "description": "Authorized Signatory"
+        },
+        "organization": {
+            "code": "AB",
+            "description": "Arab Bank"
+        },
+        "relationCountry": {
+            "code": "BH",
+            "description": "Bahrain"
+        },
+        "relationshipSequence": 4,
+        "originalGlobalId": "I2501000058051",
+        "withGlobalId": "C2501000002851",
+        "withProduct": null,
+        "globalId": "I2501000058051",
+        "relatedProduct": "000332",
+        "requestedBy": null,
+        "reasons": null,
+        "loggedInUser": null,
+        "generatedUniqueReference": null
+    },
+    {
+        "role": {
+            "code": "SIG",
+            "description": "Authorized Signatory"
+        },
+        "organization": {
+            "code": "AB",
+            "description": "Arab Bank"
+        },
+        "relationCountry": {
+            "code": "BH",
+            "description": "Bahrain"
+        },
+        "relationshipSequence": 6,
+        "originalGlobalId": "I2501000058051",
+        "withGlobalId": "C2501000002851",
+        "withProduct": null,
+        "globalId": "I2501000058051",
+        "relatedProduct": "000332",
+        "requestedBy": null,
+        "reasons": null,
+        "loggedInUser": null,
+        "generatedUniqueReference": null
+    },
+    {
+        "role": {
+            "code": "SIG",
+            "description": "Authorized Signatory"
+        },
+        "organization": {
+            "code": "AB",
+            "description": "Arab Bank"
+        },
+        "relationCountry": {
+            "code": "BH",
+            "description": "Bahrain"
+        },
+        "relationshipSequence": 7,
+        "originalGlobalId": "I2501000058051",
+        "withGlobalId": "C2501000002851",
+        "withProduct": null,
+        "globalId": "I2501000058051",
+        "relatedProduct": "000332",
+        "requestedBy": null,
+        "reasons": null,
+        "loggedInUser": null,
+        "generatedUniqueReference": null
+    },
+    {
+        "role": {
+            "code": "SIG",
+            "description": "Authorized Signatory"
+        },
+        "organization": {
+            "code": "AB",
+            "description": "Arab Bank"
+        },
+        "relationCountry": {
+            "code": "BH",
+            "description": "Bahrain"
+        },
+        "relationshipSequence": 8,
+        "originalGlobalId": "I2501000058051",
+        "withGlobalId": "C2501000002851",
+        "withProduct": null,
+        "globalId": "I2501000058051",
+        "relatedProduct": "000332",
+        "requestedBy": null,
+        "reasons": null,
+        "loggedInUser": null,
+        "generatedUniqueReference": null
+    },
+    {
+        "role": {
+            "code": "SIG",
+            "description": "Authorized Signatory"
+        },
+        "organization": {
+            "code": "AB",
+            "description": "Arab Bank"
+        },
+        "relationCountry": {
+            "code": "BH",
+            "description": "Bahrain"
+        },
+        "relationshipSequence": 9,
+        "originalGlobalId": "I2501000058051",
+        "withGlobalId": "C2501000002851",
+        "withProduct": null,
+        "globalId": "I2501000058051",
+        "relatedProduct": "000332",
+        "requestedBy": null,
+        "reasons": null,
+        "loggedInUser": null,
+        "generatedUniqueReference": null
+    },
+    {
+        "role": {
+            "code": "SIG",
+            "description": "Authorized Signatory"
+        },
+        "organization": {
+            "code": "AB",
+            "description": "Arab Bank"
+        },
+        "relationCountry": {
+            "code": "BH",
+            "description": "Bahrain"
+        },
+        "relationshipSequence": 10,
+        "originalGlobalId": "I2501000058051",
+        "withGlobalId": "C2501000002851",
+        "withProduct": null,
+        "globalId": "I2501000058051",
+        "relatedProduct": "000332",
+        "requestedBy": null,
+        "reasons": null,
+        "loggedInUser": null,
+        "generatedUniqueReference": null
+    }
+]
