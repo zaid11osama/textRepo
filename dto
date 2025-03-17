@@ -88,8 +88,5 @@ public class RelationshipDTO {
         }
     }
 }
-// Task java.util.concurrent.CompletableFuture$AsyncSupply@5cc7e579 rejected from org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor$1@3c8a7e38[Running, pool size = 10, active threads = 10, queued tasks = 100, completed tasks = 0]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2082) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1377) ~[na:na]
+//.HttpClientErrorException$Unauthorized
 	
