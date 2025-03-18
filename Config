@@ -1,28 +1,26 @@
-   @Bean
-    public HttpHeaders commonHeaders() {
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Content-Type", apiConfig.getHeaders().getContentType());
-        headers.set("Accept", apiConfig.getHeaders().getAccept());
-        headers.set("Accept-Encoding", apiConfig.getHeaders().getAcceptEncoding());
-        headers.set("Connection", apiConfig.getHeaders().getConnection());
-        headers.set("Origin", apiConfig.getHeaders().getOrigin());
-        headers.set("Referer", apiConfig.getHeaders().getReferer());
-        headers.set("User-Agent", apiConfig.getHeaders().getUserAgent());
-        headers.set("tenantId", apiConfig.getHeaders().getTenantID());
-        headers.set("channelId", apiConfig.getHeaders().getChannelID());
-        headers.set("requestcountry", apiConfig.getHeaders().getRequestCountry());
-        headers.set("transactionReference", apiConfig.getHeaders().getTransactionReference());
-        headers.set("requesterId", apiConfig.getHeaders().getRequesterID());
-        headers.set("requesterKey", apiConfig.getHeaders().getRequesterKey());
-        headers.set("inputTimestamp", apiConfig.getHeaders().getInputTimestamp());
-        headers.set("language", apiConfig.getHeaders().getLanguage());
-        headers.set("dataSource", apiConfig.getHeaders().getDataSource());
-        headers.set("user", apiConfig.getHeaders().getUser());
-        headers.set("requestChannel", apiConfig.getHeaders().getRequestChannel());
-        headers.set("channelReference", apiConfig.getHeaders().getChannelReference());
-        headers.set("identifiertype", apiConfig.getHeaders().getIdentifierType());
-        headers.set("inputcountry", apiConfig.getHeaders().getInputCountry());
-        headers.setBearerAuth(apiConfig.getHeaders().getAuthorization());
+ @GetMapping("/getAllRelations/{numberOfThreads}")
+    public ResponseEntity<List<String>> fetchData(@PathVariable int numberOfThreads){
 
-        return headers;
+        List<CompletableFuture<String>> futures = new ArrayList<>();
+
+
+        for(int i =0 ;i< numberOfThreads ;i++){
+
+            int threadNum = i+1;
+            for(int j=0;j<10;j++){
+
+                int requestID = (threadNum-1) * 10 + (j+1);
+                futures.add(apiService.callApi(requestID));
+            }
+
+        }
+        //wait for all requests to complete
+        CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
+        //collect all responses
+
+        List<String>responses = futures.stream().map(CompletableFuture::join).collect(Collectors.toList());
+
+        return new ResponseEntity<>(responses, HttpStatus.OK);
+
+
     }
