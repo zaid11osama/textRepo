@@ -1,0 +1,42 @@
+@Async("taskExecutor")
+    public CompletableFuture<String> callApi(int requestID) {
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Content-Type", contentType);
+        headers.set("Accept", accept);
+        headers.set("Accept-Encoding", acceptEncoding);
+        headers.set("Connection", connection);
+        headers.set("Origin", origin);
+        headers.set("Referer", referer);
+        headers.set("User-Agent", userAgent);
+        headers.set("tenantId", tenantID);
+        headers.set("channelId", channelID);
+        headers.set("requestcountry", requestCountry);
+        headers.set("transactionReference", transactionReference);
+        headers.set("requesterId", requesterID);
+        headers.set("requesterKey", requesterKey);
+        headers.set("inputTimestamp", inputTimestamp);
+        headers.set("language", language);
+        headers.set("dataSource", dataSource);
+        headers.set("user", user);
+        headers.set("requestChannel", requestChannel);
+        headers.set("channelReference", channelReference);
+//        headers.set("Authorization",authorization);
+        headers.set("identifiertype", identifierType);
+        headers.set("inputcountry", inputCountry);
+        headers.setBearerAuth(authorization);
+
+        String url = apiURL;//"http://10.101.18.36:9710/mdm/v1/golden-data-manager/unmerge/search?globalId=I2501000058051";
+        HttpEntity entity = new HttpEntity(headers);
+
+       // System.out.println(headers.get("Authorization"));
+//        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class, headers);
+        HttpEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+
+        System.out.println("Request " + requestID + " completed by " + Thread.currentThread().getName());
+
+
+        saveResponseToFile(response.getBody());
+
+        return CompletableFuture.completedFuture(response.getBody());
+    }
