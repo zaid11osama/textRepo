@@ -1,46 +1,47 @@
-package com.TestApi.start.service;
+package com.TestApi.start.controller;
 
-import com.TestApi.start.config.ApiConfig;
+import com.TestApi.start.service.PutApiService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
-@Service
-public class PutApiService {
+@RestController
+@RequestMapping("/api")
+public class PutApiController {
 
-    private final RestTemplate restTemplate;
-    private final ApiConfig apiConfig;
-    private final HttpHeaders commonHeaders;
+    private final PutApiService putApiService;
 
     @Autowired
-    public PutApiService(RestTemplate restTemplate, ApiConfig apiConfig, HttpHeaders commonHeaders) {
-        this.restTemplate = restTemplate;
-        this.apiConfig = apiConfig;
-        this.commonHeaders = commonHeaders;
+    public PutApiController(PutApiService putApiService) {
+        this.putApiService = putApiService;
     }
 
-    @Async("taskExecutor")
-    public CompletableFuture<List<String>> updateData(int requestID, String requestBody) {
-        List<String> responseBodies = new ArrayList<>();
-        List<String> urls = apiConfig.getUrls();
+    @PutMapping("/updateRelations/{numberOfThreads}")
+    public ResponseEntity<List<String>> updateData(
+            @PathVariable int numberOfThreads,
+            @RequestBody String requestBody) {
 
-        for (String url : urls) {
-            try {
-                HttpEntity<String> entity = new HttpEntity<>(requestBody, commonHeaders);
-                ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.PUT, entity, String.class);
-                responseBodies.add(response.getBody());
-            } catch (Exception e) {
-                System.out.println("Request " + requestID + " failed for URL " + url + " - " + e.getMessage());
+        List<CompletableFuture<List<String>>> futures = new ArrayList<>();
+
+        for (int i = 0; i < numberOfThreads; i++) {
+            int threadNum = i + 1;
+            for (int j = 0; j < 10; j++) {
+                int requestID = (threadNum - 1) * 10 + (j + 1);
+                futures.add(putApiService.updateData(requestID, requestBody));
             }
         }
 
-        System.out.println("Request " + requestID + " completed by " + Thread.currentThread().getName());
-        return CompletableFuture.completedFuture(responseBodies);
+        CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
+        List<String> responses = futures.stream()
+                .flatMap(future -> future.join().stream())
+                .collect(Collectors.toList());
+
+        return new ResponseEntity<>(responses, HttpStatus.OK);
     }
 }
