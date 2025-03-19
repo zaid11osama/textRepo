@@ -37,7 +37,7 @@ public class RestTemplateConfig {
 
         // Create an HttpComponentsClientHttpRequestFactory with the custom HttpClient
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
-        requestFactory.setHttpClient(httpClient);
+        requestFactory.setHttpClient(httpClient); // Explicitly cast to HttpClient
 
         // Create a RestTemplate with the custom RequestFactory
         return new RestTemplate(requestFactory);
