@@ -35,11 +35,15 @@ public class DeleteApiService {
                 HttpEntity<String> entity = new HttpEntity<>(requestBody, commonHeaders);
                 ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.DELETE, entity, String.class);
                 responseBodies.add(response.getBody());
-            } catch (Exception
+            } catch (Exception e) {
+                System.out.println("Request " + requestID + " failed for URL " + url + " - " + e.getMessage());
+            }
+        }
 
-
-
-
+        System.out.println("Request " + requestID + " completed by " + Thread.currentThread().getName());
+        return CompletableFuture.completedFuture(responseBodies);
+    }
+}
 
 
 
