@@ -1,22 +1,39 @@
-@Configuration
-@EnableWebSecurity
-@RequiredArgsConstructor
-public class SecurityConfig {
-    
-    private final JwtRequestFilter jwtRequestFilter;
+@Async("taskExecutor")
+    public CompletableFuture<List<String>> callApi(int requestID) {
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/authenticate").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        Curl.loadFromJson();
+        List<String> responseBodies = new ArrayList<>();
 
-        http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+//        List<String>urls = apiConfig.getGetUrls();
+        List<String>urls = curl.getCurls().getGet();
+        Map<String,String>headers = curl.getHeaders();
 
-        return http.build();
+        for (String url : urls){
+
+            try{
+
+        HttpEntity entity = new HttpEntity(commonHeaders);
+        HttpEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+        saveResponseToFile(response.getBody());
+        responseBodies.add(response.getBody());
+
+
+            } catch (Exception e) {
+
+        System.out.println("Request " + requestID + " failed for url " + url +" - "+e.getMessage());
+            }
+
+
+
+        System.out.println("Request " + requestID + " completed by " + Thread.currentThread().getName());
+        }
+
+
+
+
+        return CompletableFuture.completedFuture(responseBodies);
+
+
+
+
     }
-}
