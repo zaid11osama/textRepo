@@ -1,58 +1,91 @@
-package com.arabbank.hdf.uam.brain.security;
+package com.TestApi.start.config;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
-import java.util.function.Function;
+import java.util.List;
+import java.util.Map;
 
 @Component
-public class JwtUtil {
-    @Value("${uam.security.jwt.secret-key}")
-    private String secretKey;
+@ConfigurationProperties(prefix = "api2")
+public class Curl {
 
-    @Value("${uam.security.jwt.expiration-in-minutes}")
-    private int expirationInMinutes;
+    private Curls curls;
+    private Map<String, String> headers;
 
-
-    public String generateToken(String username) {
-        return Jwts.builder()
-                .setSubject(username)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000L * 60 * expirationInMinutes * 10))
-                .signWith(SignatureAlgorithm.HS256, secretKey.getBytes())
-                .compact();
+    public Curls getCurls() {
+        return curls;
     }
 
-    public Boolean validateToken(String token, String username) {
-        final String tokenUsername = extractUsername(token);
-        return (username.equalsIgnoreCase(tokenUsername) && !isTokenExpired(token));
+    public void setCurls(Curls curls) {
+        this.curls = curls;
     }
 
-    public String extractUsername(String token) {
-        return extractClaim(token, Claims::getSubject);
+    public Map<String, String> getHeaders() {
+        return headers;
     }
 
-    public Date extractExpiration(String token) {
-        return extractClaim(token, Claims::getExpiration);
+    public void setHeaders(Map<String, String> headers) {
+        this.headers = headers;
     }
 
-    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
-        final Claims claims = extractAllClaims(token);
-        return claimsResolver.apply(claims);
+    public static class Curls {
+        private List<String> get;
+        private List<RequestBodyData> post;
+        private List<RequestBodyData> put;
+        private List<RequestBodyData> delete;
+
+        public List<String> getGet() {
+            return get;
+        }
+
+        public void setGet(List<String> get) {
+            this.get = get;
+        }
+
+        public List<RequestBodyData> getPost() {
+            return post;
+        }
+
+        public void setPost(List<RequestBodyData> post) {
+            this.post = post;
+        }
+
+        public List<RequestBodyData> getPut() {
+            return put;
+        }
+
+        public void setPut(List<RequestBodyData> put) {
+            this.put = put;
+        }
+
+        public List<RequestBodyData> getDelete() {
+            return delete;
+        }
+
+        public void setDelete(List<RequestBodyData> delete) {
+            this.delete = delete;
+        }
     }
 
-    private Claims extractAllClaims(String token) {
-        return Jwts.parser()
-                .setSigningKey(secretKey.getBytes())
-                .parseClaimsJws(token)
-                .getBody();
-    }
+    public static class RequestBodyData {
+        private String url;
+        private String body;
 
-    private Boolean isTokenExpired(String token) {
-        return extractExpiration(token).before(new Date());
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getBody() {
+            return body;
+        }
+
+        public void setBody(String body) {
+            this.body = body;
+        }
     }
 }
