@@ -1,48 +1,27 @@
-package com.TestApi.start.controller;
+@PostMapping("/sendData/{numberOfThreads}")
+public ResponseEntity<List<ResponseEntity<Object>>> sendData(@PathVariable int numberOfThreads) {
 
-import com.TestApi.start.service.StressTestService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+    List<Curls.Curl> allCurls = curls.getCurls();
+    int totalCurls = allCurls.size();
+    int curlsPerThread = (int) Math.ceil((double) totalCurls / numberOfThreads);
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
+    List<CompletableFuture<List<ResponseEntity<Object>>>> futures = new ArrayList<>();
 
-@RestController
-@RequestMapping("/api")
-public class StressTestController {
+    for (int j = 0; j < numberOfThreads; j++) {
+        int startIdx = j * curlsPerThread;
+        int endIdx = Math.min(startIdx + curlsPerThread, totalCurls);
+        List<Curls.Curl> assignedCurls = allCurls.subList(startIdx, endIdx);
 
-    private final StressTestService stressTestService;
-
-    @Autowired
-    public StressTestController(StressTestService stressTestService) {
-        this.stressTestService = stressTestService;
+        int requestID = j + 1;
+        System.out.println("Thread " + (j + 1) + " processing curls " + startIdx + " to " + (endIdx - 1));
+        futures.add(stressTestService.callApi(requestID, assignedCurls));
     }
 
-    @PostMapping("/sendData/{numberOfThreads}")
-    public ResponseEntity<List<ResponseEntity<Object>>> sendData(@PathVariable int numberOfThreads) {
+    CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
 
-        List<CompletableFuture<List<ResponseEntity<Object>>>> futures = new ArrayList<>();
+    List<ResponseEntity<Object>> responses = futures.stream()
+            .flatMap(future -> future.join().stream())
+            .collect(Collectors.toList());
 
-        for (int j = 0; j < numberOfThreads; j++) {
-            int threadNumber = j + 1;
-            int requestID = (threadNumber - 1) * numberOfThreads + (j + 1);
-            System.out.println("future " + (j + 1));
-            futures.add(stressTestService.callApi(requestID));
-        }
-
-        CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
-
-        List<ResponseEntity<Object>> responses = futures.stream()
-                .flatMap(future -> future.join().stream())
-                .collect(Collectors.toList());
-
-        return new ResponseEntity<>(responses, HttpStatus.OK);
-    }
+    return new ResponseEntity<>(responses, HttpStatus.OK);
 }
