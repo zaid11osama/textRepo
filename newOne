@@ -1,3 +1,7 @@
+Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "content-type" (class com.TestApi.start.config.Curls$Curl$Headers), not marked as ignorable (24 known properties: "requesterKey", "tenantID", "origin", "requestCountry", "accept", "user", "inputTimestamp", "referer", "contentType", "requestChannel", "requesterID", "language", "authorization", "userAgent", "acceptEncoding", "connection", "identifierType", "dataSource", "channelReference", "transactionReference", "channelID", "inputCountry", "channel", "relationshipCountry"])
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 12, column: 26] (through reference chain: com.TestApi.start.config.Curls["curls"]->java.util.ArrayList[0]->com.TestApi.start.config.Curls$Curl["headers"]->com.TestApi.start.config.Curls$Curl$Headers["content-type"])
+	
+
 {
   "curls":
 
