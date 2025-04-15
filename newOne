@@ -1,65 +1,6 @@
-I have this .json file
-
-{
-  "curls":
-
-  [
-
-    {
-      "type": "get",
-      "url": "https://10.101.15.27:8443/mdm-ms-api/mdm/v1/api/customer/DQ3IBE/v2/profile",
-      "expected": "200 ok",
-
-      "headers": {
-        "content-type": "application/json",
-        "accept": "*/*",
-        " accept-encoding": "gzip, deflate, br"
-       etc........
-      }
-
-    }
-
-  ]
-}
-
-and this is my curls class
-
-package com.TestApi.start.config;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpHeaders;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
-@Setter
 @Getter
-@Component
-public class Curls {
-
-    private List<Curl> curls;
-    private HeadersConfig headers;
-
-
-
-
-    @Setter
-    @Getter
-    public static class Curl {
-
-        private String type;
-        private String url;
-        private JsonNode body;
-        private String expected;
-        private Headers headers;
-
-
         @Setter
-        @Getter
         public static class Headers {
-
             private String contentType;
             private String authorization;
             private String accept;
@@ -84,57 +25,39 @@ public class Curls {
             private String inputCountry;
             private String channel;
             private String relationshipCountry;
-
-
         }
 
-        @Bean
-        public HttpHeaders commonHeaders() {
+        // ✅ This is now a regular method per Curl instance
+        public HttpHeaders buildHttpHeaders() {
+            HttpHeaders httpHeaders = new HttpHeaders();
+            Headers h = this.getHeaders();
 
-            HttpHeaders headers = new HttpHeaders();
-            headers.set("Content-Type", this.getHeaders().getContentType());
-            headers.set("Accept", this.getHeaders().getAccept());
-            headers.set("Accept-Encoding", this.getHeaders().getAcceptEncoding());
-            headers.set("Connection", this.getHeaders().getConnection());
-            headers.set("Origin", this.getHeaders().getOrigin());
-            headers.set("Referer", this.getHeaders().getReferer());
-            headers.set("User-Agent", this.getHeaders().getUserAgent());
-            headers.set("tenantId", this.getHeaders().getTenantID());
-            headers.set("channelId", this.getHeaders().getChannelID());
-            headers.set("requestcountry", this.getHeaders().getRequestCountry());
-            headers.set("transactionReference", this.getHeaders().getTransactionReference());
-            headers.set("requesterId", this.getHeaders().getRequesterID());
-            headers.set("requesterKey", this.getHeaders().getRequesterKey());
-            headers.set("inputTimestamp", this.getHeaders().getInputTimestamp());
-            headers.set("language", this.getHeaders().getLanguage());
-            headers.set("dataSource", this.getHeaders().getDataSource());
-            headers.set("user", this.getHeaders().getUser());
-            headers.set("requestChannel", this.getHeaders().getRequestChannel());
-            headers.set("channelReference", this.getHeaders().getChannelReference());
-            headers.set("identifiertype", this.getHeaders().getIdentifierType());
-            headers.set("inputcountry", this.getHeaders().getInputCountry());
-            headers.setBearerAuth(this.getHeaders().getAuthorization());
-            headers.set("channel",this.getHeaders().getChannel());
-            headers.set("relationship-country",this.getHeaders().getRelationshipCountry());
-//
-//        requester-key : Anas123
-//        requester-id : anas
-//        channel-id : HELIOSPASS
-//        input-timestamp: 24-NOV-22
-            headers.set("requester-key","Anas123");
-            headers.set("requester-id","anas");
-            headers.set("channel-id","HELIOSPASS");
-            headers.set("input-timestamp","24-NOV-22");
+            if (h.getContentType() != null) httpHeaders.set("Content-Type", h.getContentType());
+            if (h.getAccept() != null) httpHeaders.set("Accept", h.getAccept());
+            if (h.getAcceptEncoding() != null) httpHeaders.set("Accept-Encoding", h.getAcceptEncoding());
+            if (h.getConnection() != null) httpHeaders.set("Connection", h.getConnection());
+            if (h.getOrigin() != null) httpHeaders.set("Origin", h.getOrigin());
+            if (h.getReferer() != null) httpHeaders.set("Referer", h.getReferer());
+            if (h.getUserAgent() != null) httpHeaders.set("User-Agent", h.getUserAgent());
+            if (h.getTenantID() != null) httpHeaders.set("tenantId", h.getTenantID());
+            if (h.getChannelID() != null) httpHeaders.set("channelId", h.getChannelID());
+            if (h.getRequestCountry() != null) httpHeaders.set("requestcountry", h.getRequestCountry());
+            if (h.getTransactionReference() != null) httpHeaders.set("transactionReference", h.getTransactionReference());
+            if (h.getRequesterID() != null) httpHeaders.set("requesterId", h.getRequesterID());
+            if (h.getRequesterKey() != null) httpHeaders.set("requesterKey", h.getRequesterKey());
+            if (h.getInputTimestamp() != null) httpHeaders.set("inputTimestamp", h.getInputTimestamp());
+            if (h.getLanguage() != null) httpHeaders.set("language", h.getLanguage());
+            if (h.getDataSource() != null) httpHeaders.set("dataSource", h.getDataSource());
+            if (h.getUser() != null) httpHeaders.set("user", h.getUser());
+            if (h.getRequestChannel() != null) httpHeaders.set("requestChannel", h.getRequestChannel());
+            if (h.getChannelReference() != null) httpHeaders.set("channelReference", h.getChannelReference());
+            if (h.getIdentifierType() != null) httpHeaders.set("identifiertype", h.getIdentifierType());
+            if (h.getInputCountry() != null) httpHeaders.set("inputcountry", h.getInputCountry());
+            if (h.getChannel() != null) httpHeaders.set("channel", h.getChannel());
+            if (h.getRelationshipCountry() != null) httpHeaders.set("relationship-country", h.getRelationshipCountry());
 
+            if (h.getAuthorization() != null) httpHeaders.setBearerAuth(h.getAuthorization());
 
-            return headers;
+            return httpHeaders;
         }
-
-
-
-
     }
-
-}
-
-can you correct it?
