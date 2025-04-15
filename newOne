@@ -1,3 +1,5 @@
+I have this .json file
+
 {
   "curls":
 
@@ -12,6 +14,7 @@
         "content-type": "application/json",
         "accept": "*/*",
         " accept-encoding": "gzip, deflate, br"
+       etc........
       }
 
     }
@@ -19,15 +22,15 @@
   ]
 }
 
-********************************************************
-
-
+and this is my curls class
 
 package com.TestApi.start.config;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -50,7 +53,82 @@ public class Curls {
         private String url;
         private JsonNode body;
         private String expected;
-        private JsonNode headers;
+        private Headers headers;
+
+
+        @Setter
+        @Getter
+        public static class Headers {
+
+            private String contentType;
+            private String authorization;
+            private String accept;
+            private String acceptEncoding;
+            private String connection;
+            private String origin;
+            private String referer;
+            private String userAgent;
+            private String tenantID;
+            private String channelID;
+            private String requestCountry;
+            private String transactionReference;
+            private String requesterID;
+            private String requesterKey;
+            private String inputTimestamp;
+            private String language;
+            private String dataSource;
+            private String user;
+            private String requestChannel;
+            private String channelReference;
+            private String identifierType;
+            private String inputCountry;
+            private String channel;
+            private String relationshipCountry;
+
+
+        }
+
+        @Bean
+        public HttpHeaders commonHeaders() {
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Content-Type", this.getHeaders().getContentType());
+            headers.set("Accept", this.getHeaders().getAccept());
+            headers.set("Accept-Encoding", this.getHeaders().getAcceptEncoding());
+            headers.set("Connection", this.getHeaders().getConnection());
+            headers.set("Origin", this.getHeaders().getOrigin());
+            headers.set("Referer", this.getHeaders().getReferer());
+            headers.set("User-Agent", this.getHeaders().getUserAgent());
+            headers.set("tenantId", this.getHeaders().getTenantID());
+            headers.set("channelId", this.getHeaders().getChannelID());
+            headers.set("requestcountry", this.getHeaders().getRequestCountry());
+            headers.set("transactionReference", this.getHeaders().getTransactionReference());
+            headers.set("requesterId", this.getHeaders().getRequesterID());
+            headers.set("requesterKey", this.getHeaders().getRequesterKey());
+            headers.set("inputTimestamp", this.getHeaders().getInputTimestamp());
+            headers.set("language", this.getHeaders().getLanguage());
+            headers.set("dataSource", this.getHeaders().getDataSource());
+            headers.set("user", this.getHeaders().getUser());
+            headers.set("requestChannel", this.getHeaders().getRequestChannel());
+            headers.set("channelReference", this.getHeaders().getChannelReference());
+            headers.set("identifiertype", this.getHeaders().getIdentifierType());
+            headers.set("inputcountry", this.getHeaders().getInputCountry());
+            headers.setBearerAuth(this.getHeaders().getAuthorization());
+            headers.set("channel",this.getHeaders().getChannel());
+            headers.set("relationship-country",this.getHeaders().getRelationshipCountry());
+//
+//        requester-key : Anas123
+//        requester-id : anas
+//        channel-id : HELIOSPASS
+//        input-timestamp: 24-NOV-22
+            headers.set("requester-key","Anas123");
+            headers.set("requester-id","anas");
+            headers.set("channel-id","HELIOSPASS");
+            headers.set("input-timestamp","24-NOV-22");
+
+
+            return headers;
+        }
 
 
 
@@ -58,3 +136,5 @@ public class Curls {
     }
 
 }
+
+can you correct it?
