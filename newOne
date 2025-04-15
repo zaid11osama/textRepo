@@ -1,4 +1,100 @@
+{
+  "curls":
+
+  [
+
+    {
+      "type": "get",
+      "url": "https://10.101.15.27:8443/mdm-ms-api/mdm/v1/api/customer/DQ3IBE/v2/profile",
+      "expected": "200 ok",
+
+      "headers": {
+        "content-type": "application/json",
+        "accept": "*/*",
+        " accept-encoding": "gzip, deflate, br",
+        "authorization": "afdfasdfsadf",
+        "acceptEncoding": "acceptEncoding",
+        "connection": "sdfdsf",
+        "origin": "origin",
+        "referer":"asd",
+        "userAgent": "sdf",
+        "tenantID": "sfdfsd",
+        "channelID": "requestCountry",
+        "requestCountry": "sdf",
+        "transactionReference": "dfgdgf",
+        "requesterID": "dsf",
+        "requesterKey": "sdf",
+        "inputTimestamp": "dasf",
+        "language": "sdf",
+        "dataSource": "fdsg",
+        "user": "sdf",
+        "requestChannel": "sdfgg",
+        "channelReference": "dsfsdf",
+        "identifierType": "sdfg",
+        "inputCountry": "sdfsg",
+        "channel": "terh",
+        "relationshipCountry": "sdfgsdf"
+
+      }
+
+    }
+
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+******************************************************************************
+
+
+
+
+
+
+
+
+package com.TestApi.start.config;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpHeaders;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+@Setter
 @Getter
+@Component
+public class Curls {
+
+    private List<Curl> curls;
+
+
+
+    @Setter
+    @Getter
+    public static class Curl {
+
+        private String type;
+        private String url;
+        private JsonNode body;
+        private String expected;
+        private Headers headers;
+
+
+
+
+
+        @Getter
         @Setter
         public static class Headers {
             private String contentType;
@@ -27,22 +123,24 @@
             private String relationshipCountry;
         }
 
-        // ✅ This is now a regular method per Curl instance
+
+
         public HttpHeaders buildHttpHeaders() {
             HttpHeaders httpHeaders = new HttpHeaders();
             Headers h = this.getHeaders();
 
-            if (h.getContentType() != null) httpHeaders.set("Content-Type", h.getContentType());
-            if (h.getAccept() != null) httpHeaders.set("Accept", h.getAccept());
-            if (h.getAcceptEncoding() != null) httpHeaders.set("Accept-Encoding", h.getAcceptEncoding());
-            if (h.getConnection() != null) httpHeaders.set("Connection", h.getConnection());
-            if (h.getOrigin() != null) httpHeaders.set("Origin", h.getOrigin());
-            if (h.getReferer() != null) httpHeaders.set("Referer", h.getReferer());
-            if (h.getUserAgent() != null) httpHeaders.set("User-Agent", h.getUserAgent());
+            if (h.getContentType() != null) httpHeaders.set("content-type", h.getContentType());
+            if (h.getAccept() != null) httpHeaders.set("accept", h.getAccept());
+            if (h.getAcceptEncoding() != null) httpHeaders.set("accept-encoding", h.getAcceptEncoding());
+            if (h.getConnection() != null) httpHeaders.set("connection", h.getConnection());
+            if (h.getOrigin() != null) httpHeaders.set("origin", h.getOrigin());
+            if (h.getReferer() != null) httpHeaders.set("referer", h.getReferer());
+            if (h.getUserAgent() != null) httpHeaders.set("user-agent", h.getUserAgent());
             if (h.getTenantID() != null) httpHeaders.set("tenantId", h.getTenantID());
             if (h.getChannelID() != null) httpHeaders.set("channelId", h.getChannelID());
             if (h.getRequestCountry() != null) httpHeaders.set("requestcountry", h.getRequestCountry());
-            if (h.getTransactionReference() != null) httpHeaders.set("transactionReference", h.getTransactionReference());
+            if (h.getTransactionReference() != null)
+                httpHeaders.set("transactionReference", h.getTransactionReference());
             if (h.getRequesterID() != null) httpHeaders.set("requesterId", h.getRequesterID());
             if (h.getRequesterKey() != null) httpHeaders.set("requesterKey", h.getRequesterKey());
             if (h.getInputTimestamp() != null) httpHeaders.set("inputTimestamp", h.getInputTimestamp());
@@ -60,4 +158,13 @@
 
             return httpHeaders;
         }
+
+
+
+
+
     }
+
+}
+
+
