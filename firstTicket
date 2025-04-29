@@ -13,3 +13,150 @@ Notes:
 Attachments
 
 explain this ticket for me
+
+
+*****************************************
+
+package com.arabbank.mdm.eod.method;
+
+import static com.arabbank.mdm.eod.util.Constant.DATE_DELETED;
+import static com.arabbank.mdm.eod.util.Constant.EOD_REFERENCE;
+import static com.arabbank.mdm.eod.util.Constant.EOD_REFERENCE_PROPARETY;
+import static com.arabbank.mdm.eod.util.Constant.GLOBAL_ID;
+import static com.arabbank.mdm.eod.util.Constant.IS_CLOSED;
+import static com.arabbank.mdm.eod.util.Constant.IS_DELETED;
+import static com.arabbank.mdm.eod.util.Constant.MDM_EODS_METHOD_LOGS;
+import static com.arabbank.mdm.eod.util.Constant.MDM_MASTER;
+import static com.arabbank.mdm.eod.util.Constant.MDM_RELATIONSHIPS;
+import static com.arabbank.mdm.eod.util.Constant.METHOD_NAME;
+import static com.arabbank.mdm.eod.util.Constant.TOTAL_NUMBER;
+import static com.arabbank.mdm.eod.util.Constant.UPDATED_TODAY;
+import static com.arabbank.mdm.eod.util.Constant.UPDATE_PROGRAM;
+import static com.arabbank.mdm.eod.util.Constant.UPDATE_TIMESTAMP;
+import static com.arabbank.mdm.eod.util.Constant.WITHGLOBALID;
+
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.arabbank.mdm.commons.lib.model.Master;
+import com.arabbank.mdm.commons.lib.util.MsUtil;
+import com.arabbank.mdm.eod.facade.Facade;
+import com.arabbank.mdm.eod.job.Job;
+import com.arabbank.mdm.eod.model.EodMethodStatus;
+
+@Service
+public class ClosedCustomer {
+
+	@Autowired
+	private Facade facade;
+
+	private Logger logger = LoggerFactory.getLogger(ClosedCustomer.class);
+
+	private static EodMethodStatus colsedCustomerStatus;
+
+	//////////////////////////////////////////////////
+	public void deletePartiesForClosedCustomer() {
+		logger.info("deletePartiesForClosedCustomer()");
+		try {
+			List<Master> closedMasters = facade.getClosedMasters();
+			int size = closedMasters.size();
+			populateEodMethodStatus(size);
+			updateMetohdTotalNumber("deletePartiesForClosedCustomer", size);
+			while (Job.isStarted() && !MsUtil.isEmpty(closedMasters)) {
+				for (Master master : closedMasters) {
+					logger.info("Deleting Parties For Closed Customer, GID : ({})", master.getGlobalId());
+					deleteClosedRelationships(master);
+					updateMasterUpdateToday(master);
+					getColsedCustomerStatus().setRemainingNumber(String.valueOf(--size));
+				}
+				if (size == 0) {
+					break;
+				}
+			}
+			getColsedCustomerStatus().setStatus("Finished");
+		} catch (Exception e) {
+			getColsedCustomerStatus().setStatus("Error");
+			MsUtil.throww(e);
+		} finally {
+			getColsedCustomerStatus().setEndTime(Timestamp.valueOf(LocalDateTime.now()));
+			logger.info("/deletePartiesForClosedCustomer()");
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	private void deleteClosedRelationships(Master master) {
+		try {
+			logger.debug("deleteClosedRelationships({})", master.getGlobalId());
+			String globalId = master.getGlobalId();
+			Map<String, Object> withGlobalIdCondition = new HashMap<>();
+			withGlobalIdCondition.put(WITHGLOBALID, globalId);
+			withGlobalIdCondition.put(IS_DELETED, 0);
+			Map<String, Object> deleteRecordValues = new HashMap<>();
+			deleteRecordValues.put(IS_DELETED, 1);
+			deleteRecordValues.put(DATE_DELETED, LocalDate.now());
+			deleteRecordValues.put(UPDATE_PROGRAM, "EOD-deletePartiesForClosedCustomer");
+			deleteRecordValues.put(UPDATE_TIMESTAMP, Timestamp.valueOf(LocalDateTime.now()));
+			facade.updateRequest(MDM_RELATIONSHIPS, withGlobalIdCondition, deleteRecordValues);
+		} finally {
+			logger.debug("/deleteClosedRelationships({})", master.getGlobalId());
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	private void updateMasterUpdateToday(Master master) {
+		try {
+			logger.debug("updateMasterUpdateToday({})", master.getGlobalId());
+			Map<String, Object> conditions = new HashMap<>();
+			conditions.put(GLOBAL_ID, master.getGlobalId());
+			conditions.put(IS_CLOSED, 1);
+			conditions.put(IS_DELETED, 0);
+			conditions.put(UPDATED_TODAY, 1);
+			Map<String, Object> values = new HashMap<>();
+			values.put(UPDATED_TODAY, 0);
+			values.put(UPDATE_PROGRAM, "EOD-deletePartiesForClosedCustomer");
+			values.put(UPDATE_TIMESTAMP, Timestamp.valueOf(LocalDateTime.now()));
+			facade.updateRequest(MDM_MASTER, conditions, values);
+		} finally {
+			logger.debug("/updateMasterUpdateToday({})", master.getGlobalId());
+		}
+	}
+
+	//////////////////////////////////////////////////
+	private static void populateEodMethodStatus(int size) {
+		setColsedCustomerStatus(new EodMethodStatus());
+		getColsedCustomerStatus().setName("deletePartiesForClosedCustomer");
+		getColsedCustomerStatus().setPrefix("PRE");
+		getColsedCustomerStatus().setStartTime(Timestamp.valueOf(LocalDateTime.now()));
+		getColsedCustomerStatus().setStatus("InProgress");
+		getColsedCustomerStatus().setTotalNumber(String.valueOf(size));
+	}
+
+	//////////////////////////////////////////////////
+	private void updateMetohdTotalNumber(String methodName, int size) {
+		Map<String, Object> conditions = new HashMap<>();
+		conditions.put(EOD_REFERENCE, System.getProperty(EOD_REFERENCE_PROPARETY));
+		conditions.put(METHOD_NAME, methodName);
+		Map<String, Object> keysAndValues = new HashMap<>();
+		keysAndValues.put(TOTAL_NUMBER, String.valueOf(size));
+		facade.updateRequest(MDM_EODS_METHOD_LOGS, conditions, keysAndValues);
+	}
+
+	//////////////////////////////////////////////////
+	public static EodMethodStatus getColsedCustomerStatus() {
+		return colsedCustomerStatus;
+	}
+
+	public static void setColsedCustomerStatus(EodMethodStatus colsedCustomerStatus) {
+		ClosedCustomer.colsedCustomerStatus = colsedCustomerStatus;
+	}
+
+}
