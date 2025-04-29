@@ -160,3 +160,25 @@ public class ClosedCustomer {
 	}
 
 }
+
+
+**********************************************************
+
+
+- checkisClosed (closed on flags_and_Attributes: global_id) 
+		get Relationships (get AH roles) 
+		flags_attribributesQuery: 
+	where is_deleted =0
+	and global_id = input.global_id
+	and role = 'AH'
+	and sequence = r.sequence 
+	and organization = r.organization
+	and type = 'PRD'
+	and value = '00'
+	and stauts = 0		
+		delete Relationships 
+		update master_per_country (mark as isClosed per conditions)
+		update master (mark as isClosed per conditions)
+	- checkActive (not closed on flags_and_Attributes)
+		update master_per_country (mark as isActive per conditions)
+		update master (mark as isActive per conditions)
