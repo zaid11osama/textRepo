@@ -1,0 +1,15 @@
+
+Open menu
+✓ Description Currently:
+• EOD handles is closed functionality using SQLs that removes all party relatioships from golden and source) by checking of party (with all identifiers: global_id, role, sequence, country, organization, is_Deleted=0, type='PRD', details_value='00' and status =0) in mdm_flags_attributes table,
+To be:
+• To replace these SQLS by an actual program (function.. etc.) as SQLS may not be sufficient here and may cause DB performance issues,
+• After the routine is done removing from relationships table, it should also update the master_per_country for the given global ID: is_closed flag by (if has 00 flag then is_closed=Y else then is_closed=N)
+Notes:
+• Deletion is for mdm_relationships for all withglobalid = our customer's global ID and related Product = our customer's related product,
+• Deletion should be on src_relationships as well,
+• Important NOT to delete the relationship records of other merged parties (related_product is important here),
+• The master_per_country flag update is only done in case, ALL relationships for this global ID, under this country, are closed,
+Attachments
+
+explain this ticket for me
