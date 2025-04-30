@@ -182,3 +182,25 @@ public class ClosedCustomer {
 	- checkActive (not closed on flags_and_Attributes)
 		update master_per_country (mark as isActive per conditions)
 		update master (mark as isActive per conditions)
+
+**************************************************************************
+
+
+
+SELECT r.global_id
+  FROM MDMGOLDEN.MDM_RELATIONSHIPS R
+ WHERE     R.IS_DELETED = 0
+       AND R.ROLE IN ('AH', 'MI', 'JNT')
+       AND R.ORGANIZATION = 'AB'
+       AND  EXISTS
+               (SELECT 1
+                  FROM MDMGOLDEN.MDM_FLAGS_AND_ATTRIBUTES F
+                 WHERE     F.IS_DELETED = 0
+                       AND F.GLOBAL_ID = R.GLOBAL_ID
+                       AND F.ROLE = R.ROLE
+                       AND F.RELATIONSHIP_SEQUENCE = R.RELATIONSHIP_SEQUENCE
+                       AND F.RELATION_COUNTRY = R.RELATION_COUNTRY
+                       AND F.ORGANIZATION = R.ORGANIZATION
+                       AND F.DETAILS_VALUE = '00'
+                       AND F.TYPE = 'PRD'
+                       AND F.STATUS = 0)
