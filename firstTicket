@@ -235,3 +235,176 @@ public void updateClosedOrActiveStatus(String globalId) {
         throw e;
     }
 }
+
+********************************************************************************
+
+package com.arabbank.mdm.eod.facade;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Service;
+
+import com.arabbank.mdm.commons.lib.model.Master;
+import com.arabbank.mdm.commons.lib.util.MsUtil;
+import com.arabbank.mdm.eod.dao.DataAccess;
+import com.arabbank.mdm.eod.model.EodConfig;
+import com.arabbank.mdm.microservice.lib.gitlab.ConfigReader;
+
+@Service
+public class Facade {
+
+	@Autowired
+	private DataAccess dao;
+	
+	@Autowired
+	private ConfigReader configReader;
+
+	private Logger logger = LoggerFactory.getLogger(Facade.class);
+
+	///////////////////////////////////////////////////////
+	public <T> List<T> getData(String tableName, Map<String, Object> keyAndValues, RowMapper<T> populator) {
+		try {
+			logger.debug("getData({},{})", tableName, keyAndValues);
+			return dao.getDataAsList(tableName, keyAndValues, populator);
+		} finally {
+			logger.debug("/getData({},{})", tableName, keyAndValues);
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	public <T> T getDataAsObject(String tableName, Map<String, Object> keyAndValues, RowMapper<T> populator) {
+		try {
+			logger.debug("getDataAsObject({},{})", tableName, keyAndValues);
+			return dao.getDataAsObject(tableName, keyAndValues, populator);
+		} finally {
+			logger.debug("/getDataAsObject({},{})", tableName, keyAndValues);
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	public void insertRequest(String tableName, Map<String, Object> keyAndValues) {
+		try {
+			logger.debug("insertRequest({},{})", tableName, keyAndValues);
+			dao.insertRequest(tableName, keyAndValues);
+		} finally {
+			logger.debug("/insertRequest({},{})", tableName, keyAndValues);
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	public int deleteRequest(String tableName, int size) {
+		try {
+			logger.debug("deleteRequest({},{})", tableName, size);
+			return dao.deleteRequest(tableName, size);
+		} finally {
+			logger.debug("/deleteRequest({},{})", tableName, size);
+		}
+	}
+	
+	///////////////////////////////////////////////////////
+	public List<EodConfig> getEodMethods(String processName) {
+		try {
+			logger.debug("getEodMethods({})", processName);
+			return dao.getEodMethods(processName);
+		} finally {
+			logger.debug("/getEodMethods({})", processName);
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	public boolean checkEodMethodStatus(String methodName) {
+		try {
+			logger.debug("checkEodMethodStatus({})", methodName);
+			return dao.checkEodMethodStatus(methodName);
+		} finally {
+			logger.debug("/checkEodMethodStatus({})", methodName);
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	public List<Master> getClosedMasters() {
+		try {
+			logger.debug("getClosedMasters()");
+			List<String> eodCountries = getEodCountries();
+			return dao.getClosedMasters(eodCountries);
+		} finally {
+			logger.debug("/getClosedMasters()");
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	public List<Master> getEodMasters(int numOfRows, String time) {
+		try {
+			logger.debug("getEodMasters({},{})", numOfRows, time);
+			List<String> eodCountries = getEodCountries();
+			return dao.getEodMasters(numOfRows, time, eodCountries);
+		} finally {
+			logger.debug("/getEodMasters({},{})", numOfRows, time);
+		}
+	}
+	
+	///////////////////////////////////////////////////////
+	public int getEodMastersCount(String time) {
+		try {
+			logger.debug("getEodMastersCount({})", time);
+			List<String> eodCountries = getEodCountries();
+			return dao.getEodMastersCount(time, eodCountries);
+		} finally {
+			logger.debug("/getEodMastersCount({})", time);
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	public int getTasksCount() {
+		try {
+			logger.debug("getTasksCount()");
+			return dao.getTasksCount();
+		} finally {
+			logger.debug("/getTasksCount()");
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	public void updateRequest(String tableName, Map<String, Object> conditions, Map<String, Object> keysAndValues) {
+		try {
+			logger.debug("updateRequest({},{},{})", tableName, conditions, keysAndValues);
+			dao.updateRequest(tableName, conditions, keysAndValues);
+		} finally {
+			logger.debug("/updateRequest({},{},{})", tableName, conditions, keysAndValues);
+		}
+	}
+
+	///////////////////////////////////////////////////////
+	public void closeDataBase() {
+		try {
+			logger.debug("closeDataBase()");
+			dao.closeDataBaseConnection();
+		} finally {
+			logger.debug("/closeDataBase()");
+		}
+	}
+	
+	///////////////////////////////////////////////////////
+	private List<String> getEodCountries() {
+		try {
+			logger.debug("getEodCountries()");
+			String property = configReader.getProperty("ab.mdm.eod.countries");
+			if (MsUtil.isEmpty(property)) {
+				String message = "EOD Countries Gitlab Variable (ab.mdm.eod.countries) is Empty !";
+				MsUtil.throww(new Exception(message));
+			}
+			String[] splittedCountries = property.split(",");
+			return new ArrayList<>(Arrays.asList(splittedCountries));
+		} finally {
+			logger.debug("/getEodCountries()");
+		}
+	}
+}
+
