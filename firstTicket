@@ -204,3 +204,34 @@ SELECT r.global_id
                        AND F.DETAILS_VALUE = '00'
                        AND F.TYPE = 'PRD'
                        AND F.STATUS = 0)
+******************************************************************************
+
+public void updateClosedOrActiveStatus(String globalId) {
+    logger.info("updateClosedOrActiveStatus({})", globalId);
+    try {
+        List<Relationship> ahRoles = facade.getAhRoles(globalId); // Get AH roles, IS_DELETED=0
+        boolean isClosed = false;
+
+        for (Relationship r : ahRoles) {
+            if (facade.existsMatchingFlag(r)) {
+                isClosed = true;
+                break;
+            }
+        }
+
+        if (isClosed) {
+            for (Relationship r : ahRoles) {
+                facade.deleteRelationship(r);
+            }
+            facade.updateMasterAsClosed(globalId);
+            facade.updateMasterPerCountryAsClosed(globalId);
+        } else {
+            facade.updateMasterAsActive(globalId);
+            facade.updateMasterPerCountryAsActive(globalId);
+        }
+
+    } catch (Exception e) {
+        logger.error("Error updating closed/active status", e);
+        throw e;
+    }
+}
