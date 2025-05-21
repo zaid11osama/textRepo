@@ -1,49 +1,61 @@
-Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "content-type" (class com.TestApi.start.config.Curls$Curl$Headers), not marked as ignorable (24 known properties: "requesterKey", "tenantID", "origin", "requestCountry", "accept", "user", "inputTimestamp", "referer", "contentType", "requestChannel", "requesterID", "language", "authorization", "userAgent", "acceptEncoding", "connection", "identifierType", "dataSource", "channelReference", "transactionReference", "channelID", "inputCountry", "channel", "relationshipCountry"])
- at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 12, column: 26] (through reference chain: com.TestApi.start.config.Curls["curls"]->java.util.ArrayList[0]->com.TestApi.start.config.Curls$Curl["headers"]->com.TestApi.start.config.Curls$Curl$Headers["content-type"])
-	
-
 {
-  "curls":
+  "id": 63,
+  "organization": "AB",
+  "role": {
+    "universalId": "some-universal-id",
+    "fileKey": "some-file-key",
+    "language": "en",
+    "code": "AH",
+    "value": "Some value",
+    "filtrationKey1": null,
+    "filtrationKey2": null,
+    "filtrationKey3": null,
+    "filtrationKey4": null,
+    "filtrationKey5": null,
+    "narrative1": null,
+    "narrative2": null,
+    "narrative3": null
+  },
+  "universalId": "3d75f1c0-3037-413b-8240-82fb534a11a1",
+  "orignialGlobalId": "I2024009784854",
+  "beAdditionalKey": null,
+  "withGlobalId": null,
+  "relationToParty": null,
+  "relationshipSequence": 1,
+  "globalId": "I2024009784854",
+  "orignalGlobalId": "I2024009784854",
 
-  [
-
-    {
-      "type": "get",
-      "url": "https://10.101.15.27:8443/mdm-ms-api/mdm/v1/api/customer/DQ3IBE/v2/profile",
-      "expected": "200 ok",
-
-      "headers": {
-        "content-type": "application/json",
-        "accept": "*/*",
-        " accept-encoding": "gzip, deflate, br",
-        "authorization": "afdfasdfsadf",
-        "acceptEncoding": "acceptEncoding",
-        "connection": "sdfdsf",
-        "origin": "origin",
-        "referer":"asd",
-        "userAgent": "sdf",
-        "tenantID": "sfdfsd",
-        "channelID": "requestCountry",
-        "requestCountry": "sdf",
-        "transactionReference": "dfgdgf",
-        "requesterID": "dsf",
-        "requesterKey": "sdf",
-        "inputTimestamp": "dasf",
-        "language": "sdf",
-        "dataSource": "fdsg",
-        "user": "sdf",
-        "requestChannel": "sdfgg",
-        "channelReference": "dsfsdf",
-        "identifierType": "sdfg",
-        "inputCountry": "sdfsg",
-        "channel": "terh",
-        "relationshipCountry": "sdfgsdf"
-
-      }
-
-    }
-
-  ]
+  "relationCountry": {
+    "universalId": "some-universal-id",
+    "fileKey": "some-file-key",
+    "language": "en",
+    "code": "JO",
+    "value": "Jordan",
+    "filtrationKey1": null,
+    "filtrationKey2": null,
+    "filtrationKey3": null,
+    "filtrationKey4": null,
+    "filtrationKey5": null,
+    "narrative1": null,
+    "narrative2": null,
+    "narrative3": null}
+  ,
+  "withProduct": "E43T7G",
+  "relationDescription": null,
+  "latestUniqueRefrence": "2024050610122760930a",
+  "updateTimestamp": "2024-05-06T07:14:26.802+00:00",
+  "updateCountry": "JO",
+  "updateProgram": "Brain-C",
+  "updateSystem": "MDM",
+  "updateUser": "MDMUSR",
+  "authorizedUser": "MDMUSR",
+  "dateLastUpdate": "2024-05-06",
+  "dateRecordCreated": "2024-05-06",
+  "updatedToday": 1,
+  "dateDeleted": null,
+  "isDeleted": 0,
+  "relatedProduct": "E43T7G",
+  "footer": null
 }
 
 
@@ -56,119 +68,308 @@ Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unr
 
 
 
-******************************************************************************
 
+***************************************************
 
-
-
-
-
-
-
-package com.TestApi.start.config;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpHeaders;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
-@Setter
-@Getter
-@Component
-public class Curls {
-
-    private List<Curl> curls;
-
-
-
-    @Setter
-    @Getter
-    public static class Curl {
-
-        private String type;
-        private String url;
-        private JsonNode body;
-        private String expected;
-        private Headers headers;
-
-
-
-
-
-        @Getter
-        @Setter
-        public static class Headers {
-            private String contentType;
-            private String authorization;
-            private String accept;
-            private String acceptEncoding;
-            private String connection;
-            private String origin;
-            private String referer;
-            private String userAgent;
-            private String tenantID;
-            private String channelID;
-            private String requestCountry;
-            private String transactionReference;
-            private String requesterID;
-            private String requesterKey;
-            private String inputTimestamp;
-            private String language;
-            private String dataSource;
-            private String user;
-            private String requestChannel;
-            private String channelReference;
-            private String identifierType;
-            private String inputCountry;
-            private String channel;
-            private String relationshipCountry;
-        }
-
-
-
-        public HttpHeaders buildHttpHeaders() {
-            HttpHeaders httpHeaders = new HttpHeaders();
-            Headers h = this.getHeaders();
-
-            if (h.getContentType() != null) httpHeaders.set("content-type", h.getContentType());
-            if (h.getAccept() != null) httpHeaders.set("accept", h.getAccept());
-            if (h.getAcceptEncoding() != null) httpHeaders.set("accept-encoding", h.getAcceptEncoding());
-            if (h.getConnection() != null) httpHeaders.set("connection", h.getConnection());
-            if (h.getOrigin() != null) httpHeaders.set("origin", h.getOrigin());
-            if (h.getReferer() != null) httpHeaders.set("referer", h.getReferer());
-            if (h.getUserAgent() != null) httpHeaders.set("user-agent", h.getUserAgent());
-            if (h.getTenantID() != null) httpHeaders.set("tenantId", h.getTenantID());
-            if (h.getChannelID() != null) httpHeaders.set("channelId", h.getChannelID());
-            if (h.getRequestCountry() != null) httpHeaders.set("requestcountry", h.getRequestCountry());
-            if (h.getTransactionReference() != null)
-                httpHeaders.set("transactionReference", h.getTransactionReference());
-            if (h.getRequesterID() != null) httpHeaders.set("requesterId", h.getRequesterID());
-            if (h.getRequesterKey() != null) httpHeaders.set("requesterKey", h.getRequesterKey());
-            if (h.getInputTimestamp() != null) httpHeaders.set("inputTimestamp", h.getInputTimestamp());
-            if (h.getLanguage() != null) httpHeaders.set("language", h.getLanguage());
-            if (h.getDataSource() != null) httpHeaders.set("dataSource", h.getDataSource());
-            if (h.getUser() != null) httpHeaders.set("user", h.getUser());
-            if (h.getRequestChannel() != null) httpHeaders.set("requestChannel", h.getRequestChannel());
-            if (h.getChannelReference() != null) httpHeaders.set("channelReference", h.getChannelReference());
-            if (h.getIdentifierType() != null) httpHeaders.set("identifiertype", h.getIdentifierType());
-            if (h.getInputCountry() != null) httpHeaders.set("inputcountry", h.getInputCountry());
-            if (h.getChannel() != null) httpHeaders.set("channel", h.getChannel());
-            if (h.getRelationshipCountry() != null) httpHeaders.set("relationship-country", h.getRelationshipCountry());
-
-            if (h.getAuthorization() != null) httpHeaders.setBearerAuth(h.getAuthorization());
-
-            return httpHeaders;
-        }
-
-
-
-
-
-    }
-
-}
-
-
+[
+  {
+    "id": 94,
+    "organization": "AB",
+    "role": "COM",
+    "universalId": "e0e840ae-ae73-49e0-b5b7-0ef2b59c001f",
+    "orignialGlobalId": "C2024003409953",
+    "beAdditionalKey": null,
+    "withGlobalId": "I2024009784854",
+    "relationToParty": null,
+    "relationshipSequence": 1,
+    "globalId": "C2024003409953",
+    "orignalGlobalId": "C2024003409953",
+    "relationCountry": "JO",
+    "withProduct": null,
+    "relationDescription": null,
+    "latestUniqueRefrence": "2024050610122760930a",
+    "updateTimestamp": "2024-05-06T07:14:28.218+00:00",
+    "updateCountry": "JO",
+    "updateProgram": "Brain-C",
+    "updateSystem": "MDM",
+    "updateUser": "MDMUSR",
+    "authorizedUser": "MDMUSR",
+    "dateLastUpdate": "2024-05-06",
+    "dateRecordCreated": "2024-05-06",
+    "updatedToday": 1,
+    "dateDeleted": null,
+    "isDeleted": false,
+    "relatedProduct": "E43T7G",
+    "footer": null
+  },
+  {
+    "id": 78397,
+    "organization": "AB",
+    "role": "COM",
+    "universalId": "e0cccff6-c03e-415c-9f78-b045793d4bcf",
+    "orignialGlobalId": "C2024003410050",
+    "beAdditionalKey": null,
+    "withGlobalId": "I2024009784854",
+    "relationToParty": null,
+    "relationshipSequence": 1,
+    "globalId": "C2024003410050",
+    "orignalGlobalId": "C2024003410050",
+    "relationCountry": "JO",
+    "withProduct": null,
+    "relationDescription": null,
+    "latestUniqueRefrence": "202408111313540893f8",
+    "updateTimestamp": "2024-08-11T10:17:01.471+00:00",
+    "updateCountry": "JO",
+    "updateProgram": "Merge",
+    "updateSystem": "MDM",
+    "updateUser": "MDMU000000",
+    "authorizedUser": "MDMU000000",
+    "dateLastUpdate": "2024-08-11",
+    "dateRecordCreated": "2024-08-11",
+    "updatedToday": 1,
+    "dateDeleted": null,
+    "isDeleted": false,
+    "relatedProduct": "ENFE2B",
+    "footer": null
+  },
+  {
+    "id": 78356,
+    "organization": "AB",
+    "role": "COM",
+    "universalId": "5d1585cb-dd3f-4471-a57a-472a6f150208",
+    "orignialGlobalId": "C2024003410954",
+    "beAdditionalKey": null,
+    "withGlobalId": "I2024009784854",
+    "relationToParty": null,
+    "relationshipSequence": 1,
+    "globalId": "C2024003410954",
+    "orignalGlobalId": "C2024003410954",
+    "relationCountry": "JO",
+    "withProduct": null,
+    "relationDescription": null,
+    "latestUniqueRefrence": "202408081504261354c3",
+    "updateTimestamp": "2024-08-08T12:04:42.439+00:00",
+    "updateCountry": "JO",
+    "updateProgram": "Merge",
+    "updateSystem": "MDM",
+    "updateUser": "MDMU000000",
+    "authorizedUser": "MDMU000000",
+    "dateLastUpdate": "2024-08-08",
+    "dateRecordCreated": "2024-08-08",
+    "updatedToday": 1,
+    "dateDeleted": null,
+    "isDeleted": false,
+    "relatedProduct": "ENFGRJ",
+    "footer": null
+  },
+  {
+    "id": 78372,
+    "organization": "AB",
+    "role": "COM",
+    "universalId": "7d928623-2adc-45ff-838e-e9c80b7aea36",
+    "orignialGlobalId": "C2024003411614",
+    "beAdditionalKey": null,
+    "withGlobalId": "I2024009784854",
+    "relationToParty": null,
+    "relationshipSequence": 1,
+    "globalId": "C2024003411614",
+    "orignalGlobalId": "C2024003411614",
+    "relationCountry": "JO",
+    "withProduct": null,
+    "relationDescription": null,
+    "latestUniqueRefrence": "20240811122133430827",
+    "updateTimestamp": "2024-08-11T09:21:58.422+00:00",
+    "updateCountry": "JO",
+    "updateProgram": "Merge",
+    "updateSystem": "MDM",
+    "updateUser": "MDSA",
+    "authorizedUser": "MDSA",
+    "dateLastUpdate": "2024-08-08",
+    "dateRecordCreated": "2024-08-08",
+    "updatedToday": 1,
+    "dateDeleted": null,
+    "isDeleted": false,
+    "relatedProduct": "F1GT97",
+    "footer": null
+  },
+  {
+    "id": 63,
+    "organization": "AB",
+    "role": "AH",
+    "universalId": "3d75f1c0-3037-413b-8240-82fb534a11a1",
+    "orignialGlobalId": "I2024009784854",
+    "beAdditionalKey": null,
+    "withGlobalId": null,
+    "relationToParty": null,
+    "relationshipSequence": 1,
+    "globalId": "I2024009784854",
+    "orignalGlobalId": "I2024009784854",
+    "relationCountry": "JO",
+    "withProduct": "E43T7G",
+    "relationDescription": null,
+    "latestUniqueRefrence": "2024050610122760930a",
+    "updateTimestamp": "2024-05-06T07:14:26.802+00:00",
+    "updateCountry": "JO",
+    "updateProgram": "Brain-C",
+    "updateSystem": "MDM",
+    "updateUser": "MDMUSR",
+    "authorizedUser": "MDMUSR",
+    "dateLastUpdate": "2024-05-06",
+    "dateRecordCreated": "2024-05-06",
+    "updatedToday": 1,
+    "dateDeleted": null,
+    "isDeleted": false,
+    "relatedProduct": "E43T7G",
+    "footer": null
+  },
+  {
+    "id": 78369,
+    "organization": "AB",
+    "role": "PP1",
+    "universalId": "48e8720f-c5f3-422c-8e39-d8bf02b67a94",
+    "orignialGlobalId": "I2024009787102",
+    "beAdditionalKey": null,
+    "withGlobalId": "I2024009784854",
+    "relationToParty": "12",
+    "relationshipSequence": 1,
+    "globalId": "I2024009787102",
+    "orignalGlobalId": "I2024009787102",
+    "relationCountry": "JO",
+    "withProduct": null,
+    "relationDescription": null,
+    "latestUniqueRefrence": "20240811122133430827",
+    "updateTimestamp": "2024-08-11T09:21:58.179+00:00",
+    "updateCountry": "JO",
+    "updateProgram": "Merge",
+    "updateSystem": "MDM",
+    "updateUser": "MDSA",
+    "authorizedUser": "MDSA",
+    "dateLastUpdate": "2024-08-08",
+    "dateRecordCreated": "2024-08-08",
+    "updatedToday": 1,
+    "dateDeleted": null,
+    "isDeleted": false,
+    "relatedProduct": "F1GT97",
+    "footer": null
+  },
+  {
+    "id": 106,
+    "organization": "AB",
+    "role": "MOT",
+    "universalId": "0cb50adc-dc4d-4241-b563-cee2a68c055e",
+    "orignialGlobalId": "I2024009788251",
+    "beAdditionalKey": null,
+    "withGlobalId": "I2024009784854",
+    "relationToParty": null,
+    "relationshipSequence": 1,
+    "globalId": "I2024009788251",
+    "orignalGlobalId": "I2024009788251",
+    "relationCountry": "JO",
+    "withProduct": null,
+    "relationDescription": null,
+    "latestUniqueRefrence": "2024050610122760930a",
+    "updateTimestamp": "2024-05-06T07:14:28.888+00:00",
+    "updateCountry": "JO",
+    "updateProgram": "Brain-C",
+    "updateSystem": "MDM",
+    "updateUser": "MDMUSR",
+    "authorizedUser": "MDMUSR",
+    "dateLastUpdate": "2024-05-06",
+    "dateRecordCreated": "2024-05-06",
+    "updatedToday": 1,
+    "dateDeleted": null,
+    "isDeleted": false,
+    "relatedProduct": "E43T7G",
+    "footer": null
+  },
+  {
+    "id": 78359,
+    "organization": "AB",
+    "role": "PP1",
+    "universalId": "e8d0fa8b-e94d-4a1c-82bc-bb88640cba84",
+    "orignialGlobalId": "I2024009788653",
+    "beAdditionalKey": null,
+    "withGlobalId": "I2024009784854",
+    "relationToParty": "01",
+    "relationshipSequence": 1,
+    "globalId": "I2024009788653",
+    "orignalGlobalId": "I2024009788653",
+    "relationCountry": "JO",
+    "withProduct": null,
+    "relationDescription": null,
+    "latestUniqueRefrence": "202408081504261354c3",
+    "updateTimestamp": "2024-08-08T12:04:42.711+00:00",
+    "updateCountry": "JO",
+    "updateProgram": "Merge",
+    "updateSystem": "MDM",
+    "updateUser": "MDMU000000",
+    "authorizedUser": "MDMU000000",
+    "dateLastUpdate": "2024-08-08",
+    "dateRecordCreated": "2024-08-08",
+    "updatedToday": 1,
+    "dateDeleted": null,
+    "isDeleted": false,
+    "relatedProduct": "ENFGRJ",
+    "footer": null
+  },
+  {
+    "id": 78400,
+    "organization": "AB",
+    "role": "MOT",
+    "universalId": "d46c244d-a81b-427b-b32f-6dc917b92099",
+    "orignialGlobalId": "I2024009789454",
+    "beAdditionalKey": null,
+    "withGlobalId": "I2024009784854",
+    "relationToParty": null,
+    "relationshipSequence": 1,
+    "globalId": "I2024009789454",
+    "orignalGlobalId": "I2024009789454",
+    "relationCountry": "JO",
+    "withProduct": null,
+    "relationDescription": null,
+    "latestUniqueRefrence": "202408111313540893f8",
+    "updateTimestamp": "2024-08-11T10:17:01.652+00:00",
+    "updateCountry": "JO",
+    "updateProgram": "Merge",
+    "updateSystem": "MDM",
+    "updateUser": "MDMU000000",
+    "authorizedUser": "MDMU000000",
+    "dateLastUpdate": "2024-08-11",
+    "dateRecordCreated": "2024-08-11",
+    "updatedToday": 1,
+    "dateDeleted": null,
+    "isDeleted": false,
+    "relatedProduct": "ENFE2B",
+    "footer": null
+  },
+  {
+    "id": 114,
+    "organization": "AB",
+    "role": "SPO",
+    "universalId": "04152d7e-82d7-40b8-bb4a-615eb2f78300",
+    "orignialGlobalId": "I2024009790451",
+    "beAdditionalKey": null,
+    "withGlobalId": "I2024009784854",
+    "relationToParty": null,
+    "relationshipSequence": 1,
+    "globalId": "I2024009790451",
+    "orignalGlobalId": "I2024009790451",
+    "relationCountry": "JO",
+    "withProduct": null,
+    "relationDescription": null,
+    "latestUniqueRefrence": "2024050610122760930a",
+    "updateTimestamp": "2024-05-06T07:14:29.829+00:00",
+    "updateCountry": "JO",
+    "updateProgram": "Brain-C",
+    "updateSystem": "MDM",
+    "updateUser": "MDMUSR",
+    "authorizedUser": "MDMUSR",
+    "dateLastUpdate": "2024-05-06",
+    "dateRecordCreated": "2024-05-06",
+    "updatedToday": 1,
+    "dateDeleted": null,
+    "isDeleted": false,
+    "relatedProduct": "E43T7G",
+    "footer": null
+  }
+]
