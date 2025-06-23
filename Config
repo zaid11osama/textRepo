@@ -1,6 +1,1 @@
-startMe : The term 'startMe' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
-At line:1 char:1
-+ startMe
-+ ~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (startMe:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
+ID|UNIVERSAL_ID                        |GLOBAL_ID     |RELATION_COUNTRY|ORGANIZATION|ROLE|RELATIONSHIP_SEQUENCE|WITHGLOBALID  |WITHPRODUCT|RELATION_TO_PARTY|RELATION_DESCRIPTION|LATEST_UNIQUE_REFERENCE|AUTHORIZER_USER|DATE_RECORD_CREATED    |DATE_LAST_UPDATED      |UPDATED_TODAY|UPDATE_PROGRAM|UPDATE_COUNTRY|UPDATE_USER|UPDATE_SYSTEM|IS_DELETED|DATE_DELETED           |UPDATE_TIMESTAMP       |RELATED_PRODUCT|ORIGINAL_GLOBAL_ID|BE_ADDITIONAL_KEY|
