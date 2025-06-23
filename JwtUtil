@@ -1,102 +1,41 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Component;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
-
-@Component
-public class Curl {
-    private Curls curls;
-    private Map<String, String> headers;
-
-    // Getters and Setters
-    public Curls getCurls() {
-        return curls;
-    }
-
-    public void setCurls(Curls curls) {
-        this.curls = curls;
-    }
-
-    public Map<String, String> getHeaders() {
-        return headers;
-    }
-
-    public void setHeaders(Map<String, String> headers) {
-        this.headers = headers;
-    }
-
-    public static class Curls {
-        private List<String> get;
-        private List<Request> post;
-        private List<Request> put;
-        private List<Request> delete;
-
-        // Getters and Setters
-        public List<String> getGet() {
-            return get;
-        }
-
-        public void setGet(List<String> get) {
-            this.get = get;
-        }
-
-        public List<Request> getPost() {
-            return post;
-        }
-
-        public void setPost(List<Request> post) {
-            this.post = post;
-        }
-
-        public List<Request> getPut() {
-            return put;
-        }
-
-        public void setPut(List<Request> put) {
-            this.put = put;
-        }
-
-        public List<Request> getDelete() {
-            return delete;
-        }
-
-        public void setDelete(List<Request> delete) {
-            this.delete = delete;
-        }
-    }
-
-    public static class Request {
-        private String url;
-        private String body;
-
-        // Getters and Setters
-        public String getUrl() {
-            return url;
-        }
-
-        public void setUrl(String url) {
-            this.url = url;
-        }
-
-        public String getBody() {
-            return body;
-        }
-
-        public void setBody(String body) {
-            this.body = body;
-        }
-    }
-
-    // Load JSON config from file
-    public static Curl loadFromJson() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            return objectMapper.readValue(new ClassPathResource("config.json").getFile(), Curl.class);
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to load JSON config", e);
-        }
-    }
-}
+SELECT 
+    A.ID AS ID_A,
+    A.GLOBAL_ID AS GLOBAL_ID_A,
+    A.RELATIONSHIP_SEQUENCE AS REL_SEQ_A,
+    B.ID AS ID_B,
+    B.GLOBAL_ID AS GLOBAL_ID_B,
+    B.RELATIONSHIP_SEQUENCE AS REL_SEQ_B
+FROM 
+    MDM_RELATIONSHIPS A
+JOIN 
+    MDM_RELATIONSHIPS B
+    ON A.RELATED_PRODUCT = B.RELATED_PRODUCT
+WHERE 
+    A.ID <> B.ID
+    AND (
+        ISNULL(A.UNIVERSAL_ID, '')              <> ISNULL(B.UNIVERSAL_ID, '') OR
+        ISNULL(A.GLOBAL_ID, '')                 <> ISNULL(B.GLOBAL_ID, '') OR
+        ISNULL(A.RELATION_COUNTRY, '')          <> ISNULL(B.RELATION_COUNTRY, '') OR
+        ISNULL(A.ORGANIZATION, '')              <> ISNULL(B.ORGANIZATION, '') OR
+        ISNULL(A.ROLE, '')                      <> ISNULL(B.ROLE, '') OR
+        ISNULL(A.RELATIONSHIP_SEQUENCE, '')     <> ISNULL(B.RELATIONSHIP_SEQUENCE, '') OR
+        ISNULL(A.WITHGLOBALID, '')              <> ISNULL(B.WITHGLOBALID, '') OR
+        ISNULL(A.WITHPRODUCT, '')               <> ISNULL(B.WITHPRODUCT, '') OR
+        ISNULL(A.RELATION_TO_PARTY, '')         <> ISNULL(B.RELATION_TO_PARTY, '') OR
+        ISNULL(A.RELATION_DESCRIPTION, '')      <> ISNULL(B.RELATION_DESCRIPTION, '') OR
+        ISNULL(A.LATEST_UNIQUE_REFERENCE, '')   <> ISNULL(B.LATEST_UNIQUE_REFERENCE, '') OR
+        ISNULL(A.AUTHORIZER_USER, '')           <> ISNULL(B.AUTHORIZER_USER, '') OR
+        ISNULL(A.DATE_RECORD_CREATED, '')       <> ISNULL(B.DATE_RECORD_CREATED, '') OR
+        ISNULL(A.DATE_LAST_UPDATED, '')         <> ISNULL(B.DATE_LAST_UPDATED, '') OR
+        ISNULL(A.UPDATED_TODAY, '')             <> ISNULL(B.UPDATED_TODAY, '') OR
+        ISNULL(A.UPDATE_PROGRAM, '')            <> ISNULL(B.UPDATE_PROGRAM, '') OR
+        ISNULL(A.UPDATE_COUNTRY, '')            <> ISNULL(B.UPDATE_COUNTRY, '') OR
+        ISNULL(A.UPDATE_USER, '')               <> ISNULL(B.UPDATE_USER, '') OR
+        ISNULL(A.UPDATE_SYSTEM, '')             <> ISNULL(B.UPDATE_SYSTEM, '') OR
+        ISNULL(A.IS_DELETED, '')                <> ISNULL(B.IS_DELETED, '') OR
+        ISNULL(A.DATE_DELETED, '')              <> ISNULL(B.DATE_DELETED, '') OR
+        ISNULL(A.UPDATE_TIMESTAMP, '')          <> ISNULL(B.UPDATE_TIMESTAMP, '') OR
+        ISNULL(A.RELATED_PRODUCT, '')           <> ISNULL(B.RELATED_PRODUCT, '') OR
+        ISNULL(A.ORIGINAL_GLOBAL_ID, '')        <> ISNULL(B.ORIGINAL_GLOBAL_ID, '') OR
+        ISNULL(A.BE_ADDITIONAL_KEY, '')         <> ISNULL(B.BE_ADDITIONAL_KEY, '')
+    )
