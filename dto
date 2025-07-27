@@ -1,92 +1,201 @@
-package com.example.connectToDatabase.repository;
-
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-public class RelationshipDTO {
-
-    private RoleDTO role;
-    private OrganizationDTO organization;
-    private RelationCountryDTO relationCountry;
-    private int relationshipSequence;
-    private String originalGlobalId;
-    private String withGlobalId;
-    private String withProduct;
-    private String globalId;
-    private String relatedProduct;
-    private String requestedBy;
-    private String reasons;
-    private String loggedInUser;
-    private String generatedUniqueReference;
-
-
-    public static class RoleDTO {
-        private String code;
-        private String description;
-
-        public String getCode() {
-            return code;
-        }
-
-        public void setCode(String code) {
-            this.code = code;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-    }
-
-
-
-    public static class OrganizationDTO {
-        private String code;
-        private String description;
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public String getCode() {
-            return code;
-        }
-
-        public void setCode(String code) {
-            this.code = code;
-        }
-    }
-
-
-    public static class RelationCountryDTO {
-        private String code;
-        private String description;
-
-        public String getCode() {
-            return code;
-        }
-
-        public void setCode(String code) {
-            this.code = code;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-    }
-}
-//.HttpClientErrorException$Unauthorized
-	
+716296
+714994
+879222
+879159
+717302
+712150
+715180
+184987
+185836
+200783
+206747
+668782
+70007
+715874
+242507
+690069
+257497
+710404
+263634
+279601
+176942
+719944
+723470
+200165
+238477
+726694
+718918
+723920
+483505
+720974
+DQ4M0I
+723294
+297162
+297188
+297138
+824073
+830341
+695506
+EJNDGO
+226983
+716750
+245796
+610776
+245801
+772366
+245810
+798226
+226854
+226871
+341667
+528212
+530358
+D2G59M
+DS8H00
+DVVFSD
+725979
+725961
+778574
+DVVFTK
+778998
+782222
+786276
+DVVFTO
+791815
+785653
+227082
+227083
+838430
+818111
+798670
+243242
+670839
+802276
+742581
+740131
+227057
+802516
+245573
+245577
+752722
+809888
+226878
+799518
+810782
+816283
+848176
+847641
+852191
+859313
+819947
+DVVFQS
+685886
+687406
+830579
+226920
+226942
+DVVFQT
+553877
+562965
+226966
+226973
+226981
+245821
+846791
+846937
+226989
+226987
+245834
+871666
+843712
+841029
+227094
+882724
+884548
+884043
+D4KI85
+226948
+226954
+D4KR96
+851517
+566668
+563937
+227088
+566888
+803198
+245614
+245615
+865517
+866301
+867420
+226996
+803324
+892088
+D6BN2I
+227006
+226995
+227021
+227024
+D69OJ8
+227045
+DVVFQU
+594815
+227098
+594881
+227095
+227102
+598071
+227121
+889333
+125390
+440198
+453735
+227029
+227044
+772294
+577539
+DVVF1K
+DVVFR9
+227048
+802372
+802364
+894087
+DVVFSG
+803832
+803882
+768804
+245728
+769559
+245732
+ENE72I
+E9JTBP
+227066
+245862
+778711
+778876
+778931
+227067
+259801
+804262
+226858
+894566
+894671
+227072
+227070
+895279
+894265
+895287
+898421
+546430
+227167
+245758
+DVVFUE
+348905
+245668
+226972
+348913
+348955
+245672
+227073
+DVVFU1
+227180
