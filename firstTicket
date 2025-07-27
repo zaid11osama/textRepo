@@ -1,410 +1,201 @@
-
-Open menu
-✓ Description Currently:
-• EOD handles is closed functionality using SQLs that removes all party relatioships from golden and source) by checking of party (with all identifiers: global_id, role, sequence, country, organization, is_Deleted=0, type='PRD', details_value='00' and status =0) in mdm_flags_attributes table,
-To be:
-• To replace these SQLS by an actual program (function.. etc.) as SQLS may not be sufficient here and may cause DB performance issues,
-• After the routine is done removing from relationships table, it should also update the master_per_country for the given global ID: is_closed flag by (if has 00 flag then is_closed=Y else then is_closed=N)
-Notes:
-• Deletion is for mdm_relationships for all withglobalid = our customer's global ID and related Product = our customer's related product,
-• Deletion should be on src_relationships as well,
-• Important NOT to delete the relationship records of other merged parties (related_product is important here),
-• The master_per_country flag update is only done in case, ALL relationships for this global ID, under this country, are closed,
-Attachments
-
-explain this ticket for me
-
-
-*****************************************
-
-package com.arabbank.mdm.eod.method;
-
-import static com.arabbank.mdm.eod.util.Constant.DATE_DELETED;
-import static com.arabbank.mdm.eod.util.Constant.EOD_REFERENCE;
-import static com.arabbank.mdm.eod.util.Constant.EOD_REFERENCE_PROPARETY;
-import static com.arabbank.mdm.eod.util.Constant.GLOBAL_ID;
-import static com.arabbank.mdm.eod.util.Constant.IS_CLOSED;
-import static com.arabbank.mdm.eod.util.Constant.IS_DELETED;
-import static com.arabbank.mdm.eod.util.Constant.MDM_EODS_METHOD_LOGS;
-import static com.arabbank.mdm.eod.util.Constant.MDM_MASTER;
-import static com.arabbank.mdm.eod.util.Constant.MDM_RELATIONSHIPS;
-import static com.arabbank.mdm.eod.util.Constant.METHOD_NAME;
-import static com.arabbank.mdm.eod.util.Constant.TOTAL_NUMBER;
-import static com.arabbank.mdm.eod.util.Constant.UPDATED_TODAY;
-import static com.arabbank.mdm.eod.util.Constant.UPDATE_PROGRAM;
-import static com.arabbank.mdm.eod.util.Constant.UPDATE_TIMESTAMP;
-import static com.arabbank.mdm.eod.util.Constant.WITHGLOBALID;
-
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.arabbank.mdm.commons.lib.model.Master;
-import com.arabbank.mdm.commons.lib.util.MsUtil;
-import com.arabbank.mdm.eod.facade.Facade;
-import com.arabbank.mdm.eod.job.Job;
-import com.arabbank.mdm.eod.model.EodMethodStatus;
-
-@Service
-public class ClosedCustomer {
-
-	@Autowired
-	private Facade facade;
-
-	private Logger logger = LoggerFactory.getLogger(ClosedCustomer.class);
-
-	private static EodMethodStatus colsedCustomerStatus;
-
-	//////////////////////////////////////////////////
-	public void deletePartiesForClosedCustomer() {
-		logger.info("deletePartiesForClosedCustomer()");
-		try {
-			List<Master> closedMasters = facade.getClosedMasters();
-			int size = closedMasters.size();
-			populateEodMethodStatus(size);
-			updateMetohdTotalNumber("deletePartiesForClosedCustomer", size);
-			while (Job.isStarted() && !MsUtil.isEmpty(closedMasters)) {
-				for (Master master : closedMasters) {
-					logger.info("Deleting Parties For Closed Customer, GID : ({})", master.getGlobalId());
-					deleteClosedRelationships(master);
-					updateMasterUpdateToday(master);
-					getColsedCustomerStatus().setRemainingNumber(String.valueOf(--size));
-				}
-				if (size == 0) {
-					break;
-				}
-			}
-			getColsedCustomerStatus().setStatus("Finished");
-		} catch (Exception e) {
-			getColsedCustomerStatus().setStatus("Error");
-			MsUtil.throww(e);
-		} finally {
-			getColsedCustomerStatus().setEndTime(Timestamp.valueOf(LocalDateTime.now()));
-			logger.info("/deletePartiesForClosedCustomer()");
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	private void deleteClosedRelationships(Master master) {
-		try {
-			logger.debug("deleteClosedRelationships({})", master.getGlobalId());
-			String globalId = master.getGlobalId();
-			Map<String, Object> withGlobalIdCondition = new HashMap<>();
-			withGlobalIdCondition.put(WITHGLOBALID, globalId);
-			withGlobalIdCondition.put(IS_DELETED, 0);
-			Map<String, Object> deleteRecordValues = new HashMap<>();
-			deleteRecordValues.put(IS_DELETED, 1);
-			deleteRecordValues.put(DATE_DELETED, LocalDate.now());
-			deleteRecordValues.put(UPDATE_PROGRAM, "EOD-deletePartiesForClosedCustomer");
-			deleteRecordValues.put(UPDATE_TIMESTAMP, Timestamp.valueOf(LocalDateTime.now()));
-			facade.updateRequest(MDM_RELATIONSHIPS, withGlobalIdCondition, deleteRecordValues);
-		} finally {
-			logger.debug("/deleteClosedRelationships({})", master.getGlobalId());
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	private void updateMasterUpdateToday(Master master) {
-		try {
-			logger.debug("updateMasterUpdateToday({})", master.getGlobalId());
-			Map<String, Object> conditions = new HashMap<>();
-			conditions.put(GLOBAL_ID, master.getGlobalId());
-			conditions.put(IS_CLOSED, 1);
-			conditions.put(IS_DELETED, 0);
-			conditions.put(UPDATED_TODAY, 1);
-			Map<String, Object> values = new HashMap<>();
-			values.put(UPDATED_TODAY, 0);
-			values.put(UPDATE_PROGRAM, "EOD-deletePartiesForClosedCustomer");
-			values.put(UPDATE_TIMESTAMP, Timestamp.valueOf(LocalDateTime.now()));
-			facade.updateRequest(MDM_MASTER, conditions, values);
-		} finally {
-			logger.debug("/updateMasterUpdateToday({})", master.getGlobalId());
-		}
-	}
-
-	//////////////////////////////////////////////////
-	private static void populateEodMethodStatus(int size) {
-		setColsedCustomerStatus(new EodMethodStatus());
-		getColsedCustomerStatus().setName("deletePartiesForClosedCustomer");
-		getColsedCustomerStatus().setPrefix("PRE");
-		getColsedCustomerStatus().setStartTime(Timestamp.valueOf(LocalDateTime.now()));
-		getColsedCustomerStatus().setStatus("InProgress");
-		getColsedCustomerStatus().setTotalNumber(String.valueOf(size));
-	}
-
-	//////////////////////////////////////////////////
-	private void updateMetohdTotalNumber(String methodName, int size) {
-		Map<String, Object> conditions = new HashMap<>();
-		conditions.put(EOD_REFERENCE, System.getProperty(EOD_REFERENCE_PROPARETY));
-		conditions.put(METHOD_NAME, methodName);
-		Map<String, Object> keysAndValues = new HashMap<>();
-		keysAndValues.put(TOTAL_NUMBER, String.valueOf(size));
-		facade.updateRequest(MDM_EODS_METHOD_LOGS, conditions, keysAndValues);
-	}
-
-	//////////////////////////////////////////////////
-	public static EodMethodStatus getColsedCustomerStatus() {
-		return colsedCustomerStatus;
-	}
-
-	public static void setColsedCustomerStatus(EodMethodStatus colsedCustomerStatus) {
-		ClosedCustomer.colsedCustomerStatus = colsedCustomerStatus;
-	}
-
-}
-
-
-**********************************************************
-
-
-- checkisClosed (closed on flags_and_Attributes: global_id) 
-		get Relationships (get AH roles) 
-		flags_attribributesQuery: 
-	where is_deleted =0
-	and global_id = input.global_id
-	and role = 'AH'
-	and sequence = r.sequence 
-	and organization = r.organization
-	and type = 'PRD'
-	and value = '00'
-	and stauts = 0		
-		delete Relationships 
-		update master_per_country (mark as isClosed per conditions)
-		update master (mark as isClosed per conditions)
-	- checkActive (not closed on flags_and_Attributes)
-		update master_per_country (mark as isActive per conditions)
-		update master (mark as isActive per conditions)
-
-**************************************************************************
-
-
-
-SELECT r.global_id
-  FROM MDMGOLDEN.MDM_RELATIONSHIPS R
- WHERE     R.IS_DELETED = 0
-       AND R.ROLE IN ('AH', 'MI', 'JNT')
-       AND R.ORGANIZATION = 'AB'
-       AND  EXISTS
-               (SELECT 1
-                  FROM MDMGOLDEN.MDM_FLAGS_AND_ATTRIBUTES F
-                 WHERE     F.IS_DELETED = 0
-                       AND F.GLOBAL_ID = R.GLOBAL_ID
-                       AND F.ROLE = R.ROLE
-                       AND F.RELATIONSHIP_SEQUENCE = R.RELATIONSHIP_SEQUENCE
-                       AND F.RELATION_COUNTRY = R.RELATION_COUNTRY
-                       AND F.ORGANIZATION = R.ORGANIZATION
-                       AND F.DETAILS_VALUE = '00'
-                       AND F.TYPE = 'PRD'
-                       AND F.STATUS = 0)
-******************************************************************************
-
-public void updateClosedOrActiveStatus(String globalId) {
-    logger.info("updateClosedOrActiveStatus({})", globalId);
-    try {
-        List<Relationship> ahRoles = facade.getAhRoles(globalId); // Get AH roles, IS_DELETED=0
-        boolean isClosed = false;
-
-        for (Relationship r : ahRoles) {
-            if (facade.existsMatchingFlag(r)) {
-                isClosed = true;
-                break;
-            }
-        }
-
-        if (isClosed) {
-            for (Relationship r : ahRoles) {
-                facade.deleteRelationship(r);
-            }
-            facade.updateMasterAsClosed(globalId);
-            facade.updateMasterPerCountryAsClosed(globalId);
-        } else {
-            facade.updateMasterAsActive(globalId);
-            facade.updateMasterPerCountryAsActive(globalId);
-        }
-
-    } catch (Exception e) {
-        logger.error("Error updating closed/active status", e);
-        throw e;
-    }
-}
-
-********************************************************************************
-
-package com.arabbank.mdm.eod.facade;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Service;
-
-import com.arabbank.mdm.commons.lib.model.Master;
-import com.arabbank.mdm.commons.lib.util.MsUtil;
-import com.arabbank.mdm.eod.dao.DataAccess;
-import com.arabbank.mdm.eod.model.EodConfig;
-import com.arabbank.mdm.microservice.lib.gitlab.ConfigReader;
-
-@Service
-public class Facade {
-
-	@Autowired
-	private DataAccess dao;
-	
-	@Autowired
-	private ConfigReader configReader;
-
-	private Logger logger = LoggerFactory.getLogger(Facade.class);
-
-	///////////////////////////////////////////////////////
-	public <T> List<T> getData(String tableName, Map<String, Object> keyAndValues, RowMapper<T> populator) {
-		try {
-			logger.debug("getData({},{})", tableName, keyAndValues);
-			return dao.getDataAsList(tableName, keyAndValues, populator);
-		} finally {
-			logger.debug("/getData({},{})", tableName, keyAndValues);
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	public <T> T getDataAsObject(String tableName, Map<String, Object> keyAndValues, RowMapper<T> populator) {
-		try {
-			logger.debug("getDataAsObject({},{})", tableName, keyAndValues);
-			return dao.getDataAsObject(tableName, keyAndValues, populator);
-		} finally {
-			logger.debug("/getDataAsObject({},{})", tableName, keyAndValues);
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	public void insertRequest(String tableName, Map<String, Object> keyAndValues) {
-		try {
-			logger.debug("insertRequest({},{})", tableName, keyAndValues);
-			dao.insertRequest(tableName, keyAndValues);
-		} finally {
-			logger.debug("/insertRequest({},{})", tableName, keyAndValues);
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	public int deleteRequest(String tableName, int size) {
-		try {
-			logger.debug("deleteRequest({},{})", tableName, size);
-			return dao.deleteRequest(tableName, size);
-		} finally {
-			logger.debug("/deleteRequest({},{})", tableName, size);
-		}
-	}
-	
-	///////////////////////////////////////////////////////
-	public List<EodConfig> getEodMethods(String processName) {
-		try {
-			logger.debug("getEodMethods({})", processName);
-			return dao.getEodMethods(processName);
-		} finally {
-			logger.debug("/getEodMethods({})", processName);
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	public boolean checkEodMethodStatus(String methodName) {
-		try {
-			logger.debug("checkEodMethodStatus({})", methodName);
-			return dao.checkEodMethodStatus(methodName);
-		} finally {
-			logger.debug("/checkEodMethodStatus({})", methodName);
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	public List<Master> getClosedMasters() {
-		try {
-			logger.debug("getClosedMasters()");
-			List<String> eodCountries = getEodCountries();
-			return dao.getClosedMasters(eodCountries);
-		} finally {
-			logger.debug("/getClosedMasters()");
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	public List<Master> getEodMasters(int numOfRows, String time) {
-		try {
-			logger.debug("getEodMasters({},{})", numOfRows, time);
-			List<String> eodCountries = getEodCountries();
-			return dao.getEodMasters(numOfRows, time, eodCountries);
-		} finally {
-			logger.debug("/getEodMasters({},{})", numOfRows, time);
-		}
-	}
-	
-	///////////////////////////////////////////////////////
-	public int getEodMastersCount(String time) {
-		try {
-			logger.debug("getEodMastersCount({})", time);
-			List<String> eodCountries = getEodCountries();
-			return dao.getEodMastersCount(time, eodCountries);
-		} finally {
-			logger.debug("/getEodMastersCount({})", time);
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	public int getTasksCount() {
-		try {
-			logger.debug("getTasksCount()");
-			return dao.getTasksCount();
-		} finally {
-			logger.debug("/getTasksCount()");
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	public void updateRequest(String tableName, Map<String, Object> conditions, Map<String, Object> keysAndValues) {
-		try {
-			logger.debug("updateRequest({},{},{})", tableName, conditions, keysAndValues);
-			dao.updateRequest(tableName, conditions, keysAndValues);
-		} finally {
-			logger.debug("/updateRequest({},{},{})", tableName, conditions, keysAndValues);
-		}
-	}
-
-	///////////////////////////////////////////////////////
-	public void closeDataBase() {
-		try {
-			logger.debug("closeDataBase()");
-			dao.closeDataBaseConnection();
-		} finally {
-			logger.debug("/closeDataBase()");
-		}
-	}
-	
-	///////////////////////////////////////////////////////
-	private List<String> getEodCountries() {
-		try {
-			logger.debug("getEodCountries()");
-			String property = configReader.getProperty("ab.mdm.eod.countries");
-			if (MsUtil.isEmpty(property)) {
-				String message = "EOD Countries Gitlab Variable (ab.mdm.eod.countries) is Empty !";
-				MsUtil.throww(new Exception(message));
-			}
-			String[] splittedCountries = property.split(",");
-			return new ArrayList<>(Arrays.asList(splittedCountries));
-		} finally {
-			logger.debug("/getEodCountries()");
-		}
-	}
-}
-
+716296	QA
+714994	QA
+879222	EG
+879159	EG
+717302	QA
+712150	QA
+715180	QA
+184987	EG
+185836	EG
+200783	EG
+206747	EG
+668782	PS
+70007	PS
+715874	QA
+242507	EG
+690069	EG
+257497	EG
+710404	QA
+263634	EG
+279601	EG
+176942	EG
+719944	QA
+723470	QA
+200165	EG
+238477	EG
+726694	QA
+718918	QA
+723920	QA
+483505	AE
+720974	QA
+DQ4M0I	JO
+723294	QA
+297162	EG
+297188	EG
+297138	EG
+824073	EG
+830341	EG
+695506	EG
+EJNDGO	JO
+226983	PS
+716750	EG
+245796	PS
+610776	EG
+245801	PS
+772366	EG
+245810	PS
+798226	QA
+226854	PS
+226871	PS
+341667	PS
+528212	EG
+530358	EG
+D2G59M	JO
+DS8H00	JO
+DVVFSD	JO
+725979	EG
+725961	EG
+778574	EG
+DVVFTK	JO
+778998	EG
+782222	EG
+786276	EG
+DVVFTO	JO
+791815	EG
+785653	EG
+227082	PS
+227083	PS
+838430	EG
+818111	EG
+798670	QA
+243242	PS
+670839	PS
+802276	QA
+742581	EG
+740131	EG
+227057	PS
+802516	QA
+245573	PS
+245577	PS
+752722	EG
+809888	EG
+226878	PS
+799518	QA
+810782	EG
+816283	EG
+848176	EG
+847641	EG
+852191	EG
+859313	EG
+819947	EG
+DVVFQS	JO
+685886	PS
+687406	PS
+830579	EG
+226920	PS
+226942	PS
+DVVFQT	JO
+553877	EG
+562965	EG
+226966	PS
+226973	PS
+226981	PS
+245821	PS
+846791	EG
+846937	EG
+226989	PS
+226987	PS
+245834	PS
+871666	EG
+843712	EG
+841029	EG
+227094	PS
+882724	EG
+884548	EG
+884043	EG
+D4KI85	JO
+226948	PS
+226954	PS
+D4KR96	JO
+851517	EG
+566668	EG
+563937	EG
+227088	PS
+566888	EG
+803198	QA
+245614	PS
+245615	PS
+865517	EG
+866301	EG
+867420	EG
+226996	PS
+803324	QA
+892088	EG
+D6BN2I	JO
+227006	PS
+226995	PS
+227021	PS
+227024	PS
+D69OJ8	JO
+227045	PS
+DVVFQU	JO
+594815	EG
+227098	PS
+594881	EG
+227095	PS
+227102	PS
+598071	EG
+227121	PS
+889333	EG
+125390	EG
+440198	EG
+453735	EG
+227029	PS
+227044	PS
+772294	EG
+577539	EG
+DVVF1K	JO
+DVVFR9	JO
+227048	PS
+802372	QA
+802364	QA
+894087	EG
+DVVFSG	JO
+803832	QA
+803882	QA
+768804	EG
+245728	PS
+769559	EG
+245732	PS
+ENE72I	JO
+E9JTBP	JO
+227066	PS
+245862	PS
+778711	EG
+778876	EG
+778931	EG
+227067	PS
+259801	PS
+804262	QA
+226858	PS
+894566	EG
+894671	EG
+227072	PS
+227070	PS
+895279	EG
+894265	EG
+895287	EG
+898421	EG
+546430	EG
+227167	PS
+245758	PS
+DVVFUE	JO
+348905	EG
+245668	PS
+226972	PS
+348913	EG
+348955	EG
+245672	PS
+227073	PS
+DVVFU1	JO
+227180	PS
