@@ -1,1 +1,2180 @@
-"Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+[
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041155510/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041155253/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000014416/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000008603/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2023007511797/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041181150/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041183112/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041184206/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023045822016/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023045827104/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000011150/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041192652/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041198314/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2023007524652/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2023000002601/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041200206/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041204151/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041180254/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000020816/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000024151/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041182853/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041192151/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000027050/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000019150/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000026501/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023030559811/AE",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "AE",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000022850/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2024000071350/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000024017/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041211911/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041212153/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041211805/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041143852/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041144654/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041352713/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043529905/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000624706/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2023007631305/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041849405/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041316251/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041850313/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041387705/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041852350/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000569111/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000569651/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000583153/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041889913/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041276352/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041277097/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043324504/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043296350/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046672007/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041367053/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041366854/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041389197/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046681315/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041390008/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041393851/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041395951/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046681851/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041396753/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041460850/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000675250/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000677612/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041475912/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041138549/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000577853/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023002033798/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041889310/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000659853/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041375551/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041375151/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000660954/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000665207/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041789411/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041790203/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041378013/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041402210/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000585851/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000595553/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041403652/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041407302/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041481051/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041480950/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041481715/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041483651/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041142150/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046658210/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041896006/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041897151/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041145618/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000601453/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000611908/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046658553/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041292298/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041295853/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000620308/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000623151/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000624112/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041855350/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041419499/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041420399/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000628449/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000626652/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041858652/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041486609/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041545297/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041544903/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000687008/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041556404/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041557951/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041557597/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043346852/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000616052/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000618255/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043351951/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041149511/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041299512/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041298554/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000684849/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041299816/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000684651/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041799507/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041799606/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041423753/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041429299/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041429099/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000635715/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000688506/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041562505/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043361297/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000637953/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000634609/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000645911/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000647113/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043370950/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000656311/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046658807/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041310550/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000692451/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041311054/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000688653/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000695011/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041312007/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000703512/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041429512/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041444351/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041445050/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041445251/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000652898/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000655498/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041447650/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041446853/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046714455/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046670405/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000659006/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000661610/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000661751/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041436809/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046672753/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000703814/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000704610/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041383897/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041829049/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041384909/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041830015/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043686609/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043687598/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000667615/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041870055/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041454716/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041455012/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041455753/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000668651/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041866808/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000709350/QA",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "QA",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000572451/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041438515/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041438997/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000671799/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000669055/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041439350/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041438102/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041439513/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041442999/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041282417/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000709950/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041836612/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046694350/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041231611/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041812949/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000622450/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041231854/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041232352/EG",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "EG",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041813551/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000673108/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046697211/JO",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "JO",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000718353/PS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "AR",
+      "requestCountry": "PS",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  }
+]
