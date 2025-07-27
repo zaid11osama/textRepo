@@ -1,2200 +1,2200 @@
 
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=sfsfsdfdsfsdf",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=89",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=12345",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=97",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/LEGAL_FORMS?code=11",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=test reload 2 ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=60",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1111",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=70",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ggggg",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=82",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=sfsfsdfdsfsdf",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=30",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=test reload ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=86",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=DSFDSF",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=88",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=zxczxc",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=AE008",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=dfgfdg",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=AE009",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=AE011",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=NNNNNNNNNNNNNNNNNN",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=AE001",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=[p[o",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/LEGAL_FORMS?code=4",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=qweqwe",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=17198",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1111110000000000068787889391009792",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=71883",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21141",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=dfgfdgfd",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=25448",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ظٹط³ط¨ظٹط³",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11942",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=zxczxczx",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=17632",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21393",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=qqqqqqqqqqq",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=26861",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=29",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21553",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=123",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=26112",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=19242",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11122",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=33",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21610",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=lookup nanna",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21892",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=25393",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=36",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=26894",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=seesesesesesese",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=26813",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=EL 40",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=71228",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=EL 40",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11115",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=EL 40",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=25639",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=44444",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=13118",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=13111",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=new lookup on test ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=25187",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=new lookup on test ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=66165",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21182",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=61510",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11621",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=NEWONE",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11954",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=basma yara 2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=16671",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=basma 6-4",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=18153",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=test reload 2 ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11593",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=gf",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=17197",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=gggggg",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=28162",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ABC",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=64610",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=BANK_PRODUCTS",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11134",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "AE",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=FATCA_CLASSIFICATIONS",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=BZ",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=HOUSE_OWNERSHIPS",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=CC",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=NN",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=CL",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=PROFESSIONS",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=CL",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=RELATION_MANAGER",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=CV",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=XX",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=CV",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=test reload ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=CX",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=erterterterter",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=DE",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=cvzxcxz",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=DO",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=fasfaf",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=EC",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=basma test31232432543535345345345345",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=IS",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=basmatest",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=JM",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=basma test",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=JO",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=qweqwe",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=KE",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=basma yara",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=KE",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=zaza",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=KH",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=gfdsgfdg",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=LK",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ظٹط³ط¨ط³ظٹط¨ط³ظٹ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=MM",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=zxcxzczx",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=MV",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=m.t",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=MX",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=qqqqqqqqq",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=MZ",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=29",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=NE",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=26 record sah?",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=NF",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=32 rec rec",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=NL",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=tets",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=PE",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=33",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=PG",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=lookup kber",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=PH",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=basma test22222222222222222222222222222222222",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=PR",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=basma test36",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=EH",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=tatatattatatata",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=FO",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=FO",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=GB",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=GG",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=test reload 2 ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=OB",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1111",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=AO",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=gggg",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=AR",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=AS",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Bank Products",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=AU",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Fatca Classifications",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=BE",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=House Ownerships",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=BL",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Nn",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=BM",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Professions",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/COUNTRIES?code=BO",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Relation Manager",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/INDUSTRIES?code=18200",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Xx",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/INDUSTRIES?code=19100",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=test reload ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/INDUSTRIES?code=21120",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=SDFDSFSDF",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/INDUSTRIES?code=21210",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=xzczxcxz",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/INDUSTRIES?code=1210",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=dfgdfgdf",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/INDUSTRIES?code=1300",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ewrewrwetrtergergregergregergregreg",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/INDUSTRIES?code=1410",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=NN123",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/INDUSTRIES?code=1500",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "ALL",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=[op[op[",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/BRANCHES?code=145",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AR",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ewrewrwetrtergergregergregergregreg",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/BRANCHES?code=153",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "AR",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=3",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/SALARY_RECEPTIONS?code=3",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "BH",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=11",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=JO024",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=gfdgff65456",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=JO032",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ظٹط³ط¨ط³ظٹ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=JO033",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=zxczxczx",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=JO019",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=1",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=qqqqqqqqqqqq",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=8",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=29",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=9",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=132",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=12",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=15",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=16",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=33",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/CITIES?code=17",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=lookup nanana - EN",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=JO001",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=JO021",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=36",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=JO026",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=tatatattatatata",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=JO002",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/GLOBAL_CITIES?code=JO003",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=19133",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=19210",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ط¨ط³ظ…ظ‰ط©ط©",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=61514",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1111",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=61610",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=555556000000",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=61686",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=63222",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Bank Products",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/RESUNIVERSAL_IDENCY_INDICATORS?code=1",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Fatca Classifications",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=25446",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=House Ownerships",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=25488",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Nn",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=25529",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Professions",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=25879",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Relation Manager",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=25953",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=Xx",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=26119",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ط¨ط³ظ…ط©",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/LEGAL_FORMS?code=AE",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=12123213",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=66110",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2222",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=66610",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ط¨ط³ظ…ط©",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=66666",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ط¨ط³ظ…ط©",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=71112",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ظ†ظ†123",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=71775",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=111",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=71810",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=sadasdas",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=75610",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ط¨ظ…ط³ظٹط³",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=76269",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=78610",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=546456",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11100",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=ظٹط³ط¨ط³ظٹط¨ط³ظٹ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11120",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1234",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11136",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11141",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=11111111111",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21145",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=29",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21146",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=13",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21193",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11110",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11124",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=333",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11134",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1234",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11145",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11152",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=36",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11181",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=473267000000000",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11190",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11193",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=4001",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=4004",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=4007",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21837",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21987",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=25158",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=78610",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=26193",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=26710",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=26715",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=26827",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=18173",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
-      "requestCountry": "",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=1",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11152",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11161",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11162",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11181",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11185",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11193",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11591",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11593",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11710",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11814",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11953",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=11954",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=13112",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=13133",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=13198",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=13781",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=13825",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=16175",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=16197",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=16310",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=17173",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=17197",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=17621",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=17633",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=17682",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=18193",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=19175",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=19264",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=19392",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21124",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21181",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeadersDetails?filteredValue=0",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/value/ZIP_CODES?code=21553",
     "expectedStatus": 200,
     "headers": {
-      "language": "AR",
-      "requestCountry": "",
+      "language": "EN",
+      "requestCountry": "JO",
       "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
