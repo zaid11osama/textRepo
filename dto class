@@ -1,7 +1,7 @@
-
+[
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=new lookup on test ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=COUNTRIES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -12,7 +12,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=EL 40",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=INDUSTRIES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -23,7 +23,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=NEWONE",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=SUB_ACTIVITIES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -34,7 +34,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=basma yara 2",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=CITIES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -45,7 +45,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=basma 6-4",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=EXEMPTION_CODES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -56,7 +56,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=test reload 2 ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=GLOBAL_CITIES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -67,7 +67,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=gf",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=CRS_CAPACITIES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -78,7 +78,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=gggggg",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=EXEMPT_CLASSIFICATIONS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -89,7 +89,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=ABC",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=TIN-EXPLAINS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -100,7 +100,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=BANK_PRODUCTS",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=LEGAL_FORMS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -111,7 +111,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=FATCA_CLASSIFICATIONS",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=PROFESSIONS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -122,7 +122,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=HOUSE_OWNERSHIPS",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=FATCA_EXCEPTION_REPORTING_CODES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -133,7 +133,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=NN",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=FATCA_PAYEE_CODES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -144,7 +144,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=PROFESSIONS",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=US_ENTITY_CLASSIFICATION",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -155,7 +155,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=RELATION_MANAGER",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=US_FEDERAL_FATCA_CLASSIFICATIONS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -166,7 +166,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=XX",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=NON_FFI_FATCA_CLASSIFICATIONS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -177,7 +177,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=test reload ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=MAIN_ACTIVITIES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -188,7 +188,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=erterterterter",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=DOCUMENTS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -199,7 +199,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=cvzxcxz",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=ZIP_CODES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -210,7 +210,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=fasfaf",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=POSITIONS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -221,7 +221,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=basma test31232432543535345345345345",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=RESUNIVERSAL_IDENCY_INDICATORS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -232,7 +232,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=basmatest",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=C3_ENTITY_TYPE",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -243,7 +243,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=basma test",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=RELATIONSHIP_CODES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -254,7 +254,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=qweqwe",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=CONTROL_PERSON_OF",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -265,7 +265,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=basma yara",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=CONTROL_PERSON_EXPLAINS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -276,7 +276,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=zaza",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=CURRENCIES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -287,7 +287,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=gfdsgfdg",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=US_STATES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -298,7 +298,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=ظٹط³ط¨ط³ظٹط¨ط³ظٹ",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=FATCA_W_8BEN_E",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -309,7 +309,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=zxcxzczx",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=NO-TIN-REASONS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -320,7 +320,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=m.t",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=32692B5A44FC7559E063F648000A9D25",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -331,7 +331,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=qqqqqqqqq",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=ACTIVE_NON_FINANCIAL_ENTITY",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -342,7 +342,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=29",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=FINANCIAL_INSTITUTION_TYPE",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -353,7 +353,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=26 record sah?",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=REGISTRARS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -364,7 +364,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=32 rec rec",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=FATCA_CLASSIFICATIONS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -375,7 +375,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=tets",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=RELATIONSHIP_TRANSFERS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -386,7 +386,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=33",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=FATCA_SUB_TYPES",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -397,7 +397,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=lookup kber",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=AB_BANKING_REASONS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -408,7 +408,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=basma test22222222222222222222222222222222222",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=SALUTATIONS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -419,7 +419,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=basma test36",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=SOURCES_OF_WEALTH",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -430,7 +430,249 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupHeaderToEdit?keyFile=tatatattatatata",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=SALARY_RANGES",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=DISABILITIES",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=OTHER_SOURCE_OF_INCOME",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=LANGUAGES",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=SALARY_RECEPTIONS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=EMPLOYMENT_STATUSES",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=MARITAL_STATUSES",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=BANK_PRODUCTS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=BANK_CODE",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=STATUSES",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=EDUCATIONS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=RISK_RATINGS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=BRANCHES",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=RELATIONSHIP_MANAGERS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=OMN_PRODUCTS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=basmatest",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=FEDERAL_FATCA_CLASSIFICATIONS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=CRS-MAIN-CATEGORIES",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=FATCA_TYPE",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=CONTROL_TYPE",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=GENDERS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=RESIDENCY_INDICATORS",
+    "expectedStatus": 200,
+    "headers": {
+      "language": "",
+      "requestCountry": "",
+      "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://10.101.15.27:8444/mdm-utility/api/util/lookup/lookupValuesDetails?keyFile=OTHER_BANKS_PRODUCTS",
     "expectedStatus": 200,
     "headers": {
       "language": "",
@@ -439,3 +681,4 @@
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   }
+]
