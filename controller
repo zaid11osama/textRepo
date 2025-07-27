@@ -1,7 +1,7 @@
 
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041155510/I2023041213050",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041155510/I2023041213050",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -12,7 +12,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041155253/C2023007534754",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041155253/C2023007534754",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -23,7 +23,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000014416/C2023008695014",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000014416/C2023008695014",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -34,7 +34,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000008603/I2023043432917",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000008603/I2023043432917",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -45,7 +45,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2023007511797/I2023041216513",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/C2023007511797/I2023041216513",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -56,7 +56,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041181150/C2023007537213",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041181150/C2023007537213",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -67,7 +67,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041183112/C2023007538853",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041183112/C2023007538853",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -78,7 +78,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041184206/I2023043435849",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041184206/I2023043435849",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -89,7 +89,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023045822016/I2023043436003",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023045822016/I2023043436003",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -100,7 +100,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023045827104/I2023041222615",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023045827104/I2023041222615",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -111,7 +111,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000011150/C2023007541206",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000011150/C2023007541206",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -122,7 +122,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041192652/I2023041223009",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041192652/I2023041223009",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -133,7 +133,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041198314/I2023041223806",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041198314/I2023041223806",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -144,7 +144,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2023007524652/C2023007541450",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/C2023007524652/C2023007541450",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -155,7 +155,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2023000002601/I2023045664851",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/C2023000002601/I2023045664851",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -166,7 +166,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041200206/C2023007542254",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041200206/C2023007542254",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -177,7 +177,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041204151/I2023041224609",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041204151/I2023041224609",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -188,7 +188,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041180254/C2023007557552",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041180254/C2023007557552",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -199,7 +199,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000020816/C2023007567955",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000020816/C2023007567955",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -210,7 +210,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000024151/C2023007571151",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000024151/C2023007571151",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -221,7 +221,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041182853/C2023007580850",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041182853/C2023007580850",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -232,7 +232,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041192151/I2023041278853",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041192151/I2023041278853",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -243,7 +243,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000027050/I2023041256898",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000027050/I2023041256898",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -254,7 +254,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000019150/C2023007565854",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000019150/C2023007565854",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -265,7 +265,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000026501/C2023007565514",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000026501/C2023007565514",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -276,7 +276,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023030559811/I2023041259016",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023030559811/I2023041259016",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -287,7 +287,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000022850/I2023041259352",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000022850/I2023041259352",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -298,7 +298,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2024000071350/I2023041259250",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/C2024000071350/I2023041259250",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -309,7 +309,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000024017/I2023045819849",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000024017/I2023045819849",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -320,7 +320,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041211911/I2023045818450",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041211911/I2023045818450",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -331,7 +331,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041212153/I2023000559855",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041212153/I2023000559855",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -342,7 +342,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041211805/C2023000001809",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041211805/C2023000001809",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -353,7 +353,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041143852/C2023000207153",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041143852/C2023000207153",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -364,7 +364,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041144654/I2023000559951",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041144654/I2023000559951",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -375,7 +375,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041352713/I2023000559613",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041352713/I2023000559613",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -386,7 +386,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043529905/I2023043238699",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023043529905/I2023043238699",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -397,7 +397,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000624706/I2023043238508",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000624706/I2023043238508",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -408,7 +408,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2023007631305/I2023043239712",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/C2023007631305/I2023043239712",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -419,7 +419,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041849405/I2023043238411",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041849405/I2023043238411",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -430,7 +430,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041316251/I2023000005353",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041316251/I2023000005353",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -441,7 +441,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041850313/I2023000004703",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041850313/I2023000004703",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -452,7 +452,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041387705/I2023000002114",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041387705/I2023000002114",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -463,7 +463,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041852350/C2023007502953",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041852350/C2023007502953",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -474,7 +474,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000569111/I2023043245705",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000569111/I2023043245705",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -485,7 +485,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000569651/I2023043249850",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000569651/I2023043249850",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -496,7 +496,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000583153/C2023008165652",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000583153/C2023008165652",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -507,7 +507,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041889913/I2023041179949",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041889913/I2023041179949",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -518,7 +518,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041276352/I2023043628007",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041276352/I2023043628007",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -529,7 +529,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041277097/I2023000001211",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041277097/I2023000001211",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -540,7 +540,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043324504/C2023007512708",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023043324504/C2023007512708",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -551,7 +551,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043296350/C2023007512950",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023043296350/C2023007512950",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -562,7 +562,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046672007/I2023041182598",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046672007/I2023041182598",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -573,7 +573,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041367053/C2023007517606",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041367053/C2023007517606",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -584,7 +584,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041366854/I2023000001914",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041366854/I2023000001914",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -595,7 +595,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041389197/C2023007524404",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041389197/C2023007524404",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -606,7 +606,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046681315/I2023045827653",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046681315/I2023045827653",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -617,7 +617,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041390008/C2023007526204",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041390008/C2023007526204",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -628,7 +628,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041393851/I2023000000551",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041393851/I2023000000551",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -639,7 +639,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041395951/I2023000002300",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041395951/I2023000002300",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -650,7 +650,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046681851/I2023043416111",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046681851/I2023043416111",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -661,7 +661,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041396753/I2023046610212",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041396753/I2023046610212",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -672,7 +672,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041460850/C2023000006651",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041460850/C2023000006651",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -683,7 +683,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000675250/I2023041177850",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000675250/I2023041177850",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -694,7 +694,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000677612/I2023000007305",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000677612/I2023000007305",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -705,7 +705,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041475912/I2023000009015",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041475912/I2023000009015",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -716,7 +716,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041138549/C2023007512051",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041138549/C2023007512051",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -727,7 +727,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000577853/I2023000012254",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000577853/I2023000012254",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -738,7 +738,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023002033798/I2023000010511",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023002033798/I2023000010511",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -749,7 +749,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041889310/I2023043270953",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041889310/I2023043270953",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -760,7 +760,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000659853/I2023041194052",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000659853/I2023041194052",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -771,7 +771,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041375551/C2023007525216",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041375551/C2023007525216",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -782,7 +782,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041375151/I2023000011749",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041375151/I2023000011749",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -793,7 +793,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000660954/I2023000014950",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000660954/I2023000014950",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -804,7 +804,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000665207/I2023041205552",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000665207/I2023041205552",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -815,7 +815,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041789411/C2023007529601",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041789411/C2023007529601",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -826,7 +826,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041790203/C2023000005111",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041790203/C2023000005111",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -837,7 +837,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041378013/C2023007536208",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041378013/C2023007536208",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -848,7 +848,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041402210/C2023007536515",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041402210/C2023007536515",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -859,7 +859,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000585851/C2023007536710",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000585851/C2023007536710",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -870,7 +870,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000595553/I2023041215910",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000595553/I2023041215910",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -881,7 +881,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041403652/I2023000006798",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041403652/I2023000006798",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -892,7 +892,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041407302/I2023000012052",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041407302/I2023000012052",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -903,7 +903,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041481051/C2023007529353",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041481051/C2023007529353",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -914,7 +914,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041480950/I2023000009253",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041480950/I2023000009253",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -925,7 +925,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041481715/I2023000011650",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041481715/I2023000011650",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -936,7 +936,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041483651/I2023041209550",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041483651/I2023041209550",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -947,7 +947,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041142150/I2023000012911",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041142150/I2023000012911",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -958,7 +958,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046658210/I2023000005753",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046658210/I2023000005753",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -969,7 +969,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041896006/C2023007533006",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041896006/C2023007533006",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -980,7 +980,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041897151/I2023046613811",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041897151/I2023046613811",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -991,7 +991,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041145618/I2023042816015",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041145618/I2023042816015",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1002,7 +1002,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000601453/I2023000007852",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000601453/I2023000007852",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1013,7 +1013,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000611908/I2023000012409",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000611908/I2023000012409",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1024,7 +1024,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046658553/I2023042816208",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046658553/I2023042816208",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1035,7 +1035,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041292298/I2023042816154",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041292298/I2023042816154",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1046,7 +1046,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041295853/C2023007485015",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041295853/C2023007485015",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1057,7 +1057,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000620308/C2023007484951",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000620308/C2023007484951",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1068,7 +1068,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000623151/I2023041143911",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000623151/I2023041143911",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1079,7 +1079,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000624112/C2023007485253",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000624112/C2023007485253",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1090,7 +1090,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041855350/I2023000009453",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041855350/I2023000009453",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1101,7 +1101,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041419499/I2023041082418",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041419499/I2023041082418",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1112,7 +1112,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041420399/I2023041082352",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041420399/I2023041082352",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1123,7 +1123,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000628449/C2023000000799",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000628449/C2023000000799",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1134,7 +1134,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000626652/I2023000028850",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000626652/I2023000028850",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1145,7 +1145,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041858652/I2023000021212",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041858652/I2023000021212",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1156,7 +1156,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041486609/I2023000027107",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041486609/I2023000027107",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1167,7 +1167,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041545297/I2023000025705",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041545297/I2023000025705",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1178,7 +1178,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041544903/I2023041103051",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041544903/I2023041103051",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1189,7 +1189,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000687008/I2023000019799",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000687008/I2023000019799",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1200,7 +1200,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041556404/I2023046616108",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041556404/I2023046616108",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1211,7 +1211,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041557951/C2023000000298",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041557951/C2023000000298",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1222,7 +1222,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041557597/C2023000001799",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041557597/C2023000001799",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1233,7 +1233,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043346852/I2023000021550",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023043346852/I2023000021550",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1244,7 +1244,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000616052/I2023000025350",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000616052/I2023000025350",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1255,7 +1255,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000618255/I2023000028311",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000618255/I2023000028311",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1266,7 +1266,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043351951/I2023000020208",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023043351951/I2023000020208",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1277,7 +1277,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041149511/I2023000028016",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041149511/I2023000028016",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1288,7 +1288,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041299512/I2023000028651",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041299512/I2023000028651",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1299,7 +1299,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041298554/C2023000002114",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041298554/C2023000002114",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1310,7 +1310,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000684849/C2023000003150",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000684849/C2023000003150",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1321,7 +1321,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041299816/C2023000010113",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041299816/C2023000010113",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1332,7 +1332,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000684651/C2023007474854",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000684651/C2023007474854",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1343,7 +1343,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041799507/C2023007474612",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041799507/C2023007474612",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1354,7 +1354,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041799606/I2023000028450",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041799606/I2023000028450",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1365,7 +1365,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041423753/I2023000027408",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041423753/I2023000027408",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1376,7 +1376,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041429299/C2023000001211",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041429299/C2023000001211",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1387,7 +1387,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041429099/I2023000019499",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041429099/I2023000019499",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1398,7 +1398,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000635715/C2023000001515",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000635715/C2023000001515",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1409,7 +1409,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000688506/I2023000028702",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000688506/I2023000028702",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1420,7 +1420,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041562505/C2023007474750",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041562505/C2023007474750",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1431,7 +1431,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043361297/I2023041146250",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023043361297/I2023041146250",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1442,7 +1442,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000637953/I2023000027910",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000637953/I2023000027910",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1453,7 +1453,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000634609/I2023000020053",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000634609/I2023000020053",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1464,7 +1464,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000645911/I2023041146315",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000645911/I2023041146315",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1475,7 +1475,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000647113/I2023041146452",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000647113/I2023041146452",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1486,7 +1486,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043370950/C2023007487114",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023043370950/C2023007487114",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1497,7 +1497,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000656311/C2023007486915",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000656311/C2023007486915",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1508,7 +1508,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046658807/C2023007487050",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046658807/C2023007487050",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1519,7 +1519,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041310550/C2023000002850",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041310550/C2023000002850",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1530,7 +1530,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000692451/I2023041127354",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000692451/I2023041127354",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1541,7 +1541,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041311054/I2023000024753",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041311054/I2023000024753",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1552,7 +1552,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000688653/I2023041150952",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000688653/I2023041150952",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1563,7 +1563,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000695011/I2023041151250",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000695011/I2023041151250",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1574,7 +1574,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041312007/I2023041150851",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041312007/I2023041150851",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1585,7 +1585,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000703512/I2023000027501",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000703512/I2023000027501",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1596,7 +1596,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041429512/I2023000029050",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041429512/I2023000029050",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1607,7 +1607,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041444351/I2023029847213",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041444351/I2023029847213",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1618,7 +1618,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041445050/I2023002880906",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041445050/I2023002880906",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1629,7 +1629,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041445251/I2023042865350",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041445251/I2023042865350",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1640,7 +1640,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000652898/I2023042865206",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000652898/I2023042865206",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1651,7 +1651,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000655498/C2023000002907",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000655498/C2023000002907",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1662,7 +1662,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041447650/C2023000002601",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041447650/C2023000002601",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1673,7 +1673,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041446853/I2023042867754",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041446853/I2023042867754",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1684,7 +1684,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046714455/C2023000009015",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046714455/C2023000009015",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1695,7 +1695,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046670405/C2023000010054",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046670405/C2023000010054",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1706,7 +1706,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000659006/I2023000028108",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000659006/I2023000028108",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1717,7 +1717,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000661610/I2023000027305",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000661610/I2023000027305",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1728,7 +1728,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000661751/I2023046613608",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000661751/I2023046613608",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1739,7 +1739,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041436809/I2023000025198",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041436809/I2023000025198",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1750,7 +1750,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046672753/I2023046613918",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046672753/I2023046613918",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1761,7 +1761,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000703814/I2023041163751",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000703814/I2023041163751",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1772,7 +1772,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000704610/C2023000004703",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000704610/C2023000004703",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1783,7 +1783,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041383897/I2023000030853",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041383897/I2023000030853",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1794,7 +1794,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041829049/I2023000031053",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041829049/I2023000031053",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1805,7 +1805,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041384909/I2023000034551",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041384909/I2023000034551",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1816,7 +1816,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041830015/C2023000002705",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041830015/C2023000002705",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1827,7 +1827,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043686609/I2023041164553",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023043686609/I2023041164553",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1838,7 +1838,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023043687598/C2023000003753",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023043687598/C2023000003753",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1849,7 +1849,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000667615/I2023000030450",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000667615/I2023000030450",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1860,7 +1860,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041870055/C2023000004352",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041870055/C2023000004352",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1871,7 +1871,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041454716/I2023000030906",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041454716/I2023000030906",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1882,7 +1882,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041455012/I2023029847414",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041455012/I2023029847414",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1893,7 +1893,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041455753/C2023000007550",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041455753/C2023000007550",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1904,7 +1904,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000668651/I2023040582053",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000668651/I2023040582053",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1915,7 +1915,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041866808/I2023043124350",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041866808/I2023043124350",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1926,7 +1926,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000709350/I2023000031154",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000709350/I2023000031154",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1937,7 +1937,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000572451/I2023000031253",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000572451/I2023000031253",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1948,7 +1948,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041438515/I2023000030652",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041438515/I2023000030652",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1959,7 +1959,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041438997/I2023043124749",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041438997/I2023043124749",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1970,7 +1970,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000671799/I2023000034353",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000671799/I2023000034353",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1981,7 +1981,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000669055/I2023043124497",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000669055/I2023043124497",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -1992,7 +1992,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041439350/I2023043124850",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041439350/I2023043124850",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2003,7 +2003,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041438102/C2023000005808",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041438102/C2023000005808",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2014,7 +2014,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041439513/C2023000006950",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041439513/C2023000006950",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2025,7 +2025,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041442999/I2023043177613",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041442999/I2023043177613",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2036,7 +2036,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041282417/I2023000030751",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041282417/I2023000030751",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2047,7 +2047,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000709950/C2023000002551",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000709950/C2023000002551",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2058,7 +2058,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041836612/I2023000030109",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041836612/I2023000030109",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2069,7 +2069,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046694350/I2023043178316",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046694350/I2023043178316",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2080,7 +2080,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041231611/I2023043178011",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041231611/I2023043178011",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2091,7 +2091,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041812949/C2023007534149",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041812949/C2023007534149",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2102,7 +2102,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000622450/I2023041212051",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000622450/I2023041212051",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2113,7 +2113,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041231854/I2023041215305",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041231854/I2023041215305",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2124,7 +2124,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041232352/I2023041217308",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041232352/I2023041217308",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2135,7 +2135,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041813551/C2023000003351",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041813551/C2023000003351",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2146,7 +2146,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000673108/I2023000033815",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000673108/I2023000033815",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2157,7 +2157,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023046697211/C2023000008011",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023046697211/C2023000008011",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2168,7 +2168,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023000718353/C2023000006498",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023000718353/C2023000006498",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2179,7 +2179,7 @@
   },
   {
     "method": "GET",
-    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/C2023007534603/C2023000006255",
+    "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/C2023007534603/C2023000006255",
     "expectedStatus": 200,
     "headers": {
       "language": "AR",
@@ -2188,4 +2188,3 @@
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
     }
   }
-
