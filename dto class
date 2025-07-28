@@ -1,6 +1,6 @@
 
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -28,7 +28,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -56,7 +56,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -84,7 +84,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -112,7 +112,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -140,7 +140,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -168,7 +168,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -196,7 +196,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -224,7 +224,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -252,7 +252,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -280,7 +280,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -308,7 +308,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -336,7 +336,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -364,7 +364,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -392,7 +392,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -420,7 +420,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -448,7 +448,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -476,7 +476,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -504,7 +504,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -532,7 +532,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -560,7 +560,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -588,7 +588,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -616,7 +616,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -644,7 +644,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -672,7 +672,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -700,7 +700,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -728,7 +728,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -756,7 +756,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -784,7 +784,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -812,7 +812,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -840,7 +840,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -868,7 +868,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -896,7 +896,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -924,7 +924,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -952,7 +952,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -980,7 +980,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1008,7 +1008,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1036,7 +1036,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1064,7 +1064,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1092,7 +1092,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1120,7 +1120,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1148,7 +1148,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1176,7 +1176,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1204,7 +1204,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1232,7 +1232,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1260,7 +1260,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1288,7 +1288,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1316,7 +1316,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1344,7 +1344,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1372,7 +1372,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1400,7 +1400,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1428,7 +1428,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1456,7 +1456,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1484,7 +1484,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1512,7 +1512,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1540,7 +1540,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1568,7 +1568,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1596,7 +1596,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1624,7 +1624,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1652,7 +1652,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1680,7 +1680,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1708,7 +1708,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1736,7 +1736,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1764,7 +1764,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1792,7 +1792,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1820,7 +1820,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1848,7 +1848,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1876,7 +1876,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1904,7 +1904,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1932,7 +1932,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1960,7 +1960,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -1988,7 +1988,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2016,7 +2016,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2044,7 +2044,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2072,7 +2072,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2100,7 +2100,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2128,7 +2128,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2156,7 +2156,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2184,7 +2184,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2212,7 +2212,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2240,7 +2240,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2268,7 +2268,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2296,7 +2296,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2324,7 +2324,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2352,7 +2352,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2380,7 +2380,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2408,7 +2408,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2436,7 +2436,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2464,7 +2464,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2492,7 +2492,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2520,7 +2520,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2548,7 +2548,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2576,7 +2576,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2604,7 +2604,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2632,7 +2632,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2660,7 +2660,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2688,7 +2688,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2716,7 +2716,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2744,7 +2744,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2772,7 +2772,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2800,7 +2800,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2828,7 +2828,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2856,7 +2856,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2884,7 +2884,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2912,7 +2912,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2940,7 +2940,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2968,7 +2968,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -2996,7 +2996,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3024,7 +3024,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3052,7 +3052,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3080,7 +3080,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3108,7 +3108,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3136,7 +3136,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3164,7 +3164,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3192,7 +3192,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3220,7 +3220,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3248,7 +3248,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3276,7 +3276,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3304,7 +3304,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3332,7 +3332,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3360,7 +3360,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3388,7 +3388,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3416,7 +3416,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3444,7 +3444,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3472,7 +3472,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3500,7 +3500,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3528,7 +3528,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3556,7 +3556,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3584,7 +3584,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3612,7 +3612,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3640,7 +3640,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3668,7 +3668,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3696,7 +3696,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3724,7 +3724,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3752,7 +3752,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3780,7 +3780,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3808,7 +3808,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3836,7 +3836,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3864,7 +3864,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3892,7 +3892,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3920,7 +3920,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3948,7 +3948,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -3976,7 +3976,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4004,7 +4004,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4032,7 +4032,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4060,7 +4060,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4088,7 +4088,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4116,7 +4116,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4144,7 +4144,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4172,7 +4172,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4200,7 +4200,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4228,7 +4228,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4256,7 +4256,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4284,7 +4284,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4312,7 +4312,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4340,7 +4340,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4368,7 +4368,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4396,7 +4396,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4424,7 +4424,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4452,7 +4452,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4480,7 +4480,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4508,7 +4508,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4536,7 +4536,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4564,7 +4564,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4592,7 +4592,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4620,7 +4620,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4648,7 +4648,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4676,7 +4676,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4704,7 +4704,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4732,7 +4732,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4760,7 +4760,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4788,7 +4788,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4816,7 +4816,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4844,7 +4844,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4872,7 +4872,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4900,7 +4900,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4928,7 +4928,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4956,7 +4956,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -4984,7 +4984,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5012,7 +5012,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5040,7 +5040,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5068,7 +5068,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5096,7 +5096,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5124,7 +5124,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5152,7 +5152,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5180,7 +5180,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5208,7 +5208,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5236,7 +5236,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5264,7 +5264,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5292,7 +5292,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5320,7 +5320,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5348,7 +5348,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5376,7 +5376,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5404,7 +5404,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5432,7 +5432,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5460,7 +5460,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5488,7 +5488,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5516,7 +5516,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5544,7 +5544,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5572,7 +5572,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5600,7 +5600,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5628,7 +5628,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5656,7 +5656,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5684,7 +5684,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5712,7 +5712,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5740,7 +5740,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5768,7 +5768,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5796,7 +5796,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5824,7 +5824,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5852,7 +5852,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5880,7 +5880,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5908,7 +5908,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5936,7 +5936,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5964,7 +5964,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -5992,7 +5992,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6020,7 +6020,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6048,7 +6048,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6076,7 +6076,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6104,7 +6104,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6132,7 +6132,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6160,7 +6160,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6188,7 +6188,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6216,7 +6216,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6244,7 +6244,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6272,7 +6272,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6300,7 +6300,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6328,7 +6328,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6356,7 +6356,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6384,7 +6384,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6412,7 +6412,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6440,7 +6440,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6468,7 +6468,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6496,7 +6496,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6524,7 +6524,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6552,7 +6552,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6580,7 +6580,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6608,7 +6608,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6636,7 +6636,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6664,7 +6664,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6692,7 +6692,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6720,7 +6720,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6748,7 +6748,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6776,7 +6776,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6804,7 +6804,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6832,7 +6832,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6860,7 +6860,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6888,7 +6888,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6916,7 +6916,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6944,7 +6944,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -6972,7 +6972,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7000,7 +7000,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7028,7 +7028,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7056,7 +7056,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7084,7 +7084,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7112,7 +7112,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7140,7 +7140,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7168,7 +7168,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7196,7 +7196,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7224,7 +7224,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7252,7 +7252,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7280,7 +7280,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7308,7 +7308,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7336,7 +7336,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7364,7 +7364,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7392,7 +7392,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7420,7 +7420,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7448,7 +7448,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7476,7 +7476,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7504,7 +7504,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7532,7 +7532,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7560,7 +7560,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7588,7 +7588,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7616,7 +7616,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7644,7 +7644,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7672,7 +7672,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7700,7 +7700,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7728,7 +7728,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7756,7 +7756,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7784,7 +7784,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7812,7 +7812,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7840,7 +7840,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7868,7 +7868,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7896,7 +7896,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7924,7 +7924,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7952,7 +7952,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -7980,7 +7980,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8008,7 +8008,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8036,7 +8036,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8064,7 +8064,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8092,7 +8092,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8120,7 +8120,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8148,7 +8148,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8176,7 +8176,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8204,7 +8204,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8232,7 +8232,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8260,7 +8260,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8288,7 +8288,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8316,7 +8316,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8344,7 +8344,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8372,7 +8372,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8400,7 +8400,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8428,7 +8428,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8456,7 +8456,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8484,7 +8484,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8512,7 +8512,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8540,7 +8540,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8568,7 +8568,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8596,7 +8596,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8624,7 +8624,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8652,7 +8652,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8680,7 +8680,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8708,7 +8708,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8736,7 +8736,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8764,7 +8764,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8792,7 +8792,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8820,7 +8820,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8848,7 +8848,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8876,7 +8876,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8904,7 +8904,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8932,7 +8932,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8960,7 +8960,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -8988,7 +8988,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9016,7 +9016,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9044,7 +9044,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9072,7 +9072,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9100,7 +9100,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9128,7 +9128,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9156,7 +9156,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9184,7 +9184,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9212,7 +9212,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9240,7 +9240,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9268,7 +9268,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9296,7 +9296,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9324,7 +9324,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9352,7 +9352,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9380,7 +9380,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9408,7 +9408,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9436,7 +9436,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9464,7 +9464,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9492,7 +9492,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9520,7 +9520,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9548,7 +9548,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9576,7 +9576,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9604,7 +9604,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9632,7 +9632,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9660,7 +9660,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9688,7 +9688,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9716,7 +9716,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
@@ -9744,7 +9744,7 @@
     }
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/compare/corporate",
     "expectedStatus": 200,
     "headers": {
