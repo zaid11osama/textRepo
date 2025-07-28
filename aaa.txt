@@ -1,1 +1,65 @@
-sdcdscsdcdc
+import pandas as pd
+import json
+import copy  # for deep copy of nested dicts
+import random
+
+
+# Load Excel
+df = pd.read_excel("C:\\Users\\DELL\\Desktop\\curlsToBut.xlsx")
+
+# Static headers
+headers_template = {
+    "requestCountry": "",
+    "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s",
+
+}
+
+# Body template
+body_template = {
+
+        "globalId": "",
+        "language": ""
+
+
+
+}
+
+# Generate request list
+requests = []
+
+for _, row in df.iterrows():
+    global_id = row['GLOBAL_ID']
+
+
+    # Deep copy body and fill globalId
+    body = copy.deepcopy(body_template)
+    body["globalId"] = str(global_id)
+    languages = ["AR", "EN"]
+    random_language = random.choice(languages)
+
+    body["language"] = str(random_language)
+
+
+
+
+    # Prepare headers
+    headers = headers_template.copy()
+    # headers["zaid"] = country  # optional
+
+    # Compose request
+    request = {
+        "method": "POST",
+        "url": f"https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/person/full",
+        "expectedStatus": 200,
+        "headers": headers,
+        "body": body
+    }
+
+    requests.append(request)
+
+# Save to JSON
+with open("generated_requests.json", "w", encoding="utf-8") as f:
+    json.dump(requests, f, ensure_ascii=False, indent=2)
+
+print("✅ Done! Requests saved to generated_requests.json")
