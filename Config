@@ -1,37 +1,121 @@
- "method" : "GET",
-      "url": "https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/",
+{
+  "curls": [
+
+    {
+      "method": "GET",
+      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041155510/EG",
       "expectedStatus": 200,
-      "headers" : {
-        "language" : "AR",
-        "requestCountry" : "JO",
+      "headers": {
+        "language": "AR",
+        "requestCountry": "EG",
         "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization" : "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
       }
-https://10.101.15.27:8443/mdm-ms-golden-api/mdm/v2/golden/general/nra/I2023041439513/I2023041439513
+    },
+        {
+      "method": "GET",
+      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2022041155510/EG",
+      "expectedStatus": 404,
+      "headers": {
+        "language": "AR",
+        "requestCountry": "EG",
+        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+      }
+    },
 
+            {
+      "method": "GET",
+      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023441155510/EG",
+      "expectedStatus": 404,
+      "headers": {
+        "language": "AR",
+        "requestCountry": "EG",
+        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+      }
+    },
 
-"Content-Type":"application/json",
-"tenantId":"OMN",
-"channelId": "MB" ,
-"inputCountry" : "JO",
-"inputReference" :"123456789101112131415161718192"  ,
+            {
+      "method": "GET",
+      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I202203155510/EG",
+      "expectedStatus": 404,
+      "headers": {
+        "language": "AR",
+        "requestCountry": "EG",
+        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+      }
+    },
 
-"requesterId" : "KYCUSER",
-"requesterKey":  "KYCPass@2023" ,
+            {
+      "method": "GET",
+      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2022121155510/EG",
+      "expectedStatus": 404,
+      "headers": {
+        "language": "AR",
+        "requestCountry": "EG",
+        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+      }
+    },
 
-"inputTimestamp"  : "2023-03-12 11:35:31.2251401" ,
+            {
+      "method": "GET",
+      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I20220415510/EG",
+      "expectedStatus": 404,
+      "headers": {
+        "language": "AR",
+        "requestCountry": "EG",
+        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+      }
+    },
 
-"language" : "EN",
+            {
+      "method": "GET",
+      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I20220411510/EG",
+      "expectedStatus": 404,
+      "headers": {
+        "language": "AR",
+        "requestCountry": "EG",
+        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+      }
+    },
 
-"dataSource" : "Tenant"  ,
+            {
+      "method": "GET",
+      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I202141155510/EG",
+      "expectedStatus": 404,
+      "headers": {
+        "language": "AR",
+        "requestCountry": "EG",
+        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+      }
+    },
 
-"user" :"test"    ,
+            {
+      "method": "GET",
+      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2022041185510/EG",
+      "expectedStatus": 404,
+      "headers": {
+        "language": "AR",
+        "requestCountry": "EG",
+        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+      }
+    },
 
-"requestChannel : "TSTPBM"  ,
-
-
-"identifierType" : "customerId" ,
-
-"accountNumber" : "11114444888861" ,
-
-"inputChannel" :  "MDMTST" 
+            {
+      "method": "GET",
+      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2022041155510/EG",
+      "expectedStatus": 404,
+      "headers": {
+        "language": "AR",
+        "requestCountry": "EG",
+        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
+      }
+    },
