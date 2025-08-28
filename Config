@@ -1,121 +1,30 @@
-{
-  "curls": [
+import pandas as pd
 
-    {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023041155510/EG",
-      "expectedStatus": 200,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "EG",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
-      }
-    },
-        {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2022041155510/EG",
-      "expectedStatus": 404,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "EG",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
-      }
-    },
+# Load both sheets
+df1 = pd.read_excel("data.xlsx", sheet_name="Sheet1")  # PHASE 1-6
+df2 = pd.read_excel("data.xlsx", sheet_name="Sheet2")  # PHASE 6-7
 
-            {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2023441155510/EG",
-      "expectedStatus": 404,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "EG",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
-      }
-    },
+# Combine both sheets
+df_all = pd.concat([df1, df2], ignore_index=True)
 
-            {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I202203155510/EG",
-      "expectedStatus": 404,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "EG",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
-      }
-    },
+# Clean PHASE column if needed
+df_all["PHASE"] = df_all["PHASE"].astype(str).str.strip()
 
-            {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2022121155510/EG",
-      "expectedStatus": 404,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "EG",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
-      }
-    },
+# Step 1: create a PASS column
+df_all["PASS"] = df_all["EXPECTED"] == df_all["ACTUAL"]
 
-            {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I20220415510/EG",
-      "expectedStatus": 404,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "EG",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
-      }
-    },
+# Step 2: group by URL and PHASE
+grouped = df_all.groupby(["URL", "PHASE"])
 
-            {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I20220411510/EG",
-      "expectedStatus": 404,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "EG",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
-      }
-    },
+# Step 3: calculate total count, pass count, and pass percentage
+result = grouped["PASS"].agg(
+    total_count="count",
+    pass_count="sum"
+).reset_index()
 
-            {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I202141155510/EG",
-      "expectedStatus": 404,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "EG",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
-      }
-    },
+result["pass_percentage"] = (result["pass_count"] / result["total_count"]) * 100
 
-            {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2022041185510/EG",
-      "expectedStatus": 404,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "EG",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
-      }
-    },
+# Save results to one Excel sheet
+result.to_excel("pass_percentage_all_phases.xlsx", index=False)
 
-            {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8443/mdm-ms-golden-api/mdm/v2/golden/general/helios/I2022041155510/EG",
-      "expectedStatus": 404,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "EG",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s"
-      }
-    },
+print("✅ Pass percentages for all phases saved to 'pass_percentage_all_phases.xlsx'")
