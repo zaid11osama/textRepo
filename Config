@@ -1,41 +1,11 @@
- @Test
-    void testCompareIndividual_WithPhoneticsResponse() {
-        // Arrange
-        when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
-        when(webClientBuilder.build()).thenReturn(webClient);
+// Mock all pieces in the chain
+WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
+WebClient.RequestBodySpec requestBodySpec = mock(WebClient.RequestBodySpec.class); // <-- important
+WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
+WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
 
-        // Mock the WebClient chain
-        WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
-        WebClient.RequestBodySpec requestBodySpec = mock(WebClient.RequestBodySpec.class);
-        WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
-        WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
-
-        when(webClient.post()).thenReturn(requestBodyUriSpec);
-        when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
-        when(requestBodySpec.bodyValue(any())).thenReturn(requestHeadersSpec);
-        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
-
-        // Mock response
-        CompareResponse mockResponse = CompareResponse.builder()
-                .success(true)
-                .firstPersonGlobalId("9999")
-                .secondPersonGlobalId("8888")
-                .build();
-
-        when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
-
-        // Create a valid request (testRequest)
-        CompareRequestDto testRequest = CompareRequestDto.builder()
-                .parameters(new CompareParametersDto()) // fill in with valid parameters if needed
-                .firstObject(new ObjRequestDto())       // fill with mock object
-                .secondObject(new ObjRequestDto())      // fill with mock object
-                .build();
-
-        // Act
-        CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
-
-        // Assert
-        assertTrue(response.isSuccess());
-        assertEquals("9999", response.getFirstPersonGlobalId());
-        assertEquals("8888", response.getSecondPersonGlobalId());
-    }
+// Arrange WebClient chain
+when(webClient.post()).thenReturn(requestBodyUriSpec);
+when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
+when(requestBodySpec.bodyValue(any())).thenReturn(requestHeadersSpec); // <-- now valid
+when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
