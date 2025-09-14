@@ -1,12 +1,33 @@
 @Test
-void testGetTaskWithSubTasks_RuntimeException() {
-    // Mock repository to throw RuntimeException
-    when(taskRepository.getCheckerTask(any())).thenThrow(new RuntimeException("DB is down"));
+void testCompareIndividual_WithPhoneticsResponse() {
+    // Arrange
+    MdmCompareRequestDto testRequest = new MdmCompareRequestDto();
+    testRequest.setFirstPersonIdentifiers(PersonIdentifierDto.builder().globalId("9999").build());
+    testRequest.setSecondPersonIdentifiers(PersonIdentifierDto.builder().globalId("8888").build());
 
-    // Assert that the service wraps it into GoldenMDMException
-    GoldenMDMException ex = assertThrows(GoldenMDMException.class, () -> {
-        checkerService.getTaskWithSubTasks("taskId", 1, 10);
-    });
+    CompareResponse mockResponse = CompareResponse.builder()
+            .success(true)
+            .firstPersonGlobalId("9999")
+            .secondPersonGlobalId("8888")
+            .build();
 
-    assertEquals("error getting tasks with subtask", ex.getMessage());
+    WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
+    WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
+    WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
+
+    when(webClientBuilder.baseUrl(anyString())).thenReturn(webClient);
+    when(webClient.post()).thenReturn(requestBodyUriSpec);
+    when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodyUriSpec);
+    when(requestBodyUriSpec.bodyValue(any())).thenReturn(requestHeadersSpec);
+    when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+    when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
+
+    // Act
+    CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
+
+    // Assert
+    assertNotNull(response);
+    assertTrue(response.isSuccess());
+    assertEquals("9999", response.getFirstPersonGlobalId());
+    assertEquals("8888", response.getSecondPersonGlobalId());
 }
