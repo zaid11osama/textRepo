@@ -1,42 +1,56 @@
-    @Test
-    void testCompareIndividual_WithPhoneticsResponse() {
-        // Arrange
-        when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
-        when(webClientBuilder.build()).thenReturn(webClient);
+@Test
+void testCompareIndividual_WithPhoneticsResponse() {
+    // Arrange
+    when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
+    when(webClientBuilder.build()).thenReturn(webClient);
 
-        // --- Mock the WebClient chain properly ---
-        WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
-        WebClient.RequestBodySpec requestBodySpec = mock(WebClient.RequestBodySpec.class);
-        WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
-        WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
+    // --- Mock the WebClient chain properly ---
+    WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
+    WebClient.RequestBodySpec requestBodySpec = mock(WebClient.RequestBodySpec.class);
+    WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
+    WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
 
-        when(webClient.post()).thenReturn(requestBodyUriSpec);
-        when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
-        when(requestBodySpec.bodyValue(any())).thenReturn((WebClient.RequestHeadersSpec) requestHeadersSpec);
-        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+    when(webClient.post()).thenReturn(requestBodyUriSpec);
+    when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
+    when(requestBodySpec.bodyValue(any())).thenReturn((WebClient.RequestHeadersSpec) requestHeadersSpec);
+    when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
 
-        // Mock the response
-        CompareResponse mockResponse = CompareResponse.builder()
-                .success(true)
-                .firstPersonGlobalId("9999")
-                .secondPersonGlobalId("8888")
-                .build();
+    // Mock the response
+    CompareResponse mockResponse = CompareResponse.builder()
+            .success(true)
+            .firstPersonGlobalId("9999")
+            .secondPersonGlobalId("8888")
+            .build();
 
-        when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
+    when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
 
-        // --- Create a valid request (whatever CompareService expects) ---
-        CompareRequestDto testRequest = CompareRequestDto.builder()
-                .parameters(new CompareParametersDto())
-                .firstObject(new ObjRequestDto())
-                .secondObject(new ObjRequestDto())
-                .build();
+    // --- Create a valid MdmCompareRequestDto (the type expected by the service) ---
+    MdmCompareRequestDto testRequest = new MdmCompareRequestDto();
 
-        // 
-        CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
+    testRequest.setFirstPersonIdentifiers(PersonIdentifierDto.builder()
+            .globalId("9999")
+            .relationshipCountry("EG")
+            .organization("AB")
+            .role("AH")
+            .relationshipSequence(1)
+            .customerId("9999")
+            .build());
 
-        // Assert
-        assertNotNull(response);
-        assertTrue(response.isSuccess());
-        assertEquals("9999", response.getFirstPersonGlobalId());
-        assertEquals("8888", response.getSecondPersonGlobalId());
-    }
+    testRequest.setSecondPersonIdentifiers(PersonIdentifierDto.builder()
+            .globalId("8888")
+            .relationshipCountry("EG")
+            .organization("AB")
+            .role("AH")
+            .relationshipSequence(1)
+            .customerId("8888")
+            .build());
+
+    // Act
+    CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
+
+    // Assert
+    assertNotNull(response);
+    assertTrue(response.isSuccess());
+    assertEquals("9999", response.getFirstPersonGlobalId());
+    assertEquals("8888", response.getSecondPersonGlobalId());
+}
