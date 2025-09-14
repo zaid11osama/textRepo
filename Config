@@ -1,30 +1,67 @@
-import pandas as pd
+this is my controller test
 
-# Load both sheets
-df1 = pd.read_excel("data.xlsx", sheet_name="Sheet1")  # PHASE 1-6
-df2 = pd.read_excel("data.xlsx", sheet_name="Sheet2")  # PHASE 6-7
 
-# Combine both sheets
-df_all = pd.concat([df1, df2], ignore_index=True)
+    @Test
+    void testGetTasks_Success() throws Exception {
+        List<LinkedHashMap<String, Object>> rawList =
+                fileReader.getDataAsJson("classpath:dummy-data/tasks.json", List.class);
 
-# Clean PHASE column if needed
-df_all["PHASE"] = df_all["PHASE"].astype(str).str.strip()
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<Task> tasks = rawList.stream()
+                .map(map -> objectMapper.convertValue(map, Task.class))
+                .collect(Collectors.toList());
 
-# Step 1: create a PASS column
-df_all["PASS"] = df_all["EXPECTED"] == df_all["ACTUAL"]
 
-# Step 2: group by URL and PHASE
-grouped = df_all.groupby(["URL", "PHASE"])
+        Page<Task> pageableTasks = convertListToPage(tasks, PageRequest.of(0, 5));
+        when(taskRepository.getCheckerTasksFiltered(any(), any())).thenReturn(pageableTasks);
 
-# Step 3: calculate total count, pass count, and pass percentage
-result = grouped["PASS"].agg(
-    total_count="count",
-    pass_count="sum"
-).reset_index()
+        RecordsManagerDto<Task> tasksManager = RecordsManagerDto.<Task>builder()
+                .records(pageableTasks.getContent())
+                .meta(RecordsMetaDto.builder().page(pageableTasks.getPageable().getPageNumber() + 1)
+                        .pageCount(pageableTasks.getTotalPages())
+                        .totalCount(pageableTasks.getTotalElements())
+                        .pageSize(pageableTasks.getSize())
+                        .build())
+                .build();
 
-result["pass_percentage"] = (result["pass_count"] / result["total_count"]) * 100
+        when(checkerService.getTasks(1, 10, null , null)).thenReturn(tasksManager);
 
-# Save results to one Excel sheet
-result.to_excel("pass_percentage_all_phases.xlsx", index=False)
+        mockMvc.perform(MockMvcRequestBuilders.get(CHECKER_API_PATH + GET_TASKS_API_PATH)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.records").isNotEmpty())
+                .andReturn();
+    }
 
-print("✅ Pass percentages for all phases saved to 'pass_percentage_all_phases.xlsx'")
+
+this is my service
+
+    public RecordsManagerDto<Task> getTasks(int page, int pageSize, String filteredValue, String columnSort) {
+        try {
+            log.info("getTasks({},{},{},{})", page, pageSize, filteredValue, columnSort);
+            Pageable pageable = createPageable(columnSort, GLOBAL_ID, page, pageSize);
+            Page<Task> checkerTasks = taskRepository.getCheckerTasksFiltered(filteredValue, pageable);
+
+            fillCustomerType(checkerTasks.getContent());
+
+            return HelperUtils.getRecordsManager(checkerTasks);
+
+
+        } catch (Exception ex) {
+            log.error("An unexpected error occurred: {}", ex.getMessage());
+            throw new GoldenMDMException("An unexpected error occurred while retrieving tasks.");
+
+        } finally {
+            log.info("/getTasks({},{},{},{})", page, pageSize, filteredValue, columnSort);
+        }
+    }
+
+this is my controller
+
+	@GetMapping("/tasks")
+	public ResponseEntity<Object> getTasks(@RequestParam(value = "page", defaultValue = "1") int page,
+										   @RequestParam(value = "pageSize", defaultValue = "10") int pageSize,
+										   @RequestParam(value = "filteredValue", required = false) String filteredValue,
+										   @RequestParam(value = "columnSort", required = false) String columnSort) {
+		return ResponseEntity.status(HttpStatus.OK).body(checkerService.getTasks(page, pageSize, filteredValue, columnSort));
+	}
