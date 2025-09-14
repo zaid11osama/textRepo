@@ -1,16 +1,76 @@
-@Test
-void testGetExcelTasks_IOException() throws Exception {
-    List<Task> tasks = List.of(new Task()); 
-    when(taskRepository.getCheckerTasksFilteredList(any())).thenReturn(tasks);
+ public TaskSubTasksViewDto getTaskWithSubTasks(String taskId, int page, int pageSize) {
+        try {
+            log.info("getTaskWithSubTasks({},{},{})", taskId, page, pageSize);
+            Optional<Task> optionalTask = taskRepository.getCheckerTask(taskId);
+            Task task;
 
-    try (MockedStatic<ExcelGenerator> mockedStatic = Mockito.mockStatic(ExcelGenerator.class)) {
-        mockedStatic.when(() -> ExcelGenerator.generateExcel(anyList(), anyList(), any()))
-                .thenThrow(new IOException("Excel write error"));
+            if (optionalTask.isPresent()) {
+                task = optionalTask.get();
+                validateTask(task);
+                fillCustomerType(task);
+            } else {
+                return new TaskSubTasksViewDto();
+            }
 
-        RuntimeException ex = assertThrows(RuntimeException.class, () -> {
-            checkerService.getExcelTasks("filter", "column");
-        });
+            TaskDto taskDto = new TaskDto(task);
 
-        assertEquals("error in generating excel", ex.getMessage());
+            Pageable pageable = PageRequest.of(page - 1, pageSize);
+            Optional<List<SubTask>> optionalSubTasks = subTaskRepository.getCheckerSubTasks(taskId, pageable);
+            int subTasksTotal = subTaskRepository.getCheckerSubTasksCount(taskId);
+            List<SubTask> subTasks = new ArrayList<>();
+            if (optionalSubTasks.isPresent()) {
+                subTasks = optionalSubTasks.get();
+
+                fillSubTaskCustomerType(subTasks);
+            }
+
+
+            List<SubTaskDto> subTaskDtos = new ArrayList<>();
+            for (SubTask subTask : subTasks) {
+                subTaskDtos.add(new SubTaskDto(subTask));
+            }
+            RecordsMetaDto meta = new RecordsMetaDto((page) * pageSize, pageSize, subTasksTotal);
+
+            return TaskSubTasksViewDto.builder()
+                    .subTask(RecordsManagerDto.<SubTaskDto>builder()
+                            .records(subTaskDtos)
+                            .meta(meta)
+                            .build())
+                    .task(taskDto)
+                    .build();
+
+        } catch (RuntimeException ex) {
+            log.error(ex.getMessage());
+            throw new GoldenMDMException("error getting tasks with subtask");
+        } finally {
+            log.info("/getTaskWithSubTasks({},{},{})", taskId, page, pageSize);
+        }
     }
-}
+
+
+  @Test
+    void testGetSubTasks_Success() throws Exception {
+        // Read the list of tasks from the JSON file
+        List<LinkedHashMap<String, Object>> taskList =
+                fileReader.getDataAsJson("classpath:dummy-data/tasks.json", List.class);
+
+        // Convert the first task from the list into a Task object
+        ObjectMapper objectMapper = new ObjectMapper();
+        testTask = objectMapper.convertValue(taskList.get(0), Task.class);
+
+        when(taskRepository.getCheckerTask(any())).thenReturn(Optional.ofNullable(testTask));
+
+        List<LinkedHashMap<String, Object>> subTaskList =
+                fileReader.getDataAsJson("classpath:dummy-data/subtasks.json", List.class);
+
+        List<SubTask> optionalSubTasks = new ArrayList<>();
+        optionalSubTasks.add(objectMapper.convertValue(subTaskList.get(0), SubTask.class));
+
+        when(subTaskRepository.getCheckerSubTasks(any(), any())).thenReturn(Optional.of(optionalSubTasks));
+
+        mockMvc.perform(MockMvcRequestBuilders.get(CHECKER_API_PATH + GET_SUB_TASKS_API_PATH)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.subTask.records").isNotEmpty())
+                .andReturn();
+    }
