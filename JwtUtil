@@ -1,13 +1,12 @@
 @Test
-void testGetTaskWithSubTasks_TaskNotFound() {
-    // Mock repository to return empty
-    when(taskRepository.getCheckerTask(any())).thenReturn(Optional.empty());
+void testGetTaskWithSubTasks_RuntimeException() {
+    // Mock repository to throw RuntimeException
+    when(taskRepository.getCheckerTask(any())).thenThrow(new RuntimeException("DB is down"));
 
-    // Call the service
-    TaskSubTasksViewDto result = checkerService.getTaskWithSubTasks("nonexistentTaskId", 1, 10);
+    // Assert that the service wraps it into GoldenMDMException
+    GoldenMDMException ex = assertThrows(GoldenMDMException.class, () -> {
+        checkerService.getTaskWithSubTasks("taskId", 1, 10);
+    });
 
-    // Assert that the result is an empty DTO
-    assertNotNull(result);
-    assertNull(result.getTask());
-    assertNull(result.getSubTask());
+    assertEquals("error getting tasks with subtask", ex.getMessage());
 }
