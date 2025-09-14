@@ -1,10 +1,16 @@
 @Test
-void testGetExcelTasks_NoTasksFound() {
-    when(taskRepository.getCheckerTasksFilteredList(any())).thenReturn(Collections.emptyList());
+void testGetExcelTasks_IOException() throws Exception {
+    List<Task> tasks = List.of(new Task()); 
+    when(taskRepository.getCheckerTasksFilteredList(any())).thenReturn(tasks);
 
-    ServiceNotFoundException ex = assertThrows(ServiceNotFoundException.class, () -> {
-        checkerService.getExcelTasks("someFilter", "someColumn");
-    });
+    try (MockedStatic<ExcelGenerator> mockedStatic = Mockito.mockStatic(ExcelGenerator.class)) {
+        mockedStatic.when(() -> ExcelGenerator.generateExcel(anyList(), anyList(), any()))
+                .thenThrow(new IOException("Excel write error"));
 
-    assertEquals("No tasks found for the given filter: someFilter", ex.getMessage());
+        RuntimeException ex = assertThrows(RuntimeException.class, () -> {
+            checkerService.getExcelTasks("filter", "column");
+        });
+
+        assertEquals("error in generating excel", ex.getMessage());
+    }
 }
