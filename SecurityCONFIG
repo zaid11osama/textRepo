@@ -1,7 +1,7 @@
- @Test
+    @Test
     void testCompareIndividual_WithPhoneticsResponse() {
         // Arrange
-        when(webClientBuilder.baseUrl(anyString())).thenReturn(webClient);
+        when(webClientBuilder.baseUrl(anyString())).thenReturn((WebClient.Builder) webClient);
 
         WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
         WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
@@ -9,7 +9,7 @@
 
         when(webClient.post()).thenReturn(requestBodyUriSpec);
         when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodyUriSpec);
-        when(requestBodyUriSpec.bodyValue(any())).thenReturn(requestHeadersSpec);
+        when(requestBodyUriSpec.bodyValue(any())).thenReturn(requestHeadersSpec);//I get Cannot resolve method 'thenReturn(RequestHeadersSpec<capture of ?>)
         when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
 
         CompareResponse mockResponse = CompareResponse.builder()
@@ -21,7 +21,7 @@
         when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
 
         // Act
-        CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
+        CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);//Cannot resolve symbol 'testRequest'
 
         // Assert
         assertTrue(response.isSuccess());
