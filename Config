@@ -1,8 +1,89 @@
-this is my controller test
+    public ByteArrayInputStream getExcelTasks(String filteredValue, String columnSort) {
+        ByteArrayInputStream checkerData;
+        try {
+            log.info("getExcelTasks({},{})", filteredValue, columnSort);
+            List<Task> checkerTasks = taskRepository.getCheckerTasksFilteredList(filteredValue);
+
+            if (checkerTasks.isEmpty()) {
+                throw new ServiceNotFoundException("No tasks found for the given filter: " + filteredValue);
+            }
+
+            fillCustomerType(checkerTasks);
+
+            List<Column> columnList = new ArrayList<>();
+            columnList.add(Column.builder()
+                    .name("Task ID")
+                    .key("taskId")
+                    .type(ColumnType.TEXT)
+                    .build());
+            columnList.add(Column.builder()
+                    .name("Global ID")
+                    .key("globalId")
+                    .type(ColumnType.TEXT)
+                    .build());
+            columnList.add(Column.builder()
+                    .name("Product ID")
+                    .key("productId")
+                    .type(ColumnType.TEXT)
+                    .build());
+            columnList.add(Column.builder()
+                    .name("Country")
+                    .key("relationCountry")
+                    .type(ColumnType.TEXT)
+                    .build());
+            columnList.add(Column.builder()
+                    .name("Organization")
+                    .key("organization")
+                    .type(ColumnType.TEXT)
+                    .build());
+            columnList.add(Column.builder()
+                    .name("Role")
+                    .key("role")
+                    .type(ColumnType.TEXT)
+                    .build());
+            columnList.add(Column.builder()
+                    .name("Status")
+                    .key("recordStatus")
+                    .type(ColumnType.TEXT)
+                    .build());
+            columnList.add(Column.builder()
+                    .name("User")
+                    .key("checkerUser")
+                    .type(ColumnType.TEXT)
+                    .build());
+            columnList.add(Column.builder()
+                    .name("Customer Type")
+                    .key("customerType")
+                    .type(ColumnType.TEXT)
+                    .build());
+            checkerData = ExcelGenerator.generateExcel(columnList, ObjectToMapConvertor.convertObjectToMap(checkerTasks), ExcelStyleTemplate.TEMPLATE_A);
+
+        } catch (IOException e) {
+            throw new RuntimeException("error in generating excel");
+        } catch (RuntimeException ex) {
+            log.error("An unexpected error occurred: {}", ex.getMessage());
+            throw new GoldenMDMException("An unexpected error occurred while retrieving tasks.");
+
+        } finally {
+            log.info("getExcelTasks({},{})", filteredValue, columnSort);
+        }
+        return checkerData;
+    }
 
 
-    @Test
-    void testGetTasks_Success() throws Exception {
+	@GetMapping("/tasks/excel")
+	public ResponseEntity<Object> getExcelTasks(@RequestParam(value = "filteredValue", required = false) String filteredValue,
+												@RequestParam(value = "columnSort", required = false) String columnSort) {
+		ByteArrayInputStream excelTasks = checkerService.getExcelTasks(filteredValue, columnSort);
+		return ResponseEntity.ok()
+				.header(HttpHeaders.CONTENT_DISPOSITION)
+				.contentType(new MediaType("application", "force-download"))
+				.body(excelTasks.readAllBytes());
+
+	}
+
+ @Test
+    void testGetTasksExcel_Success() throws Exception {
         List<LinkedHashMap<String, Object>> rawList =
                 fileReader.getDataAsJson("classpath:dummy-data/tasks.json", List.class);
 
@@ -10,58 +91,12 @@ this is my controller test
         List<Task> tasks = rawList.stream()
                 .map(map -> objectMapper.convertValue(map, Task.class))
                 .collect(Collectors.toList());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        when(taskRepository.getCheckerTasksFilteredList(any())).thenReturn(tasks);
+        when(checkerService.getExcelTasks(any(), any())).thenReturn(new ByteArrayInputStream(outputStream.toByteArray()));
 
-
-        Page<Task> pageableTasks = convertListToPage(tasks, PageRequest.of(0, 5));
-        when(taskRepository.getCheckerTasksFiltered(any(), any())).thenReturn(pageableTasks);
-
-        RecordsManagerDto<Task> tasksManager = RecordsManagerDto.<Task>builder()
-                .records(pageableTasks.getContent())
-                .meta(RecordsMetaDto.builder().page(pageableTasks.getPageable().getPageNumber() + 1)
-                        .pageCount(pageableTasks.getTotalPages())
-                        .totalCount(pageableTasks.getTotalElements())
-                        .pageSize(pageableTasks.getSize())
-                        .build())
-                .build();
-
-        when(checkerService.getTasks(1, 10, null , null)).thenReturn(tasksManager);
-
-        mockMvc.perform(MockMvcRequestBuilders.get(CHECKER_API_PATH + GET_TASKS_API_PATH)
-                .contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(MockMvcRequestBuilders.get(CHECKER_API_PATH + GET_TASKS_EXCEL_API_PATH)
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.records").isNotEmpty())
                 .andReturn();
     }
-
-
-this is my service
-
-    public RecordsManagerDto<Task> getTasks(int page, int pageSize, String filteredValue, String columnSort) {
-        try {
-            log.info("getTasks({},{},{},{})", page, pageSize, filteredValue, columnSort);
-            Pageable pageable = createPageable(columnSort, GLOBAL_ID, page, pageSize);
-            Page<Task> checkerTasks = taskRepository.getCheckerTasksFiltered(filteredValue, pageable);
-
-            fillCustomerType(checkerTasks.getContent());
-
-            return HelperUtils.getRecordsManager(checkerTasks);
-
-
-        } catch (Exception ex) {
-            log.error("An unexpected error occurred: {}", ex.getMessage());
-            throw new GoldenMDMException("An unexpected error occurred while retrieving tasks.");
-
-        } finally {
-            log.info("/getTasks({},{},{},{})", page, pageSize, filteredValue, columnSort);
-        }
-    }
-
-this is my controller
-
-	@GetMapping("/tasks")
-	public ResponseEntity<Object> getTasks(@RequestParam(value = "page", defaultValue = "1") int page,
-										   @RequestParam(value = "pageSize", defaultValue = "10") int pageSize,
-										   @RequestParam(value = "filteredValue", required = false) String filteredValue,
-										   @RequestParam(value = "columnSort", required = false) String columnSort) {
-		return ResponseEntity.status(HttpStatus.OK).body(checkerService.getTasks(page, pageSize, filteredValue, columnSort));
-	}
