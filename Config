@@ -9,3 +9,7 @@ when(webClient.post()).thenReturn(requestBodyUriSpec);
 when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
 when(requestBodySpec.bodyValue(any())).thenReturn(requestHeadersSpec); // <-- now valid
 when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+
+Cannot resolve method 'thenReturn(RequestHeadersSpec<capture of ?>)'
+WebClient.RequestHeadersSpec<?> requestHeadersSpec
+    = mock(WebClient.RequestHeadersSpec.class)
