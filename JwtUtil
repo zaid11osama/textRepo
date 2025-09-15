@@ -1,3 +1,25 @@
+RelationshipModel firstRelation = new RelationshipModel();
+firstRelation.setGlobalId("9999");
+firstRelation.setOrganization("AB");
+firstRelation.setRole("AH");
+firstRelation.setRelationCountry("EG");
+firstRelation.setRelationshipSequence(1);
+
+RelationshipModel secondRelation = new RelationshipModel();
+secondRelation.setGlobalId("8888");
+secondRelation.setOrganization("AB");
+secondRelation.setRole("AH");
+secondRelation.setRelationCountry("EG");
+secondRelation.setRelationshipSequence(1);
+
+when(relationshipRepository.getPersonRelationship(any(), any()))
+        .thenReturn(firstRelation, secondRelation);
+
+
+
+
+
+
 CompareResponse(names=null, nationalities=null, overAllRatio=0.0, parties=null, partiesCountry=null, message=can't retrieve individual information not found, success=false, firstPersonGlobalId=null, secondPersonGlobalId=null)  
 	@Query(value = "SELECT * FROM MDM_RELATIONSHIPS where ( :RELATED_PRODUCT is null or RELATED_PRODUCT = :RELATED_PRODUCT ) and GLOBAL_ID = NVL(:#{#search.globalId }, GLOBAL_ID) AND RELATION_COUNTRY = NVL(:#{#search.relationCountry }, RELATION_COUNTRY) AND ROLE = NVL(:#{#search.role }, ROLE) AND ORGANIZATION = NVL(:#{#search.organization }, ORGANIZATION) AND RELATIONSHIP_SEQUENCE = NVL(:#{#search.relationShipSequence }, RELATIONSHIP_SEQUENCE ) ORDER BY UPDATE_TIMESTAMP DESC FETCH FIRST 1 ROWS ONLY", nativeQuery = true)
 	RelationshipModel getPersonRelationship(@Param("RELATED_PRODUCT") String relatedProduct,
