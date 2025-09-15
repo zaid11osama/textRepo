@@ -1,3 +1,11 @@
+        when(relationshipRepository.getPersonRelationship(any(), any()))
+                .thenReturn(firstRelation, secondRelation);
+
+org.mockito.exceptions.misusing.WrongTypeOfReturnValue: 
+RelationshipModel cannot be returned by toString()
+toString() should return String
+
+
 RelationshipModel firstRelation = new RelationshipModel();
 firstRelation.setGlobalId("9999");
 firstRelation.setOrganization("AB");
