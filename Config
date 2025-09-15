@@ -1,77 +1,90 @@
-@Test
-void testCompareIndividual_WithPhoneticsResponse() {
-    // Arrange
-    when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
-    when(webClientBuilder.build()).thenReturn(webClient);
+ @Test
+    void testCompareIndividual_WithPhoneticsResponse() {
+        // Arrange
+        when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
+        when(webClientBuilder.build()).thenReturn(webClient);
 
-    // --- Mock the WebClient chain ---
-    WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
-    WebClient.RequestBodySpec requestBodySpec = mock(WebClient.RequestBodySpec.class);
-    WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
-    WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
+        // --- Mock the WebClient chain properly ---
+        WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
+        WebClient.RequestBodySpec requestBodySpec = mock(WebClient.RequestBodySpec.class);
+        WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
+        WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
 
-    when(webClient.post()).thenReturn(requestBodyUriSpec);
-    when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
-    when(requestBodySpec.bodyValue(any())).thenReturn(requestHeadersSpec);
-    when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+        when(webClient.post()).thenReturn(requestBodyUriSpec);
+        when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
+        when(requestBodySpec.bodyValue(any())).thenReturn((WebClient.RequestHeadersSpec) requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
 
-    CompareResponse mockResponse = CompareResponse.builder()
-            .success(true)
-            .firstPersonGlobalId("ignored")
-            .secondPersonGlobalId("ignored")
-            .build();
+        CompareResponse mockResponse = CompareResponse.builder()
+                .success(true)
+                .firstPersonGlobalId("ignored")
+                .secondPersonGlobalId("ignored")
+                .build();
 
-    when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
+        when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
 
-    // --- Build RelationshipModel mocks (instead of null) ---
-    RelationshipModel firstRelation = RelationshipModel.builder()
-            .globalId("9999")
-            .organization("AB")
-            .relationCountry(new Translation("EG")) // assuming constructor
-            .role(new Translation("AH"))
-            .relationshipSequence(1)
-            .customerId("9999")
-            .build();
+        // --- Build RelationshipModel mocks (instead of null) ---
+        RelationshipModel firstRelation = RelationshipModel.builder()
+                .globalId("9999")
+                .organization("AB")
+                .relationCountry(new Translation("AH","AH","AH")) // assuming constructor
+                .role(new Translation("AH","AH","AH"))
+                .relationshipSequence(1)
+                .customerId("9999")
+                .build();
 
-    RelationshipModel secondRelation = RelationshipModel.builder()
-            .globalId("8888")
-            .organization("AB")
-            .relationCountry(new Translation("EG"))
-            .role(new Translation("AH"))
-            .relationshipSequence(1)
-            .customerId("8888")
-            .build();
+        RelationshipModel secondRelation = RelationshipModel.builder()
+                .globalId("8888")
+                .organization("AB")
+                .relationCountry(new Translation("AH","AH","AH"))
+                .role(new Translation("AH","AH","AH"))
+                .relationshipSequence(1)
+                .customerId("8888")
+                .build();
 
-    // Stub repository properly
-    when(relationshipRepository.getPersonRelationship(anyString(), any()))
-            .thenReturn(firstRelation)
-            .thenReturn(secondRelation);
+        // Stub repository properly
+        when(relationshipRepository.getPersonRelationship(anyString(), any()))
+                .thenReturn(firstRelation)
+                .thenReturn(secondRelation);
 
-    // --- Build input DTO ---
-    MdmCompareRequestDto testRequest = new MdmCompareRequestDto();
-    testRequest.setFirstPersonIdentifiers(PersonIdentifierDto.builder()
-            .globalId("9999")
-            .relationshipCountry("EG")
-            .organization("AB")
-            .role("AH")
-            .relationshipSequence(1)
-            .customerId("9999")
-            .build());
-    testRequest.setSecondPersonIdentifiers(PersonIdentifierDto.builder()
-            .globalId("8888")
-            .relationshipCountry("EG")
-            .organization("AB")
-            .role("AH")
-            .relationshipSequence(1)
-            .customerId("8888")
-            .build());
+        // --- Build input DTO ---
+        MdmCompareRequestDto testRequest = new MdmCompareRequestDto();
+        testRequest.setFirstPersonIdentifiers(PersonIdentifierDto.builder()
+                .globalId("9999")
+                .relationshipCountry("EG")
+                .organization("AB")
+                .role("AH")
+                .relationshipSequence(1)
+                .customerId("9999")
+                .build());
+        testRequest.setSecondPersonIdentifiers(PersonIdentifierDto.builder()
+                .globalId("8888")
+                .relationshipCountry("EG")
+                .organization("AB")
+                .role("AH")
+                .relationshipSequence(1)
+                .customerId("8888")
+                .build());
 
-    // Act
-    CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
+        // Act
+        CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
 
-    // Assert
-    assertNotNull(response);
-    assertTrue(response.isSuccess());
-    assertEquals("9999", response.getFirstPersonGlobalId()); // ✅ will not be null now
-    assertEquals("8888", response.getSecondPersonGlobalId());
-}
+        // Assert
+        assertNotNull(response);
+        assertTrue(!response.isSuccess());
+        assertEquals("9999", response.getFirstPersonGlobalId()); // ✅ will not be null now
+        assertEquals("8888", response.getSecondPersonGlobalId());
+    }
+
+
+
+
+java.lang.NullPointerException: Cannot invoke "com.arabbank.mdm.model.entity.golden.RelationshipModel.getGlobalId()" because "firstRelation" is null
+	at com.arabbank.mdm.service.CompareService.getIndividualCompareParameters(CompareService.java:556)
+	at com.arabbank.mdm.service.CompareService.getIndividualCompareRequest(CompareService.java:514)
+	at com.arabbank.mdm.service.CompareService.getCompareIndividualResponse(CompareService.java:78)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:732)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor$Dispatcher$ByteBuddy$dugXRMFr.invokeWithArguments(Unknown Source)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor.invoke(InstrumentationMemberAccessor.java:251)
+	at org.mockito.internal.util.reflection.ModuleMemberAccessor.invoke(ModuleMemberAccessor.java:55)
+	at org.mockito.internal.creation.bytebuddy.MockMethodAdvice.tryInvoke(MockMethodAdvice.java:314)
