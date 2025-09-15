@@ -1,136 +1,117 @@
-        when(relationshipRepository.getPersonRelationship(any(), any()))
-                .thenReturn(firstRelation, secondRelation);
-
-org.mockito.exceptions.misusing.WrongTypeOfReturnValue: 
-RelationshipModel cannot be returned by toString()
-toString() should return String
+package com.arabbank.mdm.model.entity.golden;
 
 
-RelationshipModel firstRelation = new RelationshipModel();
-firstRelation.setGlobalId("9999");
-firstRelation.setOrganization("AB");
-firstRelation.setRole("AH");
-firstRelation.setRelationCountry("EG");
-firstRelation.setRelationshipSequence(1);
+import com.arabbank.mdm.commons.lib.model.dto.Translation;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-RelationshipModel secondRelation = new RelationshipModel();
-secondRelation.setGlobalId("8888");
-secondRelation.setOrganization("AB");
-secondRelation.setRole("AH");
-secondRelation.setRelationCountry("EG");
-secondRelation.setRelationshipSequence(1);
+import java.sql.Date;
+import java.sql.Timestamp;
 
-when(relationshipRepository.getPersonRelationship(any(), any()))
-        .thenReturn(firstRelation, secondRelation);
+@Data
+@Entity(name = "MDM_RELATIONSHIPS")
+@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "JST")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class RelationshipModel {
+    @JsonIgnore
+    private Long id;
+    @Id
+    @GeneratedValue
+    @Column(name = "UNIVERSAL_ID")
+    private String universalId;
+
+    @AttributeOverride(name = "code", column = @Column(name = "ROLE"))
+    private Translation role;
+
+    @Column(name = "WITHGLOBALID")
+    private String withGlobalId;
+
+    @Column(name = "ORGANIZATION")
+    private String organization;
+
+    @Column(name = "RELATED_PRODUCT")
+    private String customerId;
+
+    @AttributeOverride(name = "code", column = @Column(name = "RELATION_TO_PARTY"))
+    private Translation relationToParty;
+
+    @Transient
+    private String relationDetails;
+
+    @Column(name = "RELATIONSHIP_SEQUENCE")
+    private Integer relationshipSequence;
+
+    @Column(name = "GLOBAL_ID")
+    private String globalId;
+
+    @Column(name = "ORIGINAL_GLOBAL_ID")
+    private String orignalGlobalId;
+
+    @AttributeOverride(name = "code", column = @Column(name = "RELATION_COUNTRY"))
+    private Translation relationCountry;
+
+    @Column(name = "WITHPRODUCT")
+    private String withProduct;
+
+    @Column(name = "RELATION_DESCRIPTION")
+    private String relationDescription;
+
+    @Column(name = "LATEST_UNIQUE_REFERENCE")
+    private String latestUniqueRefrence;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss a")
+    @Column(name = "UPDATE_TIMESTAMP")
+    private Timestamp updateTimestamp;
+
+    @Column(name = "UPDATE_COUNTRY")
+    private String updateCountry;
+
+    @Column(name = "UPDATE_PROGRAM")
+    private String updateProgram;
+
+    @Column(name = "UPDATE_SYSTEM")
+    private String updateSystem;
+
+    @Column(name = "UPDATE_USER")
+    private String updateUser;
+
+    @Column(name = "AUTHORIZER_USER")
+    private String authorizedUser;
+
+    @Column(name = "DATE_LAST_UPDATED")
+    private Date dateLastUpdate;
+
+    @Column(name = "DATE_RECORD_CREATED")
+    private Date dateRecordCreated;
+
+    @Column(name = "UPDATED_TODAY")
+    private Integer updatedToday;
+
+    @Column(name = "DATE_DELETED")
+    private Date dateDeleted;
+
+    @Column(name = "IS_DELETED")
+    private Integer isDeleted;
+
+    @Transient
+    private String relatedName;
+}
 
 
 
+And Translation class is
 
-
-
-CompareResponse(names=null, nationalities=null, overAllRatio=0.0, parties=null, partiesCountry=null, message=can't retrieve individual information not found, success=false, firstPersonGlobalId=null, secondPersonGlobalId=null)  
-	@Query(value = "SELECT * FROM MDM_RELATIONSHIPS where ( :RELATED_PRODUCT is null or RELATED_PRODUCT = :RELATED_PRODUCT ) and GLOBAL_ID = NVL(:#{#search.globalId }, GLOBAL_ID) AND RELATION_COUNTRY = NVL(:#{#search.relationCountry }, RELATION_COUNTRY) AND ROLE = NVL(:#{#search.role }, ROLE) AND ORGANIZATION = NVL(:#{#search.organization }, ORGANIZATION) AND RELATIONSHIP_SEQUENCE = NVL(:#{#search.relationShipSequence }, RELATIONSHIP_SEQUENCE ) ORDER BY UPDATE_TIMESTAMP DESC FETCH FIRST 1 ROWS ONLY", nativeQuery = true)
-	RelationshipModel getPersonRelationship(@Param("RELATED_PRODUCT") String relatedProduct,
-			@Param("search") SearchObjDto search);
-
-    @Test
-    void testCompareIndividual_WithPhoneticsResponse() {
-        // Arrange
-        when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
-        when(webClientBuilder.build()).thenReturn(webClient);
-
-        // --- Mock the WebClient chain properly ---
-        WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
-        WebClient.RequestBodySpec requestBodySpec = mock(WebClient.RequestBodySpec.class);
-        WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
-        WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
-
-        when(webClient.post()).thenReturn(requestBodyUriSpec);
-        when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
-        when(requestBodySpec.bodyValue(any())).thenReturn((WebClient.RequestHeadersSpec) requestHeadersSpec);
-        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
-
-        // Mock the response
-        CompareResponse mockResponse = CompareResponse.builder()
-                .success(true)
-                .firstPersonGlobalId("9999")
-                .secondPersonGlobalId("8888")
-                .build();
-
-        when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
-
-        // --- Create a valid MdmCompareRequestDto (the type expected by the service) ---
-        MdmCompareRequestDto testRequest = new MdmCompareRequestDto();
-
-        testRequest.setFirstPersonIdentifiers(PersonIdentifierDto.builder()
-                .globalId("9999")
-                .relationshipCountry("EG")
-                .organization("AB")
-                .role("AH")
-                .relationshipSequence(1)
-                .customerId("9999")
-                .build());
-
-        testRequest.setSecondPersonIdentifiers(PersonIdentifierDto.builder()
-                .globalId("8888")
-                .relationshipCountry("EG")
-                .organization("AB")
-                .role("AH")
-                .relationshipSequence(1)
-                .customerId("8888")
-                .build());
-
-        // Act
-        CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
-
-        // Assert
-        assertNotNull(response);
-        assertTrue(!response.isSuccess());
-        assertEquals("9999", response.getFirstPersonGlobalId()); // here the actual is null because (see the method in the service)
-        assertEquals("8888", response.getSecondPersonGlobalId());
-    }
-
-
-
-
-public CompareResponse getCompareIndividualResponse(MdmCompareRequestDto compareRequest, boolean ignoreNationalityFields) {
-        try {
-            log.info("getCompareIndividualResponse({})", compareRequest);
-            PersonIdentifierDto firstDtoPersonIdentifiers = compareRequest.getFirstPersonIdentifiers();
-            PersonIdentifierDto secondPersonIdentifires = compareRequest.getSecondPersonIdentifiers();
-
-            RelationshipModel firstRelation = getPersonRelationship(firstDtoPersonIdentifiers);
-            RelationshipModel secondRelation = getPersonRelationship(secondPersonIdentifires);
-
-            CompareRequestDto phoneticsCompareRequestDto = getIndividualCompareRequest(firstRelation, secondRelation, ignoreNationalityFields); // here I get java.lang.NullPointerException: Cannot invoke "com.arabbank.mdm.model.entity.golden.RelationshipModel.getGlobalId()" because "firstRelation" is null
-
-            String phoneticsUrl = configReader.getProperty("ab.mdm.phonetics.service.url");
-            WebClient webClient = webClientBuilder.baseUrl(phoneticsUrl).build();
-
-            CompareResponse compareResponseDto = webClient.post()
-                    .uri(Constant.PHONETICS_INDIVIDUAL_COMPARE_URI)
-                    .bodyValue(phoneticsCompareRequestDto)
-                    .retrieve()
-                    .bodyToMono(CompareResponse.class)
-                    .block();
-
-            if (compareResponseDto == null) {
-                return CompareResponse.builder()
-                        .success(false)
-                        .message("Response is Null from Phonetices !")
-                        .build();
-            }
-            compareResponseDto.setSuccess(true);
-            compareResponseDto.setFirstPersonGlobalId(firstDtoPersonIdentifiers.getGlobalId());
-            compareResponseDto.setSecondPersonGlobalId(secondPersonIdentifires.getGlobalId());
-            return compareResponseDto;
-        } catch (RuntimeException e) {
-            log.error(e.getMessage(), e);
-            return CompareResponse.builder()
-                    .success(false)
-                    .message(e.getMessage())
-                    .build();
-        } finally {
-            log.info("/getCompareIndividualResponse({})", compareRequest);
-        }
-    }
+public class Translation {
+    @Transient
+    private String lookupName;
+    @JsonProperty("code")
+    private String code;
+    @Transient
+    private String description;
