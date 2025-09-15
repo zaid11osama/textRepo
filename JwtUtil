@@ -1,5 +1,7 @@
   
-
+	@Query(value = "SELECT * FROM MDM_RELATIONSHIPS where ( :RELATED_PRODUCT is null or RELATED_PRODUCT = :RELATED_PRODUCT ) and GLOBAL_ID = NVL(:#{#search.globalId }, GLOBAL_ID) AND RELATION_COUNTRY = NVL(:#{#search.relationCountry }, RELATION_COUNTRY) AND ROLE = NVL(:#{#search.role }, ROLE) AND ORGANIZATION = NVL(:#{#search.organization }, ORGANIZATION) AND RELATIONSHIP_SEQUENCE = NVL(:#{#search.relationShipSequence }, RELATIONSHIP_SEQUENCE ) ORDER BY UPDATE_TIMESTAMP DESC FETCH FIRST 1 ROWS ONLY", nativeQuery = true)
+	RelationshipModel getPersonRelationship(@Param("RELATED_PRODUCT") String relatedProduct,
+			@Param("search") SearchObjDto search);
 
     @Test
     void testCompareIndividual_WithPhoneticsResponse() {
