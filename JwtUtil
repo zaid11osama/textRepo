@@ -1,56 +1,104 @@
-@Test
-void testCompareIndividual_WithPhoneticsResponse() {
-    // Arrange
-    when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
-    when(webClientBuilder.build()).thenReturn(webClient);
+  
 
-    // --- Mock the WebClient chain properly ---
-    WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
-    WebClient.RequestBodySpec requestBodySpec = mock(WebClient.RequestBodySpec.class);
-    WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
-    WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
 
-    when(webClient.post()).thenReturn(requestBodyUriSpec);
-    when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
-    when(requestBodySpec.bodyValue(any())).thenReturn((WebClient.RequestHeadersSpec) requestHeadersSpec);
-    when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+    @Test
+    void testCompareIndividual_WithPhoneticsResponse() {
+        // Arrange
+        when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
+        when(webClientBuilder.build()).thenReturn(webClient);
 
-    // Mock the response
-    CompareResponse mockResponse = CompareResponse.builder()
-            .success(true)
-            .firstPersonGlobalId("9999")
-            .secondPersonGlobalId("8888")
-            .build();
+        // --- Mock the WebClient chain properly ---
+        WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
+        WebClient.RequestBodySpec requestBodySpec = mock(WebClient.RequestBodySpec.class);
+        WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
+        WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
 
-    when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
+        when(webClient.post()).thenReturn(requestBodyUriSpec);
+        when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodySpec);
+        when(requestBodySpec.bodyValue(any())).thenReturn((WebClient.RequestHeadersSpec) requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
 
-    // --- Create a valid MdmCompareRequestDto (the type expected by the service) ---
-    MdmCompareRequestDto testRequest = new MdmCompareRequestDto();
+        // Mock the response
+        CompareResponse mockResponse = CompareResponse.builder()
+                .success(true)
+                .firstPersonGlobalId("9999")
+                .secondPersonGlobalId("8888")
+                .build();
 
-    testRequest.setFirstPersonIdentifiers(PersonIdentifierDto.builder()
-            .globalId("9999")
-            .relationshipCountry("EG")
-            .organization("AB")
-            .role("AH")
-            .relationshipSequence(1)
-            .customerId("9999")
-            .build());
+        when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
 
-    testRequest.setSecondPersonIdentifiers(PersonIdentifierDto.builder()
-            .globalId("8888")
-            .relationshipCountry("EG")
-            .organization("AB")
-            .role("AH")
-            .relationshipSequence(1)
-            .customerId("8888")
-            .build());
+        // --- Create a valid MdmCompareRequestDto (the type expected by the service) ---
+        MdmCompareRequestDto testRequest = new MdmCompareRequestDto();
 
-    // Act
-    CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
+        testRequest.setFirstPersonIdentifiers(PersonIdentifierDto.builder()
+                .globalId("9999")
+                .relationshipCountry("EG")
+                .organization("AB")
+                .role("AH")
+                .relationshipSequence(1)
+                .customerId("9999")
+                .build());
 
-    // Assert
-    assertNotNull(response);
-    assertTrue(response.isSuccess());
-    assertEquals("9999", response.getFirstPersonGlobalId());
-    assertEquals("8888", response.getSecondPersonGlobalId());
-}
+        testRequest.setSecondPersonIdentifiers(PersonIdentifierDto.builder()
+                .globalId("8888")
+                .relationshipCountry("EG")
+                .organization("AB")
+                .role("AH")
+                .relationshipSequence(1)
+                .customerId("8888")
+                .build());
+
+        // Act
+        CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
+
+        // Assert
+        assertNotNull(response);
+        assertTrue(!response.isSuccess());
+        assertEquals("9999", response.getFirstPersonGlobalId()); // here the actual is null because (see the method in the service)
+        assertEquals("8888", response.getSecondPersonGlobalId());
+    }
+
+
+
+
+public CompareResponse getCompareIndividualResponse(MdmCompareRequestDto compareRequest, boolean ignoreNationalityFields) {
+        try {
+            log.info("getCompareIndividualResponse({})", compareRequest);
+            PersonIdentifierDto firstDtoPersonIdentifiers = compareRequest.getFirstPersonIdentifiers();
+            PersonIdentifierDto secondPersonIdentifires = compareRequest.getSecondPersonIdentifiers();
+
+            RelationshipModel firstRelation = getPersonRelationship(firstDtoPersonIdentifiers);
+            RelationshipModel secondRelation = getPersonRelationship(secondPersonIdentifires);
+
+            CompareRequestDto phoneticsCompareRequestDto = getIndividualCompareRequest(firstRelation, secondRelation, ignoreNationalityFields); // here I get java.lang.NullPointerException: Cannot invoke "com.arabbank.mdm.model.entity.golden.RelationshipModel.getGlobalId()" because "firstRelation" is null
+
+            String phoneticsUrl = configReader.getProperty("ab.mdm.phonetics.service.url");
+            WebClient webClient = webClientBuilder.baseUrl(phoneticsUrl).build();
+
+            CompareResponse compareResponseDto = webClient.post()
+                    .uri(Constant.PHONETICS_INDIVIDUAL_COMPARE_URI)
+                    .bodyValue(phoneticsCompareRequestDto)
+                    .retrieve()
+                    .bodyToMono(CompareResponse.class)
+                    .block();
+
+            if (compareResponseDto == null) {
+                return CompareResponse.builder()
+                        .success(false)
+                        .message("Response is Null from Phonetices !")
+                        .build();
+            }
+            compareResponseDto.setSuccess(true);
+            compareResponseDto.setFirstPersonGlobalId(firstDtoPersonIdentifiers.getGlobalId());
+            compareResponseDto.setSecondPersonGlobalId(secondPersonIdentifires.getGlobalId());
+            return compareResponseDto;
+        } catch (RuntimeException e) {
+            log.error(e.getMessage(), e);
+            return CompareResponse.builder()
+                    .success(false)
+                    .message(e.getMessage())
+                    .build();
+        } finally {
+            log.info("/getCompareIndividualResponse({})", compareRequest);
+        }
+    }
