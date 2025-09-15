@@ -1,15 +1,64 @@
-public class CompareResponse {
-    @JsonProperty("names")
-    private NamesCompareResponse names;
-    @JsonProperty("nationalities")
-    private NationalityCompareResponse nationalities;
-    @JsonProperty("over_all_ratio")
-    private double overAllRatio;
-    @JsonProperty("parties")
-    private PartyCompareResponse parties;
-    @JsonProperty("parties_country")
-    private PartyCountryCompareResponse partiesCountry;
-    private String message;
-    private Boolean success;
-    private String firstPersonGlobalId;
-    private String secondPersonGlobalId;
+@Test
+void testCompareIndividual_WebClientMocked() throws Exception {
+    // 1. Prepare request DTO
+    MdmCompareRequestDto testRequest = new MdmCompareRequestDto();
+    testRequest.setFirstPersonIdentifiers(PersonIdentifierDto.builder()
+            .globalId("9999")
+            .relationshipCountry("EG")
+            .organization("AB")
+            .role("AH")
+            .relationshipSequence(1)
+            .customerId("9999")
+            .build());
+    testRequest.setSecondPersonIdentifiers(PersonIdentifierDto.builder()
+            .globalId("8888")
+            .relationshipCountry("EG")
+            .organization("AB")
+            .role("AH")
+            .relationshipSequence(1)
+            .customerId("8888")
+            .build());
+
+    String requestBody = fileReader.convertDataToString(testRequest);
+
+    // 2. Mock configReader to return dummy URL
+    when(configReader.getProperty("ab.mdm.phonetics.service.url")).thenReturn("http://dummy-phoentics-url");
+
+    // 3. Mock getPersonRelationship to return dummy RelationshipModel objects
+    RelationshipModel firstRelation = new RelationshipModel(); // fill fields if needed
+    RelationshipModel secondRelation = new RelationshipModel();
+    when(compareService.getPersonRelationship(any(PersonIdentifierDto.class)))
+            .thenReturn(firstRelation)
+            .thenReturn(secondRelation);
+
+    // 4. Mock WebClient chain
+    WebClient webClientMock = mock(WebClient.class, RETURNS_DEEP_STUBS); // deep stub for chained calls
+    when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
+    when(webClientBuilder.build()).thenReturn(webClientMock);
+
+    CompareResponse compareResponse = new CompareResponse();
+    compareResponse.setSuccess(true);
+    compareResponse.setMessage("Mocked Response");
+    compareResponse.setFirstPersonGlobalId("9999");
+    compareResponse.setSecondPersonGlobalId("8888");
+
+    // Mock WebClient.post().uri(...).bodyValue(...).retrieve().bodyToMono(...).block()
+    when(webClientMock.post()
+            .uri(anyString())
+            .bodyValue(any())
+            .retrieve()
+            .bodyToMono(CompareResponse.class)
+            .block())
+            .thenReturn(compareResponse);
+
+    // 5. Perform MockMvc request
+    mockMvc.perform(MockMvcRequestBuilders.post(COMPARE_API_PATH + COMPARE_INDIVIDUAL_PATH)
+                    .param("ignoreNationalityFields", "true") // if needed
+                    .content(requestBody)
+                    .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.success").value(true))
+            .andExpect(jsonPath("$.message").value("Mocked Response"))
+            .andExpect(jsonPath("$.firstPersonGlobalId").value("9999"))
+            .andExpect(jsonPath("$.secondPersonGlobalId").value("8888"));
+}
