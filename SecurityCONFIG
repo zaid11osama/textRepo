@@ -1,57 +1,15 @@
-@Test
-void testCompareIndividual_WithPhoneticsResponse() {
-    // Arrange
-    MdmCompareRequestDto testRequest = new MdmCompareRequestDto();
-    testRequest.setFirstPersonIdentifiers(PersonIdentifierDto.builder()
-            .globalId("9999")
-            .relationshipCountry("EG")
-            .organization("AB")
-            .role("AH")
-            .relationshipSequence(1)
-            .customerId("9999")
-            .build());
-    testRequest.setSecondPersonIdentifiers(PersonIdentifierDto.builder()
-            .globalId("8888")
-            .relationshipCountry("EG")
-            .organization("AB")
-            .role("AH")
-            .relationshipSequence(1)
-            .customerId("8888")
-            .build());
-
-    // 👇 mock this so getIndividualObjectRequest doesn’t throw ServiceNotFoundException
-    when(relationshipRepository.getPersonRelationship(any(), any()))
-            .thenReturn(mock(RelationshipModel.class));
-
-    // also if getIndividualObjectRequest uses another repo/service, mock it here
-    when(individualRepository.findByGlobalId(anyString()))
-            .thenReturn(Optional.of(new Individual())); // or your DTO
-
-    // Mock WebClient chain
-    when(webClientBuilder.baseUrl(anyString())).thenReturn(webClientBuilder);
-    when(webClientBuilder.build()).thenReturn(webClient);
-
-    WebClient.RequestBodyUriSpec requestBodyUriSpec = mock(WebClient.RequestBodyUriSpec.class);
-    WebClient.RequestHeadersSpec<?> requestHeadersSpec = mock(WebClient.RequestHeadersSpec.class);
-    WebClient.ResponseSpec responseSpec = mock(WebClient.ResponseSpec.class);
-
-    when(webClient.post()).thenReturn(requestBodyUriSpec);
-    when(requestBodyUriSpec.uri(anyString())).thenReturn(requestBodyUriSpec);
-    when(requestBodyUriSpec.bodyValue(any())).thenReturn((WebClient.RequestHeadersSpec) requestHeadersSpec);
-    when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
-
-    CompareResponse mockResponse = CompareResponse.builder()
-            .success(true)
-            .build();
-
-    when(responseSpec.bodyToMono(CompareResponse.class)).thenReturn(Mono.just(mockResponse));
-
-    // Act
-    CompareResponse response = compareService.getCompareIndividualResponse(testRequest, false);
-
-    // Assert
-    assertNotNull(response);
-    assertTrue(response.isSuccess());
-    assertEquals("9999", response.getFirstPersonGlobalId());
-    assertEquals("8888", response.getSecondPersonGlobalId());
-}
+public class CompareResponse {
+    @JsonProperty("names")
+    private NamesCompareResponse names;
+    @JsonProperty("nationalities")
+    private NationalityCompareResponse nationalities;
+    @JsonProperty("over_all_ratio")
+    private double overAllRatio;
+    @JsonProperty("parties")
+    private PartyCompareResponse parties;
+    @JsonProperty("parties_country")
+    private PartyCountryCompareResponse partiesCountry;
+    private String message;
+    private Boolean success;
+    private String firstPersonGlobalId;
+    private String secondPersonGlobalId;
