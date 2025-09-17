@@ -1,58 +1,6 @@
-I have this test
+service
 
-
-   @Test
-    void testCompareIndividual_Success() throws Exception {
-
-        MdmCompareRequestDto testRequest = new MdmCompareRequestDto();
-
-        testRequest.setFirstPersonIdentifiers(PersonIdentifierDto.builder()
-                .globalId("9999")
-                .relationshipCountry("EG")
-                .organization("AB")
-                .role("AH")
-                .relationshipSequence(1)
-                .customerId("9999")
-                .build());
-
-
-        testRequest.setSecondPersonIdentifiers(PersonIdentifierDto.builder()
-                .globalId("8888")
-                .relationshipCountry("EG")
-                .organization("AB")
-                .role("AH")
-                .relationshipSequence(1)
-                .customerId("8888")
-                .build());
-
-        String requestBody = fileReader.convertDataToString(testRequest);
-
-        when(relationshipRepository.getPersonRelationship(any(), any())).thenReturn(relationship);
-
-//        when(compareService.getCompareIndividualResponse(testRequest)).thenReturn(compareResponseDto);
-
-        mockMvc.perform(MockMvcRequestBuilders.post(COMPARE_API_PATH + COMPARE_INDIVIDUAL_PATH)
-                        .content(requestBody)
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andReturn();
-    }
-
-
-I want to get benefit of it to test
-
-
-	@PostMapping("/individual")
-	public ResponseEntity<Object> compareIndividual(@RequestBody MdmCompareRequestDto mdmCompareRequestDto,
-													@RequestParam(required = false) boolean ignoreNationalityFields) {
-		return ResponseEntity.status(HttpStatus.OK).body(compareService.getCompareIndividualResponse(mdmCompareRequestDto, ignoreNationalityFields));
-	}
-
-
-and service is
-
-
-  public CompareResponse getCompareIndividualResponse(MdmCompareRequestDto compareRequest, boolean ignoreNationalityFields) {
+    public CompareResponse getCompareIndividualResponse(MdmCompareRequestDto compareRequest, boolean ignoreNationalityFields) {
         try {
             log.info("getCompareIndividualResponse({})", compareRequest);
             PersonIdentifierDto firstDtoPersonIdentifiers = compareRequest.getFirstPersonIdentifiers();
@@ -83,6 +31,7 @@ and service is
             compareResponseDto.setFirstPersonGlobalId(firstDtoPersonIdentifiers.getGlobalId());
             compareResponseDto.setSecondPersonGlobalId(secondPersonIdentifires.getGlobalId());
             return compareResponseDto;
+
         } catch (RuntimeException e) {
             log.error(e.getMessage(), e);
             return CompareResponse.builder()
@@ -94,7 +43,231 @@ and service is
         }
     }
 
-start testing from 
 
- String phoneticsUrl = configReader.getProperty("ab.mdm.phonetics.service.url");
-            WebClient webClient = webClientBuilder.baseUrl(phoneticsUrl).build();
+
+
+
+
+
+
+controller 
+
+	@PostMapping("/individual")
+	public ResponseEntity<Object> compareIndividual(@RequestBody MdmCompareRequestDto mdmCompareRequestDto,
+													@RequestParam(required = false) boolean ignoreNationalityFields) {
+		return ResponseEntity.status(HttpStatus.OK).body(compareService.getCompareIndividualResponse(mdmCompareRequestDto, ignoreNationalityFields));
+	}
+
+
+
+
+
+
+public class MdmCompareRequestDto {
+
+    private PersonIdentifierDto firstPersonIdentifiers;
+    private PersonIdentifierDto secondPersonIdentifiers;
+
+}
+
+
+
+
+
+@Builder
+public class PersonIdentifierDto {
+
+    private String globalId;
+    private String role;
+    private Integer relationshipSequence;
+    private String relationshipCountry;
+    private String organization;
+    private String customerId;
+    private String language;
+
+}
+
+
+
+
+
+
+
+
+public class RelationshipModel {
+    @JsonIgnore
+    private Long id;
+    @Id
+    @GeneratedValue
+    @Column(name = "UNIVERSAL_ID")
+    private String universalId;
+
+    @AttributeOverride(name = "code", column = @Column(name = "ROLE"))
+    private Translation role;
+
+    @Column(name = "WITHGLOBALID")
+    private String withGlobalId;
+
+    @Column(name = "ORGANIZATION")
+    private String organization;
+
+    @Column(name = "RELATED_PRODUCT")
+    private String customerId;
+
+    @AttributeOverride(name = "code", column = @Column(name = "RELATION_TO_PARTY"))
+    private Translation relationToParty;
+
+    @Transient
+    private String relationDetails;
+
+    @Column(name = "RELATIONSHIP_SEQUENCE")
+    private Integer relationshipSequence;
+
+    @Column(name = "GLOBAL_ID")
+    private String globalId;
+
+    @Column(name = "ORIGINAL_GLOBAL_ID")
+    private String orignalGlobalId;
+
+    @AttributeOverride(name = "code", column = @Column(name = "RELATION_COUNTRY"))
+    private Translation relationCountry;
+
+    @Column(name = "WITHPRODUCT")
+    private String withProduct;
+
+    @Column(name = "RELATION_DESCRIPTION")
+    private String relationDescription;
+
+    @Column(name = "LATEST_UNIQUE_REFERENCE")
+    private String latestUniqueRefrence;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss a")
+    @Column(name = "UPDATE_TIMESTAMP")
+    private Timestamp updateTimestamp;
+
+    @Column(name = "UPDATE_COUNTRY")
+    private String updateCountry;
+
+    @Column(name = "UPDATE_PROGRAM")
+    private String updateProgram;
+
+    @Column(name = "UPDATE_SYSTEM")
+    private String updateSystem;
+
+    @Column(name = "UPDATE_USER")
+    private String updateUser;
+
+    @Column(name = "AUTHORIZER_USER")
+    private String authorizedUser;
+
+    @Column(name = "DATE_LAST_UPDATED")
+    private Date dateLastUpdate;
+
+    @Column(name = "DATE_RECORD_CREATED")
+    private Date dateRecordCreated;
+
+    @Column(name = "UPDATED_TODAY")
+    private Integer updatedToday;
+
+    @Column(name = "DATE_DELETED")
+    private Date dateDeleted;
+
+    @Column(name = "IS_DELETED")
+    private Integer isDeleted;
+
+    @Transient
+    private String relatedName;
+}
+
+
+
+
+
+
+
+public class CompareRequestDto {
+
+    @JsonProperty("parameters")
+    private CompareParametersDto parameters;
+
+    @JsonProperty("object_one")
+    private ObjRequestDto firstObject;
+
+    @JsonProperty("object_two")
+    private ObjRequestDto secondObject;
+
+    private String token;
+
+}
+
+
+
+
+public class CompareParametersDto {
+
+    @JsonProperty("pre_processing")
+    public boolean preProcessing;
+
+    @JsonProperty("party_type")
+    public String partyType;
+
+    @JsonProperty("party_id_one")
+    public String partyOneId;
+
+    @JsonProperty("party_id_two")
+    public String partyTwoId;
+
+    @JsonProperty("return_object")
+    public String returnObject;
+}
+
+
+
+
+
+
+public class ObjRequestDto {
+    @JsonProperty(value = "names")
+    private EntryNameDto names;
+
+    @JsonProperty(value = "nationalities")
+    private List<NationalityRequestDto> nationalities;
+
+    @JsonProperty(value = "parties")
+    private PartiesRequestDto parties;
+
+    @JsonProperty(value = "parties_country")
+    private PartyCountryRequestDto partiesCountry;
+
+}
+
+
+
+
+
+
+    private CompareRequestDto getIndividualCompareRequest(RelationshipModel firstRelation, RelationshipModel secondRelation, boolean ignoreNationalityFields) {
+        try {
+            log.info("getIndividualCompareRequest({},{})", firstRelation, secondRelation);
+            CompareParametersDto compareParametersDto = getIndividualCompareParameters(firstRelation, secondRelation);
+            ObjRequestDto firstObjectRequest = getIndividualObjectRequest(firstRelation);
+            ObjRequestDto secondObjectRequest = getIndividualObjectRequest(secondRelation);
+
+            if (ignoreNationalityFields) {
+                firstObjectRequest = buildObjRequestIgnoringNationalityFields(firstObjectRequest);
+                secondObjectRequest = buildObjRequestIgnoringNationalityFields(secondObjectRequest);
+            }
+
+            return CompareRequestDto.builder()
+                    .parameters(compareParametersDto)
+                    .firstObject(firstObjectRequest)
+                    .secondObject(secondObjectRequest)
+                    .build();
+        } catch (RuntimeException ex) {
+            log.error(ex.getMessage());
+            throw ex;
+        } finally {
+            log.info("/getIndividualCompareRequest({},{})", firstRelation, secondRelation);
+        }
+    }
+
