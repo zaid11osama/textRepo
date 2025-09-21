@@ -1,14 +1,12 @@
-@Mock
-private WebClient.Builder webClientBuilder;
+  when(webClientBuilder.baseUrl("http://mocked-phonetics-service"))
+                .thenReturn(webClientBuilder);
+        when(webClientBuilder.build()).thenReturn(webClient);
 
-@Mock
-private WebClient webClient;
-
-@Mock
-private WebClient.RequestHeadersUriSpec<?> requestSpec;
-
-@Mock
-private WebClient.RequestHeadersSpec<?> headersSpec;
-
-@Mock
-private WebClient.ResponseSpec responseSpec;
+        // Mock the WebClient fluent API
+        when(webClient.post()).thenReturn(requestBodyUriSpec);
+        when(requestBodyUriSpec.uri(Constant.PHONETICS_INDIVIDUAL_COMPARE_URI))
+                .thenReturn(requestBodyUriSpec);
+        when(requestBodyUriSpec.bodyValue(dto)).thenReturn(requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+        when(responseSpec.bodyToMono(CompareResponse.class))
+                .thenReturn(Mono.just(fakeResponse));
