@@ -1,117 +1,14 @@
-package com.arabbank.mdm.model.entity.golden;
+@Mock
+private WebClient.Builder webClientBuilder;
 
+@Mock
+private WebClient webClient;
 
-import com.arabbank.mdm.commons.lib.model.dto.Translation;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+@Mock
+private WebClient.RequestHeadersUriSpec<?> requestSpec;
 
-import java.sql.Date;
-import java.sql.Timestamp;
+@Mock
+private WebClient.RequestHeadersSpec<?> headersSpec;
 
-@Data
-@Entity(name = "MDM_RELATIONSHIPS")
-@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "JST")
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class RelationshipModel {
-    @JsonIgnore
-    private Long id;
-    @Id
-    @GeneratedValue
-    @Column(name = "UNIVERSAL_ID")
-    private String universalId;
-
-    @AttributeOverride(name = "code", column = @Column(name = "ROLE"))
-    private Translation role;
-
-    @Column(name = "WITHGLOBALID")
-    private String withGlobalId;
-
-    @Column(name = "ORGANIZATION")
-    private String organization;
-
-    @Column(name = "RELATED_PRODUCT")
-    private String customerId;
-
-    @AttributeOverride(name = "code", column = @Column(name = "RELATION_TO_PARTY"))
-    private Translation relationToParty;
-
-    @Transient
-    private String relationDetails;
-
-    @Column(name = "RELATIONSHIP_SEQUENCE")
-    private Integer relationshipSequence;
-
-    @Column(name = "GLOBAL_ID")
-    private String globalId;
-
-    @Column(name = "ORIGINAL_GLOBAL_ID")
-    private String orignalGlobalId;
-
-    @AttributeOverride(name = "code", column = @Column(name = "RELATION_COUNTRY"))
-    private Translation relationCountry;
-
-    @Column(name = "WITHPRODUCT")
-    private String withProduct;
-
-    @Column(name = "RELATION_DESCRIPTION")
-    private String relationDescription;
-
-    @Column(name = "LATEST_UNIQUE_REFERENCE")
-    private String latestUniqueRefrence;
-
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss a")
-    @Column(name = "UPDATE_TIMESTAMP")
-    private Timestamp updateTimestamp;
-
-    @Column(name = "UPDATE_COUNTRY")
-    private String updateCountry;
-
-    @Column(name = "UPDATE_PROGRAM")
-    private String updateProgram;
-
-    @Column(name = "UPDATE_SYSTEM")
-    private String updateSystem;
-
-    @Column(name = "UPDATE_USER")
-    private String updateUser;
-
-    @Column(name = "AUTHORIZER_USER")
-    private String authorizedUser;
-
-    @Column(name = "DATE_LAST_UPDATED")
-    private Date dateLastUpdate;
-
-    @Column(name = "DATE_RECORD_CREATED")
-    private Date dateRecordCreated;
-
-    @Column(name = "UPDATED_TODAY")
-    private Integer updatedToday;
-
-    @Column(name = "DATE_DELETED")
-    private Date dateDeleted;
-
-    @Column(name = "IS_DELETED")
-    private Integer isDeleted;
-
-    @Transient
-    private String relatedName;
-}
-
-
-
-And Translation class is
-
-public class Translation {
-    @Transient
-    private String lookupName;
-    @JsonProperty("code")
-    private String code;
-    @Transient
-    private String description;
+@Mock
+private WebClient.ResponseSpec responseSpec;
