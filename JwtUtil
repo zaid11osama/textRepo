@@ -1,48 +1,27 @@
-public class LogMainDto {
-
-	private HeaderDto header;
-	private String inputTimestamp;
-	private String outputTimestamp;
-	private String channel;
-	private String channelReference;
-	private String mdmReference;
-	private String totalSubs;
-	private String status;
-	private String message;
-	private String numberOfRetries;
-	private FooterDto footer;
 
 
+@Builder
+public class LockCustomerDto {
+	private String customerId;
+	private String customerCountry;
+	private String latestUniqueReference;
+	private String updateProgram;
+	private String requestCountry;
+	private String requestChannel;
+	private String requester;
 }
 
-
-
-
-public class OrchService {
-
-	@Autowired
-	private OrchMainRepository orchMainRepository;
-
-	@Autowired
-	private OrchSubMainRepository orchSubMainRepository;
-
-	@Autowired
-	private LogCupTransactionRepository logCupTransactionRepository;
-
-	@Autowired
-	private RelationshipRepository relationshipRepository;
-
-	@Autowired
-	private LockedCustomerRepository lockedCustomerRepository;
-
-	public void insertLogMain(LogMainDto logMainDto) {
+public Integer lock(LockCustomerDto lockCustomerDto) {
 		try {
-			log.info("insertLogMain({})", logMainDto);
-			orchMainRepository.insertOrchMain(logMainDto.getHeader(), logMainDto.getFooter());
+			log.info("lock({})", lockCustomerDto);
+			return lockedCustomerRepository.lockCustomer(lockCustomerDto, UUID.randomUUID().toString());
 		} catch (RuntimeException ex) {
 			log.error(ex.getMessage());
-			throw new GoldenMDMException("Error inserting log for main");
+			throw new GoldenMDMException("unable to lock customer please try again");
 		} finally {
-			log.info("/insertLogMain({})", logMainDto);
+			log.info("/lock({})", lockCustomerDto);
 		}
 	}
+
+
+
