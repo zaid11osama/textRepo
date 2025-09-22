@@ -1,12 +1,25 @@
-  when(webClientBuilder.baseUrl("http://mocked-phonetics-service"))
-                .thenReturn(webClientBuilder);
-        when(webClientBuilder.build()).thenReturn(webClient);
+  @Transactional
+    public void updateNullTablesGolden(String tableName,String globalId) {
+        updateNull(tableName, globalId);
+    }
 
-        // Mock the WebClient fluent API
-        when(webClient.post()).thenReturn(requestBodyUriSpec);
-        when(requestBodyUriSpec.uri(Constant.PHONETICS_INDIVIDUAL_COMPARE_URI))
-                .thenReturn(requestBodyUriSpec);
-        when(requestBodyUriSpec.bodyValue(dto)).thenReturn(requestHeadersSpec);
-        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
-        when(responseSpec.bodyToMono(CompareResponse.class))
-                .thenReturn(Mono.just(fakeResponse));
+    @Transactional
+    public void resetToNullTablesGolden(String tableName, String globalId) {
+        resetToNull(tableName, globalId);
+    }
+
+    private void updateNull(String tableName, String globalId) {
+        update(globalId, goldenEntityManager, String.format(UPDATE_TYPE_NULL_QUERY, tableName));
+        update(globalId, goldenEntityManager, String.format(UPDATE_USAGE_NULL_QUERY, tableName));
+    }
+
+    private void resetToNull(String tableName, String globalId) {
+        update(globalId, goldenEntityManager, String.format(RESET_TYPE_TO_NULL_QUERY, tableName));
+        update(globalId, goldenEntityManager, String.format(RESET_USAGE_TO_NULL_QUERY, tableName));
+    }
+
+    private static void update(String globalId, EntityManager entityManager, String commonQuery) {
+        entityManager.createNativeQuery(commonQuery)
+                .setParameter("globalId", globalId)
+                .executeUpdate();
+    }
