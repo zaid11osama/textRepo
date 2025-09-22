@@ -1,7 +1,7 @@
-	public List<RelationshipModel> getRelationships(String globalId) {
+	public List<RelationshipModel> getAllRelationshipsByGlobalId(String globalId) {
 		try {
 			log.info("getRelationships(String globalId)");
-			return relationshipRepository.findAllByGlobalIdAndIsDeletedFalse(globalId, globalId);
+			return relationshipRepository.findRelationshipsByGlobalIdAndIsDeletedFalse(globalId);
 		} catch (RuntimeException ex) {
 			log.error(ex.getMessage());
 			throw new GoldenMDMException("error in fetching relationships");
