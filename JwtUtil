@@ -1,3 +1,23 @@
+public class LogMainDto {
+
+	private HeaderDto header;
+	private String inputTimestamp;
+	private String outputTimestamp;
+	private String channel;
+	private String channelReference;
+	private String mdmReference;
+	private String totalSubs;
+	private String status;
+	private String message;
+	private String numberOfRetries;
+	private FooterDto footer;
+
+
+}
+
+
+
+
 public class OrchService {
 
 	@Autowired
