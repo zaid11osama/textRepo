@@ -1,4 +1,13 @@
-  @Transactional
+    private final EntityManager goldenEntityManager;
+
+    @Autowired
+    public NullCompositeService(
+            @Qualifier("goldenEntityManagerFactory") EntityManager goldenEntityManager) {
+        this.goldenEntityManager = goldenEntityManager;
+    }
+
+
+@Transactional
     public void updateNullTablesGolden(String tableName,String globalId) {
         updateNull(tableName, globalId);
     }
