@@ -1,27 +1,11 @@
-
-
-@Builder
-public class LockCustomerDto {
-	private String customerId;
-	private String customerCountry;
-	private String latestUniqueReference;
-	private String updateProgram;
-	private String requestCountry;
-	private String requestChannel;
-	private String requester;
-}
-
-public Integer lock(LockCustomerDto lockCustomerDto) {
+	public List<RelationshipModel> getRelationships(String globalId) {
 		try {
-			log.info("lock({})", lockCustomerDto);
-			return lockedCustomerRepository.lockCustomer(lockCustomerDto, UUID.randomUUID().toString());
+			log.info("getRelationships(String globalId)");
+			return relationshipRepository.findAllByGlobalIdAndIsDeletedFalse(globalId, globalId);
 		} catch (RuntimeException ex) {
 			log.error(ex.getMessage());
-			throw new GoldenMDMException("unable to lock customer please try again");
+			throw new GoldenMDMException("error in fetching relationships");
 		} finally {
-			log.info("/lock({})", lockCustomerDto);
+			log.info("/getRelationships(String globalId)");
 		}
 	}
-
-
-
