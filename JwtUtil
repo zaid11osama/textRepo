@@ -1,11 +1,30 @@
-	public List<RelationshipModel> getAllRelationshipsByGlobalId(String globalId) {
-		try {
-			log.info("getRelationships(String globalId)");
-			return relationshipRepository.findRelationshipsByGlobalIdAndIsDeletedFalse(globalId);
-		} catch (RuntimeException ex) {
-			log.error(ex.getMessage());
-			throw new GoldenMDMException("error in fetching relationships");
-		} finally {
-			log.info("/getRelationships(String globalId)");
-		}
-	}
+@Test
+    void testGetAllRelationshipsByGlobalId_success() {
+        // Arrange
+        String globalId = "12345";
+        List<RelationshipModel> mockRelationships = List.of(new RelationshipModel());
+        when(relationshipRepository.findRelationshipsByGlobalIdAndIsDeletedFalse(globalId))
+                .thenReturn(mockRelationships);
+
+        // Act
+        List<RelationshipModel> result = orchService.getAllRelationshipsByGlobalId(globalId);
+
+        // Assert
+        assertEquals(mockRelationships, result);
+        verify(relationshipRepository).findRelationshipsByGlobalIdAndIsDeletedFalse(globalId);
+    }
+
+    @Test
+    void testGetAllRelationshipsByGlobalId_failure() {
+        // Arrange
+        String globalId = "12345";
+        when(relationshipRepository.findRelationshipsByGlobalIdAndIsDeletedFalse(globalId))
+                .thenThrow(new RuntimeException("DB error"));
+
+        // Act + Assert
+        GoldenMDMException ex = assertThrows(GoldenMDMException.class,
+                () -> orchService.getAllRelationshipsByGlobalId(globalId));
+
+        assertEquals("error in fetching relationships", ex.getMessage());
+        verify(relationshipRepository).findRelationshipsByGlobalIdAndIsDeletedFalse(globalId);
+    }
