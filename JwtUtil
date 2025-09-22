@@ -1,34 +1,28 @@
-    private final EntityManager goldenEntityManager;
+public class OrchService {
 
-    @Autowired
-    public NullCompositeService(
-            @Qualifier("goldenEntityManagerFactory") EntityManager goldenEntityManager) {
-        this.goldenEntityManager = goldenEntityManager;
-    }
+	@Autowired
+	private OrchMainRepository orchMainRepository;
 
+	@Autowired
+	private OrchSubMainRepository orchSubMainRepository;
 
-@Transactional
-    public void updateNullTablesGolden(String tableName,String globalId) {
-        updateNull(tableName, globalId);
-    }
+	@Autowired
+	private LogCupTransactionRepository logCupTransactionRepository;
 
-    @Transactional
-    public void resetToNullTablesGolden(String tableName, String globalId) {
-        resetToNull(tableName, globalId);
-    }
+	@Autowired
+	private RelationshipRepository relationshipRepository;
 
-    private void updateNull(String tableName, String globalId) {
-        update(globalId, goldenEntityManager, String.format(UPDATE_TYPE_NULL_QUERY, tableName));
-        update(globalId, goldenEntityManager, String.format(UPDATE_USAGE_NULL_QUERY, tableName));
-    }
+	@Autowired
+	private LockedCustomerRepository lockedCustomerRepository;
 
-    private void resetToNull(String tableName, String globalId) {
-        update(globalId, goldenEntityManager, String.format(RESET_TYPE_TO_NULL_QUERY, tableName));
-        update(globalId, goldenEntityManager, String.format(RESET_USAGE_TO_NULL_QUERY, tableName));
-    }
-
-    private static void update(String globalId, EntityManager entityManager, String commonQuery) {
-        entityManager.createNativeQuery(commonQuery)
-                .setParameter("globalId", globalId)
-                .executeUpdate();
-    }
+	public void insertLogMain(LogMainDto logMainDto) {
+		try {
+			log.info("insertLogMain({})", logMainDto);
+			orchMainRepository.insertOrchMain(logMainDto.getHeader(), logMainDto.getFooter());
+		} catch (RuntimeException ex) {
+			log.error(ex.getMessage());
+			throw new GoldenMDMException("Error inserting log for main");
+		} finally {
+			log.info("/insertLogMain({})", logMainDto);
+		}
+	}
