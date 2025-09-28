@@ -1,5 +1,4 @@
-{
-  "curls": [
+
     {
       "method": "GET",
       "url": "https://jo02-mdmkyc:8444/mdm-parties/parties/DN2I8V",
@@ -4800,5 +4799,4 @@
         "inputChannel": "MDMTST"
       }
     }
-  ]
-}
+
