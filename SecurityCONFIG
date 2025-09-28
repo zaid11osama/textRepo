@@ -1,660 +1,329 @@
-JO
-=============================
 CUSTOMER_ID|
-
 -----------+
-
 DOV2MI     |
-
 DQ39E9     |
-
 DKB426     |
-
 DQ2NR3     |
-
 D2GOD1     |
-
 E42JLG     |
-
 DPTBKK     |
-
 E3R34Q     |
-
 DQRFUN     |
-
 E3R31M     |
-
 E3R34P     |
-
 DJBSQT     |
-
 DM1UGH     |
-
 DJBR1G     |
-
 DN12HB     |
-
 DL4F11     |
-
 DJBUHS     |
-
 DQRD04     |
-
 DL4F13     |
-
 D8BIM0     |
-
 DJBRVB     |
-
 DN0EVP     |
-
 D2G0P4     |
-
 D6BQT3     |
-
 DQ4PEM     |
-
 E4RLRL     |
-
 D96QV6     |
-
 ER77CU     |
-
 E42A5J     |
-
 E3ROA7     |
-
 D95QO5     |
-
 DKB6TQ     |
-
 DI7GAV     |
-
 EA2V48     |
-
 E42PNB     |
-
 E3ROQ5     |
-
 D7AJP1     |
-
 DRRTDP     |
-
 E3ROMJ     |
-
 DND879     |
-
 D87RN6     |
-
 D97HUO     |
-
 F1GSCS     |
-
 D9605L     |
-
 D96OVO     |
-
 DQ4FQ9     |
-
 DPHMTM     |
-
 F3MVJ6     |
-
 DNDNNE     |
-
 D1ON9N     |
-
 DN2PB1     |
-
 ER79M3     |
-
 E4RLGT     |
-
 E4193F     |
-
 E42Q20     |
-
 DOUU3D     |
-
 D2GMTO     |
-
 DL4075     |
-
 DP3MDH     |
-
 DL5I1O     |
-
 DL4HFO     |
-
 DOUQH0     |
-
 DL49AG     |
-
 D96UOS     |
-
 EKO70L     |
-
 DK5HPK     |
-
 D6932J     |
-
 D94MVH     |
-
 DK667C     |
-
 DK6U4O     |
-
 D87PDM     |
-
 D87OIS     |
-
 ENE7TA     |
-
 DKB8D8     |
-
 DNEAU4     |
-
 DUM00J     |
-
 DN1VNA     |
-
 DUMQ7Q     |
-
 D69ITA     |
-
 DKB8O5     |
-
 D9678E     |
-
 DPSR71     |
-
 DNDVKH     |
-
 DND03A     |
-
 DKB7TD     |
-
 D69VTH     |
-
 DPS3C5     |
-
 DJ6CF4     |
-
 EMHD8O     |
-
 DQ2NAO     |
-
 DJ94C6     |
-
 DRR4UB     |
-
 D4K58L     |
-
 D4K54Q     |
-
 EMHD18     |
-
 DKB30K     |
-
 DKB426     |
-
 DPS2T9     |
-
 D69RBD     |
-
 DRR4H0     |
-
 FKCCMF     |
-
 DN1VNB     |
-
 D1OPM1     |
-
 DN1415     |
-
 D4K3HL     |
-
 DN2LQ8     |
-
 DN2JR3     |
-
 DN2FF6     |
-
 DDI02G     |
-
 DDINJM     |
-
 DN2JCQ     |
-
 D4KD4Q     |
-
 EU3IPM     |
-
 EKO18L     |
-
 DPGMMK     |
-
 D2GUP5     |
-
 D2GHSM     |
-
 DK6ODV     |
-
 DOUL3E     |
-
 DRRNDS     |
-
 D4K1T7     |
-
 D2GCPO     |
-
 D2GJKL     |
-
 DRRQ0C     |
-
 D2G5FC     |
-
 DOUL3E     |
-
 EU3IPM     |
-
 DK6ODV     |
-
 DPGMMK     |
-
 DUMMQD     |
-
 DND1LI     |
-
 DUM9G2     |
-
 DNEGMP     |
-
 DUM5N7     |
-
 DN2N73     |
-
 DN2G2N     |
-
 D969T0     |
-
 DBL3CA     |
-
 DN2LAR     |
-
 DN2I13     |
-
 DN2GSD     |
-
 DNDL23     |
-
 DNDI0U     |
-
 E4193Q     |
-
 D6BIUV     |
-
 E42FPN     |
-
 DJ5OQ2     |
-
 DN2KAV     |
-
 DQ25GK     |
-
 DQ4AA0     |
-
 E6POHR     |
-
 DN2I0O     |
-
 DT013S     |
-
 D7AJPE     |
-
 DQ399G     |
-
 DPG682     |
-
 D4K7IB     |
-
 D4K7BI     |
-
 D4K7IC     |
-
 DPHD4H     |
-
 DSRN0N     |
-
 DQRFJU     |
-
 DNV7VR     |
-
 DQ4EQ0     |
-
 DQRHVB     |
-
 DQ25I3     |
-
 DQ3990     |
-
 D94J58     |
-
 DSRNFS     |
-
 D8EF8L     |
-
 DM1UGH     |
-
 EA25GQ     |
-
 DSRNFS     |
-
 DSO0DH     |
-
 DS7NKU     |
-
 DSRN0P     |
-
 DNEM39     |
-
 DQ3QMK     |
-
 DQ399F     |
-
 DQ3TF1     |
-
 DN2I13     |
-
 DP20C1     |
-
 DP3MDH     |
-
 D96QV6     |
-
 DM10BB     |
-
 D8BKHO     |
-
 D97ERP     |
-
 D9649U     |
-
 D965A7     |
-
 DRRP92     |
-
 D97I2B     |
-
 DRRVCK     |
-
 DM1T8G     |
-
 DHMIT3     |
-
 DHMIT4     |
-
 DH91EE     |
-
 DSRPT3     |
-
 DH91R3     |
-
 DKBVIS     |
-
 DJ8H6G     |
-
 DRRKDA     |
-
 DLGJ4P     |
-
 DRRKM9     |
-
 F1GT9C     |
-
 D97ER7     |
-
 FNUV1N     |
-
 DNEOPU     |
-
 DQ26M6     |
-
 D96QV6     |
-
 D4K744     |
-
 EEC3LN     |
-
 E4RBT9     |
-
 F3M1J8     |
-
 DN12HB     |
-
 D96567     |
-
 DKBO05     |
-
 DPG4HI     |
-
 EE38BA     |
-
 D4KV5I     |
-
 DPSR45     |
-
 E3RNBC     |
-
 DND49D     |
-
 DPT38D     |
-
 D4FAMO     |
-
 E3ROLA     |
-
 DKBDH5     |
-
 EE3UKC     |
-
 E3RL7U     |
-
 DPG7D9     |
-
 DPHJ05     |
-
 E3RO1U     |
-
 DQ4J1N     |
-
 DM11MF     |
-
 DJ92SE     |
-
 DKBPAD     |
-
 D96Q9R     |
-
 E42M9H     |
-
 DNV7GA     |
-
 DN1O97     |
-
 DKBFA4     |
-
 E411KP     |
-
 D96RDK     |
-
 DNDS8U     |
-
 DM31KL     |
-
 DKBSEQ     |
-
 DM33AB     |
-
 DN2PQU     |
-
 D87SM7     |
-
 DKAQIE     |
-
 DQREIU     |
-
 DM2V4O     |
-
 DSRN0O     |
-
 DNEE7M     |
-
 EE312E     |
-
 E42AJG     |
-
 DSP1MU     |
-
 E42IR8     |
-
 DQREIV     |
-
 DSRNFS     |
-
 D951DT     |
-
 E4UNVP     |
-
 EMHA54     |
-
 DNEE7M     |
-
 EU3B3C     |
-
 E42IR8     |
-
 EKO8TU     |
-
 D4FCA1     |
-
 DUM25F     |
-
 DS8DKE     |
-
 D4E0LJ     |
-
 D969FD     |
-
 E3RMMB     |
-
 DL5DOG     |
-
 D6BKTC     |
-
 D4E0LK     |
-
 DUMT9O     |
-
 DQRJDR     |
-
 DSPBR4     |
-
 D4FHHG     |
-
 D6B30A     |
-
 FNUVVD     |
-
 D6B68E     |
-
 D4K744     |
-
 DM2VK1     |
-
 EEC65F     |
-
 D94J53     |
-
 D6BTUU     |
-
 DNEPA1     |
-
 D94J58     |
-
 DKBI32     |
-
 DJBQSQ     |
-
 D87VDE     |
-
 E42GLO     |
-
 E42GTJ     |
-
 EKOS9C     |
-
 E4RBT0     |
-
 EKOS9A     |
-
 DN15SN     |
-
 EE335C     |
-
 DNDTNK     |
-
 EKOT8K     |
-
 D97F6O     |
-
 E6PNE2     |
-
 E6PN47     |
-
 D6B0D1     |
-
 D6BJ6L     |
-
 D2GHOE     |
-
 DJ95SU     |
-
 DJ924O     |
-
 DRROIQ     |
-
 D97GUO     |
-
 DRSBD3     |
-
 DRR330     |
-
 DRRTVP     |
-
 DOULRP     |
-
 DJ9BMV     |
-
 DM1VG5     |
-
 DQ2U5M     |
-
 D4K18B     |
-
 DQ3HLI     |
-
 DQRRCS     |
-
 DM3MAM     |
-
 E4Q73F     |
-
 E4RE7C     |
-
 DCJFQD     |
-
 EKOUK1     |
-
 DUM447     |
- 
