@@ -1,273 +1,202 @@
-service
-
-    public CompareResponse getCompareIndividualResponse(MdmCompareRequestDto compareRequest, boolean ignoreNationalityFields) {
-        try {
-            log.info("getCompareIndividualResponse({})", compareRequest);
-            PersonIdentifierDto firstDtoPersonIdentifiers = compareRequest.getFirstPersonIdentifiers();
-            PersonIdentifierDto secondPersonIdentifires = compareRequest.getSecondPersonIdentifiers();
-
-            RelationshipModel firstRelation = getPersonRelationship(firstDtoPersonIdentifiers);
-            RelationshipModel secondRelation = getPersonRelationship(secondPersonIdentifires);
-
-            CompareRequestDto phoneticsCompareRequestDto = getIndividualCompareRequest(firstRelation, secondRelation, ignoreNationalityFields);
-
-            String phoneticsUrl = configReader.getProperty("ab.mdm.phonetics.service.url");
-            WebClient webClient = webClientBuilder.baseUrl(phoneticsUrl).build();
-
-            CompareResponse compareResponseDto = webClient.post()
-                    .uri(Constant.PHONETICS_INDIVIDUAL_COMPARE_URI)
-                    .bodyValue(phoneticsCompareRequestDto)
-                    .retrieve()
-                    .bodyToMono(CompareResponse.class)
-                    .block();
-
-            if (compareResponseDto == null) {
-                return CompareResponse.builder()
-                        .success(false)
-                        .message("Response is Null from Phonetices !")
-                        .build();
-            }
-            compareResponseDto.setSuccess(true);
-            compareResponseDto.setFirstPersonGlobalId(firstDtoPersonIdentifiers.getGlobalId());
-            compareResponseDto.setSecondPersonGlobalId(secondPersonIdentifires.getGlobalId());
-            return compareResponseDto;
-
-        } catch (RuntimeException e) {
-            log.error(e.getMessage(), e);
-            return CompareResponse.builder()
-                    .success(false)
-                    .message(e.getMessage())
-                    .build();
-        } finally {
-            log.info("/getCompareIndividualResponse({})", compareRequest);
-        }
-    }
-
-
-
-
-
-
-
-
-controller 
-
-	@PostMapping("/individual")
-	public ResponseEntity<Object> compareIndividual(@RequestBody MdmCompareRequestDto mdmCompareRequestDto,
-													@RequestParam(required = false) boolean ignoreNationalityFields) {
-		return ResponseEntity.status(HttpStatus.OK).body(compareService.getCompareIndividualResponse(mdmCompareRequestDto, ignoreNationalityFields));
-	}
-
-
-
-
-
-
-public class MdmCompareRequestDto {
-
-    private PersonIdentifierDto firstPersonIdentifiers;
-    private PersonIdentifierDto secondPersonIdentifiers;
-
-}
-
-
-
-
-
-@Builder
-public class PersonIdentifierDto {
-
-    private String globalId;
-    private String role;
-    private Integer relationshipSequence;
-    private String relationshipCountry;
-    private String organization;
-    private String customerId;
-    private String language;
-
-}
-
-
-
-
-
-
-
-
-public class RelationshipModel {
-    @JsonIgnore
-    private Long id;
-    @Id
-    @GeneratedValue
-    @Column(name = "UNIVERSAL_ID")
-    private String universalId;
-
-    @AttributeOverride(name = "code", column = @Column(name = "ROLE"))
-    private Translation role;
-
-    @Column(name = "WITHGLOBALID")
-    private String withGlobalId;
-
-    @Column(name = "ORGANIZATION")
-    private String organization;
-
-    @Column(name = "RELATED_PRODUCT")
-    private String customerId;
-
-    @AttributeOverride(name = "code", column = @Column(name = "RELATION_TO_PARTY"))
-    private Translation relationToParty;
-
-    @Transient
-    private String relationDetails;
-
-    @Column(name = "RELATIONSHIP_SEQUENCE")
-    private Integer relationshipSequence;
-
-    @Column(name = "GLOBAL_ID")
-    private String globalId;
-
-    @Column(name = "ORIGINAL_GLOBAL_ID")
-    private String orignalGlobalId;
-
-    @AttributeOverride(name = "code", column = @Column(name = "RELATION_COUNTRY"))
-    private Translation relationCountry;
-
-    @Column(name = "WITHPRODUCT")
-    private String withProduct;
-
-    @Column(name = "RELATION_DESCRIPTION")
-    private String relationDescription;
-
-    @Column(name = "LATEST_UNIQUE_REFERENCE")
-    private String latestUniqueRefrence;
-
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss a")
-    @Column(name = "UPDATE_TIMESTAMP")
-    private Timestamp updateTimestamp;
-
-    @Column(name = "UPDATE_COUNTRY")
-    private String updateCountry;
-
-    @Column(name = "UPDATE_PROGRAM")
-    private String updateProgram;
-
-    @Column(name = "UPDATE_SYSTEM")
-    private String updateSystem;
-
-    @Column(name = "UPDATE_USER")
-    private String updateUser;
-
-    @Column(name = "AUTHORIZER_USER")
-    private String authorizedUser;
-
-    @Column(name = "DATE_LAST_UPDATED")
-    private Date dateLastUpdate;
-
-    @Column(name = "DATE_RECORD_CREATED")
-    private Date dateRecordCreated;
-
-    @Column(name = "UPDATED_TODAY")
-    private Integer updatedToday;
-
-    @Column(name = "DATE_DELETED")
-    private Date dateDeleted;
-
-    @Column(name = "IS_DELETED")
-    private Integer isDeleted;
-
-    @Transient
-    private String relatedName;
-}
-
-
-
-
-
-
-
-public class CompareRequestDto {
-
-    @JsonProperty("parameters")
-    private CompareParametersDto parameters;
-
-    @JsonProperty("object_one")
-    private ObjRequestDto firstObject;
-
-    @JsonProperty("object_two")
-    private ObjRequestDto secondObject;
-
-    private String token;
-
-}
-
-
-
-
-public class CompareParametersDto {
-
-    @JsonProperty("pre_processing")
-    public boolean preProcessing;
-
-    @JsonProperty("party_type")
-    public String partyType;
-
-    @JsonProperty("party_id_one")
-    public String partyOneId;
-
-    @JsonProperty("party_id_two")
-    public String partyTwoId;
-
-    @JsonProperty("return_object")
-    public String returnObject;
-}
-
-
-
-
-
-
-public class ObjRequestDto {
-    @JsonProperty(value = "names")
-    private EntryNameDto names;
-
-    @JsonProperty(value = "nationalities")
-    private List<NationalityRequestDto> nationalities;
-
-    @JsonProperty(value = "parties")
-    private PartiesRequestDto parties;
-
-    @JsonProperty(value = "parties_country")
-    private PartyCountryRequestDto partiesCountry;
-
-}
-
-
-
-
-
-
-    private CompareRequestDto getIndividualCompareRequest(RelationshipModel firstRelation, RelationshipModel secondRelation, boolean ignoreNationalityFields) {
-        try {
-            log.info("getIndividualCompareRequest({},{})", firstRelation, secondRelation);
-            CompareParametersDto compareParametersDto = getIndividualCompareParameters(firstRelation, secondRelation);
-            ObjRequestDto firstObjectRequest = getIndividualObjectRequest(firstRelation);
-            ObjRequestDto secondObjectRequest = getIndividualObjectRequest(secondRelation);
-
-            if (ignoreNationalityFields) {
-                firstObjectRequest = buildObjRequestIgnoringNationalityFields(firstObjectRequest);
-                secondObjectRequest = buildObjRequestIgnoringNationalityFields(secondObjectRequest);
-            }
-
-            return CompareRequestDto.builder()
-                    .parameters(compareParametersDto)
-                    .firstObject(firstObjectRequest)
-                    .secondObject(secondObjectRequest)
-                    .build();
-        } catch (RuntimeException ex) {
-            log.error(ex.getMessage());
-            throw ex;
-        } finally {
-            log.info("/getIndividualCompareRequest({},{})", firstRelation, secondRelation);
-        }
-    }
-
+CUSTOMER_ID|
+-----------+
+DN2I8V     |
+D4KV56     |
+EEC8VG     |
+DNEAU4     |
+DQRSF0     |
+DL5C3K     |
+DPHEAN     |
+DJ5OQP     |
+D4KV57     |
+DN0EVP     |
+DP23V4     |
+DEHB1O     |
+DL5KGT     |
+DN2DG3     |
+DN11OT     |
+DOUOFB     |
+DL4778     |
+DKAHV2     |
+D97HGQ     |
+DQ25I3     |
+D96OVO     |
+DPTBKK     |
+DK5HPK     |
+E42A5J     |
+DN2LQ8     |
+DJBRVB     |
+D9432L     |
+FKCCMF     |
+DRRTDP     |
+EU3IPM     |
+D7AJP1     |
+DOUL3E     |
+E4193Q     |
+D7AJPE     |
+DN2KAV     |
+E3ROQ5     |
+DQ2NAO     |
+D94M1M     |
+E4RLGT     |
+D1ON9N     |
+D97ER7     |
+DLGHIQ     |
+DJBQSQ     |
+F1GT9C     |
+DQ3TF1     |
+DS7NKU     |
+DSRN0O     |
+D4E0LK     |
+DP3MDH     |
+DL5L70     |
+EA25GQ     |
+DN2PQU     |
+D2GCPO     |
+D6932J     |
+E4Q73F     |
+DCJFQD     |
+DSRNFS     |
+E42GLO     |
+E42AJG     |
+DNV7VR     |
+D6B68E     |
+EE31MP     |
+E4RBT9     |
+DKBDH5     |
+DNDTNK     |
+DKBVIS     |
+DNV7GA     |
+DQ26M6     |
+D87VDE     |
+D1OOJU     |
+D7AIMO     |
+DP3JFR     |
+E42NU0     |
+DPGMDB     |
+F2FJVU     |
+D97GKP     |
+EQBKLU     |
+DNDS8U     |
+DQ4AS1     |
+D97GMK     |
+DJ6II9     |
+D87OAN     |
+D96TRE     |
+DM3NO3     |
+E416CG     |
+DQ300L     |
+DDIM2H     |
+D69C1R     |
+DNEQ74     |
+DI7IIQ     |
+DNEJL3     |
+DN11CV     |
+DKABEM     |
+D69NTS     |
+EKO7HR     |
+DSRPVB     |
+DHMR71     |
+EA23RB     |
+DQRT2A     |
+DQRK0D     |
+DEHJDR     |
+F3MUVL     |
+DSRGJ7     |
+ENFBLA     |
+D2GE7S     |
+DL5I76     |
+DPT37C     |
+DQRS5A     |
+FQOCNT     |
+EE37JE     |
+DQRD0G     |
+DT1TG6     |
+DSRGJ6     |
+D4FDNK     |
+DRR4OG     |
+D947F6     |
+FOREHU     |
+E42IT0     |
+DND2IK     |
+DL5EHM     |
+DQ4CP0     |
+DSR35I     |
+DQRDMS     |
+F2E9MN     |
+EU3CSL     |
+EQ9L23     |
+DP3I39     |
+D969I6     |
+E3RMLM     |
+D1ON2E     |
+FQODN5     |
+DOURSQ     |
+DK670K     |
+DQ4CQM     |
+ES63V5     |
+D8EGKR     |
+DHMJGS     |
+DQ4EPV     |
+ELMLV5     |
+DN1UJK     |
+D87R2D     |
+D97CN4     |
+D6BQHA     |
+DFE7CU     |
+DQ3JMV     |
+DRR8I1     |
+DK65I4     |
+DL5LUR     |
+DJ85FE     |
+DM1812     |
+DNDT2B     |
+DN2GUI     |
+DL5K5K     |
+DND789     |
+D96TVG     |
+DJ6223     |
+DHMK6U     |
+D6BPTS     |
+E42Q0E     |
+DQ32N2     |
+DOUUGI     |
+D97GET     |
+DKAO86     |
+E3RSC0     |
+DQ3TE1     |
+E3R7A2     |
+DJCOUI     |
+D94I39     |
+E412BG     |
+DKBMO1     |
+D69V9G     |
+DQ4JIS     |
+DQ4PEK     |
+DQRDVA     |
+DKBTJH     |
+DKBLRI     |
+D8BB5R     |
+DRRJFN     |
+D95VCG     |
+D4KV55     |
+ENE8ET     |
+D8BGVL     |
+D87U1I     |
+DDJDT9     |
+E42J9L     |
+DUM72G     |
+E4Q9D7     |
+DQ4BOJ     |
+DN2JES     |
+E410LJ     |
+DL5NDO     |
+DNETQJ     |
+E3R8N6     |
+D0JRBD     |
+E4Q64U     |
+D871IH     |
+DQ39FF     |
+DQ4D7R     |
+DJ863I     |
+D6BJDG 
