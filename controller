@@ -1,5 +1,4 @@
-{
-  "curls": [
+
     {
       "method": "PUT",
       "url": "https://jo02-mdmkyc:8444/mdm-parties/parties/DOV2MI",
@@ -12426,5 +12425,4 @@
         }
       }
     }
-  ]
-}
+
