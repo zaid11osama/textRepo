@@ -1,24 +1,39 @@
- private CompareRequestDto getIndividualCompareRequest(RelationshipModel firstRelation, RelationshipModel secondRelation, boolean ignoreNationalityFields) {
-        try {
-            log.info("getIndividualCompareRequest({},{})", firstRelation, secondRelation);
-            CompareParametersDto compareParametersDto = getIndividualCompareParameters(firstRelation, secondRelation);
-            ObjRequestDto firstObjectRequest = getIndividualObjectRequest(firstRelation);
-            ObjRequestDto secondObjectRequest = getIndividualObjectRequest(secondRelation);
 
-            if (ignoreNationalityFields) {
-                firstObjectRequest = buildObjRequestIgnoringNationalityFields(firstObjectRequest);
-                secondObjectRequest = buildObjRequestIgnoringNationalityFields(secondObjectRequest);
-            }
-
-            return CompareRequestDto.builder()
-                    .parameters(compareParametersDto)
-                    .firstObject(firstObjectRequest)
-                    .secondObject(secondObjectRequest)
-                    .build();
-        } catch (RuntimeException ex) {
-            log.error(ex.getMessage());
-            throw ex;
-        } finally {
-            log.info("/getIndividualCompareRequest({},{})", firstRelation, secondRelation);
+    {
+      "method": "PUT",
+      "url": "https://jo02-mdmkyc:8444/mdm-parties/parties/ENE77V",
+      "expectedStatus": 200,
+      "headers": {
+        "requestCountry": "",
+        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s",
+        "CHANNEL": "DASHBOARD",
+        "tenantId": "OMN",
+        "channelId": "MB",
+        "inputCountry": "JO",
+        "inputReference": "123456789101112131415161718192",
+        "requesterId": "KYCUSER",
+        "requesterKey": "KYCPass@2023",
+        "inputTimestamp": "2023-03-12 11:35:31.2251401",
+        "language": "EN",
+        "dataSource": "Tenant",
+        "user": "test",
+        "requestChannel": "TSTPBM",
+        "identifierType": "customerId",
+        "accountNumber": "11114444888861",
+        "inputChannel": "MDMTST"
+      },
+      "body": {
+        "names": {
+          "nameAR": {
+            "firstName": "معاذ",
+            "secondName": "سفيان",
+            "thirdName": "سلامه",
+            "familyName": "حميدان",
+            "bigName": "حميدانسلامه",
+            "shortName": "PANA ALSABER",
+            "preferred": "false"
+          }
         }
+      }
     }
