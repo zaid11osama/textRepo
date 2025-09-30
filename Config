@@ -1,69 +1,25 @@
-for this
+@Service
+@RequiredArgsConstructor
+@Slf4j
+public class DbLoggerService {
 
-void testGetTasks_Success() throws Exception {
-        List<LinkedHashMap<String, Object>> rawList =
-                fileReader.getDataAsJson("classpath:dummy-data/tasks.json", List.class);
+	private final LogsChannelRepository logsChannelRepository;
+	private final PartyModelSetter partyModelSetter;
+	////////////////////////////////////////////////////
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Task> tasks = rawList.stream()
-                .map(map -> objectMapper.convertValue(map, Task.class))
-                .collect(Collectors.toList());
+	/**
+	 * @param object
+	 * @param headers
+	 * @param endpointName
+	 * @return logChannelEntity
+	 * @throws JsonProcessingException
+	 */
 
-
-        Page<Task> pageableTasks = convertListToPage(tasks, PageRequest.of(0, 5));
-        when(taskRepository.getCheckerTasksFiltered(any(), any())).thenReturn(pageableTasks);
-
-        RecordsManagerDto<Task> tasksManager = RecordsManagerDto.<Task>builder()
-                .records(pageableTasks.getContent())
-                .meta(RecordsMetaDto.builder().page(pageableTasks.getPageable().getPageNumber() + 1)
-                        .pageCount(pageableTasks.getTotalPages())
-                        .totalCount(pageableTasks.getTotalElements())
-                        .pageSize(pageableTasks.getSize())
-                        .build())
-                .build();
-
-        when(checkerService.getTasks(1, 10, null , null)).thenReturn(tasksManager);
-
-        mockMvc.perform(MockMvcRequestBuilders.get(CHECKER_API_PATH + GET_TASKS_API_PATH)
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.records").isNotEmpty())
-                .andReturn();
-    }
-
-I get
-
-
-
-Caused by: java.lang.NullPointerException: Cannot invoke "com.arabbank.mdm.service.CheckerService.getTasks(int, int, String, String)" because "this.checkerService" is null
-	at com.arabbank.mdm.controller.CheckerController.getTasks(CheckerController.java:35)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-
-
-and here is the class
-
-public class CheckerController {
-
-
-	private final CheckerService checkerService;
-
-	public CheckerController(CheckerService checkerService) {
-		this.checkerService = checkerService;
+	@Transactional(propagation = Propagation.REQUIRES_NEW)
+	public LogChannelEntity logIntoDb(Object object, Map<String, String> headers, String refrenceId, String endpointName) throws JsonProcessingException {
+		log.debug("logIntoDb({})", endpointName);
+		LogChannelEntity logChannelEntity = toLogEntity(object, headers, refrenceId, endpointName);
+		logsChannelRepository.save(logChannelEntity);
+		log.debug("/logIntoDb({})", endpointName);
+		return logChannelEntity;
 	}
-
-
-I have it like this
-
-    @Spy//create real object by default call real methods
-    @InjectMocks//create an instance of the class under test (create real class under test)
-    //with dependencies injected automatically
-
-    private CheckerService checkerService;
-
-why I get this error
