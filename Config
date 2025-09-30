@@ -1,256 +1,69 @@
-{
-  "curls": [
-    {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8444/mdm-parties/parties/716296",
-      "expectedStatus": 200,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s",
-        "tenantId": "OMN",
-        "channelId": "MB",
-        "inputReference": "123456789101112131415161718192",
-        "requesterId": "KYCUSER",
-        "requesterKey": "KYCPass@2023",
-        "inputTimestamp": "2023-03-12 11:35:31.2251401",
-        "dataSource": "Tenant",
-        "user": "test",
-        "inputCountry": "QA",
-        "requestChannel": "TSTPBM",
-        "identifierType": "customerId",
-        "accountNumber": "11114444888861",
-        "inputChannel": "MDMTST"
-      }
-    },
-    {
-      "method": "GET",
-      "url": "https://jo02-mdmkyc:8444/mdm-parties/parties/714994",
-      "expectedStatus": 200,
-      "headers": {
-        "language": "AR",
-        "requestCountry": "",
-        "Cookie": "JSESSIONID=33867F77567898198A30E9ADB9DFFFCD",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IltTRUNfcGFydHlJbnF1aXJ5LFNFQ19jaGVja2VyLFNFQ19tYWtlcixTRUNfbWVyZ2UsU0VDX2NvbnRyb2wsU0VDX2xvZ3MsU0VDX2xvZ3NCeUdJRCxBUElfQ1JFQVRFX0FCLEFQSV9HRVRfUEFSVFlfQllfSURFTlRJRklFUixBUElfVVBEQVRFX0FCLEFQSV9HRVRfVFJBTlNBQ1RJT05fU1RBVFVTXSIsInN1YiI6ImE0ODVmYjQzLTgzZTYtNGEiLCJpYXQiOjE3MzA3MjE3MjYsImV4cCI6MTc2MjI1NzcyNn0.r3V3AXvKvJxdU2XK1XzqTt4d3NoaXfgXFzXQ4rY_B7s",
-        "tenantId": "OMN",
-        "channelId": "MB",
-        "inputReference": "123456789101112131415161718192",
-        "requesterId": "KYCUSER",
-        "requesterKey": "KYCPass@2023",
-        "inputTimestamp": "2023-03-12 11:35:31.2251401",
-        "dataSource": "Tenant",
-        "user": "test",
-        "inputCountry": "QA",
-        "requestChannel": "TSTPBM",
-        "identifierType": "customerId",
-        "accountNumber": "11114444888861",
-        "inputChannel": "MDMTST"
-      }
-    },
+for this
+
+void testGetTasks_Success() throws Exception {
+        List<LinkedHashMap<String, Object>> rawList =
+                fileReader.getDataAsJson("classpath:dummy-data/tasks.json", List.class);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<Task> tasks = rawList.stream()
+                .map(map -> objectMapper.convertValue(map, Task.class))
+                .collect(Collectors.toList());
+
+
+        Page<Task> pageableTasks = convertListToPage(tasks, PageRequest.of(0, 5));
+        when(taskRepository.getCheckerTasksFiltered(any(), any())).thenReturn(pageableTasks);
+
+        RecordsManagerDto<Task> tasksManager = RecordsManagerDto.<Task>builder()
+                .records(pageableTasks.getContent())
+                .meta(RecordsMetaDto.builder().page(pageableTasks.getPageable().getPageNumber() + 1)
+                        .pageCount(pageableTasks.getTotalPages())
+                        .totalCount(pageableTasks.getTotalElements())
+                        .pageSize(pageableTasks.getSize())
+                        .build())
+                .build();
+
+        when(checkerService.getTasks(1, 10, null , null)).thenReturn(tasksManager);
+
+        mockMvc.perform(MockMvcRequestBuilders.get(CHECKER_API_PATH + GET_TASKS_API_PATH)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.records").isNotEmpty())
+                .andReturn();
+    }
+
+I get
 
 
 
+Caused by: java.lang.NullPointerException: Cannot invoke "com.arabbank.mdm.service.CheckerService.getTasks(int, int, String, String)" because "this.checkerService" is null
+	at com.arabbank.mdm.controller.CheckerController.getTasks(CheckerController.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
 
-CUSTOMER_ID|
------------+
-DN2I8V     |
-D4KV56     |
-EEC8VG     |
-DNEAU4     |
-DQRSF0     |
-DL5C3K     |
-DPHEAN     |
-DJ5OQP     |
-D4KV57     |
-DN0EVP     |
-DP23V4     |
-DEHB1O     |
-DL5KGT     |
-DN2DG3     |
-DN11OT     |
-DOUOFB     |
-DL4778     |
-DKAHV2     |
-D97HGQ     |
-DQ25I3     |
-D96OVO     |
-DPTBKK     |
-DK5HPK     |
-E42A5J     |
-DN2LQ8     |
-DJBRVB     |
-D9432L     |
-FKCCMF     |
-DRRTDP     |
-EU3IPM     |
-D7AJP1     |
-DOUL3E     |
-E4193Q     |
-D7AJPE     |
-DN2KAV     |
-E3ROQ5     |
-DQ2NAO     |
-D94M1M     |
-E4RLGT     |
-D1ON9N     |
-D97ER7     |
-DLGHIQ     |
-DJBQSQ     |
-F1GT9C     |
-DQ3TF1     |
-DS7NKU     |
-DSRN0O     |
-D4E0LK     |
-DP3MDH     |
-DL5L70     |
-EA25GQ     |
-DN2PQU     |
-D2GCPO     |
-D6932J     |
-E4Q73F     |
-DCJFQD     |
-DSRNFS     |
-E42GLO     |
-E42AJG     |
-DNV7VR     |
-D6B68E     |
-EE31MP     |
-E4RBT9     |
-DKBDH5     |
-DNDTNK     |
-DKBVIS     |
-DNV7GA     |
-DQ26M6     |
-D87VDE     |
-D1OOJU     |
-D7AIMO     |
-DP3JFR     |
-E42NU0     |
-DPGMDB     |
-F2FJVU     |
-D97GKP     |
-EQBKLU     |
-DNDS8U     |
-DQ4AS1     |
-D97GMK     |
-DJ6II9     |
-D87OAN     |
-D96TRE     |
-DM3NO3     |
-E416CG     |
-DQ300L     |
-DDIM2H     |
-D69C1R     |
-DNEQ74     |
-DI7IIQ     |
-DNEJL3     |
-DN11CV     |
-DKABEM     |
-D69NTS     |
-EKO7HR     |
-DSRPVB     |
-DHMR71     |
-EA23RB     |
-DQRT2A     |
-DQRK0D     |
-DEHJDR     |
-F3MUVL     |
-DSRGJ7     |
-ENFBLA     |
-D2GE7S     |
-DL5I76     |
-DPT37C     |
-DQRS5A     |
-FQOCNT     |
-EE37JE     |
-DQRD0G     |
-DT1TG6     |
-DSRGJ6     |
-D4FDNK     |
-DRR4OG     |
-D947F6     |
-FOREHU     |
-E42IT0     |
-DND2IK     |
-DL5EHM     |
-DQ4CP0     |
-DSR35I     |
-DQRDMS     |
-F2E9MN     |
-EU3CSL     |
-EQ9L23     |
-DP3I39     |
-D969I6     |
-E3RMLM     |
-D1ON2E     |
-FQODN5     |
-DOURSQ     |
-DK670K     |
-DQ4CQM     |
-ES63V5     |
-D8EGKR     |
-DHMJGS     |
-DQ4EPV     |
-ELMLV5     |
-DN1UJK     |
-D87R2D     |
-D97CN4     |
-D6BQHA     |
-DFE7CU     |
-DQ3JMV     |
-DRR8I1     |
-DK65I4     |
-DL5LUR     |
-DJ85FE     |
-DM1812     |
-DNDT2B     |
-DN2GUI     |
-DL5K5K     |
-DND789     |
-D96TVG     |
-DJ6223     |
-DHMK6U     |
-D6BPTS     |
-E42Q0E     |
-DQ32N2     |
-DOUUGI     |
-D97GET     |
-DKAO86     |
-E3RSC0     |
-DQ3TE1     |
-E3R7A2     |
-DJCOUI     |
-D94I39     |
-E412BG     |
-DKBMO1     |
-D69V9G     |
-DQ4JIS     |
-DQ4PEK     |
-DQRDVA     |
-DKBTJH     |
-DKBLRI     |
-D8BB5R     |
-DRRJFN     |
-D95VCG     |
-D4KV55     |
-ENE8ET     |
-D8BGVL     |
-D87U1I     |
-DDJDT9     |
-E42J9L     |
-DUM72G     |
-E4Q9D7     |
-DQ4BOJ     |
-DN2JES     |
-E410LJ     |
-DL5NDO     |
-DNETQJ     |
-E3R8N6     |
-D0JRBD     |
-E4Q64U     |
-D871IH     |
-DQ39FF     |
-DQ4D7R     |
-DJ863I     |
-D6BJDG 
+
+and here is the class
+
+public class CheckerController {
+
+
+	private final CheckerService checkerService;
+
+	public CheckerController(CheckerService checkerService) {
+		this.checkerService = checkerService;
+	}
+
+
+I have it like this
+
+    @Spy//create real object by default call real methods
+    @InjectMocks//create an instance of the class under test (create real class under test)
+    //with dependencies injected automatically
+
+    private CheckerService checkerService;
+
+why I get this error
