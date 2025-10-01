@@ -1,35 +1,20 @@
-    @Test
-    void handelRiskRating_ShouldCallSoapRequest_WhenRiskRatingFlagMatches() throws Exception {
-        // Arrange
-        NewPartyModel model = new NewPartyModel();
-        PartyComplianceDetails complianceDetails = new PartyComplianceDetails();
-        RiskRating riskRating = new RiskRating();
-        riskRating.setRiskRating(Constants.RR.CALC_RR_FLAG);
-
-
-        complianceDetails.set_riskRating(new Translation("a","aa","s"));
-        model.setComplianceDetails(complianceDetails);
-
-        Map<String, String> headers = new HashMap<>();
-        when(soapRequestService.getRiskRating(any(NewPartyModel.class), anyMap()))
-                .thenReturn("HIGH");
-
-        // Act
-        String result = partyService.handelRiskRating(model, headers);
-
-        // Assert
-        assertEquals("HIGH", result);
-
-org.opentest4j.AssertionFailedError: 
-Expected :HIGH
-Actual   :null
-
-
-public class RiskRating {
-    private String riskRating;
-    private float ratingFrequency;
-    private Date nextReviewDate;
-    private Date lastReviewDate;
-
-
+public class PartyComplianceDetails {
+	private Translation _residencyCountry;
+	private Translation _residencyIndicator;
+	private Translation _dataStatus;
+	private Translation _riskRating;
+	private Date lastReviewDate;
+	private Date nextReviewDate;
+	private Integer ratingFrequency;
+	private boolean grcFlag;
+	private Date grcModificationDate;
 }
+
+
+public class Translation {
+	@Transient
+	private String lookupName;
+    @JsonProperty("code")
+	private String code;
+	@Transient
+	private String description;
