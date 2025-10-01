@@ -1,26 +1,19 @@
 @Test
-void handelRiskRating_ShouldCallSoapRequest_WhenRiskRatingFlagMatches() throws Exception {
+void handelRiskRating_ShouldReturnNull_WhenFlagDoesNotMatch() throws Exception {
     // Arrange
     NewPartyModel model = new NewPartyModel();
-
     PartyComplianceDetails complianceDetails = new PartyComplianceDetails();
     Translation riskRating = new Translation();
-    riskRating.setCode(Constants.RR.CALC_RR_FLAG); // ✅ THIS is what the method checks
-
-    complianceDetails.set_riskRating(riskRating); 
+    riskRating.setCode("OTHER_FLAG"); // Does NOT match
+    complianceDetails.set_riskRating(riskRating);
     model.setComplianceDetails(complianceDetails);
 
     Map<String, String> headers = new HashMap<>();
-
-    when(soapRequestService.getRiskRating(any(NewPartyModel.class), anyMap()))
-            .thenReturn("HIGH");
 
     // Act
     String result = partyService.handelRiskRating(model, headers);
 
     // Assert
-    assertEquals("HIGH", result);
-
-    verify(soapRequestService, times(2))
-            .getRiskRating(any(NewPartyModel.class), anyMap()); // called twice in your method
+    assertNull(result);
+    verify(soapRequestService, never()).getRiskRating(any(), anyMap());
 }
