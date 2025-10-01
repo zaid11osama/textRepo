@@ -1,18 +1,19 @@
 @Test
-void testGetStatus_Success() throws Exception {
+void testGetSpecificModel_Success() throws Exception {
     // Arrange
-    MdmLogCupTransaction transaction = new MdmLogCupTransaction();
-    Optional<MdmLogCupTransaction> response = Optional.of(transaction);
+    String modelName = "TestModel";
+    String identifier = "id123";
+    Object expectedResponse = new Object();
 
     when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.getTransactionStatus(anyString(), anyString(), any())).thenReturn(response);
-    when(objectMapper.writeValueAsString(response)).thenReturn("{json}");
+    when(partyService.generalGet(any(), any(), any())).thenReturn(expectedResponse);
+    when(objectMapper.writeValueAsString(expectedResponse)).thenReturn("{json}");
 
     // Act
-    Optional<MdmLogCupTransaction> result = mainService.getStatus("cust123", "txn123", headers);
+    Object result = mainService.getSpecificModel(modelName, identifier, headers);
 
     // Assert
-    assertThat(result).isPresent().contains(transaction);
+    assertThat(result).isEqualTo(expectedResponse);
 
     verify(dbLogger).updateLogChannelOutput(
             eq("{json}"),
@@ -23,44 +24,23 @@ void testGetStatus_Success() throws Exception {
 }
 
 @Test
-void testGetStatus_EmptyOptional_ThrowsNoContent() throws Exception {
+void testGetSpecificModel_Exception() throws Exception {
     // Arrange
-    Optional<MdmLogCupTransaction> response = Optional.empty();
+    String modelName = "TestModel";
+    String identifier = "id123";
 
     when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.getTransactionStatus(anyString(), anyString(), any())).thenReturn(response);
-    when(objectMapper.writeValueAsString(response)).thenReturn("[]");
-
-    // Act & Assert
-    ResponseStatusException ex = assertThrows(ResponseStatusException.class,
-            () -> mainService.getStatus("cust123", "txn123", headers));
-
-    assertThat(ex.getStatus()).isEqualTo(HttpStatus.NO_CONTENT);
-    assertThat(ex.getReason()).isEqualTo("No content found for the given transaction.");
-
-    verify(dbLogger).updateLogChannelOutput(
-            eq("[]"),
-            eq(HttpStatus.OK.name()),
-            eq(HttpStatus.OK.value()),
-            eq(logChannel)
-    );
-}
-
-@Test
-void testGetStatus_Exception() throws Exception {
-    // Arrange
-    when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.getTransactionStatus(anyString(), anyString(), any()))
-            .thenThrow(new RuntimeException("Status lookup failed"));
+    when(partyService.generalGet(any(), any(), any()))
+            .thenThrow(new RuntimeException("Model fetch failed"));
 
     // Act & Assert
     Exception ex = assertThrows(RuntimeException.class,
-            () -> mainService.getStatus("cust123", "txn123", headers));
+            () -> mainService.getSpecificModel(modelName, identifier, headers));
 
-    assertThat(ex.getMessage()).isEqualTo("Status lookup failed");
+    assertThat(ex.getMessage()).isEqualTo("Model fetch failed");
 
     verify(dbLogger).updateLogChannelOutput(
-            eq("Status lookup failed"),
+            eq("Model fetch failed"),
             eq(HttpStatus.BAD_REQUEST.name()),
             eq(HttpStatus.BAD_REQUEST.value()),
             eq(logChannel)
