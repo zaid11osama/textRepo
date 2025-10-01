@@ -1,19 +1,16 @@
-	public void produceDocuments(List<Document> documents, String generateCustomerId, String globalId,
-			String nationalNumber, Map<String, String> headers, String customerName, String corporationId)
-			throws JsonProcessingException {
-		log.info("produceDocuments()");
+	public void produceDocumentForImages(List<PartyImage> Images, Map<String, String> headers,
+			String generateCustomerId, String globalId, String nationalNumber, String customerName,
+			String corporationId) throws JsonProcessingException {
+		log.info("produceDocumentForImages()");
 		String inputCountry = headers.get(MdmHeaderRequest.INPUT_COUNTRY);
-		String tenantId = headers.get(MdmHeaderRequest.TENANT_ID);
-		for (Document document : documents) {
-			String dmsId = document.getDmsId();
-			String docType = HelperUtils.checkTranslation(document.getType());
-			String documentNumber = document.getDocumentNumber();
+		for (PartyImage image : Images) {
+			String dmsId = image.getArchiveDetails().getDmsReference();
+			String docType = HelperUtils.checkTranslation(image.get_type());
 			if (!isEmpty(dmsId) && !isEmpty(docType)) {
-				saveDocument(docType, dmsId, globalId, corporationId, inputCountry,
-						HelperUtils.checkTranslation(document.getDocumentCountry()), "-", documentNumber);
-				kafkaUtil.produceMessage(generateCustomerId, globalId, nationalNumber, inputCountry, tenantId, dmsId,
-						docType, documentNumber, customerName);
+				saveDocument(docType, dmsId, globalId, corporationId, inputCountry, inputCountry, "-", null);
+				kafkaUtil.produceMessage(generateCustomerId, globalId, nationalNumber, inputCountry, Others.AB, dmsId,
+						docType, "", customerName);
 			}
 		}
-		log.info("/produceDocuments()");
+		log.info("/produceDocumentForImages()");
 	}
