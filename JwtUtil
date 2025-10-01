@@ -1,74 +1,88 @@
-    @Mock
-    private PortfolioDetailsRepository portfolioDetailsRepository;
-    @Mock private MdmLogCupTransactionRepository mdmLogCupTransactionRepository;
-    @Mock private GoldenRelationshipRepository goldenRelationshipRepository;
-    @Mock private PersonalPerCountryRepository personalPerCountryRepository;
-    @Mock private ComplianceDetailRepository complianceDetailRepository;
-    @Mock private MdmSysQuestionsRepository mdmSysQuestionsRepository;
-    @Mock private FlagsAttributeRepository flagsAttributeRepository;
-    @Mock private PartyImagesRepository partyImagesRepository;
-    @Mock private LegalStatusRepository legalStatusRepository;
-    @Mock private RelationshipRepository relationshipRepository;
-    @Mock private NewPartieModelSetter newPartieModelSetter;
-    @Mock private KafkaProducerService kafkaProducerService;
-    @Mock private NewPartyModelMapper newPartyModelMapper;
-    @Mock private SoapRequestService soapRequestService;
-    @Mock private MasterRepository masterRepository;
-    @Mock private PartyModelSetter partyModelSetter;
-    @Mock private NameRepository nameRepository;
-    @Mock private SrcNameRepository srcNameRepository;
-    @Mock private OnboardingInProgressCustomerRepository onboardingInProgressCustomerRepository;
-    @Mock private MdmApisClient mdmApisClient;
-    @Mock private ObjectMapper objectMapper;
-    @Mock private MdmApisClient apisClient;
-    @Mock private KafkaUtil kafkaUtil;
-    @Mock private MdmSysTranslationsRepository mdmSysTranslationsRepository;
-    @Mock private TranslationsService translationsService;
-    @Mock private ConfigReader configReader;
+ @Test
+    void addAbFullPartyDetails_success_whenIdentifierIsNull() throws Exception {
+        PartyService spyService = spy(partyService);
+        when(spyService.mapNewPartyModelToABCustomerRequestHeader(anyMap(), anyString()))
+                .thenReturn(new ABCustomerRequestHeader());
+        when(mdmApisClient.getGlobalId(anyString())).thenReturn("GLOBAL123");
+        when(soapRequestService.getRiskRating(any(), anyMap())).thenReturn("RISK123");
+        when(newPartyModelMapper.mapNewPartyModelToFixedLengthString(any(), any(), any(), any(), anyString()))
+                .thenReturn("fixedString");
 
-    @InjectMocks
-    private PartyService partyService;
+        BackendResponse backendResponse = new BackendResponse();
+        backendResponse.setBackendCreateCustomerResponse(new BackendCreateCustomerResponse("CUSTOMER123"));
+        when(mdmApisClient.callQueueIntegrationService(any(), anyString(), anyString()))
+                .thenReturn(backendResponse);
 
-    private NewPartyModel newPartyModel;
-    private Map<String, String> headers;
+        CustomerAbResponse response = spyService.addAbFullPartyDetails(newPartyModel, headers, "CORP123", null);
 
-    @BeforeEach
-    void setUp() {
-        newPartyModel = new NewPartyModel();
-        headers = new HashMap<>();
+        assertThat(response).isNotNull();
+        assertThat(response.getCustomerId()).isEqualTo("CUSTOMER123");
+        assertThat(response.getGlobalId()).isEqualTo("GLOBAL123");
     }
 
     @Test
-    void testCreateAbTransaction_Success() throws Exception {
-        // Arrange
-        CustomerAbResponse customerAbResponse = new CustomerAbResponse();
+    void addAbFullPartyDetails_reopenCustomer_success() throws Exception {
         PartyService spyService = spy(partyService);
 
-        doNothing().when(spyService).checkHeaderNulls(anyMap());
-        doReturn(customerAbResponse).when(spyService).addAbFullPartyDetails(any(), anyMap(), anyString(), anyString());
+        newPartyModel.setReopenCustomer(true);
+        headers.put("inputCountry", "US");
 
-        // Act
-        CustomerAbResponse result = spyService.createAbTransaction(newPartyModel, headers, "corpId123", "identifier");
+        Relationship relationship = new Relationship();
+        relationship.setGlobalId("GLOBAL456");
+        when(spyService.mapNewPartyModelToABCustomerRequestHeader(anyMap(), anyString()))
+                .thenReturn(new ABCustomerRequestHeader());
+        when(goldenRelationshipRepository.getCustomerByRelatedProductCountryRoleOrganizationAndIsDeleted(anyString(), anyString()))
+                .thenReturn(relationship);
+        when(soapRequestService.getRiskRating(any(), anyMap())).thenReturn("RISK456");
+        when(newPartyModelMapper.mapNewPartyModelToFixedLengthString(any(), any(), any(), any(), anyString()))
+                .thenReturn("fixedString");
 
-        // Assert
-        assertThat(result).isEqualTo(customerAbResponse);
+        BackendResponse backendResponse = new BackendResponse();
+        backendResponse.setBackendCreateCustomerResponse(new BackendCreateCustomerResponse("CUSTOMER456"));
+        when(mdmApisClient.callQueueIntegrationService(any(), anyString(), anyString()))
+                .thenReturn(backendResponse);
 
-        verify(spyService).checkHeaderNulls(headers);
-        verify(spyService).addAbFullPartyDetails(newPartyModel, headers, "corpId123", "identifier");
+        CustomerAbResponse response = spyService.addAbFullPartyDetails(newPartyModel, headers, "CORP456", "IDENTIFIER");
+
+        assertThat(response).isNotNull();
+        assertThat(response.getCustomerId()).isEqualTo("CUSTOMER456");
+        assertThat(response.getGlobalId()).isEqualTo("GLOBAL456");
     }
 
     @Test
-    void testCreateAbTransaction_HeaderNulls_ThrowsException() throws Exception {
-        // Arrange
+    void addAbFullPartyDetails_identifierNotNullAndNotReopen_throwsBusinessWarningException() {
+        newPartyModel.setReopenCustomer(false);
+
+        assertThrows(BusinessWarningException.class,
+                () -> partyService.addAbFullPartyDetails(newPartyModel, headers, "CORP123", "IDENTIFIER"));
+    }
+
+    @Test
+    void addAbFullPartyDetails_reopenCustomerButNotFound_throwsValueNotFoundException() {
+        newPartyModel.setReopenCustomer(true);
+        headers.put("inputCountry", "US");
+
+        when(goldenRelationshipRepository.getCustomerByRelatedProductCountryRoleOrganizationAndIsDeleted(anyString(), anyString()))
+                .thenReturn(null);
+
+        assertThrows(ValueNotFoundException.class,
+                () -> partyService.addAbFullPartyDetails(newPartyModel, headers, "CORP123", "IDENTIFIER"));
+    }
+
+    @Test
+    void addAbFullPartyDetails_backendResponseNull_throwsBadRequestException() throws Exception {
         PartyService spyService = spy(partyService);
-        doThrow(new IllegalArgumentException("Header missing")).when(spyService).checkHeaderNulls(anyMap());
+        when(spyService.mapNewPartyModelToABCustomerRequestHeader(anyMap(), anyString()))
+                .thenReturn(new ABCustomerRequestHeader());
+        when(mdmApisClient.getGlobalId(anyString())).thenReturn("GLOBAL123");
+        when(soapRequestService.getRiskRating(any(), anyMap())).thenReturn("RISK123");
+        when(newPartyModelMapper.mapNewPartyModelToFixedLengthString(any(), any(), any(), any(), anyString()))
+                .thenReturn("fixedString");
 
-        // Act & Assert
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,
-                () -> spyService.createAbTransaction(newPartyModel, headers, "corpId123", "identifier"));
+        BackendResponse backendResponse = new BackendResponse(); // null BackendCreateCustomerResponse
+        when(mdmApisClient.callQueueIntegrationService(any(), anyString(), anyString()))
+                .thenReturn(backendResponse);
 
-        assertThat(ex.getMessage()).isEqualTo("Header missing");
-
-        verify(spyService).checkHeaderNulls(headers);
-        verify(spyService, never()).addAbFullPartyDetails(any(), anyMap(), anyString(), anyString());
+        assertThrows(BadRequestException.class,
+                () -> spyService.addAbFullPartyDetails(newPartyModel, headers, "CORP123", null));
     }
