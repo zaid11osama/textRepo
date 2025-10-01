@@ -1,24 +1,76 @@
 @Test
-void testCreateAbCustomer_MissingCustomerIdOrGlobalId() throws Exception {
+void testGetFullDetails_Success() throws Exception {
     // Arrange
-    CustomerAbResponse customerResponse = new CustomerAbResponse();
-    customerResponse.setCustomerId(null); // simulate missing ID
-    customerResponse.setGlobalId("GLOBAL123");
-
+    NewPartyModel expectedResponse = new NewPartyModel();
     when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.createAbTransaction(any(), any(), any(), any()))
-            .thenReturn(customerResponse);
+    when(partyService.getNewPartyModel(headers, "identifier")).thenReturn(expectedResponse);
+    when(objectMapper.writeValueAsString(expectedResponse)).thenReturn("{json}");
 
-    // Act & Assert
-    Exception ex = assertThrows(Exception.class,
-            () -> mainService.createAbCustomer(newPartyModel, headers, "identifier"));
+    // Act
+    NewPartyModel result = mainService.getFullDetails("identifier", headers);
 
-    assertThat(ex.getMessage()).isEqualTo("Customer ID or Global ID is null : request not processed correctly ");
+    // Assert
+    assertThat(result).isEqualTo(expectedResponse);
 
     verify(dbLogger).updateLogChannelOutput(
-            eq("Customer ID or Global ID is null : request not processed correctly "),
+            eq("{json}"),
+            eq(HttpStatus.OK.name()),
+            eq(HttpStatus.OK.value()),
+            eq(logChannel)
+    );
+}
+
+
+
+
+
+
+@Test
+void testGetFullDetails_BusinessWarningException() throws Exception {
+    // Arrange
+    when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
+    when(partyService.getNewPartyModel(headers, "identifier"))
+            .thenThrow(new BusinessWarningException("Business warning"));
+
+    // Act & Assert
+    BusinessWarningException ex = assertThrows(BusinessWarningException.class,
+            () -> mainService.getFullDetails("identifier", headers));
+
+    assertThat(ex.getMessage()).isEqualTo("Business warning");
+
+    verify(dbLogger).updateLogChannelOutput(
+            eq("Business warning"),
             eq(HttpStatus.BAD_REQUEST.name()),
             eq(HttpStatus.BAD_REQUEST.value()),
             eq(logChannel)
     );
 }
+
+
+
+
+
+
+
+@Test
+void testGetFullDetails_GenericException() throws Exception {
+    // Arrange
+    when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
+    when(partyService.getNewPartyModel(headers, "identifier"))
+            .thenThrow(new RuntimeException("Something went wrong"));
+
+    // Act & Assert
+    Exception ex = assertThrows(RuntimeException.class,
+            () -> mainService.getFullDetails("identifier", headers));
+
+    assertThat(ex.getMessage()).isEqualTo("Something went wrong");
+
+    verify(dbLogger).updateLogChannelOutput(
+            eq("Something went wrong"),
+            eq(HttpStatus.BAD_REQUEST.name()),
+            eq(HttpStatus.BAD_REQUEST.value()),
+            eq(logChannel)
+    );
+}
+
+
