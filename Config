@@ -1,9 +1,27 @@
-	 String  handelRiskRating(NewPartyModel newPartyModel, Map<String, String> headers) throws Exception {
-		if (newPartyModel.getComplianceDetails() != null && newPartyModel.getComplianceDetails().get_riskRating() != null
-				&& newPartyModel.getComplianceDetails().get_riskRating().getCode() != null
-				&& newPartyModel.getComplianceDetails().get_riskRating().getCode().equalsIgnoreCase(Constants.RR.CALC_RR_FLAG)) {
-			newPartyModel.getComplianceDetails().get_riskRating().setCode(soapRequestService.getRiskRating(newPartyModel, headers));
-			return soapRequestService.getRiskRating(newPartyModel, headers);
+	public static List<Document> mapPartyDocumentsToDocuments(PartyDocument partyDocument, String inputCountry) {
+		log.info("mapPartyDocumentsToDocuments()");
+		try {
+			if (partyDocument != null) {
+				List<Document> documents = new ArrayList<>();
+				DocumentDetail documentDetailPassport = partyDocument.getPassport();
+				DocumentDetail documentDetailId = partyDocument.getIdDocument();
+				List<OtherDocuments> otherDocuments = partyDocument.getOthers();
+				if (documentDetailPassport != null)
+					setDocumentsDetails(documentDetailPassport, documents, Others.N01);
+				if (documentDetailId != null && inputCountry != null )
+					setDocumentsDetails(documentDetailId, documents,
+						inputCountry.equalsIgnoreCase(Others.AE_COUNTRY) ? Others.N26 : Others.N03);
+				if (!ObjectUtils.isEmpty(otherDocuments)) {
+					for (OtherDocuments document : otherDocuments)
+						if (document != null)
+							setDocumentsDetails(document.getDetails(), documents, document.get_type().getCode());
+				}
+				return documents;
+			}
+			return null;
+		} finally {
+			log.info("/mapPartyDocumentsToDocuments()");
 		}
-		return null;
 	}
+
+
