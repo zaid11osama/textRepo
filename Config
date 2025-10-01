@@ -1,16 +1,18 @@
-public String updateAbCustomer(NewPartyModel newPartyModel, Map<String, String> headers, String partyIdentifire)
-			throws Exception {
-		log.info("updateAbCustomer()");
+public Optional<MdmLogCupTransaction> getStatus(String customerId, String transactionReference,
+			Map<String, String> headers) throws JsonProcessingException, SQLException {
+		log.info("getStatus()");
 		String corporationId = generateReference();
-		LogChannelEntity logChannel = dbLogger.logIntoDb(newPartyModel, headers, corporationId,
-				EndpointsName.UPDATE_AB);
-
-
+		LogChannelEntity logChannel = dbLogger.logIntoDb(transactionReference + "/" + customerId, headers,
+				corporationId, EndpointsName.GET_STATUS);
 
 		try {
-			String response = partyService.updateAbTransaction(newPartyModel, headers, corporationId, partyIdentifire);
+			Optional<MdmLogCupTransaction> response = partyService.getTransactionStatus(customerId,
+					transactionReference, headers);
 			dbLogger.updateLogChannelOutput(objectMapper.writeValueAsString(response), HttpStatus.OK.name(),
 					HttpStatus.OK.value(), logChannel);
+			if (response.isEmpty()) {
+				throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No content found for the given transaction.");
+			}
 			return response;
 		} catch (Exception e) {
 			log.error(e.getMessage());
@@ -18,6 +20,6 @@ public String updateAbCustomer(NewPartyModel newPartyModel, Map<String, String> 
 					HttpStatus.BAD_REQUEST.value(), logChannel);
 			throw e;
 		} finally {
-			log.info("/updateAbCustomer()");
+			log.info("/getStatus()");
 		}
 	}
