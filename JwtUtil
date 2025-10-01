@@ -1,64 +1,19 @@
- @Test
-    void mapPartyDocumentsToDocuments_ShouldReturnNull_WhenPartyDocumentIsNull() {
-        // Act
-        List<Document> result = ValidateSearchAttributes.mapPartyDocumentsToDocuments(null, "AE");
-
-        // Assert
-        assertNull(result);
-    }
-
-    @Test
-    void mapPartyDocumentsToDocuments_ShouldMapDocumentsCorrectly() {
-        // Arrange
-        PartyDocument partyDocument = new PartyDocument();
-
-        // Passport document
-        DocumentDetail passportDetail = new DocumentDetail();
-        passportDetail.setNumber("P12345");
-        partyDocument.setPassport(passportDetail);
-
-        // ID document
-        DocumentDetail idDetail = new DocumentDetail();
-        idDetail.setNumber("ID6789");
-        partyDocument.setIdDocument(idDetail);
-
-        // Other documents
-        OtherDocuments otherDoc = new OtherDocuments();
-        DocumentDetail otherDetail = new DocumentDetail();
-        otherDetail.setNumber("OTH001");
-        otherDoc.setDetails(otherDetail);
-
-        Translation docType = new Translation();
-        docType.setCode("N99");
-        otherDoc.set_type(docType);
-
-        List<OtherDocuments> otherDocuments = new ArrayList<>();
-        otherDocuments.add(otherDoc);
-        partyDocument.setOthers(otherDocuments);
-
-        // Act
-        List<Document> documents = ValidateSearchAttributes.mapPartyDocumentsToDocuments(partyDocument, "AE");
-
-        // Assert
-        assertNotNull(documents);
-        assertEquals(3, documents.size()); // Passport + ID + Other document
-        assertTrue(documents.stream().anyMatch(d -> "P12345".equals(d.getNumber())));
-        assertTrue(documents.stream().anyMatch(d -> "ID6789".equals(d.getNumber())));
-        assertTrue(documents.stream().anyMatch(d -> "OTH001".equals(d.getNumber())));
-    }
-
-    @Test
-    void mapPartyDocumentsToDocuments_ShouldHandleEmptyOthers() {
-        // Arrange
-        PartyDocument partyDocument = new PartyDocument();
-        partyDocument.setPassport(new DocumentDetail());
-        partyDocument.setIdDocument(new DocumentDetail());
-        partyDocument.setOthers(new ArrayList<>()); // empty list
-
-        // Act
-        List<Document> result = ValidateSearchAttributes.mapPartyDocumentsToDocuments(partyDocument, "AE");
-
-        // Assert
-        assertNotNull(result);
-        assertEquals(2, result.size()); // Only passport + ID
-    }
+	public void produceDocuments(List<Document> documents, String generateCustomerId, String globalId,
+			String nationalNumber, Map<String, String> headers, String customerName, String corporationId)
+			throws JsonProcessingException {
+		log.info("produceDocuments()");
+		String inputCountry = headers.get(MdmHeaderRequest.INPUT_COUNTRY);
+		String tenantId = headers.get(MdmHeaderRequest.TENANT_ID);
+		for (Document document : documents) {
+			String dmsId = document.getDmsId();
+			String docType = HelperUtils.checkTranslation(document.getType());
+			String documentNumber = document.getDocumentNumber();
+			if (!isEmpty(dmsId) && !isEmpty(docType)) {
+				saveDocument(docType, dmsId, globalId, corporationId, inputCountry,
+						HelperUtils.checkTranslation(document.getDocumentCountry()), "-", documentNumber);
+				kafkaUtil.produceMessage(generateCustomerId, globalId, nationalNumber, inputCountry, tenantId, dmsId,
+						docType, documentNumber, customerName);
+			}
+		}
+		log.info("/produceDocuments()");
+	}
