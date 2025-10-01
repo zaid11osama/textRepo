@@ -7,3 +7,17 @@
 		logsChannelRepository.save(logChannelEntity);
 		log.info("/updateLogChannelOutput()");
 	}
+
+
+
+@Component
+public class ValidateSearchAttributes {
+
+	public static void updateLogChannel(String data, String responseMessage, String recordType, int status,
+			LogChannelEntity logChannel) {
+		logChannel.setData(data);
+		logChannel.setResponseMessages(responseMessage);
+		logChannel.setRecordType(recordType);
+		logChannel.setResponseStatus(status);
+	}
+}
