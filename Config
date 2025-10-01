@@ -1,25 +1,23 @@
-	public NewPartyModel getFullDetails(String identifier, Map<String, String> headers)
-			throws JsonProcessingException, SQLException {
-		log.info("getFullDetails()");
+public String updateAbCustomer(NewPartyModel newPartyModel, Map<String, String> headers, String partyIdentifire)
+			throws Exception {
+		log.info("updateAbCustomer()");
 		String corporationId = generateReference();
-		LogChannelEntity logChannel = dbLogger.logIntoDb(identifier, headers, corporationId, EndpointsName.GET_AB);
+		LogChannelEntity logChannel = dbLogger.logIntoDb(newPartyModel, headers, corporationId,
+				EndpointsName.UPDATE_AB);
+
+
 
 		try {
-			NewPartyModel response = partyService.getNewPartyModel(headers, identifier);
+			String response = partyService.updateAbTransaction(newPartyModel, headers, corporationId, partyIdentifire);
 			dbLogger.updateLogChannelOutput(objectMapper.writeValueAsString(response), HttpStatus.OK.name(),
 					HttpStatus.OK.value(), logChannel);
 			return response;
-		}catch (BusinessWarningException e) {
-			log.warn(e.getMessage());
-			dbLogger.updateLogChannelOutput(e.getMessage(), HttpStatus.BAD_REQUEST.name(),
-					HttpStatus.BAD_REQUEST.value(), logChannel);
-			throw e;
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			dbLogger.updateLogChannelOutput(e.getMessage(), HttpStatus.BAD_REQUEST.name(),
 					HttpStatus.BAD_REQUEST.value(), logChannel);
 			throw e;
 		} finally {
-			log.info("/getFullDetails()");
+			log.info("/updateAbCustomer()");
 		}
 	}
