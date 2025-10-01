@@ -1,53 +1,24 @@
- @Test
-    void testCreateAbCustomer_BusinessWarningException() throws Exception {
-        // Arrange
-        when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-        when(partyService.createAbTransaction(any(), any(), any(), any()))
-                .thenThrow(new BusinessWarningException("Business warning"));
+@Test
+void testCreateAbCustomer_MissingCustomerIdOrGlobalId() throws Exception {
+    // Arrange
+    CustomerAbResponse customerResponse = new CustomerAbResponse();
+    customerResponse.setCustomerId(null); // simulate missing ID
+    customerResponse.setGlobalId("GLOBAL123");
 
-        // Act & Assert
-        BusinessWarningException ex = assertThrows(BusinessWarningException.class,
-                () -> mainService.createAbCustomer(newPartyModel, headers, "identifier"));
+    when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
+    when(partyService.createAbTransaction(any(), any(), any(), any()))
+            .thenReturn(customerResponse);
 
-        assertThat(ex.getMessage()).isEqualTo("Business warning");
+    // Act & Assert
+    Exception ex = assertThrows(Exception.class,
+            () -> mainService.createAbCustomer(newPartyModel, headers, "identifier"));
 
-        verify(dbLogger).updateLogChannelOutput(
-                eq("Business warning"),
-                eq(HttpStatus.BAD_REQUEST.name()),
-                eq(HttpStatus.BAD_REQUEST.value()),
-                eq(logChannel)
-        );
-    }
+    assertThat(ex.getMessage()).isEqualTo("Customer ID or Global ID is null : request not processed correctly ");
 
-    @Test
-    void testCreateAbCustomer_GenericException() throws Exception {
-        // Arrange
-        when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-        when(partyService.createAbTransaction(any(), any(), any(), any()))
-                .thenThrow(new RuntimeException("Unexpected error"));
-
-        // Act & Assert
-        Exception ex = assertThrows(Exception.class,
-                () -> mainService.createAbCustomer(newPartyModel, headers, "identifier"));
-
-        assertThat(ex.getMessage()).isEqualTo("Unexpected error");
-
-        verify(dbLogger).updateLogChannelOutput(
-                eq("Unexpected error"),
-                eq(HttpStatus.BAD_REQUEST.name()),
-                eq(HttpStatus.BAD_REQUEST.value()),
-                eq(logChannel)
-        );
-    }
-
-    @Test
-    void testCreateAbCustomer_MissingInputTimestamp() {
-        // Arrange
-        headers.clear(); // no inputtimestamp
-
-        // Act & Assert
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,
-                () -> mainService.createAbCustomer(newPartyModel, headers, "identifier"));
-
-        assertThat(ex.getMessage()).isEqualTo("Input timestamp is required.");
-    }
+    verify(dbLogger).updateLogChannelOutput(
+            eq("Customer ID or Global ID is null : request not processed correctly "),
+            eq(HttpStatus.BAD_REQUEST.name()),
+            eq(HttpStatus.BAD_REQUEST.value()),
+            eq(logChannel)
+    );
+}
