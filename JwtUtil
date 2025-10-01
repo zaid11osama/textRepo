@@ -1,49 +1,26 @@
-   @Autowired
-    private MockMvc mockMvc;
 
-    @Autowired
-    private FileReader fileReader;
+    @Test
+    void testCreateAbCustomer_Success() throws Exception {
+        // Arrange
+        CustomerAbResponse customerResponse = new CustomerAbResponse();
+        customerResponse.setCustomerId("CUST123");
+        customerResponse.setGlobalId("GLOBAL123");
 
-    @Mock
-    private TaskRepository taskRepository;
+        when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
+        when(partyService.createAbTransaction(any(), any(), any(), any())).thenReturn(customerResponse);
+        when(objectMapper.writeValueAsString(any())).thenReturn("{\"customerId\":\"CUST123\"}");
 
-    @Mock
-    private SubTaskRepository subTaskRepository;
+        // Act
+        CustomerAbResponse result = mainService.createAbCustomer(newPartyModel, headers, "identifier");
 
-    @Mock
-    private SubTasksResponseRepository subTasksResponseRepository;
+        // Assert
+        assertThat(result).isNotNull();
+        assertThat(result.getCustomerId()).isEqualTo("CUST123");
 
-    @Mock
-    private UserActionRequestDto userActionRequestDto;
-
-    @Mock
-    private PersonIdentifierDto personIdentifierDto;
-
-    @InjectMocks
-    private CheckerController checkerController;
-
-    @Spy//create real object by default call real methods
-    //create an instance of the class under test (create real class under test)
-    //with dependencies injected automatically
-
-    private CheckerService checkerService;
-
-    @Mock
-    private Task testTask;
-
-    @Mock
-    private SubTask subTask;
-
-    @Mock
-    private MasterPerCountryRepository masterPerCountryRepository;
-
-    @Mock  //is fake implementation,all methods return defauls values(null,0,false,empty collection)
-    //doesn't call real methods
-    private RelationshipRepository relationshipRepository;
-
-    //run before each test
-    @BeforeEach
-    public void setup() throws Exception {
-        MockitoAnnotations.openMocks(this);
-        mockMvc =  MockMvcBuilders.standaloneSetup(checkerController).build();
+        verify(dbLogger).updateLogChannelOutput(
+                eq("{\"customerId\":\"CUST123\"}"),
+                eq(HttpStatus.CREATED.name()),
+                eq(HttpStatus.CREATED.value()),
+                eq(logChannel)
+        );
     }
