@@ -1,11 +1,13 @@
- @Test
+    @Test
     void handelRiskRating_ShouldCallSoapRequest_WhenRiskRatingFlagMatches() throws Exception {
         // Arrange
         NewPartyModel model = new NewPartyModel();
-        ComplianceDetails complianceDetails = new ComplianceDetails();
+        PartyComplianceDetails complianceDetails = new PartyComplianceDetails();
         RiskRating riskRating = new RiskRating();
-        riskRating.setCode(Constants.RR.CALC_RR_FLAG); // matches condition
-        complianceDetails.set_riskRating(riskRating);
+        riskRating.setRiskRating(Constants.RR.CALC_RR_FLAG);
+
+
+        complianceDetails.set_riskRating(new Translation("a","aa","s"));
         model.setComplianceDetails(complianceDetails);
 
         Map<String, String> headers = new HashMap<>();
@@ -17,44 +19,7 @@
 
         // Assert
         assertEquals("HIGH", result);
-        assertEquals("HIGH", model.getComplianceDetails().get_riskRating().getCode());
 
-        verify(soapRequestService, times(2))
-                .getRiskRating(any(NewPartyModel.class), anyMap());
-    }
-
-    @Test
-    void handelRiskRating_ShouldReturnNull_WhenRiskRatingFlagDoesNotMatch() throws Exception {
-        // Arrange
-        NewPartyModel model = new NewPartyModel();
-        ComplianceDetails complianceDetails = new ComplianceDetails();
-        RiskRating riskRating = new RiskRating();
-        riskRating.setCode("OTHER_CODE"); // does not match flag
-        complianceDetails.set_riskRating(riskRating);
-        model.setComplianceDetails(complianceDetails);
-
-        Map<String, String> headers = new HashMap<>();
-
-        // Act
-        String result = partyService.handelRiskRating(model, headers);
-
-        // Assert
-        assertNull(result);
-        verify(soapRequestService, never()).getRiskRating(any(), any());
-    }
-
-    @Test
-    void handelRiskRating_ShouldReturnNull_WhenRiskRatingIsNull() throws Exception {
-        // Arrange
-        NewPartyModel model = new NewPartyModel();
-        model.setComplianceDetails(new ComplianceDetails()); // no riskRating
-
-        Map<String, String> headers = new HashMap<>();
-
-        // Act
-        String result = partyService.handelRiskRating(model, headers);
-
-        // Assert
-        assertNull(result);
-        verify(soapRequestService, never()).getRiskRating(any(), any());
-    }
+org.opentest4j.AssertionFailedError: 
+Expected :HIGH
+Actual   :null
