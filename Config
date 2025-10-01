@@ -1,54 +1,25 @@
-@Service
-@RequiredArgsConstructor
-@Slf4j
-public class MainService {
-
-	private final PartyService partyService;
-	private final ObjectMapper objectMapper;
-	private final DbLoggerService dbLogger;
-
-	/////////////////////////////////////////////////////////
-
-	
-
-	public CustomerAbResponse createAbCustomer(NewPartyModel newPartyModel, Map<String, String> headers, String identifier)
-			throws Exception {
-		log.info("createAbCustomer()");
+	public NewPartyModel getFullDetails(String identifier, Map<String, String> headers)
+			throws JsonProcessingException, SQLException {
+		log.info("getFullDetails()");
 		String corporationId = generateReference();
-		LogChannelEntity logChannel = dbLogger.logIntoDb(newPartyModel, headers, corporationId, EndpointsName.CREATE_AB);
-
-		// Validate headers
-		//validateHeaders(headers);
-
-		// Validate inputTimestamp
-		String inputTimestamp = headers.get("inputtimestamp");
-		if (inputTimestamp != null) {
-			validateInputTimestamp(inputTimestamp);
-		} else {
-			throw new IllegalArgumentException("Input timestamp is required.");
-		}
+		LogChannelEntity logChannel = dbLogger.logIntoDb(identifier, headers, corporationId, EndpointsName.GET_AB);
 
 		try {
-			CustomerAbResponse customerResponse = partyService.createAbTransaction(newPartyModel, headers, corporationId, identifier);
-
-			if (customerResponse.getCustomerId() == null || customerResponse.getGlobalId() == null) {
-				throw new Exception("Customer ID or Global ID is null : request not processed correctly ");
-			}
-			dbLogger.updateLogChannelOutput(objectMapper.writeValueAsString(customerResponse),
-					HttpStatus.CREATED.name(), HttpStatus.CREATED.value(), logChannel);
-			return customerResponse;
-		} catch (BusinessWarningException e) {
+			NewPartyModel response = partyService.getNewPartyModel(headers, identifier);
+			dbLogger.updateLogChannelOutput(objectMapper.writeValueAsString(response), HttpStatus.OK.name(),
+					HttpStatus.OK.value(), logChannel);
+			return response;
+		}catch (BusinessWarningException e) {
 			log.warn(e.getMessage());
 			dbLogger.updateLogChannelOutput(e.getMessage(), HttpStatus.BAD_REQUEST.name(),
 					HttpStatus.BAD_REQUEST.value(), logChannel);
 			throw e;
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			log.error(e.getMessage());
 			dbLogger.updateLogChannelOutput(e.getMessage(), HttpStatus.BAD_REQUEST.name(),
 					HttpStatus.BAD_REQUEST.value(), logChannel);
 			throw e;
 		} finally {
-			log.info("/createAbCustomer()");
+			log.info("/getFullDetails()");
 		}
 	}
