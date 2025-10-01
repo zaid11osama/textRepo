@@ -23,3 +23,13 @@
 org.opentest4j.AssertionFailedError: 
 Expected :HIGH
 Actual   :null
+
+
+public class RiskRating {
+    private String riskRating;
+    private float ratingFrequency;
+    private Date nextReviewDate;
+    private Date lastReviewDate;
+
+
+}
