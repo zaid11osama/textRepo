@@ -1,17 +1,16 @@
  @Test
-    void produceDocuments_ShouldCallSaveDocumentAndProduceMessage_WhenValidDocument() throws JsonProcessingException {
+    void produceDocumentForImages_ShouldCallSaveDocumentAndProduceMessage_WhenValidImage() throws JsonProcessingException {
         // Arrange
-        Document doc = new Document();
-        doc.setDmsId("DMS123");
-        doc.setType("Passport");
-        doc.setDocumentNumber("DOC456");
-        doc.setDocumentCountry("CountryX");
+        PartyImage image = new PartyImage();
+        ArchiveDetails archiveDetails = new ArchiveDetails();
+        archiveDetails.setDmsReference("DMS789");
+        image.setArchiveDetails(archiveDetails);
+        image.set_type("PassportImage");
 
-        List<Document> documents = List.of(doc);
+        List<PartyImage> images = List.of(image);
 
         Map<String, String> headers = new HashMap<>();
         headers.put(MdmHeaderRequest.INPUT_COUNTRY, "AE");
-        headers.put(MdmHeaderRequest.TENANT_ID, "Tenant123");
 
         String generateCustomerId = "Cust001";
         String globalId = "Global001";
@@ -24,32 +23,31 @@
             helperUtilsMock.when(() -> HelperUtils.checkTranslation(anyString())).thenReturn("CheckedType");
 
             // Act
-            partyService.produceDocuments(documents, generateCustomerId, globalId, nationalNumber,
-                    headers, customerName, corporationId);
+            partyService.produceDocumentForImages(images, headers, generateCustomerId, globalId, nationalNumber, customerName, corporationId);
 
             // Assert
             verify(kafkaUtil, times(1))
                     .produceMessage(eq(generateCustomerId), eq(globalId), eq(nationalNumber), eq("AE"),
-                            eq("Tenant123"), eq("DMS123"), eq("CheckedType"), eq("DOC456"), eq(customerName));
+                            eq(Others.AB), eq("DMS789"), eq("CheckedType"), eq(""), eq(customerName));
         }
     }
 
     @Test
-    void produceDocuments_ShouldSkipDocument_WhenDmsIdOrDocTypeIsEmpty() throws JsonProcessingException {
+    void produceDocumentForImages_ShouldSkipImage_WhenDmsIdOrDocTypeIsEmpty() throws JsonProcessingException {
         // Arrange
-        Document doc = new Document();
-        doc.setDmsId(""); // empty DMS ID
-        doc.setType(null);
+        PartyImage image = new PartyImage();
+        ArchiveDetails archiveDetails = new ArchiveDetails();
+        archiveDetails.setDmsReference(""); // empty DMS ID
+        image.setArchiveDetails(archiveDetails);
+        image.set_type(null);
 
-        List<Document> documents = List.of(doc);
+        List<PartyImage> images = List.of(image);
 
         Map<String, String> headers = new HashMap<>();
         headers.put(MdmHeaderRequest.INPUT_COUNTRY, "AE");
-        headers.put(MdmHeaderRequest.TENANT_ID, "Tenant123");
 
         // Act
-        partyService.produceDocuments(documents, "Cust001", "Global001", "Nat123",
-                headers, "John Doe", "Corp001");
+        partyService.produceDocumentForImages(images, headers, "Cust001", "Global001", "Nat123", "John Doe", "Corp001");
 
         // Assert
         verify(kafkaUtil, never()).produceMessage(any(), any(), any(), any(), any(), any(), any(), any(), any());
