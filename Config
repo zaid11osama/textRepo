@@ -1,11 +1,5 @@
-public class KafkaProducerService {
-
-	private final KafkaTemplate<String, Object> kafkaTemplate;
-	private final ConfigReader configReader;
-
-	public void sendToOrchMainTopic(String object) {
-		log.info("sendToOrchMainTopic()");
-		String topicName = configReader.getProperty("ab.mdm.orch.request_main_topic");
-		sendKafkaMessage(object, topicName);
-		log.info("/sendToOrchMainTopic()");
+	public void sendKafkaMessage(String jsonOfObject, String topicName) {
+		log.info("sendKafkaMessage()");
+		kafkaTemplate.send(topicName, jsonOfObject);
+		log.info("/sendKafkaMessage()");
 	}
