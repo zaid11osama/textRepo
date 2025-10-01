@@ -1,18 +1,14 @@
-public Optional<MdmLogCupTransaction> getStatus(String customerId, String transactionReference,
-			Map<String, String> headers) throws JsonProcessingException, SQLException {
-		log.info("getStatus()");
+public Object getSpecificModel(String modelName, String identifier, Map<String, String> headers) throws Exception {
+		log.info("getSpecificModel()");
 		String corporationId = generateReference();
-		LogChannelEntity logChannel = dbLogger.logIntoDb(transactionReference + "/" + customerId, headers,
-				corporationId, EndpointsName.GET_STATUS);
+		String endpointName = EndpointsName.GET_SPECIFIC_AB + "/" + identifier + "/" + modelName;
+		LogChannelEntity logChannel = dbLogger.logIntoDb(identifier, headers, corporationId, endpointName);
+
 
 		try {
-			Optional<MdmLogCupTransaction> response = partyService.getTransactionStatus(customerId,
-					transactionReference, headers);
+			Object response = partyService.generalGet(headers, identifier, modelName);
 			dbLogger.updateLogChannelOutput(objectMapper.writeValueAsString(response), HttpStatus.OK.name(),
 					HttpStatus.OK.value(), logChannel);
-			if (response.isEmpty()) {
-				throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No content found for the given transaction.");
-			}
 			return response;
 		} catch (Exception e) {
 			log.error(e.getMessage());
@@ -20,6 +16,6 @@ public Optional<MdmLogCupTransaction> getStatus(String customerId, String transa
 					HttpStatus.BAD_REQUEST.value(), logChannel);
 			throw e;
 		} finally {
-			log.info("/getStatus()");
+			log.info("/getSpecificModel()");
 		}
 	}
