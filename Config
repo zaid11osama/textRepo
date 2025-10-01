@@ -1,68 +1,9 @@
-public CustomerAbResponse addAbFullPartyDetails(NewPartyModel newPartyModel, Map<String, String> headers,
-			String corporationId, String identifier) throws Exception {
-		log.info("addAbFullPartyDetails({})", corporationId);
-
-		ABCustomerRequestHeader abCustomerRequestHeader = mapNewPartyModelToABCustomerRequestHeader(headers,
-				corporationId);
-
-		Relationship existingCustomer = null;
-
-		if(identifier == null)
-			checkAndThrowIfPartyHasIdentificationNumber(newPartyModel, abCustomerRequestHeader);
-
-		else if(newPartyModel.isReopenCustomer()) {
-			String country = headers.get("inputCountry") != null ? headers.get("inputCountry") : (headers.get("requestCountry") != null ?  headers.get("requestCountry") : headers.get("requestcountry")) ;
-			existingCustomer = goldenRelationshipRepository.getCustomerByRelatedProductCountryRoleOrganizationAndIsDeleted(identifier,country);
-			if(existingCustomer == null)
-				throw new ValueNotFoundException("Customer not found");
-		}else
-			throw new BusinessWarningException("Please make reopenCustomer = TRUE in body along with the provided Customer ID / Identifier");
-		String generatedGlobalId = existingCustomer != null ? existingCustomer.getGlobalId() : mdmApisClient.getGlobalId(Others.KI_PREFIX) ;
-
-		String guardianCID = getGuardianCustomerId(newPartyModel, headers);
-		String riskRating = soapRequestService.getRiskRating(newPartyModel, headers);
-		String guardianGID = getGuardianGlobalId(newPartyModel, headers);
-
-        String fixedLengthString = newPartyModelMapper.mapNewPartyModelToFixedLengthString(
-				newPartyModel,
-				abCustomerRequestHeader,
-				riskRating,
-				buildGuardianNewPartyModelForPost(headers, guardianCID),
-				identifier
-                );
-
-		BackendResponse backendResponse =  mdmApisClient.callQueueIntegrationService(
-				abCustomerRequestHeader,
-				fixedLengthString,
-				corporationId);
-
-		if (Objects.isNull(backendResponse.getBackendCreateCustomerResponse())) {
-			throw new BadRequestException(backendResponse.getResponseMessage());
+	 String  handelRiskRating(NewPartyModel newPartyModel, Map<String, String> headers) throws Exception {
+		if (newPartyModel.getComplianceDetails() != null && newPartyModel.getComplianceDetails().get_riskRating() != null
+				&& newPartyModel.getComplianceDetails().get_riskRating().getCode() != null
+				&& newPartyModel.getComplianceDetails().get_riskRating().getCode().equalsIgnoreCase(Constants.RR.CALC_RR_FLAG)) {
+			newPartyModel.getComplianceDetails().get_riskRating().setCode(soapRequestService.getRiskRating(newPartyModel, headers));
+			return soapRequestService.getRiskRating(newPartyModel, headers);
 		}
-
-		BackendCreateCustomerResponse backendCreateCustomerResponse = backendResponse.getBackendCreateCustomerResponse();
-
-		String customerId = backendCreateCustomerResponse.getCustomerId();
-
-		if (identifier == null){
-			tryInsertRelationships(generatedGlobalId, customerId, headers.get(MdmHeaderRequest.INPUT_COUNTRY), corporationId, guardianGID);
-			SourceRelationship sourceRelationship = buildGuardianRelationship(generatedGlobalId, customerId, headers.get(MdmHeaderRequest.INPUT_COUNTRY), corporationId, guardianGID);
-			InsertGuardianNames(newPartyModel,sourceRelationship,headers);
-		}
-
-		//buildGuardianRelationship(globalId, customerId, relationCountry, corporationId, guardianGID);
-
-		CallIntegrationToCreateDocuments(newPartyModel, headers, generatedGlobalId, customerId, corporationId);
-
-		List<CreatedAccount> createdAccounts = fillCreatedAccounts(backendResponse);
-
-		log.info("/addAbFullPartyDetails({})", corporationId);
-
-		saveCustomerOnboardingInProgressRequest(newPartyModel, generatedGlobalId, customerId);
-
-		return CustomerAbResponse.builder()
-					.customerId(customerId)
-					.globalId(generatedGlobalId)
-				    .createdAccounts(createdAccounts)
-					.build();
+		return null;
 	}
