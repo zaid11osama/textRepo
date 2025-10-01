@@ -1,13 +1,56 @@
-	@Scheduled(fixedRate = 10000)
-	public void deleteOldRecords() {
-		LocalDateTime thresholdTime = LocalDateTime.now().minusSeconds(20);
-		onboardingInProgressCustomerRepository.deleteByInsertedAtBefore(thresholdTime);
-	}
-	private void throwIfCustomerIsBeingProcessed(NewPartyModel newPartyModel) {
-        boolean isCustomerOnboardingInProgress = newPartyModel.getNationalities().stream()
-				.anyMatch(nationality -> isIdentificationNumberFilled(nationality)
-						&& onboardingInProgressCustomerRepository.countAllByIdentificationNumber(nationality.getIdentificationNumber()) > 0);
-		if (isCustomerOnboardingInProgress) {
-			throw new BadRequestException("Customer is already being processed");
-		}
-	}
+ @Test
+    void produceDocuments_ShouldCallSaveDocumentAndProduceMessage_WhenValidDocument() throws JsonProcessingException {
+        // Arrange
+        Document doc = new Document();
+        doc.setDmsId("DMS123");
+        doc.setType("Passport");
+        doc.setDocumentNumber("DOC456");
+        doc.setDocumentCountry("CountryX");
+
+        List<Document> documents = List.of(doc);
+
+        Map<String, String> headers = new HashMap<>();
+        headers.put(MdmHeaderRequest.INPUT_COUNTRY, "AE");
+        headers.put(MdmHeaderRequest.TENANT_ID, "Tenant123");
+
+        String generateCustomerId = "Cust001";
+        String globalId = "Global001";
+        String nationalNumber = "Nat123";
+        String customerName = "John Doe";
+        String corporationId = "Corp001";
+
+        // Mock static HelperUtils method
+        try (MockedStatic<HelperUtils> helperUtilsMock = mockStatic(HelperUtils.class)) {
+            helperUtilsMock.when(() -> HelperUtils.checkTranslation(anyString())).thenReturn("CheckedType");
+
+            // Act
+            partyService.produceDocuments(documents, generateCustomerId, globalId, nationalNumber,
+                    headers, customerName, corporationId);
+
+            // Assert
+            verify(kafkaUtil, times(1))
+                    .produceMessage(eq(generateCustomerId), eq(globalId), eq(nationalNumber), eq("AE"),
+                            eq("Tenant123"), eq("DMS123"), eq("CheckedType"), eq("DOC456"), eq(customerName));
+        }
+    }
+
+    @Test
+    void produceDocuments_ShouldSkipDocument_WhenDmsIdOrDocTypeIsEmpty() throws JsonProcessingException {
+        // Arrange
+        Document doc = new Document();
+        doc.setDmsId(""); // empty DMS ID
+        doc.setType(null);
+
+        List<Document> documents = List.of(doc);
+
+        Map<String, String> headers = new HashMap<>();
+        headers.put(MdmHeaderRequest.INPUT_COUNTRY, "AE");
+        headers.put(MdmHeaderRequest.TENANT_ID, "Tenant123");
+
+        // Act
+        partyService.produceDocuments(documents, "Cust001", "Global001", "Nat123",
+                headers, "John Doe", "Corp001");
+
+        // Assert
+        verify(kafkaUtil, never()).produceMessage(any(), any(), any(), any(), any(), any(), any(), any(), any());
+    }
