@@ -1,21 +1,42 @@
-public Object getSpecificModel(String modelName, String identifier, Map<String, String> headers) throws Exception {
-		log.info("getSpecificModel()");
-		String corporationId = generateReference();
-		String endpointName = EndpointsName.GET_SPECIFIC_AB + "/" + identifier + "/" + modelName;
-		LogChannelEntity logChannel = dbLogger.logIntoDb(identifier, headers, corporationId, endpointName);
+@Slf4j
+@RequiredArgsConstructor
+@Service
+public class PartyService {
+	private final PortfolioDetailsRepository portfolioDetailsRepository;
+
+	private final MdmLogCupTransactionRepository mdmLogCupTransactionRepository;
+	private final GoldenRelationshipRepository goldenRelationshipRepository;
+	private final PersonalPerCountryRepository personalPerCountryRepository;
+	private final ComplianceDetailRepository complianceDetailRepository;
+	private final MdmSysQuestionsRepository mdmSysQuestionsRepository;
+	private final FlagsAttributeRepository flagsAttributeRepository;
+	private final PartyImagesRepository partyImagesRepository;
+	private final LegalStatusRepository legalStatusRepository;
+	private final RelationshipRepository relationshipRepository;
+	private final NewPartieModelSetter newPartieModelSetter;
+	private final KafkaProducerService kafkaProducerService;
+	private final NewPartyModelMapper newPartyModelMapper;
+	private final SoapRequestService soapRequestService;
+	private final MasterRepository masterRepository;
+	private final PartyModelSetter partyModelSetter;
+	private final NameRepository nameRepository;
+	private final SrcNameRepository srcNameRepository;
+	private final OnboardingInProgressCustomerRepository onboardingInProgressCustomerRepository;
+	private final MdmApisClient mdmApisClient;
+	private final ObjectMapper objectMapper;
+	private final MdmApisClient apisClient;
+	private final KafkaUtil kafkaUtil;
+	private final MdmSysTranslationsRepository mdmSysTranslationsRepository;
+	private final TranslationsService translationsService;
+	private final ConfigReader configReader;
 
 
-		try {
-			Object response = partyService.generalGet(headers, identifier, modelName);
-			dbLogger.updateLogChannelOutput(objectMapper.writeValueAsString(response), HttpStatus.OK.name(),
-					HttpStatus.OK.value(), logChannel);
-			return response;
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			dbLogger.updateLogChannelOutput(e.getMessage(), HttpStatus.BAD_REQUEST.name(),
-					HttpStatus.BAD_REQUEST.value(), logChannel);
-			throw e;
-		} finally {
-			log.info("/getSpecificModel()");
-		}
+	@Transactional
+	public CustomerAbResponse createAbTransaction(NewPartyModel newPartyModel, Map<String, String> headers,
+			String corporationId, String identifier) throws Exception {
+		log.info("createAbTransaction({})", corporationId);
+		checkHeaderNulls(headers);
+		CustomerAbResponse customerResponse = addAbFullPartyDetails(newPartyModel, headers, corporationId, identifier);
+		log.info("/createAbTransaction({})", corporationId);
+		return customerResponse;
 	}
