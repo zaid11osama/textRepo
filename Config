@@ -1,23 +1,4 @@
-	@Transactional(propagation = Propagation.REQUIRES_NEW)
-	public void updateLogChannelOutput(String data, String statusName, int statusValue, LogChannelEntity logChannel) {
-		log.info("updateLogChannelOutput()");
-		LogChannelEntity logChannelEntity = new LogChannelEntity();
-		BeanUtils.copyProperties(logChannel, logChannelEntity, "id");
-		updateLogChannel(data, statusName, Responses.OUTPUT_RECORD_TYPE, statusValue, logChannelEntity);
-		logsChannelRepository.save(logChannelEntity);
-		log.info("/updateLogChannelOutput()");
+	public boolean checkNotUnique(String channelReference) {
+     int count =logsChannelRepository.getLogsCountByChannelReference(channelReference);
+	 return count>1;
 	}
-
-
-
-@Component
-public class ValidateSearchAttributes {
-
-	public static void updateLogChannel(String data, String responseMessage, String recordType, int status,
-			LogChannelEntity logChannel) {
-		logChannel.setData(data);
-		logChannel.setResponseMessages(responseMessage);
-		logChannel.setRecordType(recordType);
-		logChannel.setResponseStatus(status);
-	}
-}
