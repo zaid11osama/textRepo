@@ -1,20 +1,26 @@
-public class PartyComplianceDetails {
-	private Translation _residencyCountry;
-	private Translation _residencyIndicator;
-	private Translation _dataStatus;
-	private Translation _riskRating;
-	private Date lastReviewDate;
-	private Date nextReviewDate;
-	private Integer ratingFrequency;
-	private boolean grcFlag;
-	private Date grcModificationDate;
+@Test
+void handelRiskRating_ShouldCallSoapRequest_WhenRiskRatingFlagMatches() throws Exception {
+    // Arrange
+    NewPartyModel model = new NewPartyModel();
+
+    PartyComplianceDetails complianceDetails = new PartyComplianceDetails();
+    Translation riskRating = new Translation();
+    riskRating.setCode(Constants.RR.CALC_RR_FLAG); // ✅ THIS is what the method checks
+
+    complianceDetails.set_riskRating(riskRating); 
+    model.setComplianceDetails(complianceDetails);
+
+    Map<String, String> headers = new HashMap<>();
+
+    when(soapRequestService.getRiskRating(any(NewPartyModel.class), anyMap()))
+            .thenReturn("HIGH");
+
+    // Act
+    String result = partyService.handelRiskRating(model, headers);
+
+    // Assert
+    assertEquals("HIGH", result);
+
+    verify(soapRequestService, times(2))
+            .getRiskRating(any(NewPartyModel.class), anyMap()); // called twice in your method
 }
-
-
-public class Translation {
-	@Transient
-	private String lookupName;
-    @JsonProperty("code")
-	private String code;
-	@Transient
-	private String description;
