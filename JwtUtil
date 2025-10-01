@@ -1,16 +1,60 @@
-        BackendResponse backendResponse = new BackendResponse();
-        backendResponse.setBackendCreateCustomerResponse(new BackendCreateCustomerResponse());
-        when(mdmApisClient.callQueueIntegrationService(any(), anyString(), anyString()))
-                .thenReturn(backendResponse);
+ @Test
+    void handelRiskRating_ShouldCallSoapRequest_WhenRiskRatingFlagMatches() throws Exception {
+        // Arrange
+        NewPartyModel model = new NewPartyModel();
+        ComplianceDetails complianceDetails = new ComplianceDetails();
+        RiskRating riskRating = new RiskRating();
+        riskRating.setCode(Constants.RR.CALC_RR_FLAG); // matches condition
+        complianceDetails.set_riskRating(riskRating);
+        model.setComplianceDetails(complianceDetails);
 
+        Map<String, String> headers = new HashMap<>();
+        when(soapRequestService.getRiskRating(any(NewPartyModel.class), anyMap()))
+                .thenReturn("HIGH");
 
-org.mockito.exceptions.misusing.WrongTypeOfReturnValue: 
-BackendResponse cannot be returned by toString()
-toString() should return String
-***
-If you're unsure why you're getting above error read on.
-Due to the nature of the syntax above problem might occur because:
-1. This exception *might* occur in wrongly written multi-threaded tests.
-   Please refer to Mockito FAQ on limitations of concurrency testing.
-2. A spy is stubbed using when(spy.foo()).then() syntax. It is safer to stub spies - 
-   - with doReturn|Throw() family of methods. More in javadocs for Mockito.spy() method.
+        // Act
+        String result = partyService.handelRiskRating(model, headers);
+
+        // Assert
+        assertEquals("HIGH", result);
+        assertEquals("HIGH", model.getComplianceDetails().get_riskRating().getCode());
+
+        verify(soapRequestService, times(2))
+                .getRiskRating(any(NewPartyModel.class), anyMap());
+    }
+
+    @Test
+    void handelRiskRating_ShouldReturnNull_WhenRiskRatingFlagDoesNotMatch() throws Exception {
+        // Arrange
+        NewPartyModel model = new NewPartyModel();
+        ComplianceDetails complianceDetails = new ComplianceDetails();
+        RiskRating riskRating = new RiskRating();
+        riskRating.setCode("OTHER_CODE"); // does not match flag
+        complianceDetails.set_riskRating(riskRating);
+        model.setComplianceDetails(complianceDetails);
+
+        Map<String, String> headers = new HashMap<>();
+
+        // Act
+        String result = partyService.handelRiskRating(model, headers);
+
+        // Assert
+        assertNull(result);
+        verify(soapRequestService, never()).getRiskRating(any(), any());
+    }
+
+    @Test
+    void handelRiskRating_ShouldReturnNull_WhenRiskRatingIsNull() throws Exception {
+        // Arrange
+        NewPartyModel model = new NewPartyModel();
+        model.setComplianceDetails(new ComplianceDetails()); // no riskRating
+
+        Map<String, String> headers = new HashMap<>();
+
+        // Act
+        String result = partyService.handelRiskRating(model, headers);
+
+        // Assert
+        assertNull(result);
+        verify(soapRequestService, never()).getRiskRating(any(), any());
+    }
