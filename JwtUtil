@@ -1,45 +1,16 @@
+        BackendResponse backendResponse = new BackendResponse();
+        backendResponse.setBackendCreateCustomerResponse(new BackendCreateCustomerResponse());
+        when(mdmApisClient.callQueueIntegrationService(any(), anyString(), anyString()))
+                .thenReturn(backendResponse);
 
 
-
-    when(newPartyModelMapper.mapNewPartyModelToFixedLengthString(any(NewPartyModel.class),
-                any(ABCustomerRequestHeader.class), anyString(), any(NewPartyModel.class), anyString()))
-                .thenReturn("fixedString");
-
-
-
-org.mockito.exceptions.misusing.PotentialStubbingProblem: 
-Strict stubbing argument mismatch. Please check:
- - this invocation of 'mapNewPartyModelToFixedLengthString' method:
-    newPartyModelMapper.mapNewPartyModelToFixedLengthString(
-    NewPartyModel(identifier=null, personalDetails=null, basicDetails=null, names=null, addresses=null, contacts=null, nationalities=[], documents=null, employment=null, portfolio=null, flagsAndAttributes=null, fatca=null, complianceDetails=null, images=null, codeDescriptions=null, dueDiligence=null, taxDetails=null, pepDetails=null, socialDetails=null, otherBanks=null, reopenCustomer=false),
-    ABCustomerRequestHeader(requestName=createCustomer, requestCountry=null, user=null, accountNumber=null, branch=null, requestLanguage=null, requestChannel=null, requestTimestamp=2025-10-01 15:35:42.561, requestReference=null, responseRequired=null, authentication=null, uniqeReference=null),
-    "RISK123",
-    null,
-    null
-);
-    -> at com.arabbank.service.PartyService.addAbFullPartyDetails(PartyService.java:137)
- - has following stubbing(s) with different arguments:
-    1. newPartyModelMapper.mapNewPartyModelToFixedLengthString(
-    null,
-    null,
-    "",
-    null,
-    ""
-);
-      -> at com.arabbank.service.PartyServiceTest.addAbFullPartyDetails_success_whenIdentifierIsNull(PartyServiceTest.java:127)
-Typically, stubbing argument mismatch indicates user mistake when writing tests.
-Mockito fails early so that you can debug potential problem easily.
-However, there are legit scenarios when this exception generates false negative signal:
-  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
-    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
-  - stubbed method is intentionally invoked with different arguments by code under test
-    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
-For more information see javadoc for PotentialStubbingProblem class.
-
-	at com.arabbank.util.mapper.NewPartyModelMapper.mapNewPartyModelToFixedLengthString(NewPartyModelMapper.java:79)
-	at com.arabbank.service.PartyService.addAbFullPartyDetails(PartyService.java:137)
-	at com.arabbank.service.PartyService.addAbFullPartyDetails(PartyService.java:114)
-	at com.arabbank.service.PartyServiceTest.addAbFullPartyDetails_success_whenIdentifierIsNull(PartyServiceTest.java:136)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+org.mockito.exceptions.misusing.WrongTypeOfReturnValue: 
+BackendResponse cannot be returned by toString()
+toString() should return String
+***
+If you're unsure why you're getting above error read on.
+Due to the nature of the syntax above problem might occur because:
+1. This exception *might* occur in wrongly written multi-threaded tests.
+   Please refer to Mockito FAQ on limitations of concurrency testing.
+2. A spy is stubbed using when(spy.foo()).then() syntax. It is safer to stub spies - 
+   - with doReturn|Throw() family of methods. More in javadocs for Mockito.spy() method.
