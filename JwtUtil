@@ -1,48 +1,74 @@
-@Test
-void testGetSpecificModel_Success() throws Exception {
-    // Arrange
-    String modelName = "TestModel";
-    String identifier = "id123";
-    Object expectedResponse = new Object();
+    @Mock
+    private PortfolioDetailsRepository portfolioDetailsRepository;
+    @Mock private MdmLogCupTransactionRepository mdmLogCupTransactionRepository;
+    @Mock private GoldenRelationshipRepository goldenRelationshipRepository;
+    @Mock private PersonalPerCountryRepository personalPerCountryRepository;
+    @Mock private ComplianceDetailRepository complianceDetailRepository;
+    @Mock private MdmSysQuestionsRepository mdmSysQuestionsRepository;
+    @Mock private FlagsAttributeRepository flagsAttributeRepository;
+    @Mock private PartyImagesRepository partyImagesRepository;
+    @Mock private LegalStatusRepository legalStatusRepository;
+    @Mock private RelationshipRepository relationshipRepository;
+    @Mock private NewPartieModelSetter newPartieModelSetter;
+    @Mock private KafkaProducerService kafkaProducerService;
+    @Mock private NewPartyModelMapper newPartyModelMapper;
+    @Mock private SoapRequestService soapRequestService;
+    @Mock private MasterRepository masterRepository;
+    @Mock private PartyModelSetter partyModelSetter;
+    @Mock private NameRepository nameRepository;
+    @Mock private SrcNameRepository srcNameRepository;
+    @Mock private OnboardingInProgressCustomerRepository onboardingInProgressCustomerRepository;
+    @Mock private MdmApisClient mdmApisClient;
+    @Mock private ObjectMapper objectMapper;
+    @Mock private MdmApisClient apisClient;
+    @Mock private KafkaUtil kafkaUtil;
+    @Mock private MdmSysTranslationsRepository mdmSysTranslationsRepository;
+    @Mock private TranslationsService translationsService;
+    @Mock private ConfigReader configReader;
 
-    when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.generalGet(any(), any(), any())).thenReturn(expectedResponse);
-    when(objectMapper.writeValueAsString(expectedResponse)).thenReturn("{json}");
+    @InjectMocks
+    private PartyService partyService;
 
-    // Act
-    Object result = mainService.getSpecificModel(modelName, identifier, headers);
+    private NewPartyModel newPartyModel;
+    private Map<String, String> headers;
 
-    // Assert
-    assertThat(result).isEqualTo(expectedResponse);
+    @BeforeEach
+    void setUp() {
+        newPartyModel = new NewPartyModel();
+        headers = new HashMap<>();
+    }
 
-    verify(dbLogger).updateLogChannelOutput(
-            eq("{json}"),
-            eq(HttpStatus.OK.name()),
-            eq(HttpStatus.OK.value()),
-            eq(logChannel)
-    );
-}
+    @Test
+    void testCreateAbTransaction_Success() throws Exception {
+        // Arrange
+        CustomerAbResponse customerAbResponse = new CustomerAbResponse();
+        PartyService spyService = spy(partyService);
 
-@Test
-void testGetSpecificModel_Exception() throws Exception {
-    // Arrange
-    String modelName = "TestModel";
-    String identifier = "id123";
+        doNothing().when(spyService).checkHeaderNulls(anyMap());
+        doReturn(customerAbResponse).when(spyService).addAbFullPartyDetails(any(), anyMap(), anyString(), anyString());
 
-    when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.generalGet(any(), any(), any()))
-            .thenThrow(new RuntimeException("Model fetch failed"));
+        // Act
+        CustomerAbResponse result = spyService.createAbTransaction(newPartyModel, headers, "corpId123", "identifier");
 
-    // Act & Assert
-    Exception ex = assertThrows(RuntimeException.class,
-            () -> mainService.getSpecificModel(modelName, identifier, headers));
+        // Assert
+        assertThat(result).isEqualTo(customerAbResponse);
 
-    assertThat(ex.getMessage()).isEqualTo("Model fetch failed");
+        verify(spyService).checkHeaderNulls(headers);
+        verify(spyService).addAbFullPartyDetails(newPartyModel, headers, "corpId123", "identifier");
+    }
 
-    verify(dbLogger).updateLogChannelOutput(
-            eq("Model fetch failed"),
-            eq(HttpStatus.BAD_REQUEST.name()),
-            eq(HttpStatus.BAD_REQUEST.value()),
-            eq(logChannel)
-    );
-}
+    @Test
+    void testCreateAbTransaction_HeaderNulls_ThrowsException() throws Exception {
+        // Arrange
+        PartyService spyService = spy(partyService);
+        doThrow(new IllegalArgumentException("Header missing")).when(spyService).checkHeaderNulls(anyMap());
+
+        // Act & Assert
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,
+                () -> spyService.createAbTransaction(newPartyModel, headers, "corpId123", "identifier"));
+
+        assertThat(ex.getMessage()).isEqualTo("Header missing");
+
+        verify(spyService).checkHeaderNulls(headers);
+        verify(spyService, never()).addAbFullPartyDetails(any(), anyMap(), anyString(), anyString());
+    }
