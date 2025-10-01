@@ -1,19 +1,20 @@
 @Test
-void testGetFullDetails_Success() throws Exception {
+void testUpdateAbCustomer_Success() throws Exception {
     // Arrange
-    NewPartyModel expectedResponse = new NewPartyModel();
+    String response = "UPDATED_SUCCESSFULLY";
     when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.getNewPartyModel(headers, "identifier")).thenReturn(expectedResponse);
-    when(objectMapper.writeValueAsString(expectedResponse)).thenReturn("{json}");
+    when(partyService.updateAbTransaction(any(), any(), any(), any()))
+            .thenReturn(response);
+    when(objectMapper.writeValueAsString(response)).thenReturn("\"UPDATED_SUCCESSFULLY\"");
 
     // Act
-    NewPartyModel result = mainService.getFullDetails("identifier", headers);
+    String result = mainService.updateAbCustomer(newPartyModel, headers, "party123");
 
     // Assert
-    assertThat(result).isEqualTo(expectedResponse);
+    assertThat(result).isEqualTo(response);
 
     verify(dbLogger).updateLogChannelOutput(
-            eq("{json}"),
+            eq("\"UPDATED_SUCCESSFULLY\""),
             eq(HttpStatus.OK.name()),
             eq(HttpStatus.OK.value()),
             eq(logChannel)
@@ -24,53 +25,30 @@ void testGetFullDetails_Success() throws Exception {
 
 
 
-
 @Test
-void testGetFullDetails_BusinessWarningException() throws Exception {
+void testUpdateAbCustomer_Exception() throws Exception {
     // Arrange
     when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.getNewPartyModel(headers, "identifier"))
-            .thenThrow(new BusinessWarningException("Business warning"));
-
-    // Act & Assert
-    BusinessWarningException ex = assertThrows(BusinessWarningException.class,
-            () -> mainService.getFullDetails("identifier", headers));
-
-    assertThat(ex.getMessage()).isEqualTo("Business warning");
-
-    verify(dbLogger).updateLogChannelOutput(
-            eq("Business warning"),
-            eq(HttpStatus.BAD_REQUEST.name()),
-            eq(HttpStatus.BAD_REQUEST.value()),
-            eq(logChannel)
-    );
-}
-
-
-
-
-
-
-
-@Test
-void testGetFullDetails_GenericException() throws Exception {
-    // Arrange
-    when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.getNewPartyModel(headers, "identifier"))
-            .thenThrow(new RuntimeException("Something went wrong"));
+    when(partyService.updateAbTransaction(any(), any(), any(), any()))
+            .thenThrow(new RuntimeException("Update failed"));
 
     // Act & Assert
     Exception ex = assertThrows(RuntimeException.class,
-            () -> mainService.getFullDetails("identifier", headers));
+            () -> mainService.updateAbCustomer(newPartyModel, headers, "party123"));
 
-    assertThat(ex.getMessage()).isEqualTo("Something went wrong");
+    assertThat(ex.getMessage()).isEqualTo("Update failed");
 
     verify(dbLogger).updateLogChannelOutput(
-            eq("Something went wrong"),
+            eq("Update failed"),
             eq(HttpStatus.BAD_REQUEST.name()),
             eq(HttpStatus.BAD_REQUEST.value()),
             eq(logChannel)
     );
 }
+
+
+
+
+
 
 
