@@ -1,4 +1,11 @@
-	public boolean checkNotUnique(String channelReference) {
-     int count =logsChannelRepository.getLogsCountByChannelReference(channelReference);
-	 return count>1;
+public class KafkaProducerService {
+
+	private final KafkaTemplate<String, Object> kafkaTemplate;
+	private final ConfigReader configReader;
+
+	public void sendToOrchMainTopic(String object) {
+		log.info("sendToOrchMainTopic()");
+		String topicName = configReader.getProperty("ab.mdm.orch.request_main_topic");
+		sendKafkaMessage(object, topicName);
+		log.info("/sendToOrchMainTopic()");
 	}
