@@ -1,26 +1,53 @@
-
-    @Test
-    void testCreateAbCustomer_Success() throws Exception {
+ @Test
+    void testCreateAbCustomer_BusinessWarningException() throws Exception {
         // Arrange
-        CustomerAbResponse customerResponse = new CustomerAbResponse();
-        customerResponse.setCustomerId("CUST123");
-        customerResponse.setGlobalId("GLOBAL123");
-
         when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-        when(partyService.createAbTransaction(any(), any(), any(), any())).thenReturn(customerResponse);
-        when(objectMapper.writeValueAsString(any())).thenReturn("{\"customerId\":\"CUST123\"}");
+        when(partyService.createAbTransaction(any(), any(), any(), any()))
+                .thenThrow(new BusinessWarningException("Business warning"));
 
-        // Act
-        CustomerAbResponse result = mainService.createAbCustomer(newPartyModel, headers, "identifier");
+        // Act & Assert
+        BusinessWarningException ex = assertThrows(BusinessWarningException.class,
+                () -> mainService.createAbCustomer(newPartyModel, headers, "identifier"));
 
-        // Assert
-        assertThat(result).isNotNull();
-        assertThat(result.getCustomerId()).isEqualTo("CUST123");
+        assertThat(ex.getMessage()).isEqualTo("Business warning");
 
         verify(dbLogger).updateLogChannelOutput(
-                eq("{\"customerId\":\"CUST123\"}"),
-                eq(HttpStatus.CREATED.name()),
-                eq(HttpStatus.CREATED.value()),
+                eq("Business warning"),
+                eq(HttpStatus.BAD_REQUEST.name()),
+                eq(HttpStatus.BAD_REQUEST.value()),
                 eq(logChannel)
         );
+    }
+
+    @Test
+    void testCreateAbCustomer_GenericException() throws Exception {
+        // Arrange
+        when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
+        when(partyService.createAbTransaction(any(), any(), any(), any()))
+                .thenThrow(new RuntimeException("Unexpected error"));
+
+        // Act & Assert
+        Exception ex = assertThrows(Exception.class,
+                () -> mainService.createAbCustomer(newPartyModel, headers, "identifier"));
+
+        assertThat(ex.getMessage()).isEqualTo("Unexpected error");
+
+        verify(dbLogger).updateLogChannelOutput(
+                eq("Unexpected error"),
+                eq(HttpStatus.BAD_REQUEST.name()),
+                eq(HttpStatus.BAD_REQUEST.value()),
+                eq(logChannel)
+        );
+    }
+
+    @Test
+    void testCreateAbCustomer_MissingInputTimestamp() {
+        // Arrange
+        headers.clear(); // no inputtimestamp
+
+        // Act & Assert
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,
+                () -> mainService.createAbCustomer(newPartyModel, headers, "identifier"));
+
+        assertThat(ex.getMessage()).isEqualTo("Input timestamp is required.");
     }
