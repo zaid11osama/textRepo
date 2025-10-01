@@ -1,60 +1,37 @@
-java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "com.arabbank.model.partymodel.NewPartyModel.getNationalities()" is null
 
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'mapNewPartyModelToFixedLengthString' method:
+    newPartyModelMapper.mapNewPartyModelToFixedLengthString(
+    NewPartyModel(identifier=null, personalDetails=null, basicDetails=null, names=null, addresses=null, contacts=null, nationalities=[], documents=null, employment=null, portfolio=null, flagsAndAttributes=null, fatca=null, complianceDetails=null, images=null, codeDescriptions=null, dueDiligence=null, taxDetails=null, pepDetails=null, socialDetails=null, otherBanks=null, reopenCustomer=false),
+    ABCustomerRequestHeader(requestName=createCustomer, requestCountry=null, user=null, accountNumber=null, branch=null, requestLanguage=null, requestChannel=null, requestTimestamp=2025-10-01 15:31:19.099, requestReference=null, responseRequired=null, authentication=null, uniqeReference=null),
+    "RISK123",
+    null,
+    null
+);
+    -> at com.arabbank.service.PartyService.addAbFullPartyDetails(PartyService.java:137)
+ - has following stubbing(s) with different arguments:
+    1. newPartyModelMapper.mapNewPartyModelToFixedLengthString(
+    null,
+    null,
+    null,
+    null,
+    ""
+);
+      -> at com.arabbank.service.PartyServiceTest.addAbFullPartyDetails_success_whenIdentifierIsNull(PartyServiceTest.java:126)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
 
-
-	private void checkAndThrowIfPartyHasIdentificationNumber(NewPartyModel newPartyModel,ABCustomerRequestHeader abCustomerRequestHeader) {
-		newPartyModel.getNationalities().stream()
-				.filter(this::isIdentificationNumberFilled)
-				.forEach(nationality -> {
-					throwIfCustomerAlreadyExists(newPartyModel, abCustomerRequestHeader.getRequestCountry());
-					throwIfCustomerIsBeingProcessed(newPartyModel);
-				});
-	}
-
-@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "JST")
-@JsonPropertyOrder({ "identifier" })
-@Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class NewPartyModel {
-	@JsonProperty(value = "identifiers")
-	private PartyIdentifier identifier;
-	@JsonProperty(value = "personalDetails")
-	private PersonalDetails personalDetails;
-	@JsonProperty(value = "basicDetails")
-	private BasicDetails basicDetails;
-	@JsonProperty(value = "names")
-	private Map<String, PartyName> names;
-	@JsonProperty(value = "addresses")
-	private Map<String, PartyAddress> addresses;
-	@JsonProperty(value = "contacts")
-	private PartyContact contacts;
-	@JsonProperty(value = "nationalities")
-	private List<PartyNationality> nationalities;
-	@JsonProperty(value = "documents")
-	private PartyDocument documents;
-	@JsonProperty(value = "employment")
-	private Employment employment;
-	@JsonProperty(value = "portfolio")
-	private PartyPortfolio portfolio;
-	@JsonProperty(value = "flagsAndAttributes")
-	private FlagsAndAttributes flagsAndAttributes;
-	@JsonProperty(value = "fatca")
-	private Fatca fatca;
-	@JsonProperty(value = "complianceDetails")
-	private PartyComplianceDetails complianceDetails;
-	@JsonProperty(value = "images")
-	private List<PartyImage> images;
-	private Map<String, Object> codeDescriptions;
-	@JsonProperty(value = "dueDiligence")
-	private PartyDueDiligence dueDiligence;
-	@JsonProperty(value = "taxDetails")
-	private PartyTaxDetails taxDetails;
-	@JsonProperty(value = "pepDetails")
-	private PepDetails pepDetails;
-	@JsonProperty(value = "socialDetails")
-	private SocialDetails socialDetails;
-	@JsonProperty(value = "otherBanks")
-	private List<OtherBanks> otherBanks;
-	@JsonProperty(value = "reopenCustomer")
-	private boolean reopenCustomer;
-}
+	at com.arabbank.util.mapper.NewPartyModelMapper.mapNewPartyModelToFixedLengthString(NewPartyModelMapper.java:79)
+	at com.arabbank.service.PartyService.addAbFullPartyDetails(PartyService.java:137)
+	at com.arabbank.service.PartyService.addAbFullPartyDetails(PartyService.java:114)
+	at com.arabbank.service.PartyServiceTest.addAbFullPartyDetails_success_whenIdentifierIsNull(PartyServiceTest.java:134)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
