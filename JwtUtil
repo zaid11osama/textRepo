@@ -1,54 +1,68 @@
 @Test
-void testUpdateAbCustomer_Success() throws Exception {
+void testGetStatus_Success() throws Exception {
     // Arrange
-    String response = "UPDATED_SUCCESSFULLY";
+    MdmLogCupTransaction transaction = new MdmLogCupTransaction();
+    Optional<MdmLogCupTransaction> response = Optional.of(transaction);
+
     when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.updateAbTransaction(any(), any(), any(), any()))
-            .thenReturn(response);
-    when(objectMapper.writeValueAsString(response)).thenReturn("\"UPDATED_SUCCESSFULLY\"");
+    when(partyService.getTransactionStatus(anyString(), anyString(), any())).thenReturn(response);
+    when(objectMapper.writeValueAsString(response)).thenReturn("{json}");
 
     // Act
-    String result = mainService.updateAbCustomer(newPartyModel, headers, "party123");
+    Optional<MdmLogCupTransaction> result = mainService.getStatus("cust123", "txn123", headers);
 
     // Assert
-    assertThat(result).isEqualTo(response);
+    assertThat(result).isPresent().contains(transaction);
 
     verify(dbLogger).updateLogChannelOutput(
-            eq("\"UPDATED_SUCCESSFULLY\""),
+            eq("{json}"),
             eq(HttpStatus.OK.name()),
             eq(HttpStatus.OK.value()),
             eq(logChannel)
     );
 }
 
+@Test
+void testGetStatus_EmptyOptional_ThrowsNoContent() throws Exception {
+    // Arrange
+    Optional<MdmLogCupTransaction> response = Optional.empty();
 
+    when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
+    when(partyService.getTransactionStatus(anyString(), anyString(), any())).thenReturn(response);
+    when(objectMapper.writeValueAsString(response)).thenReturn("[]");
 
+    // Act & Assert
+    ResponseStatusException ex = assertThrows(ResponseStatusException.class,
+            () -> mainService.getStatus("cust123", "txn123", headers));
 
+    assertThat(ex.getStatus()).isEqualTo(HttpStatus.NO_CONTENT);
+    assertThat(ex.getReason()).isEqualTo("No content found for the given transaction.");
+
+    verify(dbLogger).updateLogChannelOutput(
+            eq("[]"),
+            eq(HttpStatus.OK.name()),
+            eq(HttpStatus.OK.value()),
+            eq(logChannel)
+    );
+}
 
 @Test
-void testUpdateAbCustomer_Exception() throws Exception {
+void testGetStatus_Exception() throws Exception {
     // Arrange
     when(dbLogger.logIntoDb(any(), any(), any(), any())).thenReturn(logChannel);
-    when(partyService.updateAbTransaction(any(), any(), any(), any()))
-            .thenThrow(new RuntimeException("Update failed"));
+    when(partyService.getTransactionStatus(anyString(), anyString(), any()))
+            .thenThrow(new RuntimeException("Status lookup failed"));
 
     // Act & Assert
     Exception ex = assertThrows(RuntimeException.class,
-            () -> mainService.updateAbCustomer(newPartyModel, headers, "party123"));
+            () -> mainService.getStatus("cust123", "txn123", headers));
 
-    assertThat(ex.getMessage()).isEqualTo("Update failed");
+    assertThat(ex.getMessage()).isEqualTo("Status lookup failed");
 
     verify(dbLogger).updateLogChannelOutput(
-            eq("Update failed"),
+            eq("Status lookup failed"),
             eq(HttpStatus.BAD_REQUEST.name()),
             eq(HttpStatus.BAD_REQUEST.value()),
             eq(logChannel)
     );
 }
-
-
-
-
-
-
-
