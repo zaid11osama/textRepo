@@ -1,88 +1,60 @@
- @Test
-    void addAbFullPartyDetails_success_whenIdentifierIsNull() throws Exception {
-        PartyService spyService = spy(partyService);
-        when(spyService.mapNewPartyModelToABCustomerRequestHeader(anyMap(), anyString()))
-                .thenReturn(new ABCustomerRequestHeader());
-        when(mdmApisClient.getGlobalId(anyString())).thenReturn("GLOBAL123");
-        when(soapRequestService.getRiskRating(any(), anyMap())).thenReturn("RISK123");
-        when(newPartyModelMapper.mapNewPartyModelToFixedLengthString(any(), any(), any(), any(), anyString()))
-                .thenReturn("fixedString");
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "com.arabbank.model.partymodel.NewPartyModel.getNationalities()" is null
 
-        BackendResponse backendResponse = new BackendResponse();
-        backendResponse.setBackendCreateCustomerResponse(new BackendCreateCustomerResponse("CUSTOMER123"));
-        when(mdmApisClient.callQueueIntegrationService(any(), anyString(), anyString()))
-                .thenReturn(backendResponse);
 
-        CustomerAbResponse response = spyService.addAbFullPartyDetails(newPartyModel, headers, "CORP123", null);
 
-        assertThat(response).isNotNull();
-        assertThat(response.getCustomerId()).isEqualTo("CUSTOMER123");
-        assertThat(response.getGlobalId()).isEqualTo("GLOBAL123");
-    }
+	private void checkAndThrowIfPartyHasIdentificationNumber(NewPartyModel newPartyModel,ABCustomerRequestHeader abCustomerRequestHeader) {
+		newPartyModel.getNationalities().stream()
+				.filter(this::isIdentificationNumberFilled)
+				.forEach(nationality -> {
+					throwIfCustomerAlreadyExists(newPartyModel, abCustomerRequestHeader.getRequestCountry());
+					throwIfCustomerIsBeingProcessed(newPartyModel);
+				});
+	}
 
-    @Test
-    void addAbFullPartyDetails_reopenCustomer_success() throws Exception {
-        PartyService spyService = spy(partyService);
-
-        newPartyModel.setReopenCustomer(true);
-        headers.put("inputCountry", "US");
-
-        Relationship relationship = new Relationship();
-        relationship.setGlobalId("GLOBAL456");
-        when(spyService.mapNewPartyModelToABCustomerRequestHeader(anyMap(), anyString()))
-                .thenReturn(new ABCustomerRequestHeader());
-        when(goldenRelationshipRepository.getCustomerByRelatedProductCountryRoleOrganizationAndIsDeleted(anyString(), anyString()))
-                .thenReturn(relationship);
-        when(soapRequestService.getRiskRating(any(), anyMap())).thenReturn("RISK456");
-        when(newPartyModelMapper.mapNewPartyModelToFixedLengthString(any(), any(), any(), any(), anyString()))
-                .thenReturn("fixedString");
-
-        BackendResponse backendResponse = new BackendResponse();
-        backendResponse.setBackendCreateCustomerResponse(new BackendCreateCustomerResponse("CUSTOMER456"));
-        when(mdmApisClient.callQueueIntegrationService(any(), anyString(), anyString()))
-                .thenReturn(backendResponse);
-
-        CustomerAbResponse response = spyService.addAbFullPartyDetails(newPartyModel, headers, "CORP456", "IDENTIFIER");
-
-        assertThat(response).isNotNull();
-        assertThat(response.getCustomerId()).isEqualTo("CUSTOMER456");
-        assertThat(response.getGlobalId()).isEqualTo("GLOBAL456");
-    }
-
-    @Test
-    void addAbFullPartyDetails_identifierNotNullAndNotReopen_throwsBusinessWarningException() {
-        newPartyModel.setReopenCustomer(false);
-
-        assertThrows(BusinessWarningException.class,
-                () -> partyService.addAbFullPartyDetails(newPartyModel, headers, "CORP123", "IDENTIFIER"));
-    }
-
-    @Test
-    void addAbFullPartyDetails_reopenCustomerButNotFound_throwsValueNotFoundException() {
-        newPartyModel.setReopenCustomer(true);
-        headers.put("inputCountry", "US");
-
-        when(goldenRelationshipRepository.getCustomerByRelatedProductCountryRoleOrganizationAndIsDeleted(anyString(), anyString()))
-                .thenReturn(null);
-
-        assertThrows(ValueNotFoundException.class,
-                () -> partyService.addAbFullPartyDetails(newPartyModel, headers, "CORP123", "IDENTIFIER"));
-    }
-
-    @Test
-    void addAbFullPartyDetails_backendResponseNull_throwsBadRequestException() throws Exception {
-        PartyService spyService = spy(partyService);
-        when(spyService.mapNewPartyModelToABCustomerRequestHeader(anyMap(), anyString()))
-                .thenReturn(new ABCustomerRequestHeader());
-        when(mdmApisClient.getGlobalId(anyString())).thenReturn("GLOBAL123");
-        when(soapRequestService.getRiskRating(any(), anyMap())).thenReturn("RISK123");
-        when(newPartyModelMapper.mapNewPartyModelToFixedLengthString(any(), any(), any(), any(), anyString()))
-                .thenReturn("fixedString");
-
-        BackendResponse backendResponse = new BackendResponse(); // null BackendCreateCustomerResponse
-        when(mdmApisClient.callQueueIntegrationService(any(), anyString(), anyString()))
-                .thenReturn(backendResponse);
-
-        assertThrows(BadRequestException.class,
-                () -> spyService.addAbFullPartyDetails(newPartyModel, headers, "CORP123", null));
-    }
+@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "JST")
+@JsonPropertyOrder({ "identifier" })
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class NewPartyModel {
+	@JsonProperty(value = "identifiers")
+	private PartyIdentifier identifier;
+	@JsonProperty(value = "personalDetails")
+	private PersonalDetails personalDetails;
+	@JsonProperty(value = "basicDetails")
+	private BasicDetails basicDetails;
+	@JsonProperty(value = "names")
+	private Map<String, PartyName> names;
+	@JsonProperty(value = "addresses")
+	private Map<String, PartyAddress> addresses;
+	@JsonProperty(value = "contacts")
+	private PartyContact contacts;
+	@JsonProperty(value = "nationalities")
+	private List<PartyNationality> nationalities;
+	@JsonProperty(value = "documents")
+	private PartyDocument documents;
+	@JsonProperty(value = "employment")
+	private Employment employment;
+	@JsonProperty(value = "portfolio")
+	private PartyPortfolio portfolio;
+	@JsonProperty(value = "flagsAndAttributes")
+	private FlagsAndAttributes flagsAndAttributes;
+	@JsonProperty(value = "fatca")
+	private Fatca fatca;
+	@JsonProperty(value = "complianceDetails")
+	private PartyComplianceDetails complianceDetails;
+	@JsonProperty(value = "images")
+	private List<PartyImage> images;
+	private Map<String, Object> codeDescriptions;
+	@JsonProperty(value = "dueDiligence")
+	private PartyDueDiligence dueDiligence;
+	@JsonProperty(value = "taxDetails")
+	private PartyTaxDetails taxDetails;
+	@JsonProperty(value = "pepDetails")
+	private PepDetails pepDetails;
+	@JsonProperty(value = "socialDetails")
+	private SocialDetails socialDetails;
+	@JsonProperty(value = "otherBanks")
+	private List<OtherBanks> otherBanks;
+	@JsonProperty(value = "reopenCustomer")
+	private boolean reopenCustomer;
+}
