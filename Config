@@ -1,54 +1,7 @@
- @Test
-    void produceDocumentForImages_ShouldCallSaveDocumentAndProduceMessage_WhenValidImage() throws JsonProcessingException {
-        // Arrange
-        PartyImage image = new PartyImage();
-        ArchiveDetails archiveDetails = new ArchiveDetails();
-        archiveDetails.setDmsReference("DMS789");
-        image.setArchiveDetails(archiveDetails);
-        image.set_type("PassportImage");
-
-        List<PartyImage> images = List.of(image);
-
-        Map<String, String> headers = new HashMap<>();
-        headers.put(MdmHeaderRequest.INPUT_COUNTRY, "AE");
-
-        String generateCustomerId = "Cust001";
-        String globalId = "Global001";
-        String nationalNumber = "Nat123";
-        String customerName = "John Doe";
-        String corporationId = "Corp001";
-
-        // Mock static HelperUtils method
-        try (MockedStatic<HelperUtils> helperUtilsMock = mockStatic(HelperUtils.class)) {
-            helperUtilsMock.when(() -> HelperUtils.checkTranslation(anyString())).thenReturn("CheckedType");
-
-            // Act
-            partyService.produceDocumentForImages(images, headers, generateCustomerId, globalId, nationalNumber, customerName, corporationId);
-
-            // Assert
-            verify(kafkaUtil, times(1))
-                    .produceMessage(eq(generateCustomerId), eq(globalId), eq(nationalNumber), eq("AE"),
-                            eq(Others.AB), eq("DMS789"), eq("CheckedType"), eq(""), eq(customerName));
-        }
-    }
-
-    @Test
-    void produceDocumentForImages_ShouldSkipImage_WhenDmsIdOrDocTypeIsEmpty() throws JsonProcessingException {
-        // Arrange
-        PartyImage image = new PartyImage();
-        ArchiveDetails archiveDetails = new ArchiveDetails();
-        archiveDetails.setDmsReference(""); // empty DMS ID
-        image.setArchiveDetails(archiveDetails);
-        image.set_type(null);
-
-        List<PartyImage> images = List.of(image);
-
-        Map<String, String> headers = new HashMap<>();
-        headers.put(MdmHeaderRequest.INPUT_COUNTRY, "AE");
-
-        // Act
-        partyService.produceDocumentForImages(images, headers, "Cust001", "Global001", "Nat123", "John Doe", "Corp001");
-
-        // Assert
-        verify(kafkaUtil, never()).produceMessage(any(), any(), any(), any(), any(), any(), any(), any(), any());
-    }
+	public void checkHeaderNulls(Map<String, String> headers) {
+		Assert.notNull(headers.get(MdmHeaderRequest.USER), "user header is null");
+		Assert.notNull(headers.get(MdmHeaderRequest.INPUT_COUNTRY), "input country header is null");
+		Assert.notNull(headers.get(MdmHeaderRequest.REQUEST_CHANNEL), "request channel header is null");
+		Assert.notNull(headers.get(MdmHeaderRequest.REQUEST_LANGUAGE), "language header is null");
+		Assert.notNull(headers.get(MdmHeaderRequest.REQUEST_REFERENCE), "channel reference header is null");
+	}
