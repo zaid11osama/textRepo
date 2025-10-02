@@ -1,16 +1,13 @@
-	public void produceDocumentForImages(List<PartyImage> Images, Map<String, String> headers,
-			String generateCustomerId, String globalId, String nationalNumber, String customerName,
-			String corporationId) throws JsonProcessingException {
-		log.info("produceDocumentForImages()");
-		String inputCountry = headers.get(MdmHeaderRequest.INPUT_COUNTRY);
-		for (PartyImage image : Images) {
-			String dmsId = image.getArchiveDetails().getDmsReference();
-			String docType = HelperUtils.checkTranslation(image.get_type());
-			if (!isEmpty(dmsId) && !isEmpty(docType)) {
-				saveDocument(docType, dmsId, globalId, corporationId, inputCountry, inputCountry, "-", null);
-				kafkaUtil.produceMessage(generateCustomerId, globalId, nationalNumber, inputCountry, Others.AB, dmsId,
-						docType, "", customerName);
-			}
-		}
-		log.info("/produceDocumentForImages()");
-	}
+    @Test
+    void checkHeaderNulls_ShouldPass_WhenAllHeadersExist() {
+        // Arrange
+        Map<String, String> headers = new HashMap<>();
+        headers.put(MdmHeaderRequest.USER, "testUser");
+        headers.put(MdmHeaderRequest.INPUT_COUNTRY, "AE");
+        headers.put(MdmHeaderRequest.REQUEST_CHANNEL, "WEB");
+        headers.put(MdmHeaderRequest.REQUEST_LANGUAGE, "EN");
+        headers.put(MdmHeaderRequest.REQUEST_REFERENCE, "REF123");
+
+        // Act & Assert → should not throw
+        assertDoesNotThrow(() -> partyService.checkHeaderNulls(headers));
+    }
