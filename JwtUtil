@@ -1,13 +1,53 @@
-    @Test
-    void checkHeaderNulls_ShouldPass_WhenAllHeadersExist() {
+  @Test
+    void updateAbTransaction_whenFlagsIsPrm_returnsFlagsIsPrm() throws Exception {
         // Arrange
-        Map<String, String> headers = new HashMap<>();
-        headers.put(MdmHeaderRequest.USER, "testUser");
-        headers.put(MdmHeaderRequest.INPUT_COUNTRY, "AE");
-        headers.put(MdmHeaderRequest.REQUEST_CHANNEL, "WEB");
-        headers.put(MdmHeaderRequest.REQUEST_LANGUAGE, "EN");
-        headers.put(MdmHeaderRequest.REQUEST_REFERENCE, "REF123");
+        PartyService spyService = Mockito.spy(partyService);
+        doReturn(true).when(spyService).checkIfFlagsIsPrm(any(MainModel.class));
 
-        // Act & Assert → should not throw
-        assertDoesNotThrow(() -> partyService.checkHeaderNulls(headers));
+        // Act
+        String result = spyService.updateAbTransaction(newPartyModel, headers, "corp123", "party123");
+
+        // Assert
+        assertEquals(Others.FLAGS_IS_PRM, result);
+        verify(spyService, never()).insertLogTransaction(any());
+    }
+
+    @Test
+    void updateAbTransaction_whenCustomerNotFound_throwsException() {
+        // Arrange
+        PartyService spyService = Mockito.spy(partyService);
+        doReturn(false).when(spyService).checkIfFlagsIsPrm(any(MainModel.class));
+        when(goldenRelationshipRepository.getCustomerRelationshipsByWithProductCountryAndIsDeleted(anyString(), anyString()))
+                .thenReturn(Collections.emptyList());
+
+        // Act + Assert
+        assertThrows(ValueNotFoundException.class, () ->
+            spyService.updateAbTransaction(newPartyModel, headers, "corp123", "party123")
+        );
+    }
+
+    @Test
+    void updateAbTransaction_whenCustomerFound_returnsSuccess() throws Exception {
+        // Arrange
+        PartyService spyService = Mockito.spy(partyService);
+        doReturn(false).when(spyService).checkIfFlagsIsPrm(any(MainModel.class));
+
+        Relationship rel = new Relationship();
+        rel.setGlobalId("global123");
+        when(goldenRelationshipRepository.getCustomerRelationshipsByWithProductCountryAndIsDeleted(anyString(), anyString()))
+                .thenReturn(List.of(rel));
+
+        // Stub void methods to do nothing
+        doNothing().when(spyService).handelRiskRating(any(), any());
+        doNothing().when(spyService).insertLogTransaction(any());
+        doNothing().when(spyService).sendAhRequstUpdate(any());
+        doNothing().when(spyService).sendNonAhRequestUpdate(any());
+        doNothing().when(spyService).CallIntegrationToCreateDocuments(any(), any(), any(), any(), any());
+
+        // Act
+        String result = spyService.updateAbTransaction(newPartyModel, headers, "corp123", "party123");
+
+        // Assert
+        assertEquals(Others.CUSTOMER_UPDATED_SUCCESSFULLY, result);
+        verify(spyService).CallIntegrationToCreateDocuments(eq(newPartyModel), eq(headers), eq("global123"), eq("party123"), eq("corp123"));
     }
