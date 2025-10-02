@@ -1,7 +1,19 @@
-	public void checkHeaderNulls(Map<String, String> headers) {
-		Assert.notNull(headers.get(MdmHeaderRequest.USER), "user header is null");
-		Assert.notNull(headers.get(MdmHeaderRequest.INPUT_COUNTRY), "input country header is null");
-		Assert.notNull(headers.get(MdmHeaderRequest.REQUEST_CHANNEL), "request channel header is null");
-		Assert.notNull(headers.get(MdmHeaderRequest.REQUEST_LANGUAGE), "language header is null");
-		Assert.notNull(headers.get(MdmHeaderRequest.REQUEST_REFERENCE), "channel reference header is null");
+public String updateAbTransaction(NewPartyModel newPartyModel, Map<String, String> headers, String corporationId,
+			String partyIdentifire) throws Exception {
+		log.info("updateAbTransaction()");
+		handelRiskRating(newPartyModel, headers);
+		MainModel mainModel = new MainModel();
+		mainModel.setNewPartyModel(newPartyModel);
+		mainModel.setHeaders(mapHeadersToNewPartyModelHeaders(headers, partyIdentifire, corporationId));
+		if (checkIfFlagsIsPrm(mainModel))
+			return Others.FLAGS_IS_PRM;
+		insertLogTransaction(mainModel);
+		sendAhRequstUpdate(mainModel);
+		sendNonAhRequestUpdate(mainModel);
+		List<Relationship> existingCustomer = goldenRelationshipRepository.getCustomerRelationshipsByWithProductCountryAndIsDeleted(partyIdentifire, headers.get("inputcountry"));
+		if(existingCustomer == null || existingCustomer.isEmpty())
+			throw new ValueNotFoundException("Customer not found");
+		CallIntegrationToCreateDocuments(newPartyModel, headers, existingCustomer.get(0).getGlobalId(), partyIdentifire, corporationId);
+		log.info("/updateAbTransaction()");
+		return Others.CUSTOMER_UPDATED_SUCCESSFULLY;
 	}
