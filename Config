@@ -1,33 +1,25 @@
-public static Fatca mapFatcaDetailsToFatca(com.arabbank.model.entity.golden.FatcaDetails fatcaDetails) {
-		log.info("mapFatcaDetailsToFatca()");
-		Fatca fatca = new Fatca();
-		Questions questions = new Questions();
-		GrcDetails grcDetails = new GrcDetails();
-		if (!ObjectUtils.isEmpty(fatcaDetails)) {
-			Optional.ofNullable(fatcaDetails).ifPresent(details -> {
-				questions.setIsUSCitizen(details.getIsUsCitizen());
-				questions.setIsUSBorn(details.getIsUsBorn());
-				questions.setIsGreencardHolder(details.getIsGreenCardHolder());
-				questions.setIsUSResident(details.getIsUsResident());
-				questions.setIsUSTaxPayer(details.getIsUsTaxPayer());
-				questions.setSignedW8(details.getSignedW8());
-				questions.setSignedW9(details.getSignedW9());
-				questions.setSignedSecrecyWaiver(details.getSignedSecrecyWaiver());
-				questions.setHasUSEntityOwner(details.getHaUsEntityOwner());
-				fatca.setQuestions(questions);
-				fatca.setTaxIdentificationNumber(details.getTin());
-				fatca.setSignDate(details.getSignedDate());
-				fatca.setDateFillingForm(details.getDateFillingForm());
-				fatca.setLatestAmendment(details.getLatestAmendmentDate());
-				grcDetails.set_fatcaClassification(details.getFatcaClassification());
-				grcDetails.set_oldFatcaClassification(details.getPreviousfatcaClassification());
-				grcDetails.setChangedByGRC("Y".equals(details.getIsChangedByGrc()));
-				grcDetails.setBoException(details.getBoExcemption());
-				grcDetails.set_excemptCode(new Translation().withCode(details.getExcemptCode()));
-				grcDetails.set_excemptionReportingCode(new Translation().withCode(details.getExceptionReportingCode()));
-				fatca.setGrcDetails(grcDetails);
+public static PartyComplianceDetails mapToPartyComplianceDetails(
+			com.arabbank.model.entity.golden.ComplianceDetails complianceDetails, ComplianceBasic complianceBasic) {
+		log.info("mapToPartyComplianceDetails()");
+		PartyComplianceDetails partyComplianceDetails = new PartyComplianceDetails();
+		if (!ObjectUtils.isEmpty(complianceDetails)) {
+			Optional.of(complianceDetails).ifPresent(details -> {
+				partyComplianceDetails.set_riskRating(details.getRiskRating());
+				partyComplianceDetails.setLastReviewDate(details.getLastReviewDate());
+				partyComplianceDetails.setNextReviewDate(details.getNextReviewDate());
+				partyComplianceDetails.setRatingFrequency(details.getRatingFrequency());
+				partyComplianceDetails.setGrcFlag(details.getGrcFlag() != null && details.getGrcFlag() == 1);
+				partyComplianceDetails.set_dataStatus(details.getDataStatus());
+				partyComplianceDetails.setGrcModificationDate(details.getGrcModifyDate());
 			});
 		}
-		log.info("/mapFatcaDetailsToFatca()");
-		return fatca;
+
+		if (!ObjectUtils.isEmpty(complianceBasic)) {
+			Optional.of(complianceBasic).ifPresent(details -> {
+				partyComplianceDetails.set_residencyCountry(details.getResidencyCountry());
+				partyComplianceDetails.set_residencyIndicator(details.getResidencyIndicator());
+			});
+		}
+		log.info("/mapToPartyComplianceDetails()");
+		return partyComplianceDetails;
 	}
