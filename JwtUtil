@@ -1,70 +1,94 @@
- @Test
-    void shouldReturnEmptyPartyComplianceDetailsWhenInputsAreNull() {
-        // when
-        PartyComplianceDetails result = YourMapperClass.mapToPartyComplianceDetails(null, null);
-
-        // then
-        assertNotNull(result);
-        assertNull(result.get_riskRating());
-        assertNull(result.getLastReviewDate());
-        assertNull(result.getNextReviewDate());
-        assertNull(result.getRatingFrequency());
-        assertFalse(result.isGrcFlag());
-        assertNull(result.get_dataStatus());
-        assertNull(result.getGrcModificationDate());
-        assertNull(result.get_residencyCountry());
-        assertNull(result.get_residencyIndicator());
+@Test
+    void shouldReturnNullIfPartyModelIsNull() {
+        assertNull(mapper.mapEmploymentIncomesToEmployment(null));
     }
 
     @Test
-    void shouldMapComplianceDetailsAndComplianceBasicCorrectly() {
-        // given ComplianceDetails
-        com.arabbank.model.entity.golden.ComplianceDetails complianceDetails = new com.arabbank.model.entity.golden.ComplianceDetails();
-        complianceDetails.setRiskRating("HIGH");
-        complianceDetails.setLastReviewDate(LocalDate.of(2023, 1, 1));
-        complianceDetails.setNextReviewDate(LocalDate.of(2023, 6, 1));
-        complianceDetails.setRatingFrequency("Annual");
-        complianceDetails.setGrcFlag(1);
-        complianceDetails.setDataStatus("Active");
-        complianceDetails.setGrcModifyDate(LocalDate.of(2023, 2, 1));
-
-        // given ComplianceBasic
-        ComplianceBasic complianceBasic = new ComplianceBasic();
-        complianceBasic.setResidencyCountry("JO");
-        complianceBasic.setResidencyIndicator("Resident");
-
-        // when
-        PartyComplianceDetails result = YourMapperClass.mapToPartyComplianceDetails(complianceDetails, complianceBasic);
-
-        // then
-        assertNotNull(result);
-
-        // ComplianceDetails mapping
-        assertEquals("HIGH", result.get_riskRating());
-        assertEquals(LocalDate.of(2023, 1, 1), result.getLastReviewDate());
-        assertEquals(LocalDate.of(2023, 6, 1), result.getNextReviewDate());
-        assertEquals("Annual", result.getRatingFrequency());
-        assertTrue(result.isGrcFlag());
-        assertEquals("Active", result.get_dataStatus());
-        assertEquals(LocalDate.of(2023, 2, 1), result.getGrcModificationDate());
-
-        // ComplianceBasic mapping
-        assertEquals("JO", result.get_residencyCountry());
-        assertEquals("Resident", result.get_residencyIndicator());
+    void shouldReturnNullIfEmploymentIncomesIsNull() {
+        PartyModel partyModel = new PartyModel();
+        partyModel.setWorkDetail(null);
+        assertNull(mapper.mapEmploymentIncomesToEmployment(partyModel));
     }
 
     @Test
-    void shouldHandlePartialNullInputs() {
-        // given only ComplianceDetails
-        com.arabbank.model.entity.golden.ComplianceDetails complianceDetails = new com.arabbank.model.entity.golden.ComplianceDetails();
-        complianceDetails.setRiskRating("LOW");
+    void shouldMapEmploymentIncomesProperly() {
+        // given
+        PartyModel partyModel = new PartyModel();
+        com.arabbank.model.entity.golden.EmploymentIncomes incomes = new com.arabbank.model.entity.golden.EmploymentIncomes();
+        incomes.setEmployedFrom("2020-01-01");
+        incomes.setBusinessSector("IT");
+        incomes.setEmploymentStatus("Full-Time");
+        incomes.setSalaryRange("1000-2000");
+        incomes.setProfession("Developer");
+        incomes.setOldProfession("Engineer");
+        incomes.setPositionTitle("Senior");
+        incomes.setPositionOthers("Other Position");
+        incomes.setIncomeCode("INC123");
+        incomes.setSalaryReceptionMechanism("Bank Transfer");
+        incomes.setIsSalaryTransferred(1);
+        incomes.setIncomeCurrency("USD");
+
+        partyModel.setWorkDetail(incomes);
+
+        Relationship relationship = new Relationship();
+        Role role = new Role();
+        role.setCode("COM");
+        relationship.setRole(role);
+        relationship.setGlobalId("global-123");
+        relationship.setRelationCountry("JO");
+        relationship.setRelationshipSequence(1);
+        relationship.setOrganization("OrgName");
+
+        partyModel.setRelationships(Collections.singletonList(relationship));
+
+        Name name = new Name();
+        name.setLanguage("EN");
+        name.setBigName("BigNameValue");
+
+        when(nameRepository.getName(any(), anyString(), anyString(), anyInt(), anyString()))
+                .thenReturn(Optional.of(name));
 
         // when
-        PartyComplianceDetails result = YourMapperClass.mapToPartyComplianceDetails(complianceDetails, null);
+        Employment result = mapper.mapEmploymentIncomesToEmployment(partyModel);
 
         // then
         assertNotNull(result);
-        assertEquals("LOW", result.get_riskRating());
-        assertNull(result.get_residencyCountry());
-        assertNull(result.get_residencyIndicator());
+        assertEquals("2020-01-01", result.getEmployedFrom());
+        assertEquals("IT", result.get_businessSector());
+        assertEquals("Full-Time", result.get_status());
+        assertEquals("1000-2000", result.get_salaryRange());
+        assertEquals("Developer", result.get_profession());
+        assertEquals("Engineer", result.getProfessionOthers());
+        assertEquals("Senior", result.get_professionalLevel());
+        assertEquals("Other Position", result.getProfessionalLevelOthers());
+        assertEquals("INC123", result.get_incomeCode());
+        assertEquals("Bank Transfer", result.getSalaryReceptionMechanism());
+        assertTrue(result.getSalaryTransferred());
+        assertEquals("USD", result.get_incomeCurrency());
+
+        assertNotNull(result.getEmployerName());
+        assertEquals("EN", result.getEmployerName().get_language());
+        assertEquals("BigNameValue", result.getEmployerName().getBigName());
+
+        verify(nameRepository).getName(eq("global-123"), anyString(), anyString(), eq(1), eq("OrgName"));
+    }
+
+    @Test
+    void shouldSkipEmployerNameIfRoleIsNotCOM() {
+        PartyModel partyModel = new PartyModel();
+        com.arabbank.model.entity.golden.EmploymentIncomes incomes = new com.arabbank.model.entity.golden.EmploymentIncomes();
+        partyModel.setWorkDetail(incomes);
+
+        Relationship relationship = new Relationship();
+        Role role = new Role();
+        role.setCode("OTHER");
+        relationship.setRole(role);
+
+        partyModel.setRelationships(Collections.singletonList(relationship));
+
+        Employment result = mapper.mapEmploymentIncomesToEmployment(partyModel);
+
+        assertNotNull(result);
+        assertNull(result.getEmployerName());
+        verifyNoInteractions(nameRepository);
     }
