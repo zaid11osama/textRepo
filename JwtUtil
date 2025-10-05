@@ -1,55 +1,75 @@
-  doReturn(relationship).when (partyService).getGlobalIdByIdentifer(   anyString(),anyString() , anyString(), anyString(), anyString());
+ @Test
+    void testBuildGuardianNewPartyModelForPost_Success() throws Exception {
+        // Arrange
+        Map<String, String> headers = new HashMap<>();
+        headers.put(MdmHeaderRequest.INPUT_COUNTRY, "JO");
+        headers.put(MdmHeaderRequest.LANGUAGE, "EN");
+        headers.put(MdmHeaderRequest.ROLE, null);
+        headers.put(MdmHeaderRequest.WITH_CUSTOMER_ID, null);
 
+        String partyId = "P123";
+        String reference = "ref-xyz";
 
-        doReturn(partyModel).when(partyService).getFullPartyDetails(eq(relationship), anyMap(), eq(reference));
+        PartyService spyService = Mockito.spy(partyService);
 
+        // Mock internal calls
+        doReturn(relationship)
+                .when(spyService)
+                .getGlobalIdByIdentifer(eq(partyId), eq(Others.CUSTOMER_ID), eq("JO"), any(), any());
 
+        doReturn(reference)
+                .when(helperUtils)
+                .generateReference();
 
-        doReturn(false).when(partyService).checkPartyModelData(any());
+        doReturn(partyModel)
+                .when(spyService)
+                .getFullPartyDetails(eq(relationship), eq(headers), eq(reference));
 
-        doReturn(newPartyModel).when(partyService).mapDtoToModel(eq(partyModel), eq(relationship), anyString(), anyString());
+        doReturn(false)
+                .when(spyService)
+                .checkPartyModelData(any(PartyModel.class));
 
+        doReturn(newPartyModel)
+                .when(spyService)
+                .mapDtoToModel(eq(partyModel), eq(relationship), eq("EN"), eq("JO"));
 
+        // Act
+        NewPartyModel result = spyService.buildGuardianNewPartyModelForPost(headers, partyId);
 
-        NewPartyModel result = partyService.getNewPartyModel(headers, partyId);
-
+        // Assert
         assertNotNull(result);
-        verify(newPartieModelSetter).setDescrtiopns(newPartyModel, headers, partyId);
-        verify(partyService).setGuardianDetails(newPartyModel);
+        assertEquals(newPartyModel, result);
 
-org.mockito.exceptions.misusing.PotentialStubbingProblem: 
-Strict stubbing argument mismatch. Please check:
- - this invocation of 'getGlobalIdByIdentifer' method:
-    partyService.getGlobalIdByIdentifer(
-    "P123",
-    "customerId",
-    "JO",
-    null,
-    null
-);
-    -> at com.arabbank.service.PartyService.getNewPartyModel(PartyService.java:777)
- - has following stubbing(s) with different arguments:
-    1. partyService.getGlobalIdByIdentifer(
-    "",
-    "",
-    "",
-    "",
-    ""
-);
-      -> at com.arabbank.service.PartyServiceTest.testGetNewPartyModel_Success(PartyServiceTest.java:662)
-Typically, stubbing argument mismatch indicates user mistake when writing tests.
-Mockito fails early so that you can debug potential problem easily.
-However, there are legit scenarios when this exception generates false negative signal:
-  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
-    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
-  - stubbed method is intentionally invoked with different arguments by code under test
-    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
-For more information see javadoc for PotentialStubbingProblem class.
+        verify(spyService).getGlobalIdByIdentifer(eq(partyId), eq(Others.CUSTOMER_ID), eq("JO"), any(), any());
+        verify(spyService).getFullPartyDetails(eq(relationship), eq(headers), eq(reference));
+        verify(spyService).mapDtoToModel(eq(partyModel), eq(relationship), eq("EN"), eq("JO"));
+    }
 
-	at com.arabbank.service.PartyService.getGlobalIdByIdentifer(PartyService.java:927)
-	at com.arabbank.service.PartyService.getNewPartyModel(PartyService.java:777)
-	at com.arabbank.service.PartyService.getNewPartyModel(PartyService.java:770)
-	at com.arabbank.service.PartyServiceTest.testGetNewPartyModel_Success(PartyServiceTest.java:678)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+    @Test
+    void testBuildGuardianNewPartyModelForPost_WhenPartyIdIsNull_ShouldReturnNull() {
+        // Act
+        NewPartyModel result = partyService.buildGuardianNewPartyModelForPost(new HashMap<>(), null);
+
+        // Assert
+        assertNull(result);
+    }
+
+    @Test
+    void testBuildGuardianNewPartyModelForPost_WhenCustomerNotFound_ShouldThrowException() throws Exception {
+        // Arrange
+        Map<String, String> headers = new HashMap<>();
+        headers.put(MdmHeaderRequest.INPUT_COUNTRY, "JO");
+        headers.put(MdmHeaderRequest.LANGUAGE, "EN");
+
+        String partyId = "P123";
+
+        PartyService spyService = Mockito.spy(partyService);
+
+        doReturn(null)
+                .when(spyService)
+                .getGlobalIdByIdentifer(anyString(), anyString(), anyString(), any(), any());
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+                () -> spyService.buildGuardianNewPartyModelForPost(headers, partyId));
+    }
