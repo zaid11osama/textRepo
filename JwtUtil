@@ -1,38 +1,13 @@
-	public NewPartyModel getNewPartyModel(Map<String, String> headers, String partyId) {
-		log.info("getNewPartyModel({})", partyId);
-		try {
-			String inputCountry = headers.get(MdmHeaderRequest.INPUT_COUNTRY);
-			String language = headers.get(MdmHeaderRequest.LANGUAGE);
+org.mockito.exceptions.misusing.MissingMethodInvocationException: 
+when() requires an argument which has to be 'a method call on a mock'.
+For example:
+    when(mock.getArticles()).thenReturn(articles);
 
-			checkIdentifierType(headers);
+Also, this error might show up because:
+1. you stub either of: final/private/equals()/hashCode() methods.
+   Those methods *cannot* be stubbed/verified.
+   Mocking methods declared on non-public parent classes is not supported.
+2. inside when() you don't call method on mock but on some other object.
 
-			Relationship relationship = getGlobalIdByIdentifer(
-					partyId,
-					headers.get(MdmHeaderRequest.IDENTIFIER_TYPE),
-					inputCountry,
-					headers.get(MdmHeaderRequest.ROLE),
-					headers.get(MdmHeaderRequest.WITH_CUSTOMER_ID)
-			);
-			if(relationship == null ){
-				throw new BusinessWarningException("Customer Not Found");
-			}
-			PartyModel fullPartyDetails = getFullPartyDetails(relationship, headers, HelperUtils.generateReference());
 
-			if (checkPartyModelData(fullPartyDetails)) {
-				throw new CustomerNotFoundException(HandleErr.CUSTOMER_NOT_FOUND);
-			}
-			NewPartyModel newPartyModel = mapDtoToModel(fullPartyDetails, relationship, language, inputCountry);
-
-			setGuardianDetails(newPartyModel);
-
-			newPartieModelSetter.setDescrtiopns(newPartyModel, headers, partyId);
-			return newPartyModel;
-		} catch (JsonProcessingException e) {
-			throw new GeneralBadRequestException("An error occurred during JSON processing, " + e);
-		} catch (SQLException e) {
-			throw new DatabaseException("An error occurred during database operation, " + e);
-		}
-		finally {
-			log.info("/getNewPartyModel({})", partyId);
-		}
-	}
+	at com.arabbank.service.PartyServiceTest.testGetNewPartyModel_Success(PartyServiceTest.java:653)
