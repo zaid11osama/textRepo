@@ -1,87 +1,22 @@
-@Test
-    void checkIfFlagsIsPrm_WhenPrmFlagFound_ShouldReturnTrueAndSaveFlag() {
-        // Arrange
-        Flag flag = new Flag();
-        flag.set_identifier(new Translation("lookup", Others.PRM, "desc"));
-        FlagsAndAttributes flagsAndAttributes = new FlagsAndAttributes();
-        flagsAndAttributes.setFlags(List.of(flag));
+	public FlagsAttribute mapFlagsAttrbiuteToFlagsAndAttributes(Flag flag, Relationship relationship) {
+		log.debug("mapFlagsAttrbiuteToFlagsAndAttributes()");
+		int status = ObjectUtils.isEmpty(flag.getStatus()) ? flag.getStatus().equalsIgnoreCase("0") ? 0 : 1 : 0;
+		FlagsAttribute flagsAttribute = FlagsAttribute.builder().globalId(relationship.getGlobalId()).isActive(status)
+				.universalId(UUID.randomUUID().toString()).organization(relationship.getOrganization())
+				.relationCountry(HelperUtils.checkTranslation(relationship.getRelationCountry()))
+				.relationshipSequence(relationship.getRelationshipSequence()).role(relationship.getRole())
+				.termsAndConditionVersion(flag.getTermsAndConditionVersion()).value(flag.getValue())
+				.authorizedUser(Others.KYC).dateRecordCreated(java.sql.Date.valueOf(LocalDate.now()))
+				.dateLastUpdate(java.sql.Date.valueOf(LocalDate.now())).updatedToday(1)
+				.updateCountry(HelperUtils.checkTranslation(relationship.getRelationCountry()))
+				.updateProgram(Others.KYC).updateUser(Others.KYC).isDeleted(0).updateSystem(Others.KYC)
+				.latestUniqueRefrence(relationship.getLatestUniqueRefrence()).type(flag.get_identifier())
+				.updateTimestamp(Timestamp.valueOf(LocalDateTime.now())).build();
+		if (status == 0)
+			flagsAttribute.setInactiveDate(flag.getStatusDate());
+		else
+			flagsAttribute.setActiveDate(flag.getStatusDate());
 
-        NewPartyModel newPartyModel = new NewPartyModel();
-        newPartyModel.setFlagsAndAttributes(flagsAndAttributes);
-
-        NewPartyModelHeaders headers = new NewPartyModelHeaders();
-        headers.setCustomerId("cust123");
-        headers.setInputCountry("JO");
-        headers.setRole("admin");
-
-        MainModel mainModel = new MainModel();
-        mainModel.setNewPartyModel(newPartyModel);
-        mainModel.setHeaders(headers);
-
-        Relationship relationship = new Relationship();
-        relationship.setGlobalId("global123");
-
-        when(goldenRelationshipRepository.getGlobalIdByRelatedProductAndRelationCountryAndRole(anyString(), anyString(), anyString()))
-                .thenReturn(relationship);
-
-        FlagsAttribute mappedFlag = new FlagsAttribute();
-        mappedFlag.setGlobalId("global123");
-        mappedFlag.setRole("admin");
-        mappedFlag.setRelationCountry("JO");
-        mappedFlag.setValue("v1");
-        mappedFlag.setType(new Translation("t1", "t1", "t1"));
-
-        // Mock mapper method
-        doReturn(mappedFlag).when(partyService).mapFlagsAttrbiuteToFlagsAndAttributes(any(), any());
-
-        when(flagsAttributeRepository.getFlagsAttribute(anyString(), anyString(), anyString(), any(), any(), any(), any()))
-                .thenReturn(null);
-
-        // Act
-        boolean result = partyService.checkIfFlagsIsPrm(mainModel);
-
-        // Assert
-        assertTrue(result);
-        verify(flagsAttributeRepository).save(mappedFlag);
-    }
-
-    @Test
-    void checkIfFlagsIsPrm_WhenNoPrmFlagFound_ShouldReturnFalse() {
-        // Arrange
-        Flag flag = new Flag();
-        flag.set_identifier(new Translation("lookup", "NON_PRM", "desc"));
-        FlagsAndAttributes flagsAndAttributes = new FlagsAndAttributes();
-        flagsAndAttributes.setFlags(List.of(flag));
-
-        NewPartyModel newPartyModel = new NewPartyModel();
-        newPartyModel.setFlagsAndAttributes(flagsAndAttributes);
-
-        MainModel mainModel = new MainModel();
-        mainModel.setNewPartyModel(newPartyModel);
-        mainModel.setHeaders(new NewPartyModelHeaders());
-
-        // Act
-        boolean result = partyService.checkIfFlagsIsPrm(mainModel);
-
-        // Assert
-        assertFalse(result);
-        verifyNoInteractions(flagsAttributeRepository);
-    }
-
-    @Test
-    void checkIfFlagsIsPrm_WhenFlagsListIsEmpty_ShouldReturnFalse() {
-        // Arrange
-        NewPartyModel newPartyModel = new NewPartyModel();
-        newPartyModel.setFlagsAndAttributes(new FlagsAndAttributes());
-
-        MainModel mainModel = new MainModel();
-        mainModel.setNewPartyModel(newPartyModel);
-        mainModel.setHeaders(new NewPartyModelHeaders());
-
-        // Act
-        boolean result = partyService.checkIfFlagsIsPrm(mainModel);
-
-        // Assert
-        assertFalse(result);
-        verifyNoInteractions(flagsAttributeRepository);
-    }
+		log.debug("/mapFlagsAttrbiuteToFlagsAndAttributes()");
+		return flagsAttribute;
+	}
