@@ -1,24 +1,16 @@
-@Test
-    void shouldReturnTrueWhenAllFieldsAreEmpty() {
-        PartyModel emptyParty = new PartyModel();
-        boolean result = partyUtils.checkPartyModelData(emptyParty);
-        assertTrue(result, "Expected true when all fields are null or empty");
-    }
+  @Test
+    void shouldMapDtoToModelSuccessfully() throws JsonProcessingException {
+        // given
+        PartyModel dto = new PartyModel();
+        Relationship rel = new Relationship();
+        dto.setIdentifier(new Identifier("P123"));
+        dto.setNames(List.of(new NameModel("John", "Doe")));
 
-    @Test
-    void shouldReturnFalseWhenOneFieldIsNotEmpty() {
-        PartyModel party = new PartyModel();
-        party.setNames(List.of(new NameModel())); // one field not empty
+        // when
+        NewPartyModel result = partyMapper.mapDtoToModel(dto, rel, "en", "JO");
 
-        boolean result = partyUtils.checkPartyModelData(party);
-        assertFalse(result, "Expected false when at least one field is not empty");
-    }
-
-    @Test
-    void shouldReturnFalseWhenComplianceDetailIsNotNull() {
-        PartyModel party = new PartyModel();
-        party.setComplianceDetail(new ComplianceDetail());
-
-        boolean result = partyUtils.checkPartyModelData(party);
-        assertFalse(result, "Expected false when ComplianceDetail is not null");
+        // then
+        assertNotNull(result);
+        assertEquals("P123", result.getIdentifier().getPartyId());
+        assertFalse(result.getNames().isEmpty());
     }
