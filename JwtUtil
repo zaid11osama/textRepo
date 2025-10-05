@@ -1,71 +1,70 @@
  @Test
-    void shouldReturnEmptyFatcaWhenInputIsNull() {
+    void shouldReturnEmptyPartyComplianceDetailsWhenInputsAreNull() {
         // when
-        Fatca result = YourMapperClass.mapFatcaDetailsToFatca(null);
+        PartyComplianceDetails result = YourMapperClass.mapToPartyComplianceDetails(null, null);
 
         // then
         assertNotNull(result);
-        assertNull(result.getQuestions());
-        assertNull(result.getTaxIdentificationNumber());
-        assertNull(result.getSignDate());
-        assertNull(result.getDateFillingForm());
-        assertNull(result.getLatestAmendment());
-        assertNull(result.getGrcDetails());
+        assertNull(result.get_riskRating());
+        assertNull(result.getLastReviewDate());
+        assertNull(result.getNextReviewDate());
+        assertNull(result.getRatingFrequency());
+        assertFalse(result.isGrcFlag());
+        assertNull(result.get_dataStatus());
+        assertNull(result.getGrcModificationDate());
+        assertNull(result.get_residencyCountry());
+        assertNull(result.get_residencyIndicator());
     }
 
     @Test
-    void shouldMapFatcaDetailsCorrectly() {
-        // given
-        com.arabbank.model.entity.golden.FatcaDetails fatcaDetails = new com.arabbank.model.entity.golden.FatcaDetails();
-        fatcaDetails.setIsUsCitizen("Yes");
-        fatcaDetails.setIsUsBorn("No");
-        fatcaDetails.setIsGreenCardHolder("Yes");
-        fatcaDetails.setIsUsResident("No");
-        fatcaDetails.setIsUsTaxPayer("Yes");
-        fatcaDetails.setSignedW8("Yes");
-        fatcaDetails.setSignedW9("No");
-        fatcaDetails.setSignedSecrecyWaiver("Yes");
-        fatcaDetails.setHaUsEntityOwner("No");
-        fatcaDetails.setTin("TIN12345");
-        fatcaDetails.setSignedDate(LocalDate.of(2023, 1, 1));
-        fatcaDetails.setDateFillingForm(LocalDate.of(2023, 2, 1));
-        fatcaDetails.setLatestAmendmentDate(LocalDate.of(2023, 3, 1));
-        fatcaDetails.setFatcaClassification("CLASS_A");
-        fatcaDetails.setPreviousfatcaClassification("CLASS_B");
-        fatcaDetails.setIsChangedByGrc("Y");
-        fatcaDetails.setBoExcemption("EXEMPT1");
-        fatcaDetails.setExcemptCode("CODE1");
-        fatcaDetails.setExceptionReportingCode("CODE2");
+    void shouldMapComplianceDetailsAndComplianceBasicCorrectly() {
+        // given ComplianceDetails
+        com.arabbank.model.entity.golden.ComplianceDetails complianceDetails = new com.arabbank.model.entity.golden.ComplianceDetails();
+        complianceDetails.setRiskRating("HIGH");
+        complianceDetails.setLastReviewDate(LocalDate.of(2023, 1, 1));
+        complianceDetails.setNextReviewDate(LocalDate.of(2023, 6, 1));
+        complianceDetails.setRatingFrequency("Annual");
+        complianceDetails.setGrcFlag(1);
+        complianceDetails.setDataStatus("Active");
+        complianceDetails.setGrcModifyDate(LocalDate.of(2023, 2, 1));
+
+        // given ComplianceBasic
+        ComplianceBasic complianceBasic = new ComplianceBasic();
+        complianceBasic.setResidencyCountry("JO");
+        complianceBasic.setResidencyIndicator("Resident");
 
         // when
-        Fatca result = YourMapperClass.mapFatcaDetailsToFatca(fatcaDetails);
+        PartyComplianceDetails result = YourMapperClass.mapToPartyComplianceDetails(complianceDetails, complianceBasic);
 
         // then
         assertNotNull(result);
 
-        Questions questions = result.getQuestions();
-        assertNotNull(questions);
-        assertEquals("Yes", questions.getIsUSCitizen());
-        assertEquals("No", questions.getIsUSBorn());
-        assertEquals("Yes", questions.getIsGreencardHolder());
-        assertEquals("No", questions.getIsUSResident());
-        assertEquals("Yes", questions.getIsUSTaxPayer());
-        assertEquals("Yes", questions.getSignedW8());
-        assertEquals("No", questions.getSignedW9());
-        assertEquals("Yes", questions.getSignedSecrecyWaiver());
-        assertEquals("No", questions.getHasUSEntityOwner());
+        // ComplianceDetails mapping
+        assertEquals("HIGH", result.get_riskRating());
+        assertEquals(LocalDate.of(2023, 1, 1), result.getLastReviewDate());
+        assertEquals(LocalDate.of(2023, 6, 1), result.getNextReviewDate());
+        assertEquals("Annual", result.getRatingFrequency());
+        assertTrue(result.isGrcFlag());
+        assertEquals("Active", result.get_dataStatus());
+        assertEquals(LocalDate.of(2023, 2, 1), result.getGrcModificationDate());
 
-        assertEquals("TIN12345", result.getTaxIdentificationNumber());
-        assertEquals(LocalDate.of(2023, 1, 1), result.getSignDate());
-        assertEquals(LocalDate.of(2023, 2, 1), result.getDateFillingForm());
-        assertEquals(LocalDate.of(2023, 3, 1), result.getLatestAmendment());
+        // ComplianceBasic mapping
+        assertEquals("JO", result.get_residencyCountry());
+        assertEquals("Resident", result.get_residencyIndicator());
+    }
 
-        GrcDetails grcDetails = result.getGrcDetails();
-        assertNotNull(grcDetails);
-        assertEquals("CLASS_A", grcDetails.get_fatcaClassification());
-        assertEquals("CLASS_B", grcDetails.get_oldFatcaClassification());
-        assertTrue(grcDetails.isChangedByGRC());
-        assertEquals("EXEMPT1", grcDetails.getBoException());
-        assertEquals("CODE1", grcDetails.get_excemptCode().getCode());
-        assertEquals("CODE2", grcDetails.get_excemptionReportingCode().getCode());
+    @Test
+    void shouldHandlePartialNullInputs() {
+        // given only ComplianceDetails
+        com.arabbank.model.entity.golden.ComplianceDetails complianceDetails = new com.arabbank.model.entity.golden.ComplianceDetails();
+        complianceDetails.setRiskRating("LOW");
+
+        // when
+        PartyComplianceDetails result = YourMapperClass.mapToPartyComplianceDetails(complianceDetails, null);
+
+        // then
+        assertNotNull(result);
+        assertEquals("LOW", result.get_riskRating());
+        assertNull(result.get_residencyCountry());
+        assertNull(result.get_residencyIndicator());
     }
