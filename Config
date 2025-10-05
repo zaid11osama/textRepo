@@ -1,34 +1,13 @@
-	public boolean checkIfFlagsIsPrm(MainModel mainModel) {
-		log.info("checkIfFlagsIsPrm()");
-		NewPartyModel newPartyModel = mainModel.getNewPartyModel();
-		NewPartyModelHeaders headers = mainModel.getHeaders();
-		if (!ObjectUtils.isEmpty(newPartyModel) && !ObjectUtils.isEmpty(newPartyModel.getFlagsAndAttributes())
-				&& !CollectionUtils.isEmpty(newPartyModel.getFlagsAndAttributes().getFlags())) {
-			for (Flag flag : newPartyModel.getFlagsAndAttributes().getFlags()) {
-				String code = checkTranslation(flag.get_identifier());
-				if (!ObjectUtils.isEmpty(code) && code.equalsIgnoreCase(Others.PRM)) {
-					String role = headers.getRole();
-					Relationship relationship = role == null || role.isBlank()
-							? goldenRelationshipRepository.getGlobalIdByRelatedProductAndRelationCountryAndAhRole(
-							headers.getCustomerId(),
-							headers.getInputCountry()
-					) : goldenRelationshipRepository.getGlobalIdByRelatedProductAndRelationCountryAndRole(
-							headers.getCustomerId(),
-							headers.getInputCountry(),
-							role
-					);
-					FlagsAttribute flagsAttribute = mapFlagsAttrbiuteToFlagsAndAttributes(flag, relationship);
-					FlagsAttribute attribute = flagsAttributeRepository.getFlagsAttribute(flagsAttribute.getGlobalId(),
-							HelperUtils.checkTranslation(flagsAttribute.getRole()), flagsAttribute.getRelationCountry(),
-							flagsAttribute.getRelationshipSequence(), flagsAttribute.getOrganization(),
-							flagsAttribute.getValue(), HelperUtils.checkTranslation(flagsAttribute.getType()));
-					if (!ObjectUtils.isEmpty(attribute))
-						flagsAttributeRepository.delete(attribute);
-					flagsAttributeRepository.save(flagsAttribute);
-					return true;
-				}
-			}
-		}
-		log.info("/checkIfFlagsIsPrm()");
-		return false;
-	}
+org.mockito.exceptions.misusing.NotAMockException: 
+Argument passed to when() is not a mock!
+Example of correct stubbing:
+    doThrow(new RuntimeException()).when(mock).someMethod();
+
+	at com.arabbank.service.PartyServiceTest.checkIfFlagsIsPrm_WhenPrmFlagFound_ShouldReturnTrueAndSaveFlag(PartyServiceTest.java:525)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+
+   // Mock mapper method
+        doReturn(mappedFlag).when(partyService).mapFlagsAttrbiuteToFlagsAndAttributes(any(), any());
