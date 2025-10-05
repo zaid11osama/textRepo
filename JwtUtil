@@ -1,16 +1,35 @@
-  @Test
-    void shouldMapDtoToModelSuccessfully() throws JsonProcessingException {
-        // given
-        PartyModel dto = new PartyModel();
-        Relationship rel = new Relationship();
-        dto.setIdentifier(new Identifier("P123"));
-        dto.setNames(List.of(new NameModel("John", "Doe")));
+	public PartyPortfolio mapPortfolioDetailsToPortfolio(
+			List<com.arabbank.model.entity.golden.PortfolioDetails> portfolioDetailsList) {
+		log.info("mapPortfolioDetailsToPortfolio()");
+		PartyPortfolio partyPortfolio = new PartyPortfolio();
+		List<CodedQuestionPortfolio> codedQuestions = new ArrayList<>();
+		List<FreeQuestionPortfolio> freeQuestions = new ArrayList<>();
+		int codedQuestionIndex = 0;
+		int freeQuestionIndex = 0;
+		if (portfolioDetailsList == null)
+			return null;
+		for (com.arabbank.model.entity.golden.PortfolioDetails details : portfolioDetailsList) {
+			if (!ObjectUtils.isEmpty(details)) {
+				String fileKey = mdmSysQuestionsRepository
+						.getFileKeyByQuestionId(HelperUtils.checkTranslation(details.getType())).orElse(null);
+				if (!HelperUtils.isEmpty(fileKey)) {
+					CodedQuestionPortfolio codedQuestion = new CodedQuestionPortfolio();
+					codedQuestion.setIndex(codedQuestionIndex++);
+					codedQuestion.set_answerValue(new Translation().withCode(details.getAnswerValue()));
+					codedQuestion.set_question(details.getType());
+					codedQuestions.add(codedQuestion);
+				} else {
+					FreeQuestionPortfolio freeQuestion = new FreeQuestionPortfolio();
+					freeQuestion.setIndex(freeQuestionIndex++);
+					freeQuestion.setAnswerValue(details.getAnswerValue());
+					freeQuestion.set_question(details.getType());
+					freeQuestions.add(freeQuestion);
+				}
 
-        // when
-        NewPartyModel result = partyMapper.mapDtoToModel(dto, rel, "en", "JO");
-
-        // then
-        assertNotNull(result);
-        assertEquals("P123", result.getIdentifier().getPartyId());
-        assertFalse(result.getNames().isEmpty());
-    }
+				partyPortfolio.setCodedQuestions(codedQuestions);
+				partyPortfolio.setFreeQuestions(freeQuestions);
+			}
+		}
+		log.info("/mapPortfolioDetailsToPortfolio()");
+		return partyPortfolio;
+	}
