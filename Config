@@ -1,25 +1,41 @@
-public static PartyComplianceDetails mapToPartyComplianceDetails(
-			com.arabbank.model.entity.golden.ComplianceDetails complianceDetails, ComplianceBasic complianceBasic) {
-		log.info("mapToPartyComplianceDetails()");
-		PartyComplianceDetails partyComplianceDetails = new PartyComplianceDetails();
-		if (!ObjectUtils.isEmpty(complianceDetails)) {
-			Optional.of(complianceDetails).ifPresent(details -> {
-				partyComplianceDetails.set_riskRating(details.getRiskRating());
-				partyComplianceDetails.setLastReviewDate(details.getLastReviewDate());
-				partyComplianceDetails.setNextReviewDate(details.getNextReviewDate());
-				partyComplianceDetails.setRatingFrequency(details.getRatingFrequency());
-				partyComplianceDetails.setGrcFlag(details.getGrcFlag() != null && details.getGrcFlag() == 1);
-				partyComplianceDetails.set_dataStatus(details.getDataStatus());
-				partyComplianceDetails.setGrcModificationDate(details.getGrcModifyDate());
-			});
+Employment mapEmploymentIncomesToEmployment(PartyModel partyModel) {
+		log.info("mapEmploymentIncomesToEmployment()");
+		if (partyModel == null) {
+			return null;
 		}
+		Employment employment = new Employment();
+		com.arabbank.model.entity.golden.EmploymentIncomes employmentIncomes = partyModel.getWorkDetail();
+		if (employmentIncomes == null)
+			return null;
+		employment.setEmployedFrom(employmentIncomes.getEmployedFrom());
+		employment.set_businessSector(employmentIncomes.getBusinessSector());
+		employment.set_status(employmentIncomes.getEmploymentStatus());
+		employment.set_salaryRange(employmentIncomes.getSalaryRange());
+		employment.set_profession(employmentIncomes.getProfession());
+		employment.setProfessionOthers(employmentIncomes.getOldProfession());
+		employment.set_professionalLevel(employmentIncomes.getPositionTitle());
+		employment.setProfessionalLevelOthers(employmentIncomes.getPositionOthers());
+		employment.set_incomeCode(employmentIncomes.getIncomeCode());
+		employment.set_salaryReceptionMechanism(employmentIncomes.getSalaryReceptionMechanism());
+		employment.setSalaryTransferred(
+				employmentIncomes.getIsSalaryTransferred() != null && employmentIncomes.getIsSalaryTransferred() == 1);
+		employment.set_incomeCurrency(employmentIncomes.getIncomeCurrency());
 
-		if (!ObjectUtils.isEmpty(complianceBasic)) {
-			Optional.of(complianceBasic).ifPresent(details -> {
-				partyComplianceDetails.set_residencyCountry(details.getResidencyCountry());
-				partyComplianceDetails.set_residencyIndicator(details.getResidencyIndicator());
-			});
-		}
-		log.info("/mapToPartyComplianceDetails()");
-		return partyComplianceDetails;
+		    List<Relationship> relationships= partyModel.getRelationships();
+
+			for(Relationship relationship : relationships) {
+				if ("COM".equalsIgnoreCase(relationship.getRole().getCode())){
+					Optional<Name> name = nameRepository.getName(relationship.getGlobalId(),
+							HelperUtils.checkTranslation(relationship.getRelationCountry()),
+							HelperUtils.checkTranslation(relationship.getRole()), relationship.getRelationshipSequence(),
+							relationship.getOrganization());
+					EmployerName employerName = new EmployerName();
+					employerName.set_language(name.get().getLanguage());
+					employerName.setBigName(name.get().getBigName());
+					employment.setEmployerName(employerName);
+				}
+			}
+		log.info("/mapEmploymentIncomesToEmployment()");
+		return employment;
+
 	}
