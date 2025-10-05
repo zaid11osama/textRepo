@@ -1,17 +1,39 @@
-	public boolean checkPartyModelData(PartyModel fullPartyDetails) {
-		log.debug("checkPartyModelData({})", fullPartyDetails);
-		if (isEmpty(fullPartyDetails.getAddresses()) && isEmpty(fullPartyDetails.getContacts())
-				&& isEmpty(fullPartyDetails.getDocuments()) && isEmpty(fullPartyDetails.getDueDiligences())
-				&& isEmpty(fullPartyDetails.getFlagsAttributes()) && isEmpty(fullPartyDetails.getInternetAccounts())
-				&& isEmpty(fullPartyDetails.getLegalStatuses()) && isEmpty(fullPartyDetails.getMatchingPersons())
-				&& isEmpty(fullPartyDetails.getNames()) && isEmpty(fullPartyDetails.getOtherBanksRelationships())
-				&& isEmpty(fullPartyDetails.getPortfolios()) && isEmpty(fullPartyDetails.getRelationships())
-				&& isEmpty(fullPartyDetails.getTaxDetails()) && fullPartyDetails.getComplianceDetail() == null
-				&& fullPartyDetails.getCrsDetail() == null && fullPartyDetails.getFatcaDetails() == null
-				&& fullPartyDetails.getPepDetails() == null && fullPartyDetails.getPersonalDetail() == null
-				&& fullPartyDetails.getWorkDetail() == null) {
-			return true;
-		}
-		log.debug("/checkPartyModelData({})", fullPartyDetails);
-		return false;
+	public NewPartyModel mapDtoToModel(PartyModel partyModelDto, Relationship relationship, String language,
+			String inputCountry) throws JsonProcessingException {
+		log.info("mapDtoToModel() old PartyModel -> new PartyModel");
+		NewPartyModel newPartyModel = new NewPartyModel();
+		String globalId = partyModelDto.getIdentifier() != null ? partyModelDto.getIdentifier().getPartyId() : null;
+		Relationship mainRelationship = getMainRelationship(partyModelDto.getRelationships());
+
+		newPartyModel.setIdentifier(partyModelDto.getIdentifier());
+		newPartyModel.setDocuments(mapDocumentsToPartyDocuments(partyModelDto.getDocuments()));
+		newPartyModel.setNames(mapNameToPartyName(partyModelDto.getNames()));
+		newPartyModel.setAddresses(mapToPartyAddressMap(partyModelDto.getAddresses()));
+		if (newPartyModel.getIdentifier() != null)
+			newPartyModel.getIdentifier()
+					.setRelationships(mapToItSelfRelationships(partyModelDto.getRelationships(), globalId, language));
+		newPartyModel.setEmployment(mapEmploymentIncomesToEmployment(partyModelDto));
+		newPartyModel.setComplianceDetails(
+				mapToPartyComplianceDetails(partyModelDto.getComplianceDetail(), partyModelDto.getComplianceBasic()));
+		newPartyModel.setFatca(mapFatcaDetailsToFatca(partyModelDto.getFatcaDetails()));
+		newPartyModel.setPortfolio(mapPortfolioDetailsToPortfolio(partyModelDto.getPortfolios()));
+		newPartyModel.setNationalities(mapToNationalities(partyModelDto.getLegalStatuses()));
+		newPartyModel.setDueDiligence(mapToDueDiligence(partyModelDto.getDueDiligences()));
+		newPartyModel.setTaxDetails(mapToTaxDetails(partyModelDto.getTaxDetails(), partyModelDto.getComplianceBasic()));
+		newPartyModel.setPersonalDetails(
+				mapToPersonalDetails(partyModelDto.getPersonalDetail(), relationship, partyModelDto.getNames(), language));
+		newPartyModel.setFlagsAndAttributes(mapFlagsAndAttributes(partyModelDto.getFlagsAttributes()));
+		newPartyModel.setOtherBanks(mapToOtherBank(partyModelDto.getOtherBanksRelationships()));
+		newPartyModel.setContacts(mapToPartyContacts(partyModelDto, relationship));
+
+		if (mainRelationship != null)
+			newPartyModel.setSocialDetails(mapToSocialDetails(partyModelDto, globalId, inputCountry, mainRelationship));
+		newPartyModel.setImages(mapToPartyImages(partyModelDto.getImages()));
+		newPartyModel.setPepDetails(mapToPartyPep(partyModelDto.getPepDetails()));
+		log.debug(newPartyModel.toString());
+		ObjectMapper objectMapper = new ObjectMapper();
+		String jsonString = objectMapper.writeValueAsString(newPartyModel);
+		log.debug(jsonString);
+		log.info("/mapDtoToModel() old PartyModel -> new PartyModel");
+		return newPartyModel;
 	}
