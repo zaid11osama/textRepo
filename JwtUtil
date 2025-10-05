@@ -1,46 +1,43 @@
-  @Test
-    void testBuildGuardianNewPartyModelForPost_Success() throws Exception {
-        // Arrange
-        Map<String, String> headers = new HashMap<>();
-        headers.put(Constants.MdmHeaderRequest.INPUT_COUNTRY, "JO");
-        headers.put(Constants.MdmHeaderRequest.LANGUAGE, "EN");
-        headers.put(Constants.MdmHeaderRequest.ROLE, null);
-        headers.put(Constants.MdmHeaderRequest.WITH_CUSTOMER_ID, null);
+@Test
+void testBuildGuardianNewPartyModelForPost_Success() throws Exception {
+    // Arrange
+    Map<String, String> headers = new HashMap<>();
+    headers.put(Constants.MdmHeaderRequest.INPUT_COUNTRY, "JO");
+    headers.put(Constants.MdmHeaderRequest.LANGUAGE, "EN");
+    headers.put(Constants.MdmHeaderRequest.ROLE, null);
+    headers.put(Constants.MdmHeaderRequest.WITH_CUSTOMER_ID, null);
 
-        String partyId = "P123";
-        String reference = "ref-xyz";
+    String partyId = "P123";
 
-        PartyService spyService = Mockito.spy(partyService);
+    PartyService spyService = Mockito.spy(partyService);
 
-        // Mock internal calls
-        doReturn(relationship)
-                .when(spyService)
-                .getGlobalIdByIdentifer(eq(partyId), eq(Constants.Others.CUSTOMER_ID), eq("JO"), any(), any());
+    // Mock internal calls
+    doReturn(relationship)
+            .when(spyService)
+            .getGlobalIdByIdentifer(eq(partyId), eq(Constants.Others.CUSTOMER_ID), eq("JO"), any(), any());
 
-//        doReturn(reference)
-//                .when(helperUtils)
-//                .generateReference();
+    // We don't care about the exact reference string (UUID/random)
+    doReturn(partyModel)
+            .when(spyService)
+            .getFullPartyDetails(any(Relationship.class), anyMap(), anyString());
 
-        doReturn(partyModel)
-                .when(spyService)
-                .getFullPartyDetails(any(), any(), any());
+    doReturn(false)
+            .when(spyService)
+            .checkPartyModelData(any(PartyModel.class));
 
-        doReturn(false)
-                .when(spyService)
-                .checkPartyModelData(any(PartyModel.class));
+    doReturn(newPartyModel)
+            .when(spyService)
+            .mapDtoToModel(eq(partyModel), eq(relationship), eq("EN"), eq("JO"));
 
-        doReturn(newPartyModel)
-                .when(spyService)
-                .mapDtoToModel(eq(partyModel), eq(relationship), eq("EN"), eq("JO"));
+    // Act
+    NewPartyModel result = spyService.buildGuardianNewPartyModelForPost(headers, partyId);
 
-        // Act
-        NewPartyModel result = spyService.buildGuardianNewPartyModelForPost(headers, partyId);
+    // Assert
+    assertNotNull(result);
+    assertEquals(newPartyModel, result);
 
-        // Assert
-        assertNotNull(result);
-        assertEquals(newPartyModel, result);
-
-        verify(spyService).getGlobalIdByIdentifer(eq(partyId), eq(Constants.Others.CUSTOMER_ID), eq("JO"), any(), any());
-        verify(spyService).getFullPartyDetails(eq(relationship), eq(headers), eq(reference));
-        verify(spyService).mapDtoToModel(eq(partyModel), eq(relationship), eq("EN"), eq("JO"));
-    }
+    // ✅ Verification (use flexible matchers)
+    verify(spyService).getGlobalIdByIdentifer(eq(partyId), eq(Constants.Others.CUSTOMER_ID), eq("JO"), any(), any());
+    verify(spyService).getFullPartyDetails(eq(relationship), eq(headers), anyString());
+    verify(spyService).mapDtoToModel(eq(partyModel), eq(relationship), eq("EN"), eq("JO"));
+}
