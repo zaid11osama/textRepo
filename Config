@@ -1,39 +1,74 @@
-	public NewPartyModel mapDtoToModel(PartyModel partyModelDto, Relationship relationship, String language,
-			String inputCountry) throws JsonProcessingException {
-		log.info("mapDtoToModel() old PartyModel -> new PartyModel");
-		NewPartyModel newPartyModel = new NewPartyModel();
-		String globalId = partyModelDto.getIdentifier() != null ? partyModelDto.getIdentifier().getPartyId() : null;
-		Relationship mainRelationship = getMainRelationship(partyModelDto.getRelationships());
+ @Test
+    void shouldReturnNullWhenInputListIsNull() {
+        // when
+        PartyPortfolio result = partyMapper.mapPortfolioDetailsToPortfolio(null);
 
-		newPartyModel.setIdentifier(partyModelDto.getIdentifier());
-		newPartyModel.setDocuments(mapDocumentsToPartyDocuments(partyModelDto.getDocuments()));
-		newPartyModel.setNames(mapNameToPartyName(partyModelDto.getNames()));
-		newPartyModel.setAddresses(mapToPartyAddressMap(partyModelDto.getAddresses()));
-		if (newPartyModel.getIdentifier() != null)
-			newPartyModel.getIdentifier()
-					.setRelationships(mapToItSelfRelationships(partyModelDto.getRelationships(), globalId, language));
-		newPartyModel.setEmployment(mapEmploymentIncomesToEmployment(partyModelDto));
-		newPartyModel.setComplianceDetails(
-				mapToPartyComplianceDetails(partyModelDto.getComplianceDetail(), partyModelDto.getComplianceBasic()));
-		newPartyModel.setFatca(mapFatcaDetailsToFatca(partyModelDto.getFatcaDetails()));
-		newPartyModel.setPortfolio(mapPortfolioDetailsToPortfolio(partyModelDto.getPortfolios()));
-		newPartyModel.setNationalities(mapToNationalities(partyModelDto.getLegalStatuses()));
-		newPartyModel.setDueDiligence(mapToDueDiligence(partyModelDto.getDueDiligences()));
-		newPartyModel.setTaxDetails(mapToTaxDetails(partyModelDto.getTaxDetails(), partyModelDto.getComplianceBasic()));
-		newPartyModel.setPersonalDetails(
-				mapToPersonalDetails(partyModelDto.getPersonalDetail(), relationship, partyModelDto.getNames(), language));
-		newPartyModel.setFlagsAndAttributes(mapFlagsAndAttributes(partyModelDto.getFlagsAttributes()));
-		newPartyModel.setOtherBanks(mapToOtherBank(partyModelDto.getOtherBanksRelationships()));
-		newPartyModel.setContacts(mapToPartyContacts(partyModelDto, relationship));
+        // then
+        assertNull(result);
+    }
 
-		if (mainRelationship != null)
-			newPartyModel.setSocialDetails(mapToSocialDetails(partyModelDto, globalId, inputCountry, mainRelationship));
-		newPartyModel.setImages(mapToPartyImages(partyModelDto.getImages()));
-		newPartyModel.setPepDetails(mapToPartyPep(partyModelDto.getPepDetails()));
-		log.debug(newPartyModel.toString());
-		ObjectMapper objectMapper = new ObjectMapper();
-		String jsonString = objectMapper.writeValueAsString(newPartyModel);
-		log.debug(jsonString);
-		log.info("/mapDtoToModel() old PartyModel -> new PartyModel");
-		return newPartyModel;
-	}
+    @Test
+    void shouldMapCodedQuestionsWhenFileKeyExists() {
+        // given
+        com.arabbank.model.entity.golden.PortfolioDetails details = new com.arabbank.model.entity.golden.PortfolioDetails();
+        details.setType("Q1");
+        details.setAnswerValue("A1");
+
+        when(mdmSysQuestionsRepository.getFileKeyByQuestionId(anyString()))
+                .thenReturn(Optional.of("FILE_KEY"));
+
+        // when
+        PartyPortfolio result = partyMapper.mapPortfolioDetailsToPortfolio(List.of(details));
+
+        // then
+        assertNotNull(result);
+        assertEquals(1, result.getCodedQuestions().size());
+        assertEquals(0, result.getFreeQuestions().size());
+        assertEquals("Q1", result.getCodedQuestions().get(0).get_question());
+        assertEquals("A1", result.getCodedQuestions().get(0).get_answerValue().getCode());
+    }
+
+    @Test
+    void shouldMapFreeQuestionsWhenFileKeyIsEmpty() {
+        // given
+        com.arabbank.model.entity.golden.PortfolioDetails details = new com.arabbank.model.entity.golden.PortfolioDetails();
+        details.setType("Q2");
+        details.setAnswerValue("A2");
+
+        when(mdmSysQuestionsRepository.getFileKeyByQuestionId(anyString()))
+                .thenReturn(Optional.empty());
+
+        // when
+        PartyPortfolio result = partyMapper.mapPortfolioDetailsToPortfolio(List.of(details));
+
+        // then
+        assertNotNull(result);
+        assertEquals(0, result.getCodedQuestions().size());
+        assertEquals(1, result.getFreeQuestions().size());
+        assertEquals("Q2", result.getFreeQuestions().get(0).get_question());
+        assertEquals("A2", result.getFreeQuestions().get(0).getAnswerValue());
+    }
+
+    @Test
+    void shouldHandleMultipleQuestions() {
+        // given
+        com.arabbank.model.entity.golden.PortfolioDetails coded = new com.arabbank.model.entity.golden.PortfolioDetails();
+        coded.setType("Q1");
+        coded.setAnswerValue("A1");
+
+        com.arabbank.model.entity.golden.PortfolioDetails free = new com.arabbank.model.entity.golden.PortfolioDetails();
+        free.setType("Q2");
+        free.setAnswerValue("A2");
+
+        when(mdmSysQuestionsRepository.getFileKeyByQuestionId("Q1")).thenReturn(Optional.of("KEY1"));
+        when(mdmSysQuestionsRepository.getFileKeyByQuestionId("Q2")).thenReturn(Optional.empty());
+
+        // when
+        PartyPortfolio result = partyMapper.mapPortfolioDetailsToPortfolio(List.of(coded, free));
+
+        // then
+        assertEquals(1, result.getCodedQuestions().size());
+        assertEquals(1, result.getFreeQuestions().size());
+        assertEquals("Q1", result.getCodedQuestions().get(0).get_question());
+        assertEquals("Q2", result.getFreeQuestions().get(0).get_question());
+    }
