@@ -1,48 +1,24 @@
 @Test
-void testGetRelationshipsByGlobalIdAndCustomerId_WhenRoleIsNull_ShouldCallAhRoleMethod() throws Exception {
-    // Arrange
-    String identifier = "C123";
-    String inputCountry = "JO";
-    String role = null;
-    Relationship expectedRelationship = new Relationship();
+    void shouldReturnTrueWhenAllFieldsAreEmpty() {
+        PartyModel emptyParty = new PartyModel();
+        boolean result = partyUtils.checkPartyModelData(emptyParty);
+        assertTrue(result, "Expected true when all fields are null or empty");
+    }
 
-    when(goldenRelationshipRepository
-            .getGlobalIdByRelatedProductAndRelationCountryAndAhRole(identifier, inputCountry))
-            .thenReturn(expectedRelationship);
+    @Test
+    void shouldReturnFalseWhenOneFieldIsNotEmpty() {
+        PartyModel party = new PartyModel();
+        party.setNames(List.of(new NameModel())); // one field not empty
 
-    // Act
-    Relationship result = partyService.getRelationshipsByGlobalIdAndCustomerId(identifier, inputCountry, role);
+        boolean result = partyUtils.checkPartyModelData(party);
+        assertFalse(result, "Expected false when at least one field is not empty");
+    }
 
-    // Assert
-    assertNotNull(result);
-    assertEquals(expectedRelationship, result);
-    verify(goldenRelationshipRepository)
-            .getGlobalIdByRelatedProductAndRelationCountryAndAhRole(identifier, inputCountry);
-    verify(goldenRelationshipRepository, never())
-            .getGlobalIdByRelatedProductAndRelationCountryAndRole(anyString(), anyString(), anyString());
-}
+    @Test
+    void shouldReturnFalseWhenComplianceDetailIsNotNull() {
+        PartyModel party = new PartyModel();
+        party.setComplianceDetail(new ComplianceDetail());
 
-
-@Test
-void testGetRelationshipsByGlobalIdAndCustomerId_WhenRoleIsNotBlank_ShouldCallRoleMethod() throws Exception {
-    // Arrange
-    String identifier = "C123";
-    String inputCountry = "JO";
-    String role = "GUARDIAN";
-    Relationship expectedRelationship = new Relationship();
-
-    when(goldenRelationshipRepository
-            .getGlobalIdByRelatedProductAndRelationCountryAndRole(identifier, inputCountry, role))
-            .thenReturn(expectedRelationship);
-
-    // Act
-    Relationship result = partyService.getRelationshipsByGlobalIdAndCustomerId(identifier, inputCountry, role);
-
-    // Assert
-    assertNotNull(result);
-    assertEquals(expectedRelationship, result);
-    verify(goldenRelationshipRepository)
-            .getGlobalIdByRelatedProductAndRelationCountryAndRole(identifier, inputCountry, role);
-    verify(goldenRelationshipRepository, never())
-            .getGlobalIdByRelatedProductAndRelationCountryAndAhRole(anyString(), anyString());
-}
+        boolean result = partyUtils.checkPartyModelData(party);
+        assertFalse(result, "Expected false when ComplianceDetail is not null");
+    }
