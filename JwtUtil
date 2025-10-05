@@ -1,75 +1,21 @@
- @Test
-    void testBuildGuardianNewPartyModelForPost_Success() throws Exception {
-        // Arrange
-        Map<String, String> headers = new HashMap<>();
-        headers.put(MdmHeaderRequest.INPUT_COUNTRY, "JO");
-        headers.put(MdmHeaderRequest.LANGUAGE, "EN");
-        headers.put(MdmHeaderRequest.ROLE, null);
-        headers.put(MdmHeaderRequest.WITH_CUSTOMER_ID, null);
-
-        String partyId = "P123";
-        String reference = "ref-xyz";
-
-        PartyService spyService = Mockito.spy(partyService);
-
-        // Mock internal calls
-        doReturn(relationship)
-                .when(spyService)
-                .getGlobalIdByIdentifer(eq(partyId), eq(Others.CUSTOMER_ID), eq("JO"), any(), any());
-
-        doReturn(reference)
-                .when(helperUtils)
-                .generateReference();
-
-        doReturn(partyModel)
+       doReturn(partyModel)
                 .when(spyService)
                 .getFullPartyDetails(eq(relationship), eq(headers), eq(reference));
 
-        doReturn(false)
-                .when(spyService)
-                .checkPartyModelData(any(PartyModel.class));
 
-        doReturn(newPartyModel)
-                .when(spyService)
-                .mapDtoToModel(eq(partyModel), eq(relationship), eq("EN"), eq("JO"));
-
-        // Act
-        NewPartyModel result = spyService.buildGuardianNewPartyModelForPost(headers, partyId);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals(newPartyModel, result);
-
-        verify(spyService).getGlobalIdByIdentifer(eq(partyId), eq(Others.CUSTOMER_ID), eq("JO"), any(), any());
-        verify(spyService).getFullPartyDetails(eq(relationship), eq(headers), eq(reference));
-        verify(spyService).mapDtoToModel(eq(partyModel), eq(relationship), eq("EN"), eq("JO"));
-    }
-
-    @Test
-    void testBuildGuardianNewPartyModelForPost_WhenPartyIdIsNull_ShouldReturnNull() {
-        // Act
-        NewPartyModel result = partyService.buildGuardianNewPartyModelForPost(new HashMap<>(), null);
-
-        // Assert
-        assertNull(result);
-    }
-
-    @Test
-    void testBuildGuardianNewPartyModelForPost_WhenCustomerNotFound_ShouldThrowException() throws Exception {
-        // Arrange
-        Map<String, String> headers = new HashMap<>();
-        headers.put(MdmHeaderRequest.INPUT_COUNTRY, "JO");
-        headers.put(MdmHeaderRequest.LANGUAGE, "EN");
-
-        String partyId = "P123";
-
-        PartyService spyService = Mockito.spy(partyService);
-
-        doReturn(null)
-                .when(spyService)
-                .getGlobalIdByIdentifer(anyString(), anyString(), anyString(), any(), any());
-
-        // Act & Assert
-        assertThrows(IllegalArgumentException.class,
-                () -> spyService.buildGuardianNewPartyModelForPost(headers, partyId));
-    }
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getFullPartyDetails' method:
+    partyService.getFullPartyDetails(
+    Relationship(id=null, universalId=null, role=null, withGlobalId=null, organization=null, customerId=null, relationToParty=null, relationDetails=null, relationshipSequence=null, globalId=null, orignalGlobalId=null, relationCountry=null, withProduct=null, relationDescription=null, latestUniqueRefrence=null, updateTimestamp=null, updateCountry=null, updateProgram=null, updateSystem=null, updateUser=null, authorizedUser=null, dateLastUpdate=null, dateRecordCreated=null, updatedToday=null, dateDeleted=null, isDeleted=null, relatedName=null),
+    {"role" = null, "inputcountry" = "JO", "language" = "EN", "withCustomerId" = null},
+    "d090ab5e-9758-45de-911e-61822c"
+);
+    -> at com.arabbank.service.PartyService.buildGuardianNewPartyModelForPost(PartyService.java:850)
+ - has following stubbing(s) with different arguments:
+    1. partyService.getFullPartyDetails(
+    null,
+    null,
+    null
+);
+      -> at com.arabbank.service.PartyServiceTest.testBuildGuardianNewPartyModelForPost_Success(PartyServiceTest.java:759)
