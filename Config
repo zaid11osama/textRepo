@@ -1,74 +1,33 @@
- @Test
-    void shouldReturnNullWhenInputListIsNull() {
-        // when
-        PartyPortfolio result = partyMapper.mapPortfolioDetailsToPortfolio(null);
-
-        // then
-        assertNull(result);
-    }
-
-    @Test
-    void shouldMapCodedQuestionsWhenFileKeyExists() {
-        // given
-        com.arabbank.model.entity.golden.PortfolioDetails details = new com.arabbank.model.entity.golden.PortfolioDetails();
-        details.setType("Q1");
-        details.setAnswerValue("A1");
-
-        when(mdmSysQuestionsRepository.getFileKeyByQuestionId(anyString()))
-                .thenReturn(Optional.of("FILE_KEY"));
-
-        // when
-        PartyPortfolio result = partyMapper.mapPortfolioDetailsToPortfolio(List.of(details));
-
-        // then
-        assertNotNull(result);
-        assertEquals(1, result.getCodedQuestions().size());
-        assertEquals(0, result.getFreeQuestions().size());
-        assertEquals("Q1", result.getCodedQuestions().get(0).get_question());
-        assertEquals("A1", result.getCodedQuestions().get(0).get_answerValue().getCode());
-    }
-
-    @Test
-    void shouldMapFreeQuestionsWhenFileKeyIsEmpty() {
-        // given
-        com.arabbank.model.entity.golden.PortfolioDetails details = new com.arabbank.model.entity.golden.PortfolioDetails();
-        details.setType("Q2");
-        details.setAnswerValue("A2");
-
-        when(mdmSysQuestionsRepository.getFileKeyByQuestionId(anyString()))
-                .thenReturn(Optional.empty());
-
-        // when
-        PartyPortfolio result = partyMapper.mapPortfolioDetailsToPortfolio(List.of(details));
-
-        // then
-        assertNotNull(result);
-        assertEquals(0, result.getCodedQuestions().size());
-        assertEquals(1, result.getFreeQuestions().size());
-        assertEquals("Q2", result.getFreeQuestions().get(0).get_question());
-        assertEquals("A2", result.getFreeQuestions().get(0).getAnswerValue());
-    }
-
-    @Test
-    void shouldHandleMultipleQuestions() {
-        // given
-        com.arabbank.model.entity.golden.PortfolioDetails coded = new com.arabbank.model.entity.golden.PortfolioDetails();
-        coded.setType("Q1");
-        coded.setAnswerValue("A1");
-
-        com.arabbank.model.entity.golden.PortfolioDetails free = new com.arabbank.model.entity.golden.PortfolioDetails();
-        free.setType("Q2");
-        free.setAnswerValue("A2");
-
-        when(mdmSysQuestionsRepository.getFileKeyByQuestionId("Q1")).thenReturn(Optional.of("KEY1"));
-        when(mdmSysQuestionsRepository.getFileKeyByQuestionId("Q2")).thenReturn(Optional.empty());
-
-        // when
-        PartyPortfolio result = partyMapper.mapPortfolioDetailsToPortfolio(List.of(coded, free));
-
-        // then
-        assertEquals(1, result.getCodedQuestions().size());
-        assertEquals(1, result.getFreeQuestions().size());
-        assertEquals("Q1", result.getCodedQuestions().get(0).get_question());
-        assertEquals("Q2", result.getFreeQuestions().get(0).get_question());
-    }
+public static Fatca mapFatcaDetailsToFatca(com.arabbank.model.entity.golden.FatcaDetails fatcaDetails) {
+		log.info("mapFatcaDetailsToFatca()");
+		Fatca fatca = new Fatca();
+		Questions questions = new Questions();
+		GrcDetails grcDetails = new GrcDetails();
+		if (!ObjectUtils.isEmpty(fatcaDetails)) {
+			Optional.ofNullable(fatcaDetails).ifPresent(details -> {
+				questions.setIsUSCitizen(details.getIsUsCitizen());
+				questions.setIsUSBorn(details.getIsUsBorn());
+				questions.setIsGreencardHolder(details.getIsGreenCardHolder());
+				questions.setIsUSResident(details.getIsUsResident());
+				questions.setIsUSTaxPayer(details.getIsUsTaxPayer());
+				questions.setSignedW8(details.getSignedW8());
+				questions.setSignedW9(details.getSignedW9());
+				questions.setSignedSecrecyWaiver(details.getSignedSecrecyWaiver());
+				questions.setHasUSEntityOwner(details.getHaUsEntityOwner());
+				fatca.setQuestions(questions);
+				fatca.setTaxIdentificationNumber(details.getTin());
+				fatca.setSignDate(details.getSignedDate());
+				fatca.setDateFillingForm(details.getDateFillingForm());
+				fatca.setLatestAmendment(details.getLatestAmendmentDate());
+				grcDetails.set_fatcaClassification(details.getFatcaClassification());
+				grcDetails.set_oldFatcaClassification(details.getPreviousfatcaClassification());
+				grcDetails.setChangedByGRC("Y".equals(details.getIsChangedByGrc()));
+				grcDetails.setBoException(details.getBoExcemption());
+				grcDetails.set_excemptCode(new Translation().withCode(details.getExcemptCode()));
+				grcDetails.set_excemptionReportingCode(new Translation().withCode(details.getExceptionReportingCode()));
+				fatca.setGrcDetails(grcDetails);
+			});
+		}
+		log.info("/mapFatcaDetailsToFatca()");
+		return fatca;
+	}
