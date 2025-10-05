@@ -1,13 +1,55 @@
-org.mockito.exceptions.misusing.MissingMethodInvocationException: 
-when() requires an argument which has to be 'a method call on a mock'.
-For example:
-    when(mock.getArticles()).thenReturn(articles);
-
-Also, this error might show up because:
-1. you stub either of: final/private/equals()/hashCode() methods.
-   Those methods *cannot* be stubbed/verified.
-   Mocking methods declared on non-public parent classes is not supported.
-2. inside when() you don't call method on mock but on some other object.
+  doReturn(relationship).when (partyService).getGlobalIdByIdentifer(   anyString(),anyString() , anyString(), anyString(), anyString());
 
 
-	at com.arabbank.service.PartyServiceTest.testGetNewPartyModel_Success(PartyServiceTest.java:653)
+        doReturn(partyModel).when(partyService).getFullPartyDetails(eq(relationship), anyMap(), eq(reference));
+
+
+
+        doReturn(false).when(partyService).checkPartyModelData(any());
+
+        doReturn(newPartyModel).when(partyService).mapDtoToModel(eq(partyModel), eq(relationship), anyString(), anyString());
+
+
+
+        NewPartyModel result = partyService.getNewPartyModel(headers, partyId);
+
+        assertNotNull(result);
+        verify(newPartieModelSetter).setDescrtiopns(newPartyModel, headers, partyId);
+        verify(partyService).setGuardianDetails(newPartyModel);
+
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getGlobalIdByIdentifer' method:
+    partyService.getGlobalIdByIdentifer(
+    "P123",
+    "customerId",
+    "JO",
+    null,
+    null
+);
+    -> at com.arabbank.service.PartyService.getNewPartyModel(PartyService.java:777)
+ - has following stubbing(s) with different arguments:
+    1. partyService.getGlobalIdByIdentifer(
+    "",
+    "",
+    "",
+    "",
+    ""
+);
+      -> at com.arabbank.service.PartyServiceTest.testGetNewPartyModel_Success(PartyServiceTest.java:662)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+
+	at com.arabbank.service.PartyService.getGlobalIdByIdentifer(PartyService.java:927)
+	at com.arabbank.service.PartyService.getNewPartyModel(PartyService.java:777)
+	at com.arabbank.service.PartyService.getNewPartyModel(PartyService.java:770)
+	at com.arabbank.service.PartyServiceTest.testGetNewPartyModel_Success(PartyServiceTest.java:678)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
