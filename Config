@@ -1,62 +1,34 @@
- @Test
-    void testGetNewPartyModel_Success() throws Exception {
-        String partyId = "P123";
-        String reference = "REF001";
+public NewPartyModel buildGuardianNewPartyModelForPost(Map<String, String> headers, String partyId) {
+		if (partyId == null) return null;
+		log.info("buildGuardianNewPartyModelForPost({})", partyId);
+		try {
+			String inputCountry = headers.get(MdmHeaderRequest.INPUT_COUNTRY);
+			String language = headers.get(MdmHeaderRequest.LANGUAGE);
 
-        // Mock internal method calls
-        when(helperUtils.generateReference()).thenReturn(reference);
-        when(partyService.getGlobalIdByIdentifer(
-                anyString(), anyString(), anyString(), anyString(), anyString()))
-                .thenReturn(relationship);
+			Relationship relationship = getGlobalIdByIdentifer(
+					partyId,
+					Others.CUSTOMER_ID,
+					inputCountry,
+					headers.get(MdmHeaderRequest.ROLE),
+					headers.get(MdmHeaderRequest.WITH_CUSTOMER_ID)
+			);
 
-        when(partyService.getFullPartyDetails(eq(relationship), anyMap(), eq(reference)))
-                .thenReturn(partyModel);
+			Assert.notNull(relationship, "Customer Not Found");
+			PartyModel fullPartyDetails = getFullPartyDetails(relationship, headers, HelperUtils.generateReference());
 
-        when(partyService.checkPartyModelData(any())).thenReturn(false);
-        when(partyService.mapDtoToModel(eq(partyModel), eq(relationship), anyString(), anyString()))
-                .thenReturn(newPartyModel);
+			if (checkPartyModelData(fullPartyDetails)) {
+				throw new CustomerNotFoundException(HandleErr.CUSTOMER_NOT_FOUND);
+			}
+			NewPartyModel newPartyModel = mapDtoToModel(fullPartyDetails, relationship, language, inputCountry);
 
-        // Act
-        NewPartyModel result = partyService.getNewPartyModel(headers, partyId);
-
-        // Assert
-        assertNotNull(result);
-        verify(newPartieModelSetter).setDescrtiopns(newPartyModel, headers, partyId);
-        verify(partyService).setGuardianDetails(newPartyModel);
-        verify(helperUtils).generateReference();
-    }
-
-    @Test
-    void testGetNewPartyModel_RelationshipNull_ThrowsBusinessWarningException() {
-        when(partyService.getGlobalIdByIdentifer(any(), any(), any(), any(), any())).thenReturn(null);
-
-        assertThrows(BusinessWarningException.class,
-                () -> partyService.getNewPartyModel(headers, "P123"));
-    }
-
-    @Test
-    void testGetNewPartyModel_CheckPartyModelData_ThrowsCustomerNotFound() throws Exception {
-        when(partyService.getGlobalIdByIdentifer(any(), any(), any(), any(), any())).thenReturn(relationship);
-        when(helperUtils.generateReference()).thenReturn("REF001");
-        when(partyService.getFullPartyDetails(any(), any(), any())).thenReturn(partyModel);
-        when(partyService.checkPartyModelData(any())).thenReturn(true);
-
-        assertThrows(CustomerNotFoundException.class,
-                () -> partyService.getNewPartyModel(headers, "P123"));
-    }
-
-    @Test
-    void testGetNewPartyModel_JsonProcessingException() throws Exception {
-        when(partyService.getGlobalIdByIdentifer(any(), any(), any(), any(), any())).thenThrow(JsonProcessingException.class);
-
-        assertThrows(GeneralBadRequestException.class,
-                () -> partyService.getNewPartyModel(headers, "P123"));
-    }
-
-    @Test
-    void testGetNewPartyModel_SqlException() throws Exception {
-        when(partyService.getGlobalIdByIdentifer(any(), any(), any(), any(), any())).thenThrow(SQLException.class);
-
-        assertThrows(DatabaseException.class,
-                () -> partyService.getNewPartyModel(headers, "P123"));
-    }
+//			newPartieModelSetter.setDescrtiopns(newPartyModel, headers, partyId);
+			return newPartyModel;
+		} catch (JsonProcessingException e) {
+			throw new GeneralBadRequestException("An error occurred during JSON processing, " + e);
+		} catch (SQLException e) {
+			throw new DatabaseException("An error occurred during database operation, " + e);
+		}
+		finally {
+			log.info("/buildGuardianNewPartyModelForPost({})", partyId);
+		}
+	}
