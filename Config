@@ -1,10 +1,17 @@
-	public Relationship getRelationshipsByGlobalIdAndCustomerId(String identifier, String inputCountry, String role) {
-		log.debug("getGlobalIdByCustomerId({})", identifier);
-		try {
-			return role == null || role.isBlank()
-					? goldenRelationshipRepository.getGlobalIdByRelatedProductAndRelationCountryAndAhRole(identifier, inputCountry)
-					: goldenRelationshipRepository.getGlobalIdByRelatedProductAndRelationCountryAndRole(identifier, inputCountry, role);
-		} finally {
-			log.debug("/getGlobalIdByCustomerId({})", identifier);
+	public boolean checkPartyModelData(PartyModel fullPartyDetails) {
+		log.debug("checkPartyModelData({})", fullPartyDetails);
+		if (isEmpty(fullPartyDetails.getAddresses()) && isEmpty(fullPartyDetails.getContacts())
+				&& isEmpty(fullPartyDetails.getDocuments()) && isEmpty(fullPartyDetails.getDueDiligences())
+				&& isEmpty(fullPartyDetails.getFlagsAttributes()) && isEmpty(fullPartyDetails.getInternetAccounts())
+				&& isEmpty(fullPartyDetails.getLegalStatuses()) && isEmpty(fullPartyDetails.getMatchingPersons())
+				&& isEmpty(fullPartyDetails.getNames()) && isEmpty(fullPartyDetails.getOtherBanksRelationships())
+				&& isEmpty(fullPartyDetails.getPortfolios()) && isEmpty(fullPartyDetails.getRelationships())
+				&& isEmpty(fullPartyDetails.getTaxDetails()) && fullPartyDetails.getComplianceDetail() == null
+				&& fullPartyDetails.getCrsDetail() == null && fullPartyDetails.getFatcaDetails() == null
+				&& fullPartyDetails.getPepDetails() == null && fullPartyDetails.getPersonalDetail() == null
+				&& fullPartyDetails.getWorkDetail() == null) {
+			return true;
 		}
+		log.debug("/checkPartyModelData({})", fullPartyDetails);
+		return false;
 	}
