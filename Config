@@ -1,10 +1,24 @@
-	public PartyModel getFullPartyDetails(Relationship relationship, Map<String, String> headers,
-			String generatedKycReference) throws JsonProcessingException {
-		log.info("getFullPartyDetails()");
-		PartyModel partyModel = new PartyModel();
-		RequestHeader requestHeaders = populateRequestHeader(headers);
-		partyModel.setIdentifier(getPartyIdentifiers(relationship, requestHeaders.getLanguage()));
-		partyModelSetter.setPartyModel(partyModel, relationship, headers);
-		log.info("/getFullPartyDetails()");
-		return partyModel;
+	public Relationship getGlobalIdByIdentifer(String identifier, String identifirType, String inputCountry, String role,String withCustomerId)
+			throws SQLException {
+		log.debug("getGlobalIdByIdentifer({})" + identifier);
+		try {
+			Assert.hasLength(identifirType, "identifierType is null");
+			if (identifirType.equalsIgnoreCase(Others.GLOBAL_ID)) {
+				log.debug("Found GLOBAL_ID, returning identifier: {}", identifier);
+				return getRelationshipByGlobalId(identifier, role,  withCustomerId);
+
+			}
+			if (identifirType.equalsIgnoreCase(Others.CUSTOMER_ID)) {
+				log.debug("Found CUSTOMER_ID, fetching global ID by customer ID");
+				return getRelationshipsByGlobalIdAndCustomerId(identifier, inputCountry, role);
+			}
+			log.warn("Unsupported identifierType: " + identifirType);
+			throw new IllegalArgumentException("Unsupported identifierType: " + identifirType);
+
+		} catch (Exception e) {
+			log.error("Error when getByIdentiferType() ," + e.getMessage());
+			throw new CustomerNotFoundException("Error when getGlobalIdByIdentifer() ," + e.getMessage());
+		} finally {
+			log.debug("/getgetByIdentiferType({})", identifier);
+		}
 	}
