@@ -1,20 +1,7 @@
-    mockMvc.perform(MockMvcRequestBuilders.get(CHECKER_API_PATH + GET_TASKS_API_PATH)
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.records").isNotEmpty())
-                .andReturn();
+try (MockedStatic<HelperUtils> mocked = Mockito.mockStatic(HelperUtils.class)) {
+    mocked.when(HelperUtils::generateReference).thenReturn(reference);
 
-java.lang.AssertionError: No value at JSON path "$.records"
+    NewPartyModel result = partyService.getNewPartyModel(headers, partyId);
 
-	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:302)
-	at org.springframework.test.util.JsonPathExpectationsHelper.assertValueIsNotEmpty(JsonPathExpectationsHelper.java:238)
-	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$isNotEmpty$6(JsonPathResultMatchers.java:162)
-	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.arabbank.mdm.functional.test.CheckerFunctionalTest.testGetTasks_Success(CheckerFunctionalTest.java:140)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: java.lang.IllegalArgumentException: json can not be null or empty
-	at com.jayway.jsonpath.internal.Utils.notEmpty(Utils.java:401)
-	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:390)
-	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:377)
+    assertNotNull(result);
+}
