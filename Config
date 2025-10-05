@@ -1,34 +1,10 @@
-public NewPartyModel buildGuardianNewPartyModelForPost(Map<String, String> headers, String partyId) {
-		if (partyId == null) return null;
-		log.info("buildGuardianNewPartyModelForPost({})", partyId);
-		try {
-			String inputCountry = headers.get(MdmHeaderRequest.INPUT_COUNTRY);
-			String language = headers.get(MdmHeaderRequest.LANGUAGE);
-
-			Relationship relationship = getGlobalIdByIdentifer(
-					partyId,
-					Others.CUSTOMER_ID,
-					inputCountry,
-					headers.get(MdmHeaderRequest.ROLE),
-					headers.get(MdmHeaderRequest.WITH_CUSTOMER_ID)
-			);
-
-			Assert.notNull(relationship, "Customer Not Found");
-			PartyModel fullPartyDetails = getFullPartyDetails(relationship, headers, HelperUtils.generateReference());
-
-			if (checkPartyModelData(fullPartyDetails)) {
-				throw new CustomerNotFoundException(HandleErr.CUSTOMER_NOT_FOUND);
-			}
-			NewPartyModel newPartyModel = mapDtoToModel(fullPartyDetails, relationship, language, inputCountry);
-
-//			newPartieModelSetter.setDescrtiopns(newPartyModel, headers, partyId);
-			return newPartyModel;
-		} catch (JsonProcessingException e) {
-			throw new GeneralBadRequestException("An error occurred during JSON processing, " + e);
-		} catch (SQLException e) {
-			throw new DatabaseException("An error occurred during database operation, " + e);
-		}
-		finally {
-			log.info("/buildGuardianNewPartyModelForPost({})", partyId);
-		}
+	public PartyModel getFullPartyDetails(Relationship relationship, Map<String, String> headers,
+			String generatedKycReference) throws JsonProcessingException {
+		log.info("getFullPartyDetails()");
+		PartyModel partyModel = new PartyModel();
+		RequestHeader requestHeaders = populateRequestHeader(headers);
+		partyModel.setIdentifier(getPartyIdentifiers(relationship, requestHeaders.getLanguage()));
+		partyModelSetter.setPartyModel(partyModel, relationship, headers);
+		log.info("/getFullPartyDetails()");
+		return partyModel;
 	}
