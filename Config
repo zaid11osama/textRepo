@@ -1,37 +1,62 @@
-    @Test
-    void mapFlagsAttrbiuteToFlagsAndAttributes_ShouldReturnMappedObject() {
-        // Arrange
-        Flag flag = new Flag();
-        flag.set_identifier(new Translation("FlagName", "PRM", "Preferred"));
-        flag.setStatus("1");
-        flag.setStatusDate(Date.valueOf(LocalDate.of(2025, 10, 5)));
-        flag.setTermsAndConditionVersion("v1");
-        flag.setValue("Active");
+ @Test
+    void testGetNewPartyModel_Success() throws Exception {
+        String partyId = "P123";
+        String reference = "REF001";
 
-        Relationship relationship = new Relationship();
-        relationship.setGlobalId("G123");
-        relationship.setOrganization("Org001");
-        relationship.setRelationCountry(new Translation("Country", "JO", "Jordan"));
-        relationship.setRelationshipSequence("SEQ001");
-        relationship.setRole("Admin");
-        relationship.setLatestUniqueRefrence("REF001");
+        // Mock internal method calls
+        when(helperUtils.generateReference()).thenReturn(reference);
+        when(partyService.getGlobalIdByIdentifer(
+                anyString(), anyString(), anyString(), anyString(), anyString()))
+                .thenReturn(relationship);
+
+        when(partyService.getFullPartyDetails(eq(relationship), anyMap(), eq(reference)))
+                .thenReturn(partyModel);
+
+        when(partyService.checkPartyModelData(any())).thenReturn(false);
+        when(partyService.mapDtoToModel(eq(partyModel), eq(relationship), anyString(), anyString()))
+                .thenReturn(newPartyModel);
 
         // Act
-        FlagsAttribute result = partyService.mapFlagsAttrbiuteToFlagsAndAttributes(flag, relationship);
+        NewPartyModel result = partyService.getNewPartyModel(headers, partyId);
 
         // Assert
         assertNotNull(result);
-        assertEquals("G123", result.getGlobalId());
-        assertEquals("Org001", result.getOrganization());
-        assertEquals("SEQ001", result.getRelationshipSequence());
-        assertEquals("Admin", result.getRole());
-        assertEquals("Active", result.getValue());
-        assertEquals("PRM", result.getType().getCode());
-        assertEquals(1, result.getIsActive());
-        assertEquals(0, result.getIsDeleted());
-        assertEquals(Others.KYC, result.getAuthorizedUser());
-        assertEquals(Others.KYC, result.getUpdateUser());
-        assertNotNull(result.getUniversalId());
-        assertNotNull(result.getUpdateTimestamp());
-        assertEquals(flag.getStatusDate(), result.getActiveDate()); // since status = "1"
+        verify(newPartieModelSetter).setDescrtiopns(newPartyModel, headers, partyId);
+        verify(partyService).setGuardianDetails(newPartyModel);
+        verify(helperUtils).generateReference();
+    }
+
+    @Test
+    void testGetNewPartyModel_RelationshipNull_ThrowsBusinessWarningException() {
+        when(partyService.getGlobalIdByIdentifer(any(), any(), any(), any(), any())).thenReturn(null);
+
+        assertThrows(BusinessWarningException.class,
+                () -> partyService.getNewPartyModel(headers, "P123"));
+    }
+
+    @Test
+    void testGetNewPartyModel_CheckPartyModelData_ThrowsCustomerNotFound() throws Exception {
+        when(partyService.getGlobalIdByIdentifer(any(), any(), any(), any(), any())).thenReturn(relationship);
+        when(helperUtils.generateReference()).thenReturn("REF001");
+        when(partyService.getFullPartyDetails(any(), any(), any())).thenReturn(partyModel);
+        when(partyService.checkPartyModelData(any())).thenReturn(true);
+
+        assertThrows(CustomerNotFoundException.class,
+                () -> partyService.getNewPartyModel(headers, "P123"));
+    }
+
+    @Test
+    void testGetNewPartyModel_JsonProcessingException() throws Exception {
+        when(partyService.getGlobalIdByIdentifer(any(), any(), any(), any(), any())).thenThrow(JsonProcessingException.class);
+
+        assertThrows(GeneralBadRequestException.class,
+                () -> partyService.getNewPartyModel(headers, "P123"));
+    }
+
+    @Test
+    void testGetNewPartyModel_SqlException() throws Exception {
+        when(partyService.getGlobalIdByIdentifer(any(), any(), any(), any(), any())).thenThrow(SQLException.class);
+
+        assertThrows(DatabaseException.class,
+                () -> partyService.getNewPartyModel(headers, "P123"));
     }
