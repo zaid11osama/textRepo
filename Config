@@ -1,24 +1,10 @@
-	public Relationship getGlobalIdByIdentifer(String identifier, String identifirType, String inputCountry, String role,String withCustomerId)
-			throws SQLException {
-		log.debug("getGlobalIdByIdentifer({})" + identifier);
+	public Relationship getRelationshipsByGlobalIdAndCustomerId(String identifier, String inputCountry, String role) {
+		log.debug("getGlobalIdByCustomerId({})", identifier);
 		try {
-			Assert.hasLength(identifirType, "identifierType is null");
-			if (identifirType.equalsIgnoreCase(Others.GLOBAL_ID)) {
-				log.debug("Found GLOBAL_ID, returning identifier: {}", identifier);
-				return getRelationshipByGlobalId(identifier, role,  withCustomerId);
-
-			}
-			if (identifirType.equalsIgnoreCase(Others.CUSTOMER_ID)) {
-				log.debug("Found CUSTOMER_ID, fetching global ID by customer ID");
-				return getRelationshipsByGlobalIdAndCustomerId(identifier, inputCountry, role);
-			}
-			log.warn("Unsupported identifierType: " + identifirType);
-			throw new IllegalArgumentException("Unsupported identifierType: " + identifirType);
-
-		} catch (Exception e) {
-			log.error("Error when getByIdentiferType() ," + e.getMessage());
-			throw new CustomerNotFoundException("Error when getGlobalIdByIdentifer() ," + e.getMessage());
+			return role == null || role.isBlank()
+					? goldenRelationshipRepository.getGlobalIdByRelatedProductAndRelationCountryAndAhRole(identifier, inputCountry)
+					: goldenRelationshipRepository.getGlobalIdByRelatedProductAndRelationCountryAndRole(identifier, inputCountry, role);
 		} finally {
-			log.debug("/getgetByIdentiferType({})", identifier);
+			log.debug("/getGlobalIdByCustomerId({})", identifier);
 		}
 	}
