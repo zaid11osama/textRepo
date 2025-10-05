@@ -1,21 +1,96 @@
-       doReturn(partyModel)
-                .when(spyService)
-                .getFullPartyDetails(eq(relationship), eq(headers), eq(reference));
-
-
-org.mockito.exceptions.misusing.PotentialStubbingProblem: 
-Strict stubbing argument mismatch. Please check:
- - this invocation of 'getFullPartyDetails' method:
-    partyService.getFullPartyDetails(
+Wanted but not invoked:
+partyService.getFullPartyDetails(
     Relationship(id=null, universalId=null, role=null, withGlobalId=null, organization=null, customerId=null, relationToParty=null, relationDetails=null, relationshipSequence=null, globalId=null, orignalGlobalId=null, relationCountry=null, withProduct=null, relationDescription=null, latestUniqueRefrence=null, updateTimestamp=null, updateCountry=null, updateProgram=null, updateSystem=null, updateUser=null, authorizedUser=null, dateLastUpdate=null, dateRecordCreated=null, updatedToday=null, dateDeleted=null, isDeleted=null, relatedName=null),
     {"role" = null, "inputcountry" = "JO", "language" = "EN", "withCustomerId" = null},
-    "d090ab5e-9758-45de-911e-61822c"
+    "ref-xyz"
 );
-    -> at com.arabbank.service.PartyService.buildGuardianNewPartyModelForPost(PartyService.java:850)
- - has following stubbing(s) with different arguments:
-    1. partyService.getFullPartyDetails(
-    null,
+-> at com.arabbank.service.PartyService.getFullPartyDetails(PartyService.java:871)
+
+However, there were exactly 5 interactions with this mock:
+partyService.buildGuardianNewPartyModelForPost(
+    {"role" = null, "inputcountry" = "JO", "language" = "EN", "withCustomerId" = null},
+    "P123"
+);
+-> at com.arabbank.service.PartyServiceTest.testBuildGuardianNewPartyModelForPost_Success(PartyServiceTest.java:770)
+
+partyService.getGlobalIdByIdentifer(
+    "P123",
+    "customerid",
+    "JO",
     null,
     null
 );
-      -> at com.arabbank.service.PartyServiceTest.testBuildGuardianNewPartyModelForPost_Success(PartyServiceTest.java:759)
+-> at com.arabbank.service.PartyService.buildGuardianNewPartyModelForPost(PartyService.java:841)
+
+partyService.getFullPartyDetails(
+    Relationship(id=null, universalId=null, role=null, withGlobalId=null, organization=null, customerId=null, relationToParty=null, relationDetails=null, relationshipSequence=null, globalId=null, orignalGlobalId=null, relationCountry=null, withProduct=null, relationDescription=null, latestUniqueRefrence=null, updateTimestamp=null, updateCountry=null, updateProgram=null, updateSystem=null, updateUser=null, authorizedUser=null, dateLastUpdate=null, dateRecordCreated=null, updatedToday=null, dateDeleted=null, isDeleted=null, relatedName=null),
+    {"role" = null, "inputcountry" = "JO", "language" = "EN", "withCustomerId" = null},
+    "c518cabb-333a-4e27-b955-13b591"
+);
+-> at com.arabbank.service.PartyService.buildGuardianNewPartyModelForPost(PartyService.java:850)
+
+partyService.checkPartyModelData(
+    PartyModel(identifier=null, master=null, relationships=null, personalDetail=null, names=null, mobile=null, email=null, images=null, externalMemberId=null, originalId=null, addresses=null, contacts=null, workDetail=null, legalStatuses=null, documents=null, portfolios=null, flagsAttributes=null, internetAccounts=null, otherBanksRelationships=null, complianceDetail=null, complianceBasic=null, fatcaDetails=null, taxDetails=null, pepDetails=null, crsDetail=null, dueDiligences=null, termsAndConditions=null, matchingPersons=null, codeDescriptions=null, attributesList=null, isMoxeyAb=0)
+);
+-> at com.arabbank.service.PartyService.buildGuardianNewPartyModelForPost(PartyService.java:852)
+
+partyService.mapDtoToModel(
+    PartyModel(identifier=null, master=null, relationships=null, personalDetail=null, names=null, mobile=null, email=null, images=null, externalMemberId=null, originalId=null, addresses=null, contacts=null, workDetail=null, legalStatuses=null, documents=null, portfolios=null, flagsAttributes=null, internetAccounts=null, otherBanksRelationships=null, complianceDetail=null, complianceBasic=null, fatcaDetails=null, taxDetails=null, pepDetails=null, crsDetail=null, dueDiligences=null, termsAndConditions=null, matchingPersons=null, codeDescriptions=null, attributesList=null, isMoxeyAb=0),
+    Relationship(id=null, universalId=null, role=null, withGlobalId=null, organization=null, customerId=null, relationToParty=null, relationDetails=null, relationshipSequence=null, globalId=null, orignalGlobalId=null, relationCountry=null, withProduct=null, relationDescription=null, latestUniqueRefrence=null, updateTimestamp=null, updateCountry=null, updateProgram=null, updateSystem=null, updateUser=null, authorizedUser=null, dateLastUpdate=null, dateRecordCreated=null, updatedToday=null, dateDeleted=null, isDeleted=null, relatedName=null),
+    "EN",
+    "JO"
+);
+-> at com.arabbank.service.PartyService.buildGuardianNewPartyModelForPost(PartyService.java:855)
+
+
+Wanted but not invoked:
+partyService.getFullPartyDetails(
+    Relationship(id=null, universalId=null, role=null, withGlobalId=null, organization=null, customerId=null, relationToParty=null, relationDetails=null, relationshipSequence=null, globalId=null, orignalGlobalId=null, relationCountry=null, withProduct=null, relationDescription=null, latestUniqueRefrence=null, updateTimestamp=null, updateCountry=null, updateProgram=null, updateSystem=null, updateUser=null, authorizedUser=null, dateLastUpdate=null, dateRecordCreated=null, updatedToday=null, dateDeleted=null, isDeleted=null, relatedName=null),
+    {"role" = null, "inputcountry" = "JO", "language" = "EN", "withCustomerId" = null},
+    "ref-xyz"
+);
+-> at com.arabbank.service.PartyService.getFullPartyDetails(PartyService.java:871)
+
+However, there were exactly 5 interactions with this mock:
+partyService.buildGuardianNewPartyModelForPost(
+    {"role" = null, "inputcountry" = "JO", "language" = "EN", "withCustomerId" = null},
+    "P123"
+);
+-> at com.arabbank.service.PartyServiceTest.testBuildGuardianNewPartyModelForPost_Success(PartyServiceTest.java:770)
+
+partyService.getGlobalIdByIdentifer(
+    "P123",
+    "customerid",
+    "JO",
+    null,
+    null
+);
+-> at com.arabbank.service.PartyService.buildGuardianNewPartyModelForPost(PartyService.java:841)
+
+partyService.getFullPartyDetails(
+    Relationship(id=null, universalId=null, role=null, withGlobalId=null, organization=null, customerId=null, relationToParty=null, relationDetails=null, relationshipSequence=null, globalId=null, orignalGlobalId=null, relationCountry=null, withProduct=null, relationDescription=null, latestUniqueRefrence=null, updateTimestamp=null, updateCountry=null, updateProgram=null, updateSystem=null, updateUser=null, authorizedUser=null, dateLastUpdate=null, dateRecordCreated=null, updatedToday=null, dateDeleted=null, isDeleted=null, relatedName=null),
+    {"role" = null, "inputcountry" = "JO", "language" = "EN", "withCustomerId" = null},
+    "c518cabb-333a-4e27-b955-13b591"
+);
+-> at com.arabbank.service.PartyService.buildGuardianNewPartyModelForPost(PartyService.java:850)
+
+partyService.checkPartyModelData(
+    PartyModel(identifier=null, master=null, relationships=null, personalDetail=null, names=null, mobile=null, email=null, images=null, externalMemberId=null, originalId=null, addresses=null, contacts=null, workDetail=null, legalStatuses=null, documents=null, portfolios=null, flagsAttributes=null, internetAccounts=null, otherBanksRelationships=null, complianceDetail=null, complianceBasic=null, fatcaDetails=null, taxDetails=null, pepDetails=null, crsDetail=null, dueDiligences=null, termsAndConditions=null, matchingPersons=null, codeDescriptions=null, attributesList=null, isMoxeyAb=0)
+);
+-> at com.arabbank.service.PartyService.buildGuardianNewPartyModelForPost(PartyService.java:852)
+
+partyService.mapDtoToModel(
+    PartyModel(identifier=null, master=null, relationships=null, personalDetail=null, names=null, mobile=null, email=null, images=null, externalMemberId=null, originalId=null, addresses=null, contacts=null, workDetail=null, legalStatuses=null, documents=null, portfolios=null, flagsAttributes=null, internetAccounts=null, otherBanksRelationships=null, complianceDetail=null, complianceBasic=null, fatcaDetails=null, taxDetails=null, pepDetails=null, crsDetail=null, dueDiligences=null, termsAndConditions=null, matchingPersons=null, codeDescriptions=null, attributesList=null, isMoxeyAb=0),
+    Relationship(id=null, universalId=null, role=null, withGlobalId=null, organization=null, customerId=null, relationToParty=null, relationDetails=null, relationshipSequence=null, globalId=null, orignalGlobalId=null, relationCountry=null, withProduct=null, relationDescription=null, latestUniqueRefrence=null, updateTimestamp=null, updateCountry=null, updateProgram=null, updateSystem=null, updateUser=null, authorizedUser=null, dateLastUpdate=null, dateRecordCreated=null, updatedToday=null, dateDeleted=null, isDeleted=null, relatedName=null),
+    "EN",
+    "JO"
+);
+-> at com.arabbank.service.PartyService.buildGuardianNewPartyModelForPost(PartyService.java:855)
+
+
+	at com.arabbank.service.PartyService.getFullPartyDetails(PartyService.java:871)
+
+
+here is the issue
+        NewPartyModel result = spyService.buildGuardianNewPartyModelForPost(headers, partyId);
+
