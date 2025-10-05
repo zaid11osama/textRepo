@@ -1,53 +1,87 @@
-  @Test
-    void updateAbTransaction_whenFlagsIsPrm_returnsFlagsIsPrm() throws Exception {
+@Test
+    void checkIfFlagsIsPrm_WhenPrmFlagFound_ShouldReturnTrueAndSaveFlag() {
         // Arrange
-        PartyService spyService = Mockito.spy(partyService);
-        doReturn(true).when(spyService).checkIfFlagsIsPrm(any(MainModel.class));
+        Flag flag = new Flag();
+        flag.set_identifier(new Translation("lookup", Others.PRM, "desc"));
+        FlagsAndAttributes flagsAndAttributes = new FlagsAndAttributes();
+        flagsAndAttributes.setFlags(List.of(flag));
+
+        NewPartyModel newPartyModel = new NewPartyModel();
+        newPartyModel.setFlagsAndAttributes(flagsAndAttributes);
+
+        NewPartyModelHeaders headers = new NewPartyModelHeaders();
+        headers.setCustomerId("cust123");
+        headers.setInputCountry("JO");
+        headers.setRole("admin");
+
+        MainModel mainModel = new MainModel();
+        mainModel.setNewPartyModel(newPartyModel);
+        mainModel.setHeaders(headers);
+
+        Relationship relationship = new Relationship();
+        relationship.setGlobalId("global123");
+
+        when(goldenRelationshipRepository.getGlobalIdByRelatedProductAndRelationCountryAndRole(anyString(), anyString(), anyString()))
+                .thenReturn(relationship);
+
+        FlagsAttribute mappedFlag = new FlagsAttribute();
+        mappedFlag.setGlobalId("global123");
+        mappedFlag.setRole("admin");
+        mappedFlag.setRelationCountry("JO");
+        mappedFlag.setValue("v1");
+        mappedFlag.setType(new Translation("t1", "t1", "t1"));
+
+        // Mock mapper method
+        doReturn(mappedFlag).when(partyService).mapFlagsAttrbiuteToFlagsAndAttributes(any(), any());
+
+        when(flagsAttributeRepository.getFlagsAttribute(anyString(), anyString(), anyString(), any(), any(), any(), any()))
+                .thenReturn(null);
 
         // Act
-        String result = spyService.updateAbTransaction(newPartyModel, headers, "corp123", "party123");
+        boolean result = partyService.checkIfFlagsIsPrm(mainModel);
 
         // Assert
-        assertEquals(Others.FLAGS_IS_PRM, result);
-        verify(spyService, never()).insertLogTransaction(any());
+        assertTrue(result);
+        verify(flagsAttributeRepository).save(mappedFlag);
     }
 
     @Test
-    void updateAbTransaction_whenCustomerNotFound_throwsException() {
+    void checkIfFlagsIsPrm_WhenNoPrmFlagFound_ShouldReturnFalse() {
         // Arrange
-        PartyService spyService = Mockito.spy(partyService);
-        doReturn(false).when(spyService).checkIfFlagsIsPrm(any(MainModel.class));
-        when(goldenRelationshipRepository.getCustomerRelationshipsByWithProductCountryAndIsDeleted(anyString(), anyString()))
-                .thenReturn(Collections.emptyList());
+        Flag flag = new Flag();
+        flag.set_identifier(new Translation("lookup", "NON_PRM", "desc"));
+        FlagsAndAttributes flagsAndAttributes = new FlagsAndAttributes();
+        flagsAndAttributes.setFlags(List.of(flag));
 
-        // Act + Assert
-        assertThrows(ValueNotFoundException.class, () ->
-            spyService.updateAbTransaction(newPartyModel, headers, "corp123", "party123")
-        );
+        NewPartyModel newPartyModel = new NewPartyModel();
+        newPartyModel.setFlagsAndAttributes(flagsAndAttributes);
+
+        MainModel mainModel = new MainModel();
+        mainModel.setNewPartyModel(newPartyModel);
+        mainModel.setHeaders(new NewPartyModelHeaders());
+
+        // Act
+        boolean result = partyService.checkIfFlagsIsPrm(mainModel);
+
+        // Assert
+        assertFalse(result);
+        verifyNoInteractions(flagsAttributeRepository);
     }
 
     @Test
-    void updateAbTransaction_whenCustomerFound_returnsSuccess() throws Exception {
+    void checkIfFlagsIsPrm_WhenFlagsListIsEmpty_ShouldReturnFalse() {
         // Arrange
-        PartyService spyService = Mockito.spy(partyService);
-        doReturn(false).when(spyService).checkIfFlagsIsPrm(any(MainModel.class));
+        NewPartyModel newPartyModel = new NewPartyModel();
+        newPartyModel.setFlagsAndAttributes(new FlagsAndAttributes());
 
-        Relationship rel = new Relationship();
-        rel.setGlobalId("global123");
-        when(goldenRelationshipRepository.getCustomerRelationshipsByWithProductCountryAndIsDeleted(anyString(), anyString()))
-                .thenReturn(List.of(rel));
-
-        // Stub void methods to do nothing
-        doNothing().when(spyService).handelRiskRating(any(), any());
-        doNothing().when(spyService).insertLogTransaction(any());
-        doNothing().when(spyService).sendAhRequstUpdate(any());
-        doNothing().when(spyService).sendNonAhRequestUpdate(any());
-        doNothing().when(spyService).CallIntegrationToCreateDocuments(any(), any(), any(), any(), any());
+        MainModel mainModel = new MainModel();
+        mainModel.setNewPartyModel(newPartyModel);
+        mainModel.setHeaders(new NewPartyModelHeaders());
 
         // Act
-        String result = spyService.updateAbTransaction(newPartyModel, headers, "corp123", "party123");
+        boolean result = partyService.checkIfFlagsIsPrm(mainModel);
 
         // Assert
-        assertEquals(Others.CUSTOMER_UPDATED_SUCCESSFULLY, result);
-        verify(spyService).CallIntegrationToCreateDocuments(eq(newPartyModel), eq(headers), eq("global123"), eq("party123"), eq("corp123"));
+        assertFalse(result);
+        verifyNoInteractions(flagsAttributeRepository);
     }
