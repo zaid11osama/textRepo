@@ -1,35 +1,71 @@
-	public PartyPortfolio mapPortfolioDetailsToPortfolio(
-			List<com.arabbank.model.entity.golden.PortfolioDetails> portfolioDetailsList) {
-		log.info("mapPortfolioDetailsToPortfolio()");
-		PartyPortfolio partyPortfolio = new PartyPortfolio();
-		List<CodedQuestionPortfolio> codedQuestions = new ArrayList<>();
-		List<FreeQuestionPortfolio> freeQuestions = new ArrayList<>();
-		int codedQuestionIndex = 0;
-		int freeQuestionIndex = 0;
-		if (portfolioDetailsList == null)
-			return null;
-		for (com.arabbank.model.entity.golden.PortfolioDetails details : portfolioDetailsList) {
-			if (!ObjectUtils.isEmpty(details)) {
-				String fileKey = mdmSysQuestionsRepository
-						.getFileKeyByQuestionId(HelperUtils.checkTranslation(details.getType())).orElse(null);
-				if (!HelperUtils.isEmpty(fileKey)) {
-					CodedQuestionPortfolio codedQuestion = new CodedQuestionPortfolio();
-					codedQuestion.setIndex(codedQuestionIndex++);
-					codedQuestion.set_answerValue(new Translation().withCode(details.getAnswerValue()));
-					codedQuestion.set_question(details.getType());
-					codedQuestions.add(codedQuestion);
-				} else {
-					FreeQuestionPortfolio freeQuestion = new FreeQuestionPortfolio();
-					freeQuestion.setIndex(freeQuestionIndex++);
-					freeQuestion.setAnswerValue(details.getAnswerValue());
-					freeQuestion.set_question(details.getType());
-					freeQuestions.add(freeQuestion);
-				}
+ @Test
+    void shouldReturnEmptyFatcaWhenInputIsNull() {
+        // when
+        Fatca result = YourMapperClass.mapFatcaDetailsToFatca(null);
 
-				partyPortfolio.setCodedQuestions(codedQuestions);
-				partyPortfolio.setFreeQuestions(freeQuestions);
-			}
-		}
-		log.info("/mapPortfolioDetailsToPortfolio()");
-		return partyPortfolio;
-	}
+        // then
+        assertNotNull(result);
+        assertNull(result.getQuestions());
+        assertNull(result.getTaxIdentificationNumber());
+        assertNull(result.getSignDate());
+        assertNull(result.getDateFillingForm());
+        assertNull(result.getLatestAmendment());
+        assertNull(result.getGrcDetails());
+    }
+
+    @Test
+    void shouldMapFatcaDetailsCorrectly() {
+        // given
+        com.arabbank.model.entity.golden.FatcaDetails fatcaDetails = new com.arabbank.model.entity.golden.FatcaDetails();
+        fatcaDetails.setIsUsCitizen("Yes");
+        fatcaDetails.setIsUsBorn("No");
+        fatcaDetails.setIsGreenCardHolder("Yes");
+        fatcaDetails.setIsUsResident("No");
+        fatcaDetails.setIsUsTaxPayer("Yes");
+        fatcaDetails.setSignedW8("Yes");
+        fatcaDetails.setSignedW9("No");
+        fatcaDetails.setSignedSecrecyWaiver("Yes");
+        fatcaDetails.setHaUsEntityOwner("No");
+        fatcaDetails.setTin("TIN12345");
+        fatcaDetails.setSignedDate(LocalDate.of(2023, 1, 1));
+        fatcaDetails.setDateFillingForm(LocalDate.of(2023, 2, 1));
+        fatcaDetails.setLatestAmendmentDate(LocalDate.of(2023, 3, 1));
+        fatcaDetails.setFatcaClassification("CLASS_A");
+        fatcaDetails.setPreviousfatcaClassification("CLASS_B");
+        fatcaDetails.setIsChangedByGrc("Y");
+        fatcaDetails.setBoExcemption("EXEMPT1");
+        fatcaDetails.setExcemptCode("CODE1");
+        fatcaDetails.setExceptionReportingCode("CODE2");
+
+        // when
+        Fatca result = YourMapperClass.mapFatcaDetailsToFatca(fatcaDetails);
+
+        // then
+        assertNotNull(result);
+
+        Questions questions = result.getQuestions();
+        assertNotNull(questions);
+        assertEquals("Yes", questions.getIsUSCitizen());
+        assertEquals("No", questions.getIsUSBorn());
+        assertEquals("Yes", questions.getIsGreencardHolder());
+        assertEquals("No", questions.getIsUSResident());
+        assertEquals("Yes", questions.getIsUSTaxPayer());
+        assertEquals("Yes", questions.getSignedW8());
+        assertEquals("No", questions.getSignedW9());
+        assertEquals("Yes", questions.getSignedSecrecyWaiver());
+        assertEquals("No", questions.getHasUSEntityOwner());
+
+        assertEquals("TIN12345", result.getTaxIdentificationNumber());
+        assertEquals(LocalDate.of(2023, 1, 1), result.getSignDate());
+        assertEquals(LocalDate.of(2023, 2, 1), result.getDateFillingForm());
+        assertEquals(LocalDate.of(2023, 3, 1), result.getLatestAmendment());
+
+        GrcDetails grcDetails = result.getGrcDetails();
+        assertNotNull(grcDetails);
+        assertEquals("CLASS_A", grcDetails.get_fatcaClassification());
+        assertEquals("CLASS_B", grcDetails.get_oldFatcaClassification());
+        assertTrue(grcDetails.isChangedByGRC());
+        assertEquals("EXEMPT1", grcDetails.getBoException());
+        assertEquals("CODE1", grcDetails.get_excemptCode().getCode());
+        assertEquals("CODE2", grcDetails.get_excemptionReportingCode().getCode());
+    }
