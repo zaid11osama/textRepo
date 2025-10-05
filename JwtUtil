@@ -1,22 +1,38 @@
-	public FlagsAttribute mapFlagsAttrbiuteToFlagsAndAttributes(Flag flag, Relationship relationship) {
-		log.debug("mapFlagsAttrbiuteToFlagsAndAttributes()");
-		int status = ObjectUtils.isEmpty(flag.getStatus()) ? flag.getStatus().equalsIgnoreCase("0") ? 0 : 1 : 0;
-		FlagsAttribute flagsAttribute = FlagsAttribute.builder().globalId(relationship.getGlobalId()).isActive(status)
-				.universalId(UUID.randomUUID().toString()).organization(relationship.getOrganization())
-				.relationCountry(HelperUtils.checkTranslation(relationship.getRelationCountry()))
-				.relationshipSequence(relationship.getRelationshipSequence()).role(relationship.getRole())
-				.termsAndConditionVersion(flag.getTermsAndConditionVersion()).value(flag.getValue())
-				.authorizedUser(Others.KYC).dateRecordCreated(java.sql.Date.valueOf(LocalDate.now()))
-				.dateLastUpdate(java.sql.Date.valueOf(LocalDate.now())).updatedToday(1)
-				.updateCountry(HelperUtils.checkTranslation(relationship.getRelationCountry()))
-				.updateProgram(Others.KYC).updateUser(Others.KYC).isDeleted(0).updateSystem(Others.KYC)
-				.latestUniqueRefrence(relationship.getLatestUniqueRefrence()).type(flag.get_identifier())
-				.updateTimestamp(Timestamp.valueOf(LocalDateTime.now())).build();
-		if (status == 0)
-			flagsAttribute.setInactiveDate(flag.getStatusDate());
-		else
-			flagsAttribute.setActiveDate(flag.getStatusDate());
+	public NewPartyModel getNewPartyModel(Map<String, String> headers, String partyId) {
+		log.info("getNewPartyModel({})", partyId);
+		try {
+			String inputCountry = headers.get(MdmHeaderRequest.INPUT_COUNTRY);
+			String language = headers.get(MdmHeaderRequest.LANGUAGE);
 
-		log.debug("/mapFlagsAttrbiuteToFlagsAndAttributes()");
-		return flagsAttribute;
+			checkIdentifierType(headers);
+
+			Relationship relationship = getGlobalIdByIdentifer(
+					partyId,
+					headers.get(MdmHeaderRequest.IDENTIFIER_TYPE),
+					inputCountry,
+					headers.get(MdmHeaderRequest.ROLE),
+					headers.get(MdmHeaderRequest.WITH_CUSTOMER_ID)
+			);
+			if(relationship == null ){
+				throw new BusinessWarningException("Customer Not Found");
+			}
+			PartyModel fullPartyDetails = getFullPartyDetails(relationship, headers, HelperUtils.generateReference());
+
+			if (checkPartyModelData(fullPartyDetails)) {
+				throw new CustomerNotFoundException(HandleErr.CUSTOMER_NOT_FOUND);
+			}
+			NewPartyModel newPartyModel = mapDtoToModel(fullPartyDetails, relationship, language, inputCountry);
+
+			setGuardianDetails(newPartyModel);
+
+			newPartieModelSetter.setDescrtiopns(newPartyModel, headers, partyId);
+			return newPartyModel;
+		} catch (JsonProcessingException e) {
+			throw new GeneralBadRequestException("An error occurred during JSON processing, " + e);
+		} catch (SQLException e) {
+			throw new DatabaseException("An error occurred during database operation, " + e);
+		}
+		finally {
+			log.info("/getNewPartyModel({})", partyId);
+		}
 	}
