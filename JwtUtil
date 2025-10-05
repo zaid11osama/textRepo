@@ -1,71 +1,48 @@
 @Test
-void testGetGlobalIdByIdentifer_WhenGlobalIdType_ReturnsRelationship() throws Exception {
-    // Arrange
-    String identifier = "G123";
-    String identifierType = Constants.Others.GLOBAL_ID;
-    String inputCountry = "JO";
-    String role = "GUARDIAN";
-    String withCustomerId = "C999";
-
-    PartyService spyService = Mockito.spy(partyService);
-    Relationship expectedRelationship = new Relationship();
-
-    doReturn(expectedRelationship)
-            .when(spyService)
-            .getRelationshipByGlobalId(identifier, role, withCustomerId);
-
-    // Act
-    Relationship result = spyService.getGlobalIdByIdentifer(identifier, identifierType, inputCountry, role, withCustomerId);
-
-    // Assert
-    assertNotNull(result);
-    assertEquals(expectedRelationship, result);
-    verify(spyService).getRelationshipByGlobalId(identifier, role, withCustomerId);
-}
-
-
-@Test
-void testGetGlobalIdByIdentifer_WhenCustomerIdType_ReturnsRelationship() throws Exception {
+void testGetRelationshipsByGlobalIdAndCustomerId_WhenRoleIsNull_ShouldCallAhRoleMethod() throws Exception {
     // Arrange
     String identifier = "C123";
-    String identifierType = Constants.Others.CUSTOMER_ID;
     String inputCountry = "JO";
-    String role = "ACCOUNT";
-    String withCustomerId = null;
-
-    PartyService spyService = Mockito.spy(partyService);
+    String role = null;
     Relationship expectedRelationship = new Relationship();
 
-    doReturn(expectedRelationship)
-            .when(spyService)
-            .getRelationshipsByGlobalIdAndCustomerId(identifier, inputCountry, role);
+    when(goldenRelationshipRepository
+            .getGlobalIdByRelatedProductAndRelationCountryAndAhRole(identifier, inputCountry))
+            .thenReturn(expectedRelationship);
 
     // Act
-    Relationship result = spyService.getGlobalIdByIdentifer(identifier, identifierType, inputCountry, role, withCustomerId);
+    Relationship result = partyService.getRelationshipsByGlobalIdAndCustomerId(identifier, inputCountry, role);
 
     // Assert
     assertNotNull(result);
     assertEquals(expectedRelationship, result);
-    verify(spyService).getRelationshipsByGlobalIdAndCustomerId(identifier, inputCountry, role);
+    verify(goldenRelationshipRepository)
+            .getGlobalIdByRelatedProductAndRelationCountryAndAhRole(identifier, inputCountry);
+    verify(goldenRelationshipRepository, never())
+            .getGlobalIdByRelatedProductAndRelationCountryAndRole(anyString(), anyString(), anyString());
 }
 
 
 @Test
-void testGetGlobalIdByIdentifer_WhenUnsupportedIdentifierType_ThrowsException() {
+void testGetRelationshipsByGlobalIdAndCustomerId_WhenRoleIsNotBlank_ShouldCallRoleMethod() throws Exception {
     // Arrange
-    String identifier = "X123";
-    String identifierType = "INVALID_TYPE";
+    String identifier = "C123";
     String inputCountry = "JO";
-    String role = "USER";
-    String withCustomerId = null;
+    String role = "GUARDIAN";
+    Relationship expectedRelationship = new Relationship();
 
-    PartyService spyService = Mockito.spy(partyService);
+    when(goldenRelationshipRepository
+            .getGlobalIdByRelatedProductAndRelationCountryAndRole(identifier, inputCountry, role))
+            .thenReturn(expectedRelationship);
 
-    // Act & Assert
-    CustomerNotFoundException thrown = assertThrows(
-            CustomerNotFoundException.class,
-            () -> spyService.getGlobalIdByIdentifer(identifier, identifierType, inputCountry, role, withCustomerId)
-    );
+    // Act
+    Relationship result = partyService.getRelationshipsByGlobalIdAndCustomerId(identifier, inputCountry, role);
 
-    assertTrue(thrown.getMessage().contains("Unsupported identifierType"));
+    // Assert
+    assertNotNull(result);
+    assertEquals(expectedRelationship, result);
+    verify(goldenRelationshipRepository)
+            .getGlobalIdByRelatedProductAndRelationCountryAndRole(identifier, inputCountry, role);
+    verify(goldenRelationshipRepository, never())
+            .getGlobalIdByRelatedProductAndRelationCountryAndAhRole(anyString(), anyString());
 }
