@@ -1,7 +1,9 @@
-try (MockedStatic<HelperUtils> mocked = Mockito.mockStatic(HelperUtils.class)) {
-    mocked.when(HelperUtils::generateReference).thenReturn(reference);
+     when(partyService.getGlobalIdByIdentifer(
+                anyString(),anyString() , anyString(), anyString(), anyString()))
+                .thenReturn(relationship);
 
-    NewPartyModel result = partyService.getNewPartyModel(headers, partyId);
+com.arabbank.exception.CustomerNotFoundException: Error when getGlobalIdByIdentifer() ,identifierType is null
 
-    assertNotNull(result);
-}
+	at com.arabbank.service.PartyService.getGlobalIdByIdentifer(PartyService.java:944)
+	at com.arabbank.service.PartyServiceTest.testGetNewPartyModel_Success(PartyServiceTest.java:660)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
