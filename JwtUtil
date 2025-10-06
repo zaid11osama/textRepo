@@ -1,62 +1,46 @@
- @Test
-    void testSetPhones_withValidContact_shouldSetFieldsCorrectly() {
-        // Arrange
-        Contact contact = new Contact();
-        PhoneCountry phoneCountry = new PhoneCountry();
-        phoneCountry.setCode("JO");
-        Phone phone = new Phone();
-        phone.setNumber("0791234567");
-        phone.setCountry(phoneCountry);
-        contact.setPhone(phone);
+public static Map<String, EmailDetails> mapEmailToPartyContact(List<InternetAccount> internetAccounts,
+																   PartyContact partyContact) {
+		log.info("mapEmailToPartyContact()");
 
-        PartyPhone partyPhone = new PartyPhone();
-        int index = 1;
-        String type = "MOBILE";
+		EmailDetails emailsPersonal = new EmailDetails();
+		EmailDetails emailsWork = new EmailDetails();
+		EmailDetails emailsOther = new EmailDetails();
 
-        YourClassName spyClass = spy(yourClass);
-        doReturn("+962").when(spyClass).getDialCode("JO");
-        mockStatic(HelperUtils.class);
+		Map<String, EmailDetails> emails = new HashMap<>();
 
-        when(HelperUtils.checkTranslation(phoneCountry)).thenReturn("JO");
-        when(HelperUtils.checkDescription(phoneCountry)).thenReturn("Jordan");
+		if (internetAccounts == null)
+			return null;
 
-        // Act
-        spyClass.setPhones(index, contact, partyPhone, type);
+		for (InternetAccount internetAccount : internetAccounts) {
 
-        // Assert
-        assertEquals(type, partyPhone.getType());
-        assertEquals("0791234567", partyPhone.getNumber());
-        assertNotNull(partyPhone.getCountry());
-        assertEquals("+962", partyPhone.getCountry().getDialcode());
-        assertEquals("JO", partyPhone.getCountry().getCode());
-        assertEquals("Jordan", partyPhone.getCountry().getDescription());
-        assertEquals(index, partyPhone.getIndex());
-    }
+			if (!ObjectUtils.isEmpty(internetAccount)) {
 
-    @Test
-    void testSetPhones_withNullPhoneNumber_shouldSkipDialCode() {
-        // Arrange
-        Contact contact = new Contact();
-        PhoneCountry phoneCountry = new PhoneCountry();
-        phoneCountry.setCode("JO");
-        Phone phone = new Phone();
-        phone.setNumber(null);
-        phone.setCountry(phoneCountry);
-        contact.setPhone(phone);
+				String usage = internetAccount.getUsage();
+				String type = internetAccount.getType();
 
-        PartyPhone partyPhone = new PartyPhone();
+				if ("EML".equalsIgnoreCase(usage)) {
 
-        YourClassName spyClass = spy(yourClass);
-        mockStatic(HelperUtils.class);
+					if ("RES".equalsIgnoreCase(type)) {
+						emailsPersonal.setEmail(internetAccount.getHandler());
+						emailsPersonal.setIsVerified(0);
+					} else if ("WRK".equalsIgnoreCase(type)) {
+						emailsWork.setEmail(internetAccount.getHandler());
+						emailsWork.setIsVerified(0);
+					} else if ("DFT".equalsIgnoreCase(type)) {
+						emailsOther.setEmail(internetAccount.getHandler());
+						emailsOther.setIsVerified(0);
+					}
+				}
 
-        when(HelperUtils.checkTranslation(phoneCountry)).thenReturn("JO");
-        when(HelperUtils.checkDescription(phoneCountry)).thenReturn("Jordan");
+				if ("WEB".equalsIgnoreCase(usage)) {
+					partyContact.setWebsite(internetAccount.getHandler());
+				}
+			}
+		}
+		emails.put("personal", emailsPersonal);
+		emails.put("work", emailsWork);
+		emails.put("other", emailsOther);
 
-        // Act
-        spyClass.setPhones(1, contact, partyPhone, "MOBILE");
-
-        // Assert
-        assertNull(partyPhone.getCountry().getDialcode());
-        assertEquals("JO", partyPhone.getCountry().getCode());
-        assertEquals("Jordan", partyPhone.getCountry().getDescription());
-    }
+		log.info("/mapEmailToPartyContact()");
+		return emails;
+	}
