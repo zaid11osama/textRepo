@@ -1,42 +1,19 @@
-   @Test
-    void testGetTranslation_WhenTranslationExists() {
-        // Arrange
-        String fileKey = "file1";
-        String filtrationKey3 = "filter1";
-        String language = "en";
-        String code = "001";
-
-        String key = fileKey + filtrationKey3 + language + code; // depends on concatTranslation logic
-        MdmSysTranslations translation = new MdmSysTranslations();
-        translation.setValue("Hello");
-
-        TranslationsService.translationsMap.put(fileKey, new MdmSysTranslations()); // simulate cached fileKey
-        TranslationsService.translationsMap.put(key, translation);
-
-        // Act
-        String result = translationsService.getTranslation(fileKey, filtrationKey3, language, code);
-
-        // Assert
-        assertEquals("Hello", result);
-        verifyNoInteractions(mdmSysTranslationsRepository); // since translation exists, no cache call
-    }
-
-    @Test
-    void testGetTranslation_WhenTranslationNotFound() {
-        // Arrange
-        String fileKey = "file1";
-        String filtrationKey3 = "filter1";
-        String language = "en";
-        String code = "002";
-
-        // Spy to mock internal cacheTranslations call
-        TranslationsService spyService = spy(translationsService);
-        doNothing().when(spyService).cacheTranslations(fileKey);
-
-        // Act
-        String result = spyService.getTranslation(fileKey, filtrationKey3, language, code);
-
-        // Assert
-        assertEquals("-", result);
-        verify(spyService).cacheTranslations(fileKey);
-    }
+public void cacheTranslations(String fileKey) {
+		log.debug("casheTranslations()");
+		fileKey = fileKey == null ? " " : fileKey;
+		List<MdmSysTranslations> list = null;
+		list = findByFileKey(fileKey.toUpperCase());
+		if (list != null) {
+			MdmSysTranslations lookUps = new MdmSysTranslations();
+			translationsMap.put(fileKey, lookUps);
+		}
+		for (MdmSysTranslations looUps : list) {
+			String[] filtersKeys = checkTheFilterationKey3(looUps);
+			for (String filterKey3 : filtersKeys) {
+				String key = concatTranslation(fileKey, filterKey3, looUps == null ? null : looUps.getLanguage(),
+						looUps == null ? null : looUps.getCode());
+				translationsMap.put(key, looUps);
+			}
+		}
+		log.debug("/casheTranslations()");
+	}
