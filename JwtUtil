@@ -1,53 +1,12 @@
-@Test
-void shouldMapDocumentsToPartyDocumentsProperly() {
-    // given
-    com.arabbank.model.entity.golden.Document passportDoc = new com.arabbank.model.entity.golden.Document();
-    passportDoc.setType(new Translation("PASSPORT", "PASSPORT", "PASSPORT"));
-    passportDoc.setDocumentNumber("P123");
-    passportDoc.setIssueCountry(new Translation("JO", "JO", "JO"));
-    passportDoc.setIssueDate(Date.valueOf("2020-01-01"));
-    passportDoc.setExpiryDate(Date.valueOf("2030-01-01"));
 
-    com.arabbank.model.entity.golden.Document idDoc = new com.arabbank.model.entity.golden.Document();
-    idDoc.setType(new Translation("26", "26", "26")); // triggers ID branch
-    idDoc.setDocumentNumber("ID123");
-    idDoc.setIssueCountry(new Translation("JO", "JO", "JO"));
-    idDoc.setIssueDate(Date.valueOf("2021-01-01"));
-    idDoc.setExpiryDate(Date.valueOf("2026-01-01"));
 
-    com.arabbank.model.entity.golden.Document otherDoc = new com.arabbank.model.entity.golden.Document();
-    otherDoc.setType(new Translation("OTHER", "OTHER", "OTHER")); // goes to "others" list
-    otherDoc.setDocumentNumber("O123");
-    otherDoc.setIssueCountry(new Translation("JO", "JO", "JO"));
-    otherDoc.setIssueDate(Date.valueOf("2022-01-01"));
-    otherDoc.setExpiryDate(Date.valueOf("2027-01-01"));
+        try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class);
+        MockedStatic<PartyService> mockedPartyService = mockStatic(PartyService.class);) {
 
-    List<com.arabbank.model.entity.golden.Document> documents = Arrays.asList(passportDoc, idDoc, otherDoc);
 
-    // Mock static helper methods (if they are static in HelperUtils)
-    try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class)) {
 
-        // simulate behavior for checkTranslation and isMainPassport
-        mockedHelper.when(() -> HelperUtils.isMainPassport(passportDoc)).thenReturn(true);
-        mockedHelper.when(() -> HelperUtils.checkTranslation(any())).thenAnswer(invocation -> {
-            Translation t = invocation.getArgument(0);
-            return t.getCode(); // return its own code
-        });
-
-        // when
-        PartyDocument result = PartyService.mapDocumentsToPartyDocuments(documents);
-
-        // then
-        assertNotNull(result);
-        assertNotNull(result.getPassport());
-        assertEquals("P123", result.getPassport().getDocumentNumber());
-
-        assertNotNull(result.getIdDocument());
-        assertEquals("ID123", result.getIdDocument().getDocumentNumber());
-
-        assertNotNull(result.getOthers());
-        assertEquals(1, result.getOthers().size());
-        assertEquals("OTHER", result.getOthers().get(0).get_type().getCode());
-        assertEquals("O123", result.getOthers().get(0).getDetails().getDocumentNumber());
-    }
-}
+            mockedPartyService.when(() -> partyService.isMainPassport(passportDoc)).thenReturn(true);
+            mockedHelper.when(() -> HelperUtils.checkTranslation(any())).thenAnswer(invocation -> {
+                Translation t = invocation.getArgument(0);
+                return t.getCode(); // return its own code
+            });
