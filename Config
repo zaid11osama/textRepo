@@ -1,20 +1,53 @@
-	public static List<PartyNationality> mapToNationalities(List<LegalStatus> legalStatuses) {
-		log.info("mapToNationalities()");
-		List<PartyNationality> nationalities = new ArrayList<>();
-		if (legalStatuses == null)
+public Map<String, List<PartyPhone>> mapPhoneToPartyContact(List<Contact> contactsList) {
+		log.info("mapPhoneToPartyContact()");
+		if (contactsList == null)
 			return null;
-		int index = 1;
-		for (LegalStatus legalStatus : legalStatuses) {
-			if (!ObjectUtils.isEmpty(legalStatus)) {
-				PartyNationality nationality = new PartyNationality();
-				nationality.setIndex(index++);
-				// Assuming `id` in `LegalStatus` maps to `index` in `PartyNationality`
-				nationality.set_country(legalStatus.getCountry());
-				checkLegalStatusesUsageIsP(legalStatus, nationality);
-				nationality.setIdentificationNumber(legalStatus.getIdentificationNumber());
-				nationalities.add(nationality);
+		Map<String, List<PartyPhone>> phones = new HashMap<>();
+		List<PartyPhone> partyPhonesRes = new ArrayList<>();
+		List<PartyPhone> partyPhonesCor = new ArrayList<>();
+		List<PartyPhone> partyPhonesEmp = new ArrayList<>();
+		List<PartyPhone> partyPhonesPrm = new ArrayList<>();
+		List<PartyPhone> partyPhonesSMS = new ArrayList<>();
+
+		for (Contact contact : contactsList) {
+			if (!ObjectUtils.isEmpty(contact) && contact.getPhone() != null) {
+				String typeCode = HelperUtils.checkTranslation(contact.getType()) == null ? "OT"
+						: HelperUtils.checkTranslation(contact.getType());
+
+				PartyPhone partyPhone = new PartyPhone();
+
+				int usage = Optional.ofNullable(contact.getUsage()).orElse(0);
+				if (typeCode.equalsIgnoreCase("RSF") || typeCode.equalsIgnoreCase("RSM")
+						|| typeCode.equalsIgnoreCase("RSL")) {
+					String phoneType = getPhoneType(typeCode);
+					setPhones(usage, contact, partyPhone, phoneType);
+					partyPhonesRes.add(partyPhone);
+				} else if (typeCode.equalsIgnoreCase("SMS")) {
+					setPhones(usage, contact, partyPhone, "MOBILE");
+					partyPhonesSMS.add(partyPhone);
+				} else if (typeCode.equalsIgnoreCase("WRM") || typeCode.equalsIgnoreCase("WRL")
+						|| typeCode.equalsIgnoreCase("WRF")) {
+					String phoneType = getPhoneType(typeCode);
+					setPhones(usage, contact, partyPhone, phoneType);
+					partyPhonesEmp.add(partyPhone);
+				} else if (typeCode.equalsIgnoreCase("PRM") || typeCode.equalsIgnoreCase("PRL")
+						|| typeCode.equalsIgnoreCase("PRF")) {
+					String phoneType = getPhoneType(typeCode);
+					setPhones(usage, contact, partyPhone, phoneType);
+					partyPhonesPrm.add(partyPhone);
+				} else if (typeCode.equalsIgnoreCase("CRM") || typeCode.equalsIgnoreCase("CRL")
+						|| typeCode.equalsIgnoreCase("CRF")) {
+					setPhones(usage, contact, partyPhone, "MOBILE");
+					partyPhonesCor.add(partyPhone);
+				}
 			}
 		}
-		log.info("/mapToNationalities()");
-		return nationalities;
+
+		phones.put("residential", partyPhonesRes);
+		phones.put("sms", partyPhonesSMS);
+		phones.put("correspondent", partyPhonesCor);
+		phones.put("employment", partyPhonesEmp);
+		phones.put("permanent", partyPhonesPrm);
+		log.info("/mapPhoneToPartyContact()");
+		return phones;
 	}
