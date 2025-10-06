@@ -1,68 +1,64 @@
  @Test
-    void shouldReturnTrue_WhenDocumentIsMainPassport() {
+    void shouldMapAllDocumentFieldsCorrectly() {
         // given
         Document document = new Document();
-        document.setType(new Translation("01", "Passport", "جواز سفر"));
+        document.setDocumentCountry(new Translation("JO", "Jordan", "الأردن"));
+        document.setIssueCountry(new Translation("SA", "Saudi Arabia", "السعودية"));
+        document.setExpiryDate(Date.valueOf("2030-12-31"));
+        document.setIssueDate(Date.valueOf("2020-01-01"));
+        document.setIssuedBy("Passport Office");
+        document.setIssuePlace("Amman");
+        document.setDocumentNumber("A123456");
         document.setUsage("1");
+        document.setDmsId("DMS123");
+        document.setCrmStatus("Success");
 
         // when
-        boolean result = PartyService.isMainPassport(document);
+        DocumentDetail result = PartyService.setDocumntsMapping(document);
 
         // then
-        assertTrue(result);
+        assertNotNull(result);
+        assertEquals("JO", result.get_country().getCode());
+        assertEquals("SA", result.get_issueCountry().getCode());
+        assertEquals(Date.valueOf("2030-12-31"), result.getExpiryDate());
+        assertEquals(Date.valueOf("2020-01-01"), result.getIssueDate());
+        assertEquals("Passport Office", result.getIssuedBy());
+        assertEquals("Amman", result.getIssuePlace());
+        assertEquals("A123456", result.getNumber());
+        assertEquals("1", result.getUsage());
+
+        // validate nested archive details
+        assertNotNull(result.getArchiveDetails());
+        assertEquals("DMS123", result.getArchiveDetails().getDmsReference());
+        assertTrue(result.getArchiveDetails().isArchivalStatus());
     }
 
     @Test
-    void shouldReturnFalse_WhenTypeIsNull() {
+    void shouldSetArchivalStatusFalse_WhenCrmStatusIsNotSuccess() {
         // given
         Document document = new Document();
-        document.setUsage("1");
+        document.setCrmStatus("Failed");
+        document.setDmsId("DMS999");
 
         // when
-        boolean result = PartyService.isMainPassport(document);
+        DocumentDetail result = PartyService.setDocumntsMapping(document);
 
         // then
-        assertFalse(result);
+        assertNotNull(result.getArchiveDetails());
+        assertFalse(result.getArchiveDetails().isArchivalStatus());
+        assertEquals("DMS999", result.getArchiveDetails().getDmsReference());
     }
 
     @Test
-    void shouldReturnFalse_WhenTypeCodeIsNot01() {
+    void shouldHandleNullCrmStatusGracefully() {
         // given
         Document document = new Document();
-        document.setType(new Translation("02", "ID", "هوية"));
-        document.setUsage("1");
+        document.setCrmStatus(null);
 
         // when
-        boolean result = PartyService.isMainPassport(document);
+        DocumentDetail result = PartyService.setDocumntsMapping(document);
 
         // then
-        assertFalse(result);
-    }
-
-    @Test
-    void shouldReturnFalse_WhenUsageIsNot1() {
-        // given
-        Document document = new Document();
-        document.setType(new Translation("01", "Passport", "جواز سفر"));
-        document.setUsage("2");
-
-        // when
-        boolean result = PartyService.isMainPassport(document);
-
-        // then
-        assertFalse(result);
-    }
-
-    @Test
-    void shouldReturnFalse_WhenTypeCodeIsNull() {
-        // given
-        Document document = new Document();
-        document.setType(new Translation(null, "Passport", "جواز سفر"));
-        document.setUsage("1");
-
-        // when
-        boolean result = PartyService.isMainPassport(document);
-
-        // then
-        assertFalse(result);
+        assertNotNull(result.getArchiveDetails());
+        assertFalse(result.getArchiveDetails().isArchivalStatus());
     }
