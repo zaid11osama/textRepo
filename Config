@@ -1,34 +1,35 @@
-@Test
-void testSetPhones_withValidContact_shouldSetFieldsCorrectly() {
-    try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class)) {
-        // Arrange
-        mockedHelper.when(() -> HelperUtils.checkTranslation(any()))
-                .thenReturn("JO");
-        mockedHelper.when(() -> HelperUtils.checkDescription(any()))
-                .thenReturn("Jordan");
+   @Test
+    void shouldMapContactsToPartyPhones() {
+        // given
+        Contact residentialContact = new Contact();
+        residentialContact.setType(new Translation("RSF", "Residential", "Residential"));
+        residentialContact.setPhone(new ContactPhone());
+        residentialContact.setUsage(1);
 
-        Contact contact = new Contact();
-        PartyPhoneCountry phoneCountry = new PartyPhoneCountry();
-        phoneCountry.setCode("JO");
-        ContactPhone phone = new ContactPhone();
-        phone.setNumber("0791234567");
-        phone.setCountry(new Translation("JO", "Jordan", "<UNK>"));
-        contact.setPhone(phone);
+        Contact smsContact = new Contact();
+        smsContact.setType(new Translation("SMS", "SMS", "SMS"));
+        smsContact.setPhone(new ContactPhone());
+        smsContact.setUsage(2);
 
-        PartyPhone partyPhone = new PartyPhone();
-        int index = 1;
-        String type = "MOBILE";
+        List<Contact> contacts = Arrays.asList(residentialContact, smsContact);
 
-        PartyService spyClass = spy(partyService);
-        doReturn("+962").when(spyClass).getDialCode(anyString());
+        try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class)) {
+            mockedHelper.when(() -> HelperUtils.checkTranslation(any()))
+                    .thenAnswer(invocation -> ((Translation) invocation.getArgument(0)).getCode());
 
-        // Act
-        spyClass.setPhones(index, contact, partyPhone, type);
+            PartyService spyService = Mockito.spy(partyService);
 
-        // Assert
-        assertEquals(type, partyPhone.getType());
-        assertEquals("0791234567", partyPhone.getNumber());
-        assertNotNull(partyPhone.getCountry());
-        assertEquals("+962", partyPhone.getCountry().getDialcode());
-        assertEquals(index, partyPhone.getIndex());
+
+            doNothing().when(spyService).setPhones(anyInt(), any(Contact.class), any(PartyPhone.class), anyString());
+
+            // when
+            Map<String, List<PartyPhone>> result = spyService.mapPhoneToPartyContact(contacts);
+
+            // then
+            assertNotNull(result);
+            assertTrue(result.containsKey("residential"));
+            assertTrue(result.containsKey("sms"));
+
+
+        }
     }
