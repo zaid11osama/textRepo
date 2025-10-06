@@ -1,61 +1,62 @@
  @Test
-    void shouldMapContactsToPartyPhones() {
-        // given
-        Contact residentialContact = new Contact();
-        residentialContact.setType(new Translation("RSF", "Residential", "Residential"));
-        residentialContact.setPhone("123456789");
-        residentialContact.setUsage(1);
+    void testSetPhones_withValidContact_shouldSetFieldsCorrectly() {
+        // Arrange
+        Contact contact = new Contact();
+        PhoneCountry phoneCountry = new PhoneCountry();
+        phoneCountry.setCode("JO");
+        Phone phone = new Phone();
+        phone.setNumber("0791234567");
+        phone.setCountry(phoneCountry);
+        contact.setPhone(phone);
 
-        Contact smsContact = new Contact();
-        smsContact.setType(new Translation("SMS", "SMS", "SMS"));
-        smsContact.setPhone("987654321");
-        smsContact.setUsage(2);
+        PartyPhone partyPhone = new PartyPhone();
+        int index = 1;
+        String type = "MOBILE";
 
-        List<Contact> contacts = Arrays.asList(residentialContact, smsContact);
+        YourClassName spyClass = spy(yourClass);
+        doReturn("+962").when(spyClass).getDialCode("JO");
+        mockStatic(HelperUtils.class);
 
-        // Mock HelperUtils static call
-        try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class)) {
-            mockedHelper.when(() -> HelperUtils.checkTranslation(any()))
-                        .thenAnswer(invocation -> ((Translation) invocation.getArgument(0)).getCode());
+        when(HelperUtils.checkTranslation(phoneCountry)).thenReturn("JO");
+        when(HelperUtils.checkDescription(phoneCountry)).thenReturn("Jordan");
 
-            PartyService spyService = Mockito.spy(new PartyService());
+        // Act
+        spyClass.setPhones(index, contact, partyPhone, type);
 
-            // Mock getPhoneType and setPhones behavior
-            doReturn("HOME").when(spyService).getPhoneType("RSF");
-            doNothing().when(spyService).setPhones(anyInt(), any(Contact.class), any(PartyPhone.class), anyString());
-
-            // when
-            Map<String, List<PartyPhone>> result = spyService.mapPhoneToPartyContact(contacts);
-
-            // then
-            assertNotNull(result);
-            assertTrue(result.containsKey("residential"));
-            assertTrue(result.containsKey("sms"));
-
-            assertEquals(1, result.get("residential").size());
-            assertEquals(1, result.get("sms").size());
-        }
+        // Assert
+        assertEquals(type, partyPhone.getType());
+        assertEquals("0791234567", partyPhone.getNumber());
+        assertNotNull(partyPhone.getCountry());
+        assertEquals("+962", partyPhone.getCountry().getDialcode());
+        assertEquals("JO", partyPhone.getCountry().getCode());
+        assertEquals("Jordan", partyPhone.getCountry().getDescription());
+        assertEquals(index, partyPhone.getIndex());
     }
 
     @Test
-    void shouldReturnNull_WhenContactsListIsNull() {
-        PartyService partyService = new PartyService();
+    void testSetPhones_withNullPhoneNumber_shouldSkipDialCode() {
+        // Arrange
+        Contact contact = new Contact();
+        PhoneCountry phoneCountry = new PhoneCountry();
+        phoneCountry.setCode("JO");
+        Phone phone = new Phone();
+        phone.setNumber(null);
+        phone.setCountry(phoneCountry);
+        contact.setPhone(phone);
 
-        Map<String, List<PartyPhone>> result = partyService.mapPhoneToPartyContact(null);
+        PartyPhone partyPhone = new PartyPhone();
 
-        assertNull(result);
-    }
+        YourClassName spyClass = spy(yourClass);
+        mockStatic(HelperUtils.class);
 
-    @Test
-    void shouldSkipContactsWithoutPhone() {
-        Contact contactWithoutPhone = new Contact();
-        contactWithoutPhone.setType(new Translation("RSF", "Residential", "Residential"));
-        contactWithoutPhone.setPhone(null);
+        when(HelperUtils.checkTranslation(phoneCountry)).thenReturn("JO");
+        when(HelperUtils.checkDescription(phoneCountry)).thenReturn("Jordan");
 
-        PartyService partyService = new PartyService();
+        // Act
+        spyClass.setPhones(1, contact, partyPhone, "MOBILE");
 
-        Map<String, List<PartyPhone>> result = partyService.mapPhoneToPartyContact(Collections.singletonList(contactWithoutPhone));
-
-        assertNotNull(result);
-        assertTrue(result.get("residential").isEmpty());
+        // Assert
+        assertNull(partyPhone.getCountry().getDialcode());
+        assertEquals("JO", partyPhone.getCountry().getCode());
+        assertEquals("Jordan", partyPhone.getCountry().getDescription());
     }
