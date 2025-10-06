@@ -1,72 +1,42 @@
- @Test
-    void testMapEmailToPartyContact_shouldMapEmailsAndWebsiteCorrectly() {
+   @Test
+    void testGetTranslation_WhenTranslationExists() {
         // Arrange
-        PartyContact partyContact = new PartyContact();
+        String fileKey = "file1";
+        String filtrationKey3 = "filter1";
+        String language = "en";
+        String code = "001";
 
-        InternetAccount personalEmail = new InternetAccount();
-        personalEmail.setUsage("EML");
-        personalEmail.setType("RES");
-        personalEmail.setHandler("personal@mail.com");
+        String key = fileKey + filtrationKey3 + language + code; // depends on concatTranslation logic
+        MdmSysTranslations translation = new MdmSysTranslations();
+        translation.setValue("Hello");
 
-        InternetAccount workEmail = new InternetAccount();
-        workEmail.setUsage("EML");
-        workEmail.setType("WRK");
-        workEmail.setHandler("work@mail.com");
-
-        InternetAccount otherEmail = new InternetAccount();
-        otherEmail.setUsage("EML");
-        otherEmail.setType("DFT");
-        otherEmail.setHandler("other@mail.com");
-
-        InternetAccount websiteAccount = new InternetAccount();
-        websiteAccount.setUsage("WEB");
-        websiteAccount.setHandler("www.mywebsite.com");
-
-        List<InternetAccount> accounts = Arrays.asList(
-                personalEmail, workEmail, otherEmail, websiteAccount
-        );
+        TranslationsService.translationsMap.put(fileKey, new MdmSysTranslations()); // simulate cached fileKey
+        TranslationsService.translationsMap.put(key, translation);
 
         // Act
-        Map<String, EmailDetails> result =
-                PartyService.mapEmailToPartyContact(accounts, partyContact);
+        String result = translationsService.getTranslation(fileKey, filtrationKey3, language, code);
 
         // Assert
-        assertNotNull(result);
-        assertEquals(3, result.size());
-
-        EmailDetails personal = result.get("personal");
-        EmailDetails work = result.get("work");
-        EmailDetails other = result.get("other");
-
-        assertEquals("personal@mail.com", personal.getEmail());
-        assertEquals("work@mail.com", work.getEmail());
-        assertEquals("other@mail.com", other.getEmail());
-
-        assertEquals(0, personal.getIsVerified());
-        assertEquals(0, work.getIsVerified());
-        assertEquals(0, other.getIsVerified());
-
-        // website
-        assertEquals("www.mywebsite.com", partyContact.getWebsite());
+        assertEquals("Hello", result);
+        verifyNoInteractions(mdmSysTranslationsRepository); // since translation exists, no cache call
     }
 
     @Test
-    void testMapEmailToPartyContact_withNullList_returnsNull() {
+    void testGetTranslation_WhenTranslationNotFound() {
+        // Arrange
+        String fileKey = "file1";
+        String filtrationKey3 = "filter1";
+        String language = "en";
+        String code = "002";
+
+        // Spy to mock internal cacheTranslations call
+        TranslationsService spyService = spy(translationsService);
+        doNothing().when(spyService).cacheTranslations(fileKey);
+
         // Act
-        Map<String, EmailDetails> result = PartyService.mapEmailToPartyContact(null, new PartyContact());
+        String result = spyService.getTranslation(fileKey, filtrationKey3, language, code);
 
         // Assert
-        assertNull(result);
-    }
-
-    @Test
-    void testMapEmailToPartyContact_withEmptyList_returnsEmptyEmails() {
-        // Act
-        Map<String, EmailDetails> result = PartyService.mapEmailToPartyContact(new ArrayList<>(), new PartyContact());
-
-        // Assert
-        assertNotNull(result);
-        assertTrue(result.containsKey("personal"));
-        assertTrue(result.containsKey("work"));
-        assertTrue(result.containsKey("other"));
+        assertEquals("-", result);
+        verify(spyService).cacheTranslations(fileKey);
     }
