@@ -1,88 +1,60 @@
  @Test
-    void testGetTranslation_WhenTranslationExistsInCache() {
+    void testCheckTheFilterationKey3_WithCommaSeparatedKeys() {
         // Arrange
-        String fileKey = "file1";
-        String filtrationKey3 = "filter1";
-        String language = "EN";
-        String code = "001";
-        String expectedValue = "Hello";
-
-        // Mock translation in cache
-        MdmSysTranslations translation = new MdmSysTranslations();
-        translation.setValue(expectedValue);
-
-        String key = "file1|filter1|EN|001"; // simulate concatTranslation result
-        TranslationsService.translationsMap.put(fileKey, new MdmSysTranslations()); // mark as cached
-        TranslationsService.translationsMap.put(key, translation);
-
-        // Spy service to control concatTranslation
-        TranslationsService spyService = spy(translationsService);
-        doReturn(key).when(spyService).concatTranslation(fileKey, filtrationKey3, language, code);
+        MdmSysTranslations lookup = new MdmSysTranslations();
+        lookup.setFiltrantionKey3("A,B,C");
 
         // Act
-        String result = spyService.getTranslation(fileKey, filtrationKey3, language, code);
+        String[] result = translationsService.checkTheFilterationKey3(lookup);
 
         // Assert
-        assertEquals(expectedValue, result);
-        verify(spyService, never()).cacheTranslations(anyString());
+        assertArrayEquals(new String[]{"A", "B", "C"}, result);
     }
 
     @Test
-    void testGetTranslation_WhenNotCachedAndFoundAfterCache() {
+    void testCheckTheFilterationKey3_WithSpacesAfterComma() {
         // Arrange
-        String fileKey = "file1";
-        String filtrationKey3 = "filter1";
-        String language = "EN";
-        String code = "001";
-
-        // Mock a translation returned from findByFileKey
-        MdmSysTranslations translation = new MdmSysTranslations();
-        translation.setLanguage(language);
-        translation.setCode(code);
-        translation.setValue("Hello from DB");
-
-        List<MdmSysTranslations> translationsList = List.of(translation);
-
-        // Spy service to control internal methods
-        TranslationsService spyService = spy(translationsService);
-
-        // Mock concatTranslation
-        String expectedKey = "file1|filter1|EN|001";
-        doReturn(expectedKey).when(spyService).concatTranslation(anyString(), anyString(), anyString(), anyString());
-
-        // Mock checkTheFilterationKey3 to return one key
-        doReturn(new String[]{filtrationKey3}).when(spyService).checkTheFilterationKey3(any(MdmSysTranslations.class));
-
-        // Mock findByFileKey to return our fake list
-        doReturn(translationsList).when(spyService).findByFileKey(fileKey.toUpperCase());
+        MdmSysTranslations lookup = new MdmSysTranslations();
+        lookup.setFiltrantionKey3("A, B, C");
 
         // Act
-        String result = spyService.getTranslation(fileKey, filtrationKey3, language, code);
+        String[] result = translationsService.checkTheFilterationKey3(lookup);
 
         // Assert
-        assertEquals("Hello from DB", result);
-        verify(spyService).cacheTranslations(fileKey);
+        assertArrayEquals(new String[]{"A", "B", "C"}, result);
     }
 
     @Test
-    void testGetTranslation_WhenTranslationNotFoundEvenAfterCache() {
+    void testCheckTheFilterationKey3_WithSingleValue() {
         // Arrange
-        String fileKey = "file1";
-        String filtrationKey3 = "filter1";
-        String language = "EN";
-        String code = "999";
-
-        TranslationsService spyService = spy(translationsService);
-        doReturn(Collections.emptyList()).when(spyService).findByFileKey(fileKey.toUpperCase());
-        doReturn("file1|filter1|EN|999").when(spyService)
-                .concatTranslation(fileKey, filtrationKey3, language, code);
-        doReturn(new String[]{filtrationKey3}).when(spyService)
-                .checkTheFilterationKey3(any(MdmSysTranslations.class));
+        MdmSysTranslations lookup = new MdmSysTranslations();
+        lookup.setFiltrantionKey3("XYZ");
 
         // Act
-        String result = spyService.getTranslation(fileKey, filtrationKey3, language, code);
+        String[] result = translationsService.checkTheFilterationKey3(lookup);
 
         // Assert
-        assertEquals("-", result);
-        verify(spyService).cacheTranslations(fileKey);
+        assertArrayEquals(new String[]{"XYZ"}, result);
+    }
+
+    @Test
+    void testCheckTheFilterationKey3_WithNullObject() {
+        // Act
+        String[] result = translationsService.checkTheFilterationKey3(null);
+
+        // Assert
+        assertArrayEquals(new String[]{null}, result);
+    }
+
+    @Test
+    void testCheckTheFilterationKey3_WithNullFieldValue() {
+        // Arrange
+        MdmSysTranslations lookup = new MdmSysTranslations();
+        lookup.setFiltrantionKey3(null);
+
+        // Act
+        String[] result = translationsService.checkTheFilterationKey3(lookup);
+
+        // Assert
+        assertArrayEquals(new String[]{null}, result);
     }
