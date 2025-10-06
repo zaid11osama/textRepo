@@ -1,75 +1,53 @@
 @Test
-void shouldMapEmploymentIncomesAndEmployerNameProperly() {
+void shouldMapDocumentsToPartyDocumentsProperly() {
     // given
-    PartyModel partyModel = new PartyModel();
-    com.arabbank.model.entity.golden.EmploymentIncomes incomes = new com.arabbank.model.entity.golden.EmploymentIncomes();
-    incomes.setEmployedFrom(Date.valueOf("2020-01-01"));
-    incomes.setBusinessSector(new Translation("IT", "IT", "IT"));
-    incomes.setEmploymentStatus(new Translation("Full-Time", "Full-Time", "Full-Time"));
-    incomes.setSalaryRange(new Translation("1000-2000", "1000-2000", "IT"));
-    incomes.setProfession(new Translation("Developer", "Developer", "IT"));
-    incomes.setOldProfession("Engineer");
-    incomes.setPositionTitle(new Translation("IT", "Senior", "IT"));
-    incomes.setPositionOthers("Other Position");
-    incomes.setIncomeCode(new Translation("IT", "INC123", "IT"));
-    incomes.setSalaryReceptionMechanism(new Translation("IT", "IT", "IT"));
-    incomes.setIsSalaryTransferred(1);
-    incomes.setIncomeCurrency(new Translation("IT", "USD", "IT"));
+    com.arabbank.model.entity.golden.Document passportDoc = new com.arabbank.model.entity.golden.Document();
+    passportDoc.setType(new Translation("PASSPORT", "PASSPORT", "PASSPORT"));
+    passportDoc.setDocumentNumber("P123");
+    passportDoc.setIssueCountry(new Translation("JO", "JO", "JO"));
+    passportDoc.setIssueDate(Date.valueOf("2020-01-01"));
+    passportDoc.setExpiryDate(Date.valueOf("2030-01-01"));
 
-    partyModel.setWorkDetail(incomes);
+    com.arabbank.model.entity.golden.Document idDoc = new com.arabbank.model.entity.golden.Document();
+    idDoc.setType(new Translation("26", "26", "26")); // triggers ID branch
+    idDoc.setDocumentNumber("ID123");
+    idDoc.setIssueCountry(new Translation("JO", "JO", "JO"));
+    idDoc.setIssueDate(Date.valueOf("2021-01-01"));
+    idDoc.setExpiryDate(Date.valueOf("2026-01-01"));
 
-    // ✅ Create a relationship with COM role so loop executes
-    Relationship relationship = new Relationship();
-    relationship.setRole(new Translation("COM", "COM", "COM")); // IMPORTANT
-    relationship.setGlobalId("global-123");
-    relationship.setRelationCountry(new Translation("JO", "JO", "JO"));
-    relationship.setRelationshipSequence(1);
-    relationship.setOrganization("OrgName");
+    com.arabbank.model.entity.golden.Document otherDoc = new com.arabbank.model.entity.golden.Document();
+    otherDoc.setType(new Translation("OTHER", "OTHER", "OTHER")); // goes to "others" list
+    otherDoc.setDocumentNumber("O123");
+    otherDoc.setIssueCountry(new Translation("JO", "JO", "JO"));
+    otherDoc.setIssueDate(Date.valueOf("2022-01-01"));
+    otherDoc.setExpiryDate(Date.valueOf("2027-01-01"));
 
-    partyModel.setRelationships(Collections.singletonList(relationship));
+    List<com.arabbank.model.entity.golden.Document> documents = Arrays.asList(passportDoc, idDoc, otherDoc);
 
-    // ✅ Mock the nameRepository call
-    Name name = new Name();
-    name.setLanguage(new Translation("EN", "EN", "EN"));
-    name.setBigName("BigNameValue");
+    // Mock static helper methods (if they are static in HelperUtils)
+    try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class)) {
 
-    when(nameRepository.getName(
-            anyString(),
-            anyString(),
-            anyString(),
-            anyInt(),
-            anyString()
-    )).thenReturn(Optional.of(name));
+        // simulate behavior for checkTranslation and isMainPassport
+        mockedHelper.when(() -> HelperUtils.isMainPassport(passportDoc)).thenReturn(true);
+        mockedHelper.when(() -> HelperUtils.checkTranslation(any())).thenAnswer(invocation -> {
+            Translation t = invocation.getArgument(0);
+            return t.getCode(); // return its own code
+        });
 
-    // when
-    Employment result = partyService.mapEmploymentIncomesToEmployment(partyModel);
+        // when
+        PartyDocument result = PartyService.mapDocumentsToPartyDocuments(documents);
 
-    // then
-    assertNotNull(result);
+        // then
+        assertNotNull(result);
+        assertNotNull(result.getPassport());
+        assertEquals("P123", result.getPassport().getDocumentNumber());
 
-    // Verify normal mappings
-    assertEquals("IT", result.get_businessSector().getCode());
-    assertEquals("Full-Time", result.get_status().getCode());
-    assertEquals("1000-2000", result.get_salaryRange().getCode());
-    assertEquals("Developer", result.get_profession().getCode());
-    assertEquals("Engineer", result.getProfessionOthers());
-    assertEquals("Senior", result.get_professionalLevel().getCode());
-    assertEquals("Other Position", result.getProfessionalLevelOthers());
-    assertEquals("INC123", result.get_incomeCode().getCode());
-    assertEquals("USD", result.get_incomeCurrency().getCode());
-    assertTrue(result.isSalaryTransferred());
+        assertNotNull(result.getIdDocument());
+        assertEquals("ID123", result.getIdDocument().getDocumentNumber());
 
-    // ✅ Verify employer name mapping
-    assertNotNull(result.getEmployerName());
-    assertEquals("EN", result.getEmployerName().get_language().getCode());
-    assertEquals("BigNameValue", result.getEmployerName().getBigName());
-
-    // ✅ Verify the mock was actually used
-    verify(nameRepository, times(1)).getName(
-            anyString(),
-            anyString(),
-            anyString(),
-            anyInt(),
-            anyString()
-    );
+        assertNotNull(result.getOthers());
+        assertEquals(1, result.getOthers().size());
+        assertEquals("OTHER", result.getOthers().get(0).get_type().getCode());
+        assertEquals("O123", result.getOthers().get(0).getDetails().getDocumentNumber());
+    }
 }
