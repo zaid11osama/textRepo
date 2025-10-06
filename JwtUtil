@@ -1,46 +1,36 @@
-public static Map<String, EmailDetails> mapEmailToPartyContact(List<InternetAccount> internetAccounts,
-																   PartyContact partyContact) {
-		log.info("mapEmailToPartyContact()");
+public class TranslationsService {
 
-		EmailDetails emailsPersonal = new EmailDetails();
-		EmailDetails emailsWork = new EmailDetails();
-		EmailDetails emailsOther = new EmailDetails();
+	private final JdbcTemplate jdbcTemplate;
+	private final ObjectMapper objectMapper;
+	private final LogsChannelRepository logsChannelRepository;
+	private final MdmSysTranslationsRepository mdmSysTranslationsRepository;
 
-		Map<String, EmailDetails> emails = new HashMap<>();
+	public static Map<String, List<MdmSysTranslations>> lookUpsMap = new HashMap<>();
+	public static Map<String, MdmSysTranslations> translationsMap = new HashMap<>();
+	private static final String UTILS_ENDPOINT = ": kyc/v1/lookups/";
 
-		if (internetAccounts == null)
-			return null;
+	////////////////////////////////////////////////////
 
-		for (InternetAccount internetAccount : internetAccounts) {
 
-			if (!ObjectUtils.isEmpty(internetAccount)) {
 
-				String usage = internetAccount.getUsage();
-				String type = internetAccount.getType();
+	////////////////////////////////////////////////////
 
-				if ("EML".equalsIgnoreCase(usage)) {
 
-					if ("RES".equalsIgnoreCase(type)) {
-						emailsPersonal.setEmail(internetAccount.getHandler());
-						emailsPersonal.setIsVerified(0);
-					} else if ("WRK".equalsIgnoreCase(type)) {
-						emailsWork.setEmail(internetAccount.getHandler());
-						emailsWork.setIsVerified(0);
-					} else if ("DFT".equalsIgnoreCase(type)) {
-						emailsOther.setEmail(internetAccount.getHandler());
-						emailsOther.setIsVerified(0);
-					}
-				}
 
-				if ("WEB".equalsIgnoreCase(usage)) {
-					partyContact.setWebsite(internetAccount.getHandler());
-				}
+	public String getTranslation(String fileKey, String filtrationKey3, String language, String code) {
+		log.debug("getTranslation({} , {} , {} , {})", fileKey, filtrationKey3, language, code);
+		try {
+			MdmSysTranslations existFileKey = translationsMap.get(fileKey);
+			if (existFileKey == null) {
+				cacheTranslations(fileKey);
 			}
+			String key = concatTranslation(fileKey, filtrationKey3, language, code);
+			MdmSysTranslations translation = translationsMap.get(key);
+			if (translation != null) {
+				return translation.getValue();
+			}
+			return "-";
+		} finally {
+			log.debug("/getTranslation({} , {} , {} , {})", fileKey, filtrationKey3, language, code);
 		}
-		emails.put("personal", emailsPersonal);
-		emails.put("work", emailsWork);
-		emails.put("other", emailsOther);
-
-		log.info("/mapEmailToPartyContact()");
-		return emails;
 	}
