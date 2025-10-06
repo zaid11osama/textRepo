@@ -1,50 +1,36 @@
- @Test
-    void testFindByFileKey_WhenRepositoryReturnsList() {
-        // Arrange
-        String key = "FILE1";
-        MdmSysTranslations t1 = new MdmSysTranslations();
-        MdmSysTranslations t2 = new MdmSysTranslations();
-        List<MdmSysTranslations> list = List.of(t1, t2);
+   @Test
+    void shouldMapContactsToPartyPhones() {
+        // given
+        try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class)) {
+        Contact residentialContact = new Contact();
+        residentialContact.setType(new Translation("RSF", "Residential", "Residential"));
+        residentialContact.setPhone(new ContactPhone());
+        residentialContact.setUsage(1);
 
-        when(mdmSysTranslationsRepository.getTranslationsByFileKey(key))
-                .thenReturn(Optional.of(list));
+        Contact smsContact = new Contact();
+        smsContact.setType(new Translation("SMS", "SMS", "SMS"));
+        smsContact.setPhone(new ContactPhone());
+        smsContact.setUsage(2);
 
-        // Act
-        List<MdmSysTranslations> result = translationsService.findByFileKey(key);
+        List<Contact> contacts = Arrays.asList(residentialContact, smsContact);
 
-        // Assert
-        assertNotNull(result);
-        assertEquals(2, result.size());
-        assertSame(list, result);
-        verify(mdmSysTranslationsRepository).getTranslationsByFileKey(key);
-    }
 
-    @Test
-    void testFindByFileKey_WhenRepositoryReturnsEmptyOptional() {
-        // Arrange
-        String key = "UNKNOWN";
-        when(mdmSysTranslationsRepository.getTranslationsByFileKey(key))
-                .thenReturn(Optional.empty());
+            mockedHelper.when(() -> HelperUtils.checkTranslation(any()))
+                    .thenAnswer(invocation -> ((Translation) invocation.getArgument(0)).getCode());
 
-        // Act
-        List<MdmSysTranslations> result = translationsService.findByFileKey(key);
+            PartyService spyService = Mockito.spy(partyService);
 
-        // Assert
-        assertNull(result);
-        verify(mdmSysTranslationsRepository).getTranslationsByFileKey(key);
-    }
 
-    @Test
-    void testFindByFileKey_WhenRepositoryThrowsException() {
-        // Arrange
-        String key = "ERROR";
-        when(mdmSysTranslationsRepository.getTranslationsByFileKey(key))
-                .thenThrow(new RuntimeException("DB failure"));
+            doNothing().when(spyService).setPhones(anyInt(), any(Contact.class), any(PartyPhone.class), anyString());
 
-        // Act + Assert
-        RuntimeException ex = assertThrows(RuntimeException.class,
-                () -> translationsService.findByFileKey(key));
+            // when
+            Map<String, List<PartyPhone>> result = spyService.mapPhoneToPartyContact(contacts);
 
-        assertEquals("DB failure", ex.getMessage());
-        verify(mdmSysTranslationsRepository).getTranslationsByFileKey(key);
+            // then
+            assertNotNull(result);
+            assertTrue(result.containsKey("residential"));
+            assertTrue(result.containsKey("sms"));
+
+
+        }
     }
