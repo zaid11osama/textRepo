@@ -1,57 +1,61 @@
  @Test
-    void shouldMapLegalStatusesToPartyNationalities() {
+    void shouldMapContactsToPartyPhones() {
         // given
-        LegalStatus legalStatus1 = new LegalStatus();
-        legalStatus1.setCountry(new Translation("JO", "Jordan", "الأردن"));
-        legalStatus1.setIdentificationNumber("ID123");
-        
-        LegalStatus legalStatus2 = new LegalStatus();
-        legalStatus2.setCountry(new Translation("US", "United States", "الولايات المتحدة"));
-        legalStatus2.setIdentificationNumber("ID456");
+        Contact residentialContact = new Contact();
+        residentialContact.setType(new Translation("RSF", "Residential", "Residential"));
+        residentialContact.setPhone("123456789");
+        residentialContact.setUsage(1);
 
-        List<LegalStatus> legalStatuses = Arrays.asList(legalStatus1, legalStatus2);
+        Contact smsContact = new Contact();
+        smsContact.setType(new Translation("SMS", "SMS", "SMS"));
+        smsContact.setPhone("987654321");
+        smsContact.setUsage(2);
 
-        // when
-        List<PartyNationality> result = PartyService.mapToNationalities(legalStatuses);
+        List<Contact> contacts = Arrays.asList(residentialContact, smsContact);
 
-        // then
-        assertNotNull(result);
-        assertEquals(2, result.size());
+        // Mock HelperUtils static call
+        try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class)) {
+            mockedHelper.when(() -> HelperUtils.checkTranslation(any()))
+                        .thenAnswer(invocation -> ((Translation) invocation.getArgument(0)).getCode());
 
-        assertEquals(1, result.get(0).getIndex());
-        assertEquals("JO", result.get(0).get_country().getCode());
-        assertEquals("ID123", result.get(0).getIdentificationNumber());
+            PartyService spyService = Mockito.spy(new PartyService());
 
-        assertEquals(2, result.get(1).getIndex());
-        assertEquals("US", result.get(1).get_country().getCode());
-        assertEquals("ID456", result.get(1).getIdentificationNumber());
+            // Mock getPhoneType and setPhones behavior
+            doReturn("HOME").when(spyService).getPhoneType("RSF");
+            doNothing().when(spyService).setPhones(anyInt(), any(Contact.class), any(PartyPhone.class), anyString());
+
+            // when
+            Map<String, List<PartyPhone>> result = spyService.mapPhoneToPartyContact(contacts);
+
+            // then
+            assertNotNull(result);
+            assertTrue(result.containsKey("residential"));
+            assertTrue(result.containsKey("sms"));
+
+            assertEquals(1, result.get("residential").size());
+            assertEquals(1, result.get("sms").size());
+        }
     }
 
     @Test
-    void shouldReturnNull_WhenLegalStatusesIsNull() {
-        // when
-        List<PartyNationality> result = PartyService.mapToNationalities(null);
+    void shouldReturnNull_WhenContactsListIsNull() {
+        PartyService partyService = new PartyService();
 
-        // then
+        Map<String, List<PartyPhone>> result = partyService.mapPhoneToPartyContact(null);
+
         assertNull(result);
     }
 
     @Test
-    void shouldSkipNullLegalStatusEntries() {
-        // given
-        LegalStatus legalStatus1 = new LegalStatus();
-        legalStatus1.setCountry(new Translation("JO", "Jordan", "الأردن"));
-        legalStatus1.setIdentificationNumber("ID123");
+    void shouldSkipContactsWithoutPhone() {
+        Contact contactWithoutPhone = new Contact();
+        contactWithoutPhone.setType(new Translation("RSF", "Residential", "Residential"));
+        contactWithoutPhone.setPhone(null);
 
-        List<LegalStatus> legalStatuses = Arrays.asList(null, legalStatus1, null);
+        PartyService partyService = new PartyService();
 
-        // when
-        List<PartyNationality> result = PartyService.mapToNationalities(legalStatuses);
+        Map<String, List<PartyPhone>> result = partyService.mapPhoneToPartyContact(Collections.singletonList(contactWithoutPhone));
 
-        // then
         assertNotNull(result);
-        assertEquals(1, result.size());
-        assertEquals(1, result.get(0).getIndex());
-        assertEquals("JO", result.get(0).get_country().getCode());
-        assertEquals("ID123", result.get(0).getIdentificationNumber());
+        assertTrue(result.get("residential").isEmpty());
     }
