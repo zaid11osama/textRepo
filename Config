@@ -1,17 +1,72 @@
+ @Test
+    void testMapEmailToPartyContact_shouldMapEmailsAndWebsiteCorrectly() {
+        // Arrange
+        PartyContact partyContact = new PartyContact();
 
-org.mockito.exceptions.misusing.PotentialStubbingProblem: 
-Strict stubbing argument mismatch. Please check:
- - this invocation of 'getDialCode' method:
-    partyService.getDialCode("Jordan");
-    -> at com.arabbank.service.PartyService.setPhones(PartyService.java:1771)
- - has following stubbing(s) with different arguments:
-    1. partyService.getDialCode("JO");
-      -> at com.arabbank.service.PartyServiceTest.testSetPhones_withValidContact_shouldSetFieldsCorrectly(PartyServiceTest.java:1719)
-Typically, stubbing argument mismatch indicates user mistake when writing tests.
-Mockito fails early so that you can debug potential problem easily.
-However, there are legit scenarios when this exception generates false negative signal:
-  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
-    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
-  - stubbed method is intentionally invoked with different arguments by code under test
-    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
-For more information see javadoc for PotentialStubbingProblem class.
+        InternetAccount personalEmail = new InternetAccount();
+        personalEmail.setUsage("EML");
+        personalEmail.setType("RES");
+        personalEmail.setHandler("personal@mail.com");
+
+        InternetAccount workEmail = new InternetAccount();
+        workEmail.setUsage("EML");
+        workEmail.setType("WRK");
+        workEmail.setHandler("work@mail.com");
+
+        InternetAccount otherEmail = new InternetAccount();
+        otherEmail.setUsage("EML");
+        otherEmail.setType("DFT");
+        otherEmail.setHandler("other@mail.com");
+
+        InternetAccount websiteAccount = new InternetAccount();
+        websiteAccount.setUsage("WEB");
+        websiteAccount.setHandler("www.mywebsite.com");
+
+        List<InternetAccount> accounts = Arrays.asList(
+                personalEmail, workEmail, otherEmail, websiteAccount
+        );
+
+        // Act
+        Map<String, EmailDetails> result =
+                PartyService.mapEmailToPartyContact(accounts, partyContact);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(3, result.size());
+
+        EmailDetails personal = result.get("personal");
+        EmailDetails work = result.get("work");
+        EmailDetails other = result.get("other");
+
+        assertEquals("personal@mail.com", personal.getEmail());
+        assertEquals("work@mail.com", work.getEmail());
+        assertEquals("other@mail.com", other.getEmail());
+
+        assertEquals(0, personal.getIsVerified());
+        assertEquals(0, work.getIsVerified());
+        assertEquals(0, other.getIsVerified());
+
+        // website
+        assertEquals("www.mywebsite.com", partyContact.getWebsite());
+    }
+
+    @Test
+    void testMapEmailToPartyContact_withNullList_returnsNull() {
+        // Act
+        Map<String, EmailDetails> result = PartyService.mapEmailToPartyContact(null, new PartyContact());
+
+        // Assert
+        assertNull(result);
+    }
+
+    @Test
+    void testMapEmailToPartyContact_withEmptyList_returnsEmptyEmails() {
+        // Act
+        Map<String, EmailDetails> result = PartyService.mapEmailToPartyContact(new ArrayList<>(), new PartyContact());
+
+        // Assert
+        assertNotNull(result);
+        assertTrue(result.containsKey("personal"));
+        assertTrue(result.containsKey("work"));
+        assertTrue(result.containsKey("other"));
+    }
