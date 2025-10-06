@@ -1,76 +1,35 @@
+	public static PartyDocument mapDocumentsToPartyDocuments(List<com.arabbank.model.entity.golden.Document> documents) {
+		log.info("mapDocumentsToPartyDocuments()");
+		if (documents == null)
+			return null;
 
- @Test
-    void shouldMapEmploymentIncomesProperly() {
-        // given
-        PartyModel partyModel = new PartyModel();
-        com.arabbank.model.entity.golden.EmploymentIncomes incomes = new com.arabbank.model.entity.golden.EmploymentIncomes();
-        incomes.setEmployedFrom(Date.valueOf("2020-01-01"));
-        incomes.setBusinessSector(new Translation("IT","IT","IT"));
-        incomes.setEmploymentStatus(new Translation("Full-Time","Full-Time","Full-Time"));
-        incomes.setSalaryRange(new Translation("1000-2000","1000-2000","IT"));
-        incomes.setProfession(new Translation("Developer","Developer","IT"));
-        incomes.setOldProfession("Engineer");
-        incomes.setPositionTitle(new Translation("IT","Senior","IT"));
-        incomes.setPositionOthers("Other Position");
-        incomes.setIncomeCode(new Translation("IT","INC123","IT"));
-        incomes.setSalaryReceptionMechanism(new Translation("IT","IT","IT"));
-        incomes.setIsSalaryTransferred(1);
-        incomes.setIncomeCurrency(new Translation("IT","USD","IT"));
+		PartyDocument partyDocument = new PartyDocument();
+		List<OtherDocuments> otherDocuments = new ArrayList<>();
 
-        partyModel.setWorkDetail(incomes);
+		for (com.arabbank.model.entity.golden.Document document : documents) {
+			if (ObjectUtils.isEmpty(document))
+				continue;
 
-        Relationship relationship = new Relationship();
-        Role role = new Role();
+			if (partyDocument.getPassport() == null && isMainPassport(document)) {
+				DocumentDetail documentDetailPassport = setDocumntsMapping(document);
+				partyDocument.setPassport(documentDetailPassport);
+				continue;
+			}
 
-        relationship.setRole(new Translation("IT","IT","IT"));
-        relationship.setGlobalId("global-123");
-        relationship.setRelationCountry(new Translation("IT","IT","IT"));
-        relationship.setRelationshipSequence(1);
-        relationship.setOrganization("OrgName");
+			String translationCode = checkTranslation(document.getType());
+			if ("26".equalsIgnoreCase(translationCode) || "03".equalsIgnoreCase(translationCode)) {
+				DocumentDetail documentDetailId = setDocumntsMapping(document);
+				partyDocument.setIdDocument(documentDetailId);
+				continue;
+			}
 
-        partyModel.setRelationships(Collections.singletonList(relationship));
-
-
-        Name name = new Name();
-        name.setLanguage(new Translation("EN","EN","EN"));
-        name.setBigName("BigNameValue");
-
-        when(nameRepository.getName(any(), anyString(), anyString(), anyInt(), anyString()))
-                .thenReturn(Optional.of(name));
-
-        // when
-        Employment result = partyService.mapEmploymentIncomesToEmployment(partyModel);
-
-        // then
-        assertNotNull(result);
-
-        assertEquals("IT", result.get_businessSector().getCode());
-        assertEquals("Full-Time", result.get_status().getCode());
-        assertEquals("1000-2000", result.get_salaryRange().getCode());
-        assertEquals("Developer", result.get_profession().getCode());
-        assertEquals("Engineer", result.getProfessionOthers());
-        assertEquals("Senior", result.get_professionalLevel().getCode());
-        assertEquals("Other Position", result.getProfessionalLevelOthers());
-        assertEquals("INC123", result.get_incomeCode().getCode());
-
-        assertEquals("USD", result.get_incomeCurrency().getCode());
-
-
-
-
-           }
-
-
-
-
-
-org.mockito.exceptions.misusing.UnnecessaryStubbingException: 
-Unnecessary stubbings detected.
-Clean & maintainable test code requires zero unnecessary code.
-Following stubbings are unnecessary (click to navigate to relevant line of code):
-  1. -> at com.arabbank.service.PartyServiceTest.shouldMapEmploymentIncomesProperly(PartyServiceTest.java:1238)
-Please remove unnecessary stubbings or use 'lenient' strictness. More info: javadoc for UnnecessaryStubbingException class.
-
-	at org.mockito.junit.jupiter.MockitoExtension.afterEach(MockitoExtension.java:192)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+			OtherDocuments otherDocument = new OtherDocuments();
+			DocumentDetail documentDetailOther = setDocumntsMapping(document);
+			otherDocument.set_type(document.getType());
+			otherDocument.setDetails(documentDetailOther);
+			otherDocuments.add(otherDocument);
+		}
+		partyDocument.setOthers(otherDocuments);
+		log.info("/mapDocumentsToPartyDocuments()");
+		return partyDocument;
+	}
