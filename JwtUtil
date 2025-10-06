@@ -1,60 +1,50 @@
  @Test
-    void testCheckTheFilterationKey3_WithCommaSeparatedKeys() {
+    void testFindByFileKey_WhenRepositoryReturnsList() {
         // Arrange
-        MdmSysTranslations lookup = new MdmSysTranslations();
-        lookup.setFiltrantionKey3("A,B,C");
+        String key = "FILE1";
+        MdmSysTranslations t1 = new MdmSysTranslations();
+        MdmSysTranslations t2 = new MdmSysTranslations();
+        List<MdmSysTranslations> list = List.of(t1, t2);
+
+        when(mdmSysTranslationsRepository.getTranslationsByFileKey(key))
+                .thenReturn(Optional.of(list));
 
         // Act
-        String[] result = translationsService.checkTheFilterationKey3(lookup);
+        List<MdmSysTranslations> result = translationsService.findByFileKey(key);
 
         // Assert
-        assertArrayEquals(new String[]{"A", "B", "C"}, result);
+        assertNotNull(result);
+        assertEquals(2, result.size());
+        assertSame(list, result);
+        verify(mdmSysTranslationsRepository).getTranslationsByFileKey(key);
     }
 
     @Test
-    void testCheckTheFilterationKey3_WithSpacesAfterComma() {
+    void testFindByFileKey_WhenRepositoryReturnsEmptyOptional() {
         // Arrange
-        MdmSysTranslations lookup = new MdmSysTranslations();
-        lookup.setFiltrantionKey3("A, B, C");
+        String key = "UNKNOWN";
+        when(mdmSysTranslationsRepository.getTranslationsByFileKey(key))
+                .thenReturn(Optional.empty());
 
         // Act
-        String[] result = translationsService.checkTheFilterationKey3(lookup);
+        List<MdmSysTranslations> result = translationsService.findByFileKey(key);
 
         // Assert
-        assertArrayEquals(new String[]{"A", "B", "C"}, result);
+        assertNull(result);
+        verify(mdmSysTranslationsRepository).getTranslationsByFileKey(key);
     }
 
     @Test
-    void testCheckTheFilterationKey3_WithSingleValue() {
+    void testFindByFileKey_WhenRepositoryThrowsException() {
         // Arrange
-        MdmSysTranslations lookup = new MdmSysTranslations();
-        lookup.setFiltrantionKey3("XYZ");
+        String key = "ERROR";
+        when(mdmSysTranslationsRepository.getTranslationsByFileKey(key))
+                .thenThrow(new RuntimeException("DB failure"));
 
-        // Act
-        String[] result = translationsService.checkTheFilterationKey3(lookup);
+        // Act + Assert
+        RuntimeException ex = assertThrows(RuntimeException.class,
+                () -> translationsService.findByFileKey(key));
 
-        // Assert
-        assertArrayEquals(new String[]{"XYZ"}, result);
-    }
-
-    @Test
-    void testCheckTheFilterationKey3_WithNullObject() {
-        // Act
-        String[] result = translationsService.checkTheFilterationKey3(null);
-
-        // Assert
-        assertArrayEquals(new String[]{null}, result);
-    }
-
-    @Test
-    void testCheckTheFilterationKey3_WithNullFieldValue() {
-        // Arrange
-        MdmSysTranslations lookup = new MdmSysTranslations();
-        lookup.setFiltrantionKey3(null);
-
-        // Act
-        String[] result = translationsService.checkTheFilterationKey3(lookup);
-
-        // Assert
-        assertArrayEquals(new String[]{null}, result);
+        assertEquals("DB failure", ex.getMessage());
+        verify(mdmSysTranslationsRepository).getTranslationsByFileKey(key);
     }
