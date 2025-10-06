@@ -1,35 +1,4 @@
-	public static PartyDocument mapDocumentsToPartyDocuments(List<com.arabbank.model.entity.golden.Document> documents) {
-		log.info("mapDocumentsToPartyDocuments()");
-		if (documents == null)
-			return null;
+mockedHelper.when(() -> partyService.isMainPassport(passportDoc)).thenReturn(true);
 
-		PartyDocument partyDocument = new PartyDocument();
-		List<OtherDocuments> otherDocuments = new ArrayList<>();
 
-		for (com.arabbank.model.entity.golden.Document document : documents) {
-			if (ObjectUtils.isEmpty(document))
-				continue;
-
-			if (partyDocument.getPassport() == null && isMainPassport(document)) {
-				DocumentDetail documentDetailPassport = setDocumntsMapping(document);
-				partyDocument.setPassport(documentDetailPassport);
-				continue;
-			}
-
-			String translationCode = checkTranslation(document.getType());
-			if ("26".equalsIgnoreCase(translationCode) || "03".equalsIgnoreCase(translationCode)) {
-				DocumentDetail documentDetailId = setDocumntsMapping(document);
-				partyDocument.setIdDocument(documentDetailId);
-				continue;
-			}
-
-			OtherDocuments otherDocument = new OtherDocuments();
-			DocumentDetail documentDetailOther = setDocumntsMapping(document);
-			otherDocument.set_type(document.getType());
-			otherDocument.setDetails(documentDetailOther);
-			otherDocuments.add(otherDocument);
-		}
-		partyDocument.setOthers(otherDocuments);
-		log.info("/mapDocumentsToPartyDocuments()");
-		return partyDocument;
-	}
+this method is static and inside partyService
