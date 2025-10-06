@@ -1,4 +1,6 @@
-mockedHelper.when(() -> partyService.isMainPassport(passportDoc)).thenReturn(true);
-
-
-this method is static and inside partyService
+public static boolean isMainPassport(com.arabbank.model.entity.golden.Document document) {
+		return document.getType() != null
+				&& document.getType().getCode() != null
+				&& document.getType().getCode().equalsIgnoreCase("01")
+				&& "1".equals(document.getUsage());
+	}
