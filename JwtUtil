@@ -1,12 +1,68 @@
+ @Test
+    void shouldReturnTrue_WhenDocumentIsMainPassport() {
+        // given
+        Document document = new Document();
+        document.setType(new Translation("01", "Passport", "جواز سفر"));
+        document.setUsage("1");
 
+        // when
+        boolean result = PartyService.isMainPassport(document);
 
-        try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class);
-        MockedStatic<PartyService> mockedPartyService = mockStatic(PartyService.class);) {
+        // then
+        assertTrue(result);
+    }
 
+    @Test
+    void shouldReturnFalse_WhenTypeIsNull() {
+        // given
+        Document document = new Document();
+        document.setUsage("1");
 
+        // when
+        boolean result = PartyService.isMainPassport(document);
 
-            mockedPartyService.when(() -> partyService.isMainPassport(passportDoc)).thenReturn(true);
-            mockedHelper.when(() -> HelperUtils.checkTranslation(any())).thenAnswer(invocation -> {
-                Translation t = invocation.getArgument(0);
-                return t.getCode(); // return its own code
-            });
+        // then
+        assertFalse(result);
+    }
+
+    @Test
+    void shouldReturnFalse_WhenTypeCodeIsNot01() {
+        // given
+        Document document = new Document();
+        document.setType(new Translation("02", "ID", "هوية"));
+        document.setUsage("1");
+
+        // when
+        boolean result = PartyService.isMainPassport(document);
+
+        // then
+        assertFalse(result);
+    }
+
+    @Test
+    void shouldReturnFalse_WhenUsageIsNot1() {
+        // given
+        Document document = new Document();
+        document.setType(new Translation("01", "Passport", "جواز سفر"));
+        document.setUsage("2");
+
+        // when
+        boolean result = PartyService.isMainPassport(document);
+
+        // then
+        assertFalse(result);
+    }
+
+    @Test
+    void shouldReturnFalse_WhenTypeCodeIsNull() {
+        // given
+        Document document = new Document();
+        document.setType(new Translation(null, "Passport", "جواز سفر"));
+        document.setUsage("1");
+
+        // when
+        boolean result = PartyService.isMainPassport(document);
+
+        // then
+        assertFalse(result);
+    }
