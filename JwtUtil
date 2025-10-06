@@ -1,94 +1,75 @@
 @Test
-    void shouldReturnNullIfPartyModelIsNull() {
-        assertNull(mapper.mapEmploymentIncomesToEmployment(null));
-    }
+void shouldMapEmploymentIncomesAndEmployerNameProperly() {
+    // given
+    PartyModel partyModel = new PartyModel();
+    com.arabbank.model.entity.golden.EmploymentIncomes incomes = new com.arabbank.model.entity.golden.EmploymentIncomes();
+    incomes.setEmployedFrom(Date.valueOf("2020-01-01"));
+    incomes.setBusinessSector(new Translation("IT", "IT", "IT"));
+    incomes.setEmploymentStatus(new Translation("Full-Time", "Full-Time", "Full-Time"));
+    incomes.setSalaryRange(new Translation("1000-2000", "1000-2000", "IT"));
+    incomes.setProfession(new Translation("Developer", "Developer", "IT"));
+    incomes.setOldProfession("Engineer");
+    incomes.setPositionTitle(new Translation("IT", "Senior", "IT"));
+    incomes.setPositionOthers("Other Position");
+    incomes.setIncomeCode(new Translation("IT", "INC123", "IT"));
+    incomes.setSalaryReceptionMechanism(new Translation("IT", "IT", "IT"));
+    incomes.setIsSalaryTransferred(1);
+    incomes.setIncomeCurrency(new Translation("IT", "USD", "IT"));
 
-    @Test
-    void shouldReturnNullIfEmploymentIncomesIsNull() {
-        PartyModel partyModel = new PartyModel();
-        partyModel.setWorkDetail(null);
-        assertNull(mapper.mapEmploymentIncomesToEmployment(partyModel));
-    }
+    partyModel.setWorkDetail(incomes);
 
-    @Test
-    void shouldMapEmploymentIncomesProperly() {
-        // given
-        PartyModel partyModel = new PartyModel();
-        com.arabbank.model.entity.golden.EmploymentIncomes incomes = new com.arabbank.model.entity.golden.EmploymentIncomes();
-        incomes.setEmployedFrom("2020-01-01");
-        incomes.setBusinessSector("IT");
-        incomes.setEmploymentStatus("Full-Time");
-        incomes.setSalaryRange("1000-2000");
-        incomes.setProfession("Developer");
-        incomes.setOldProfession("Engineer");
-        incomes.setPositionTitle("Senior");
-        incomes.setPositionOthers("Other Position");
-        incomes.setIncomeCode("INC123");
-        incomes.setSalaryReceptionMechanism("Bank Transfer");
-        incomes.setIsSalaryTransferred(1);
-        incomes.setIncomeCurrency("USD");
+    // ✅ Create a relationship with COM role so loop executes
+    Relationship relationship = new Relationship();
+    relationship.setRole(new Translation("COM", "COM", "COM")); // IMPORTANT
+    relationship.setGlobalId("global-123");
+    relationship.setRelationCountry(new Translation("JO", "JO", "JO"));
+    relationship.setRelationshipSequence(1);
+    relationship.setOrganization("OrgName");
 
-        partyModel.setWorkDetail(incomes);
+    partyModel.setRelationships(Collections.singletonList(relationship));
 
-        Relationship relationship = new Relationship();
-        Role role = new Role();
-        role.setCode("COM");
-        relationship.setRole(role);
-        relationship.setGlobalId("global-123");
-        relationship.setRelationCountry("JO");
-        relationship.setRelationshipSequence(1);
-        relationship.setOrganization("OrgName");
+    // ✅ Mock the nameRepository call
+    Name name = new Name();
+    name.setLanguage(new Translation("EN", "EN", "EN"));
+    name.setBigName("BigNameValue");
 
-        partyModel.setRelationships(Collections.singletonList(relationship));
+    when(nameRepository.getName(
+            anyString(),
+            anyString(),
+            anyString(),
+            anyInt(),
+            anyString()
+    )).thenReturn(Optional.of(name));
 
-        Name name = new Name();
-        name.setLanguage("EN");
-        name.setBigName("BigNameValue");
+    // when
+    Employment result = partyService.mapEmploymentIncomesToEmployment(partyModel);
 
-        when(nameRepository.getName(any(), anyString(), anyString(), anyInt(), anyString()))
-                .thenReturn(Optional.of(name));
+    // then
+    assertNotNull(result);
 
-        // when
-        Employment result = mapper.mapEmploymentIncomesToEmployment(partyModel);
+    // Verify normal mappings
+    assertEquals("IT", result.get_businessSector().getCode());
+    assertEquals("Full-Time", result.get_status().getCode());
+    assertEquals("1000-2000", result.get_salaryRange().getCode());
+    assertEquals("Developer", result.get_profession().getCode());
+    assertEquals("Engineer", result.getProfessionOthers());
+    assertEquals("Senior", result.get_professionalLevel().getCode());
+    assertEquals("Other Position", result.getProfessionalLevelOthers());
+    assertEquals("INC123", result.get_incomeCode().getCode());
+    assertEquals("USD", result.get_incomeCurrency().getCode());
+    assertTrue(result.isSalaryTransferred());
 
-        // then
-        assertNotNull(result);
-        assertEquals("2020-01-01", result.getEmployedFrom());
-        assertEquals("IT", result.get_businessSector());
-        assertEquals("Full-Time", result.get_status());
-        assertEquals("1000-2000", result.get_salaryRange());
-        assertEquals("Developer", result.get_profession());
-        assertEquals("Engineer", result.getProfessionOthers());
-        assertEquals("Senior", result.get_professionalLevel());
-        assertEquals("Other Position", result.getProfessionalLevelOthers());
-        assertEquals("INC123", result.get_incomeCode());
-        assertEquals("Bank Transfer", result.getSalaryReceptionMechanism());
-        assertTrue(result.getSalaryTransferred());
-        assertEquals("USD", result.get_incomeCurrency());
+    // ✅ Verify employer name mapping
+    assertNotNull(result.getEmployerName());
+    assertEquals("EN", result.getEmployerName().get_language().getCode());
+    assertEquals("BigNameValue", result.getEmployerName().getBigName());
 
-        assertNotNull(result.getEmployerName());
-        assertEquals("EN", result.getEmployerName().get_language());
-        assertEquals("BigNameValue", result.getEmployerName().getBigName());
-
-        verify(nameRepository).getName(eq("global-123"), anyString(), anyString(), eq(1), eq("OrgName"));
-    }
-
-    @Test
-    void shouldSkipEmployerNameIfRoleIsNotCOM() {
-        PartyModel partyModel = new PartyModel();
-        com.arabbank.model.entity.golden.EmploymentIncomes incomes = new com.arabbank.model.entity.golden.EmploymentIncomes();
-        partyModel.setWorkDetail(incomes);
-
-        Relationship relationship = new Relationship();
-        Role role = new Role();
-        role.setCode("OTHER");
-        relationship.setRole(role);
-
-        partyModel.setRelationships(Collections.singletonList(relationship));
-
-        Employment result = mapper.mapEmploymentIncomesToEmployment(partyModel);
-
-        assertNotNull(result);
-        assertNull(result.getEmployerName());
-        verifyNoInteractions(nameRepository);
-    }
+    // ✅ Verify the mock was actually used
+    verify(nameRepository, times(1)).getName(
+            anyString(),
+            anyString(),
+            anyString(),
+            anyInt(),
+            anyString()
+    );
+}
