@@ -1,8 +1,80 @@
-	public List<MdmSysTranslations> findByFileKey(String key) {
-		log.debug("findByFileKey({})", key);
-		try {
-			return mdmSysTranslationsRepository.getTranslationsByFileKey(key).orElse(null);
-		} finally {
-			log.debug("/findByFileKey({})", key);
-		}
-	}
+    @Test
+    void shouldMapContactsToPartyPhones() {
+        // given
+        Contact residentialContact = new Contact();
+        residentialContact.setType(new Translation("RSF", "Residential", "Residential"));
+        residentialContact.setPhone(new ContactPhone());
+        residentialContact.setUsage(1);
+
+        Contact smsContact = new Contact();
+        smsContact.setType(new Translation("SMS", "SMS", "SMS"));
+        smsContact.setPhone(new ContactPhone());
+        smsContact.setUsage(2);
+
+        List<Contact> contacts = Arrays.asList(residentialContact, smsContact);
+
+        try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class)) {
+            mockedHelper.when(() -> HelperUtils.checkTranslation(any()))
+                    .thenAnswer(invocation -> ((Translation) invocation.getArgument(0)).getCode());
+
+            PartyService spyService = Mockito.spy(partyService);
+
+
+            doNothing().when(spyService).setPhones(anyInt(), any(Contact.class), any(PartyPhone.class), anyString());
+
+            // when
+            Map<String, List<PartyPhone>> result = spyService.mapPhoneToPartyContact(contacts);
+
+            // then
+            assertNotNull(result);
+            assertTrue(result.containsKey("residential"));
+            assertTrue(result.containsKey("sms"));
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+    @Test
+    void testSetPhones_withValidContact_shouldSetFieldsCorrectly() {
+        // Arrange
+        Contact contact = new Contact();
+        PartyPhoneCountry phoneCountry = new PartyPhoneCountry();
+        phoneCountry.setCode("JO");
+        ContactPhone phone = new ContactPhone();
+        phone.setNumber("0791234567");
+        phone.setCountry(new Translation("JO", "Jordan", "<UNK>"));
+        contact.setPhone(phone);
+
+        PartyPhone partyPhone = new PartyPhone();
+        int index = 1;
+        String type = "MOBILE";
+
+//        partyPhone.setCountry();
+
+        PartyService spyClass = spy(partyService);
+        doReturn("+962").when(spyClass).getDialCode(anyString());
+        mockStatic(HelperUtils.class);
+
+        when(HelperUtils.checkTranslation(new Translation("JO","JO","JO"))).thenReturn("JO");
+        when(HelperUtils.checkDescription(new Translation("JO","JO","JO"))).thenReturn("Jordan");
+
+        // Act
+        spyClass.setPhones(index, contact, partyPhone, type);
+
+        // Assert
+        assertEquals(type, partyPhone.getType());
+        assertEquals("0791234567", partyPhone.getNumber());
+        assertNotNull(partyPhone.getCountry());
+        assertEquals("+962", partyPhone.getCountry().getDialcode());
+
+
+        assertEquals(index, partyPhone.getIndex());
+    }
