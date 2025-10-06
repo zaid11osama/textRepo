@@ -1,14 +1,8 @@
-	public String[] checkTheFilterationKey3(MdmSysTranslations lookUps) {
-		log.debug("checkTheFilterationKey3({})", lookUps);
+	public List<MdmSysTranslations> findByFileKey(String key) {
+		log.debug("findByFileKey({})", key);
 		try {
-			String[] filtersKeys;
-			if (lookUps != null && lookUps.getFiltrantionKey3() != null && lookUps.getFiltrantionKey3().contains(",")) {
-				filtersKeys = lookUps.getFiltrantionKey3().split(",\\s*");
-			} else {
-				filtersKeys = new String[] { lookUps != null ? lookUps.getFiltrantionKey3() : null };
-			}
-			return filtersKeys;
+			return mdmSysTranslationsRepository.getTranslationsByFileKey(key).orElse(null);
 		} finally {
-			log.debug("/checkTheFilterationKey3({})", lookUps);
+			log.debug("/findByFileKey({})", key);
 		}
 	}
