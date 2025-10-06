@@ -1,12 +1,17 @@
-	public void setPhones(int index, Contact contact, PartyPhone partyPhone, String type) {
-		PartyPhoneCountry country = new PartyPhoneCountry();
-		partyPhone.setType(type);
-		partyPhone.setNumber(contact.getPhone().getNumber());
-		if (contact.getPhone().getNumber() != null)
-			country.setDialcode(getDialCode(
-					contact.getPhone().getCountry() != null ? contact.getPhone().getCountry().getCode() : null));
-		country.setCode(HelperUtils.checkTranslation(contact.getPhone().getCountry()));
-		country.setDescription(HelperUtils.checkDescription(contact.getPhone().getCountry()));
-		partyPhone.setCountry(country);
-		partyPhone.setIndex(index);
-	}
+
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getDialCode' method:
+    partyService.getDialCode("Jordan");
+    -> at com.arabbank.service.PartyService.setPhones(PartyService.java:1771)
+ - has following stubbing(s) with different arguments:
+    1. partyService.getDialCode("JO");
+      -> at com.arabbank.service.PartyServiceTest.testSetPhones_withValidContact_shouldSetFieldsCorrectly(PartyServiceTest.java:1719)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
