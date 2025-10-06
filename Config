@@ -1,17 +1,20 @@
-	private static DocumentDetail setDocumntsMapping(com.arabbank.model.entity.golden.Document document) {
-		DocumentDetail documentDetail = new DocumentDetail();
-		PartyArchiveDetails archiveDetails = new PartyArchiveDetails();
-		documentDetail.set_country(document.getDocumentCountry());
-		documentDetail.set_issueCountry(document.getIssueCountry());
-		documentDetail.setExpiryDate(document.getExpiryDate());
-		documentDetail.setIssueDate(document.getIssueDate());
-		documentDetail.setIssuedBy(document.getIssuedBy());
-		documentDetail.setIssuePlace(document.getIssuePlace());
-		documentDetail.setNumber(document.getDocumentNumber());
-		documentDetail.setUsage(document.getUsage());
-		archiveDetails.setDmsReference(document.getDmsId());
-		archiveDetails.setArchivalStatus(
-				document.getCrmStatus() != null && (document.getCrmStatus().equalsIgnoreCase("Success")));
-		documentDetail.setArchiveDetails(archiveDetails);
-		return documentDetail;
+	public static List<PartyNationality> mapToNationalities(List<LegalStatus> legalStatuses) {
+		log.info("mapToNationalities()");
+		List<PartyNationality> nationalities = new ArrayList<>();
+		if (legalStatuses == null)
+			return null;
+		int index = 1;
+		for (LegalStatus legalStatus : legalStatuses) {
+			if (!ObjectUtils.isEmpty(legalStatus)) {
+				PartyNationality nationality = new PartyNationality();
+				nationality.setIndex(index++);
+				// Assuming `id` in `LegalStatus` maps to `index` in `PartyNationality`
+				nationality.set_country(legalStatus.getCountry());
+				checkLegalStatusesUsageIsP(legalStatus, nationality);
+				nationality.setIdentificationNumber(legalStatus.getIdentificationNumber());
+				nationalities.add(nationality);
+			}
+		}
+		log.info("/mapToNationalities()");
+		return nationalities;
 	}
