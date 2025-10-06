@@ -1,64 +1,57 @@
  @Test
-    void shouldMapAllDocumentFieldsCorrectly() {
+    void shouldMapLegalStatusesToPartyNationalities() {
         // given
-        Document document = new Document();
-        document.setDocumentCountry(new Translation("JO", "Jordan", "الأردن"));
-        document.setIssueCountry(new Translation("SA", "Saudi Arabia", "السعودية"));
-        document.setExpiryDate(Date.valueOf("2030-12-31"));
-        document.setIssueDate(Date.valueOf("2020-01-01"));
-        document.setIssuedBy("Passport Office");
-        document.setIssuePlace("Amman");
-        document.setDocumentNumber("A123456");
-        document.setUsage("1");
-        document.setDmsId("DMS123");
-        document.setCrmStatus("Success");
+        LegalStatus legalStatus1 = new LegalStatus();
+        legalStatus1.setCountry(new Translation("JO", "Jordan", "الأردن"));
+        legalStatus1.setIdentificationNumber("ID123");
+        
+        LegalStatus legalStatus2 = new LegalStatus();
+        legalStatus2.setCountry(new Translation("US", "United States", "الولايات المتحدة"));
+        legalStatus2.setIdentificationNumber("ID456");
+
+        List<LegalStatus> legalStatuses = Arrays.asList(legalStatus1, legalStatus2);
 
         // when
-        DocumentDetail result = PartyService.setDocumntsMapping(document);
+        List<PartyNationality> result = PartyService.mapToNationalities(legalStatuses);
 
         // then
         assertNotNull(result);
-        assertEquals("JO", result.get_country().getCode());
-        assertEquals("SA", result.get_issueCountry().getCode());
-        assertEquals(Date.valueOf("2030-12-31"), result.getExpiryDate());
-        assertEquals(Date.valueOf("2020-01-01"), result.getIssueDate());
-        assertEquals("Passport Office", result.getIssuedBy());
-        assertEquals("Amman", result.getIssuePlace());
-        assertEquals("A123456", result.getNumber());
-        assertEquals("1", result.getUsage());
+        assertEquals(2, result.size());
 
-        // validate nested archive details
-        assertNotNull(result.getArchiveDetails());
-        assertEquals("DMS123", result.getArchiveDetails().getDmsReference());
-        assertTrue(result.getArchiveDetails().isArchivalStatus());
+        assertEquals(1, result.get(0).getIndex());
+        assertEquals("JO", result.get(0).get_country().getCode());
+        assertEquals("ID123", result.get(0).getIdentificationNumber());
+
+        assertEquals(2, result.get(1).getIndex());
+        assertEquals("US", result.get(1).get_country().getCode());
+        assertEquals("ID456", result.get(1).getIdentificationNumber());
     }
 
     @Test
-    void shouldSetArchivalStatusFalse_WhenCrmStatusIsNotSuccess() {
-        // given
-        Document document = new Document();
-        document.setCrmStatus("Failed");
-        document.setDmsId("DMS999");
-
+    void shouldReturnNull_WhenLegalStatusesIsNull() {
         // when
-        DocumentDetail result = PartyService.setDocumntsMapping(document);
+        List<PartyNationality> result = PartyService.mapToNationalities(null);
 
         // then
-        assertNotNull(result.getArchiveDetails());
-        assertFalse(result.getArchiveDetails().isArchivalStatus());
-        assertEquals("DMS999", result.getArchiveDetails().getDmsReference());
+        assertNull(result);
     }
 
     @Test
-    void shouldHandleNullCrmStatusGracefully() {
+    void shouldSkipNullLegalStatusEntries() {
         // given
-        Document document = new Document();
-        document.setCrmStatus(null);
+        LegalStatus legalStatus1 = new LegalStatus();
+        legalStatus1.setCountry(new Translation("JO", "Jordan", "الأردن"));
+        legalStatus1.setIdentificationNumber("ID123");
+
+        List<LegalStatus> legalStatuses = Arrays.asList(null, legalStatus1, null);
 
         // when
-        DocumentDetail result = PartyService.setDocumntsMapping(document);
+        List<PartyNationality> result = PartyService.mapToNationalities(legalStatuses);
 
         // then
-        assertNotNull(result.getArchiveDetails());
-        assertFalse(result.getArchiveDetails().isArchivalStatus());
+        assertNotNull(result);
+        assertEquals(1, result.size());
+        assertEquals(1, result.get(0).getIndex());
+        assertEquals("JO", result.get(0).get_country().getCode());
+        assertEquals("ID123", result.get(0).getIdentificationNumber());
     }
