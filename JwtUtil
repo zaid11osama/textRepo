@@ -1,24 +1,33 @@
- @Test
-    void testCreateAbCustomer_shouldReturnCreatedResponse() throws Exception {
-        // Arrange
-        NewPartyModel newPartyModel = new NewPartyModel();
+  @Test
+    void testGetFullDetails() throws Exception {
+        // given
+        String identifier = "CUST123";
+        String identifierType = "customerid";
+        String role = "admin";
+        String withCustomerId = "true";
+        String user = "Zaid";
+
         Map<String, String> headers = new HashMap<>();
-        headers.put("Authorization", "Bearer token");
-        String identifier = "AB123";
+        headers.put("identifierType", identifierType);
+        headers.put("role", role);
+        headers.put("withCustomerId", withCustomerId);
+        headers.put("user", user);
 
-        Object expectedResponse = new Object(); // you can use a custom object if you want
+        Map<String, Object> expectedResponse = Map.of("name", "John Doe", "id", identifier);
 
-        when(mainService.createAbCustomer(eq(newPartyModel), eq(headers), eq(identifier)))
+        when(mainService.getFullDetails(eq(identifier), anyMap()))
                 .thenReturn(expectedResponse);
 
-        // Act
-        ResponseEntity<Object> response = partyController.createAbCustomer(newPartyModel, headers, identifier);
+        // when + then
+        mockMvc.perform(MockMvcRequestBuilders.get("/parties/{identifier}", identifier)
+                        .header("identifierType", identifierType)
+                        .header("role", role)
+                        .header("withCustomerId", withCustomerId)
+                        .header("user", user)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name").value("John Doe"))
+                .andExpect(jsonPath("$.id").value(identifier));
 
-        // Assert
-        assertNotNull(response);
-        assertEquals(HttpStatus.CREATED, response.getStatusCode());
-        assertEquals(expectedResponse, response.getBody());
-
-        verify(mainService, times(1))
-                .createAbCustomer(eq(newPartyModel), eq(headers), eq(identifier));
+        verify(mainService).getFullDetails(eq(identifier), anyMap());
     }
