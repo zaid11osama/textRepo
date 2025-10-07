@@ -1,11 +1,6 @@
-mockMvc.perform(MockMvcRequestBuilders.get("/parties/{identifier}", identifier)
-                .header("identifierType", identifierType)
-                .header("role", role)
-                .header("withCustomerId", withCustomerId)
-                .header("user", user)
-                .contentType(MediaType.APPLICATION_JSON))
-        .andDo(print())
-        .andExpect(status().isOk())
-        .andExpect(jsonPath("$.names.CUST123.firstName").value("John Doe"))
-        .andExpect(jsonPath("$.names.CUST123.bigName").value("John Doe"))
-        .andExpect(jsonPath("$.reopenCustomer").value(false));
+	@PutMapping("/{identifier}")
+	public ResponseEntity<?> updateCustomer(@PathVariable("identifier") String identifier,
+			@RequestBody NewPartyModel newPartyModel, @RequestHeader Map<String, String> headers) throws Exception {
+		return new ResponseEntity<Object>(mainService.updateAbCustomer(newPartyModel, headers, identifier),
+				HttpStatus.OK);
+	}
