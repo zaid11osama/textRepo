@@ -1,1 +1,42 @@
-{"names":{"CUST123":{"firstName":"John Doe","bigName":"John Doe","fullNameEN":"John Doe","preferred":false}},"reopenCustomer":false}
+@Test
+void testCheckTransactionStatus() throws Exception {
+    // given
+    String customerId = "CUST123";
+    String transactionReference = "TRX456";
+
+    Map<String, String> headers = Map.of(
+            "role", "admin",
+            "user", "Zaid"
+    );
+
+    MdmLogCupTransaction transaction = new MdmLogCupTransaction();
+    transaction.setId(1L);
+    transaction.setCustomerId(customerId);
+    transaction.setTransactionReference(transactionReference);
+    transaction.setStatus("SUCCESS");
+
+    when(mainService.getStatus(eq(customerId), eq(transactionReference), anyMap()))
+            .thenReturn(Optional.of(transaction));
+
+    // when + then
+    MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/parties/get-transaction/{customerId}/{transactionReference}",
+                    customerId, transactionReference)
+                    .header("role", "admin")
+                    .header("user", "Zaid")
+                    .contentType(MediaType.APPLICATION_JSON))
+            .andDo(print())
+            .andExpect(status().isOk())
+            .andReturn();
+
+    String content = result.getResponse().getContentAsString();
+
+    // parse JSON
+    JsonNode json = new ObjectMapper().readTree(content);
+
+    assertEquals(1L, json.get("id").asLong());
+    assertEquals(customerId, json.get("customerId").asText());
+    assertEquals(transactionReference, json.get("transactionReference").asText());
+    assertEquals("SUCCESS", json.get("status").asText());
+
+    verify(mainService).getStatus(eq(customerId), eq(transactionReference), anyMap());
+}
