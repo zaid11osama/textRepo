@@ -1,19 +1,53 @@
-	@GetMapping("/{identifier}")
-	public ResponseEntity<?> getFullDetails(
+ @Test
+    void testGetFullDetails() throws Exception {
+        // given
+        String identifier = "CUST123";
+        String identifierType = "customerid";
+        String role = "admin";
+        String withCustomerId = "true";
+        String user = "Zaid";
 
-			@PathVariable("identifier") String identifier,
-			@RequestHeader(value = IDENTIFIER_TYPE, defaultValue = "customerid") String identifierType,
-			@RequestHeader(value = ROLE, required = false) String role,
-			@RequestHeader(value = WITH_CUSTOMER_ID, required = false) String withCustomerId,
-			@RequestHeader(value = USER, required = false) String user,
-			@RequestHeader Map<String, String> headers)
-			throws IOException, SQLException {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("identifierType", identifierType);
+        headers.put("role", role);
+        headers.put("withCustomerId", withCustomerId);
+        headers.put("user", user);
 
-		headers.put(IDENTIFIER_TYPE, identifierType == null ? "customerid" : identifierType);
-		headers.put(USER, user);
-		headers.put(ROLE, role);
-		headers.put(WITH_CUSTOMER_ID, withCustomerId);
+        PartyName partyName = PartyName.builder()
+                .bigName("John Doe")
+                .firstName("John Doe")
+                .fullNameEN("John Doe")
+                .build();
+
+        Map<String, PartyName> partyNames = new HashMap<>();
+
+        partyNames.put(identifier, partyName);
 
 
-		return new ResponseEntity<Object>(mainService.getFullDetails(identifier, headers), HttpStatus.OK);
-	}
+        NewPartyModel expectedResponse =  new NewPartyModel();
+
+
+
+        expectedResponse.setNames(partyNames);
+
+        when(mainService.getFullDetails(eq(identifier), anyMap()))
+                .thenReturn((NewPartyModel) expectedResponse);
+
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/parties/{identifier}", identifier)
+                        .header("identifierType", identifierType)
+                        .header("role", role)
+                        .header("withCustomerId", withCustomerId)
+                        .header("user", user)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(System.out::println)
+                .andExpect(status().isOk())
+                .andExpect( jsonPath("$.name").value("John Doe"))
+                .andExpect(jsonPath("$.id").value(identifier));
+
+        verify(mainService).getFullDetails(eq(identifier), anyMap());
+    }
+
+org.springframework.test.web.servlet.DefaultMvcResult@40bf4386
+
+java.lang.AssertionError: No value at JSON path "$.name"
