@@ -1,8 +1,8 @@
- @Test
+    @Test
     void testUpdateAbCustomer() throws Exception {
         String identifier = "CUST123";
 
-      
+
         PartyName partyName = PartyName.builder()
                 .bigName("Updated Name")
                 .firstName("Updated Name")
@@ -12,7 +12,7 @@
         NewPartyModel requestBody = new NewPartyModel();
         requestBody.setNames(partyNames);
 
-        
+
         Map<String, Object> expectedResponse = Map.of(
                 "status", "updated",
                 "id", identifier,
@@ -23,18 +23,17 @@
         when(mainService.updateAbCustomer(any(NewPartyModel.class), anyMap(), eq(identifier)))
                 .thenReturn(jsonResponse);
 
-       
+
         mockMvc.perform(MockMvcRequestBuilders.put("/parties/{identifier}", identifier)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .accept(MediaType.APPLICATION_JSON)          
+                        .accept(MediaType.APPLICATION_JSON)          // <‑‑ ensure JSON response
                         .content(new ObjectMapper().writeValueAsString(requestBody))
                         .header("role", "admin")
                         .header("user", "Zaid"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.status").value("updated"))
-                .andExpect(jsonPath("$.id").value(identifier))
-                .andExpect(jsonPath("$.name").value("Updated Name"));
+                .andExpect(content().json("{\"name\":\"Updated Name\",\"id\":\"CUST123\",\"status\":\"updated\"}"));
+
 
         verify(mainService).updateAbCustomer(any(NewPartyModel.class), anyMap(), eq(identifier));
     }
@@ -50,4 +49,18 @@ MockHttpServletResponse:
    Redirected URL = null
           Cookies = []
 
-java.lang.AssertionError: No value at JSON path "$.status"
+java.lang.AssertionError: 
+Expected: a JSON object
+     got: org.skyscreamer.jsonassert.JSONParser$1@4962b41e
+
+<Click to see difference>
+
+
+	at org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:417)
+	at org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:394)
+	at org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:336)
+	at org.springframework.test.util.JsonExpectationsHelper.assertJsonEqual(JsonExpectationsHelper.java:61)
+	at org.springframework.test.web.servlet.result.ContentResultMatchers.lambda$json$9(ContentResultMatchers.java:227)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.arabbank.controller.PartyControllerTest.testUpdateAbCustomer(PartyControllerTest.java:172)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
