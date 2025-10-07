@@ -1,4 +1,16 @@
-java.lang.AssertionError: Response content expected:<{"status":"updated","id":"CUST123","name":"Updated Name"}> but was:<"{\"status\":\"updated\",\"id\":\"CUST123\",\"name\":\"Updated Name\"}">
-Expected :{"status":"updated","id":"CUST123","name":"Updated Name"}
-Actual   :"{\"status\":\"updated\",\"id\":\"CUST123\",\"name\":\"Updated Name\"}"
-<Click to see difference>
+MvcResult result = mockMvc.perform(MockMvcRequestBuilders.put("/parties/{identifier}", identifier)
+        .contentType(MediaType.APPLICATION_JSON)
+        .accept(MediaType.APPLICATION_JSON)
+        .content(new ObjectMapper().writeValueAsString(requestBody))
+        .header("role", "admin")
+        .header("user", "Zaid"))
+    .andDo(print())
+    .andExpect(status().isOk())
+    .andReturn();
+
+String content = result.getResponse().getContentAsString();
+JsonNode json = new ObjectMapper().readTree(content);
+
+assertEquals("updated", json.get("status").asText());
+assertEquals(identifier, json.get("id").asText());
+assertEquals("Updated Name", json.get("name").asText());
