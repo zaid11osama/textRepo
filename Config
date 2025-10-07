@@ -1,20 +1,19 @@
-@RequestMapping("/parties")
-@Slf4j
+	@GetMapping("/{identifier}")
+	public ResponseEntity<?> getFullDetails(
 
-public class PartyController {
+			@PathVariable("identifier") String identifier,
+			@RequestHeader(value = IDENTIFIER_TYPE, defaultValue = "customerid") String identifierType,
+			@RequestHeader(value = ROLE, required = false) String role,
+			@RequestHeader(value = WITH_CUSTOMER_ID, required = false) String withCustomerId,
+			@RequestHeader(value = USER, required = false) String user,
+			@RequestHeader Map<String, String> headers)
+			throws IOException, SQLException {
 
-	private final MainService mainService;
+		headers.put(IDENTIFIER_TYPE, identifierType == null ? "customerid" : identifierType);
+		headers.put(USER, user);
+		headers.put(ROLE, role);
+		headers.put(WITH_CUSTOMER_ID, withCustomerId);
 
-	/**
-	 * @param newPartyModel
-	 * @param headers
-	 * @return customerResponse
-	 * @throws Exception
-	 */
 
-	//@PreAuthorize("hasRole('CREATE_AB')")
-	@PostMapping({"","/{identifier}"})
-	public ResponseEntity<Object> createAbCustomer(@RequestBody NewPartyModel newPartyModel,
-			@RequestHeader Map<String, String> headers, @PathVariable(required = false) String identifier) throws Exception {
-		return new ResponseEntity<Object>(mainService.createAbCustomer(newPartyModel, headers, identifier), HttpStatus.CREATED);
+		return new ResponseEntity<Object>(mainService.getFullDetails(identifier, headers), HttpStatus.OK);
 	}
