@@ -1,36 +1,24 @@
-   @Test
-    void shouldMapContactsToPartyPhones() {
-        // given
-        try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class)) {
-        Contact residentialContact = new Contact();
-        residentialContact.setType(new Translation("RSF", "Residential", "Residential"));
-        residentialContact.setPhone(new ContactPhone());
-        residentialContact.setUsage(1);
+ @Test
+    void testCreateAbCustomer_shouldReturnCreatedResponse() throws Exception {
+        // Arrange
+        NewPartyModel newPartyModel = new NewPartyModel();
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Authorization", "Bearer token");
+        String identifier = "AB123";
 
-        Contact smsContact = new Contact();
-        smsContact.setType(new Translation("SMS", "SMS", "SMS"));
-        smsContact.setPhone(new ContactPhone());
-        smsContact.setUsage(2);
+        Object expectedResponse = new Object(); // you can use a custom object if you want
 
-        List<Contact> contacts = Arrays.asList(residentialContact, smsContact);
+        when(mainService.createAbCustomer(eq(newPartyModel), eq(headers), eq(identifier)))
+                .thenReturn(expectedResponse);
 
+        // Act
+        ResponseEntity<Object> response = partyController.createAbCustomer(newPartyModel, headers, identifier);
 
-            mockedHelper.when(() -> HelperUtils.checkTranslation(any()))
-                    .thenAnswer(invocation -> ((Translation) invocation.getArgument(0)).getCode());
+        // Assert
+        assertNotNull(response);
+        assertEquals(HttpStatus.CREATED, response.getStatusCode());
+        assertEquals(expectedResponse, response.getBody());
 
-            PartyService spyService = Mockito.spy(partyService);
-
-
-            doNothing().when(spyService).setPhones(anyInt(), any(Contact.class), any(PartyPhone.class), anyString());
-
-            // when
-            Map<String, List<PartyPhone>> result = spyService.mapPhoneToPartyContact(contacts);
-
-            // then
-            assertNotNull(result);
-            assertTrue(result.containsKey("residential"));
-            assertTrue(result.containsKey("sms"));
-
-
-        }
+        verify(mainService, times(1))
+                .createAbCustomer(eq(newPartyModel), eq(headers), eq(identifier));
     }
