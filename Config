@@ -1,47 +1,95 @@
-@Test
-void testUpdateCustomer() throws Exception {
-    // given
-    String identifier = "CUST123";
+  @Test
+    void testUpdateCustomer() throws Exception {
+        // given
+        String identifier = "CUST123";
 
-    Map<String, String> headers = new HashMap<>();
-    headers.put("role", "admin");
-    headers.put("user", "Zaid");
+        Map<String, String> headers = new HashMap<>();
+        headers.put("role", "admin");
+        headers.put("user", "Zaid");
 
-    // Prepare request body
-    PartyName partyName = PartyName.builder()
-            .bigName("Updated Name")
-            .firstName("Updated Name")
-            .fullNameEN("Updated Name")
-            .build();
+        // Prepare request body
+        PartyName partyName = PartyName.builder()
+                .bigName("Updated Name")
+                .firstName("Updated Name")
+                .fullNameEN("Updated Name")
+                .build();
 
-    Map<String, PartyName> partyNames = new HashMap<>();
-    partyNames.put(identifier, partyName);
+        Map<String, PartyName> partyNames = new HashMap<>();
+        partyNames.put(identifier, partyName);
 
-    NewPartyModel requestBody = new NewPartyModel();
-    requestBody.setNames(partyNames);
+        NewPartyModel requestBody = new NewPartyModel();
+        requestBody.setNames(partyNames);
 
-    // Mock expected response
-    Map<String, Object> expectedResponse = Map.of(
-            "status", "updated",
-            "id", identifier,
-            "name", "Updated Name"
-    );
+        // Mock expected response
+        String expectedResponse = new String();
 
-    when(mainService.updateAbCustomer(any(NewPartyModel.class), anyMap(), eq(identifier)))
-            .thenReturn(expectedResponse);
+        when(mainService.updateAbCustomer(any(NewPartyModel.class), anyMap(), eq(identifier)))
+                .thenReturn(expectedResponse);
 
-    // when + then
-    mockMvc.perform(MockMvcRequestBuilders.put("/parties/{identifier}", identifier)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(new ObjectMapper().writeValueAsString(requestBody))
-                    .header("role", "admin")
-                    .header("user", "Zaid"))
-            .andDo(print()) // 👈 prints JSON response for debugging
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.status").value("updated"))
-            .andExpect(jsonPath("$.id").value(identifier))
-            .andExpect(jsonPath("$.name").value("Updated Name"));
+        // when + then
+        mockMvc.perform(MockMvcRequestBuilders.put("/parties/{identifier}", identifier)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(requestBody))
+                        .header("role", "admin")
+                        .header("user", "Zaid"))
+                .andDo(print()) // 👈 prints JSON response for debugging
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status").value("updated"))
+                .andExpect(jsonPath("$.id").value(identifier))
+                .andExpect(jsonPath("$.name").value("Updated Name"));
 
-    // verify service interaction
-    verify(mainService).updateAbCustomer(any(NewPartyModel.class), anyMap(), eq(identifier));
-}
+        // verify service interaction
+        verify(mainService).updateAbCustomer(any(NewPartyModel.class), anyMap(), eq(identifier));
+    }
+
+
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /parties/CUST123
+       Parameters = {}
+          Headers = [Content-Type:"application/json", role:"admin", user:"Zaid", Content-Length:"144"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.arabbank.controller.PartyController
+           Method = com.arabbank.controller.PartyController#updateCustomer(String, NewPartyModel, Map)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = ""
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+java.lang.AssertionError: No value at JSON path "$.status"
+
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:302)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:99)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.arabbank.controller.PartyControllerTest.testUpdateCustomer(PartyControllerTest.java:172)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.jayway.jsonpath.PathNotFoundException: Expected to find an object with property ['status'] in path $ but found 'java.lang.String'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.
+
