@@ -1,16 +1,65 @@
-MvcResult result = mockMvc.perform(MockMvcRequestBuilders.put("/parties/{identifier}", identifier)
-        .contentType(MediaType.APPLICATION_JSON)
-        .accept(MediaType.APPLICATION_JSON)
-        .content(new ObjectMapper().writeValueAsString(requestBody))
-        .header("role", "admin")
-        .header("user", "Zaid"))
-    .andDo(print())
-    .andExpect(status().isOk())
-    .andReturn();
+   @Test
+    void testUpdateAbCustomer() throws Exception {
+        String identifier = "CUST123";
 
-String content = result.getResponse().getContentAsString();
-JsonNode json = new ObjectMapper().readTree(content);
 
-assertEquals("updated", json.get("status").asText());
-assertEquals(identifier, json.get("id").asText());
-assertEquals("Updated Name", json.get("name").asText());
+        PartyName partyName = PartyName.builder()
+                .bigName("Updated Name")
+                .firstName("Updated Name")
+                .fullNameEN("Updated Name")
+                .build();
+        Map<String, PartyName> partyNames = Map.of(identifier, partyName);
+        NewPartyModel requestBody = new NewPartyModel();
+        requestBody.setNames(partyNames);
+
+
+        Map<String, Object> expectedResponse = Map.of(
+                "status", "updated",
+                "id", identifier,
+                "name", "Updated Name"
+        );
+       String jsonResponse = new ObjectMapper().writeValueAsString(expectedResponse);
+
+        when(mainService.updateAbCustomer(any(NewPartyModel.class), anyMap(), eq(identifier)))
+                .thenReturn(jsonResponse);
+
+
+
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.put("/parties/{identifier}", identifier)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(requestBody))
+                        .header("role", "admin")
+                        .header("user", "Zaid"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String content = result.getResponse().getContentAsString();
+        JsonNode json = new ObjectMapper().readTree(content);
+
+        assertEquals("updated", json.get("status").asText());
+        assertEquals(identifier, json.get("id").asText());
+        assertEquals("Updated Name", json.get("name").asText());
+
+    }
+
+
+
+
+
+
+
+
+
+Body = "{\"status\":\"updated\",\"name\":\"Updated Name\",\"id\":\"CUST123\"}"
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+java.lang.NullPointerException: Cannot invoke "com.fasterxml.jackson.databind.JsonNode.asText()" because the return value of "com.fasterxml.jackson.databind.JsonNode.get(String)" is null
+
+	at com.arabbank.controller.PartyControllerTest.testUpdateAbCustomer(PartyControllerTest.java:179)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
