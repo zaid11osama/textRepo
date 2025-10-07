@@ -1,21 +1,20 @@
-@Test
-void shouldMapContactsToPartyPhones() {
-    try (MockedStatic<HelperUtils> mockedHelper = mockStatic(HelperUtils.class)) {
-        mockedHelper.when(() -> HelperUtils.checkTranslation(any()))
-                    .thenAnswer(invocation -> ((Translation) invocation.getArgument(0)).getCode());
+@RequestMapping("/parties")
+@Slf4j
 
-        PartyService spyService = Mockito.spy(new PartyService());
+public class PartyController {
 
-        doNothing().when(spyService).setPhones(anyInt(), any(Contact.class), any(PartyPhone.class), anyString());
+	private final MainService mainService;
 
-        List<Contact> contacts = Arrays.asList(
-                createContact("RSF", "Residential", "Residential", 1),
-                createContact("SMS", "SMS", "SMS", 2)
-        );
+	/**
+	 * @param newPartyModel
+	 * @param headers
+	 * @return customerResponse
+	 * @throws Exception
+	 */
 
-        Map<String, List<PartyPhone>> result = spyService.mapPhoneToPartyContact(contacts);
-
-        assertNotNull(result);
-        assertTrue(result.containsKey("residential"));
-        assertTrue(result.containsKey("sms"));
-    }
+	//@PreAuthorize("hasRole('CREATE_AB')")
+	@PostMapping({"","/{identifier}"})
+	public ResponseEntity<Object> createAbCustomer(@RequestBody NewPartyModel newPartyModel,
+			@RequestHeader Map<String, String> headers, @PathVariable(required = false) String identifier) throws Exception {
+		return new ResponseEntity<Object>(mainService.createAbCustomer(newPartyModel, headers, identifier), HttpStatus.CREATED);
+	}
