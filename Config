@@ -1,28 +1,26 @@
-  @Test
-    void testGetGlobalId() {
-        // Arrange
-        String prefix = "CUST";
-        String expectedGlobalId = "CUST12345";
 
-        // mock getFeshehUtilityBaseUrl() if it’s inside the same class
-        // or if it’s constant, you can hardcode it below.
-        String baseUrl = "http://localhost:8080"; 
-        // If getFeshehUtilityBaseUrl() is a private method, 
-        // you can use a spy to mock it:
-        // MainService mainServiceSpy = Mockito.spy(mainService);
-        // doReturn(baseUrl).when(mainServiceSpy).getFeshehUtilityBaseUrl();
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getForEntity' method:
+    restTemplate.getForEntity(
+    "null/mdm/v1/util/global-id/CUST",
+    class java.lang.String
+);
+    -> at com.arabbank.client.MdmApisClient.getGlobalId(MdmApisClient.java:52)
+ - has following stubbing(s) with different arguments:
+    1. restTemplate.getForEntity(null, null);
+      -> at com.arabbank.client.MdmApisClientTest.testGetGlobalId(MdmApisClientTest.java:90)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
 
-        // Construct the expected URL
-        String expectedUrl = baseUrl + "/mdm/v1/util/global-id/" + prefix;
-
-        // Mock REST call
-        ResponseEntity<String> responseEntity = new ResponseEntity<>(expectedGlobalId, HttpStatus.OK);
-        when(restTemplate.getForEntity(eq(expectedUrl), eq(String.class))).thenReturn(responseEntity);
-
-        // Act
-        String actualGlobalId = mainService.getGlobalId(prefix);
-
-        // Assert
-        assertEquals(expectedGlobalId, actualGlobalId);
-        verify(restTemplate, times(1)).getForEntity(eq(expectedUrl), eq(String.class));
-    }
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:420)
+	at com.arabbank.client.MdmApisClient.getGlobalId(MdmApisClient.java:52)
+	at com.arabbank.client.MdmApisClientTest.testGetGlobalId(MdmApisClientTest.java:93)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
