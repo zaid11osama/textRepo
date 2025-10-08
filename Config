@@ -1,36 +1,26 @@
-@Test
-    void testInsertTransactionLog_Success() {
-        // Arrange
-        String baseUrl = "http://golden-service";
-        String expectedUrl = baseUrl + "/insert/transaction-log";
+      when(configReader.getProperty("mdm.golden.url")).thenReturn(baseUrl);
 
-        when(configReader.getProperty("mdm.golden.url")).thenReturn(baseUrl);
-        when(restTemplate.exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(String.class)))
-                .thenReturn(new ResponseEntity<>("Success", HttpStatus.OK));
+org.opentest4j.AssertionFailedError: Unexpected exception thrown: org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getProperty' method:
+    configReader.getProperty(
+    "ab.mdm.golden.orch.url"
+);
+    -> at com.arabbank.client.MdmApisClient.getGoldenUrl(MdmApisClient.java:43)
+ - has following stubbing(s) with different arguments:
+    1. configReader.getProperty("mdm.golden.url");
+      -> at com.arabbank.client.MdmApisClientTest.testInsertTransactionLog_Success(MdmApisClientTest.java:270)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
 
-        // Act
-        assertDoesNotThrow(() -> mdmApisClient.insertTransactionLog(transactionLogResponse));
-
-        // Assert
-        verify(restTemplate, times(1))
-                .exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(String.class));
-    }
-
-    @Test
-    void testInsertTransactionLog_RestTemplateThrowsException() {
-        // Arrange
-        String baseUrl = "http://golden-service";
-        String expectedUrl = baseUrl + "/insert/transaction-log";
-
-        when(configReader.getProperty("mdm.golden.url")).thenReturn(baseUrl);
-        when(restTemplate.exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(String.class)))
-                .thenThrow(new RuntimeException("Service unavailable"));
-
-        // Act & Assert
-        RuntimeException exception = assertThrows(RuntimeException.class, () ->
-                mdmApisClient.insertTransactionLog(transactionLogResponse));
-
-        assertEquals("Service unavailable", exception.getMessage());
-        verify(restTemplate, times(1))
-                .exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(String.class));
-    }
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168)
