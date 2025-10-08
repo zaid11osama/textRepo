@@ -1,27 +1,8 @@
-@Test
-    void testGetFeshehUtilityBaseUrl() {
-        when(configReader.getProperty("mdm.feesheh.client")).thenReturn("http://feesheh.com");
-        String result = mdmApisClient.getFeshehUtilityBaseUrl();
-        assertEquals("http://feesheh.com", result);
-    }
-
-    @Test
-    void testGetQIntegrationBaseUrl() {
-        when(configReader.getProperty("mdm.mq.integration.client")).thenReturn("http://integration.com");
-        String result = mdmApisClient.getQIntegrationBaseUrl();
-        assertEquals("http://integration.com", result);
-    }
-
-    @Test
-    void testGetDialCpuntryBaseUrl() {
-        when(configReader.getProperty("mdm.microservices.dial.country.client")).thenReturn("http://dialcountry.com");
-        String result = mdmApisClient.getDialCpuntryBaseUrl();
-        assertEquals("http://dialcountry.com", result);
-    }
-
-    @Test
-    void testGetBrainBaseUrl() {
-        when(configReader.getProperty("mdm.microservices.brain")).thenReturn("http://brain.com");
-        String result = mdmApisClient.getBrainBaseUrl();
-        assertEquals("http://brain.com", result);
-    }
+public String getGlobalId(String prefix) {
+		log.info("getGlobalId({}})", prefix);
+		String url = getFeshehUtilityBaseUrl() + "/mdm/v1/util/global-id/" + prefix;
+		ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+		log.info("generated GlobalId : {}", response.getBody().toString());
+		log.info("/getGlobalId({})", prefix);
+		return response.getBody().toString();
+	}
