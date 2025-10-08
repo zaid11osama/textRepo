@@ -1,15 +1,43 @@
-public class TranslationAttributesMapper implements RowMapper<TranslationsAttribute> {
+ @Test
+    void testMapRow_Success() throws SQLException {
+        // Arrange
+        ResultSet rs = mock(ResultSet.class);
 
-	@Override
-	public TranslationsAttribute mapRow(ResultSet rs, int rowNum) throws SQLException {
-		TranslationsAttribute translationsAttr = new TranslationsAttribute();
-		translationsAttr.setFileKey(rs.getString("FILE_KEY"));
-		translationsAttr.setLanguage(rs.getString("LANGUAGE"));
-		translationsAttr.setFiltrationKey1(rs.getString("FILTRATION_KEY1"));
-		translationsAttr.setFiltrationKey2(rs.getString("FILTRATION_KEY2"));
-		translationsAttr.setFiltrationKey3(rs.getString("FILTRATION_KEY3"));
-		translationsAttr.setFiltrationKey4(rs.getString("FILTRATION_KEY4"));
-		translationsAttr.setFiltrationKey5(rs.getString("FILTRATION_KEY5"));
-		translationsAttr.setCode(rs.getString("CODE"));
-		return translationsAttr;
-	}
+        when(rs.getString("FILE_KEY")).thenReturn("fileKey123");
+        when(rs.getString("LANGUAGE")).thenReturn("EN");
+        when(rs.getString("FILTRATION_KEY1")).thenReturn("Filter1");
+        when(rs.getString("FILTRATION_KEY2")).thenReturn("Filter2");
+        when(rs.getString("FILTRATION_KEY3")).thenReturn("Filter3");
+        when(rs.getString("FILTRATION_KEY4")).thenReturn("Filter4");
+        when(rs.getString("FILTRATION_KEY5")).thenReturn("Filter5");
+        when(rs.getString("CODE")).thenReturn("Code123");
+
+        TranslationAttributesMapper mapper = new TranslationAttributesMapper();
+
+        // Act
+        TranslationsAttribute result = mapper.mapRow(rs, 1);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals("fileKey123", result.getFileKey());
+        assertEquals("EN", result.getLanguage());
+        assertEquals("Filter1", result.getFiltrationKey1());
+        assertEquals("Filter2", result.getFiltrationKey2());
+        assertEquals("Filter3", result.getFiltrationKey3());
+        assertEquals("Filter4", result.getFiltrationKey4());
+        assertEquals("Filter5", result.getFiltrationKey5());
+        assertEquals("Code123", result.getCode());
+    }
+
+    @Test
+    void testMapRow_SQLExceptionThrown() throws SQLException {
+        // Arrange
+        ResultSet rs = mock(ResultSet.class);
+        when(rs.getString(anyString())).thenThrow(new SQLException("Database error"));
+
+        TranslationAttributesMapper mapper = new TranslationAttributesMapper();
+
+        // Act & Assert
+        SQLException exception = assertThrows(SQLException.class, () -> mapper.mapRow(rs, 1));
+        assertEquals("Database error", exception.getMessage());
+    }
