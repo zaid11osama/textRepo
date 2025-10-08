@@ -1,41 +1,27 @@
 @Test
-void testGetSpecificModel() throws Exception {
-    // Arrange
-    String identifier = "CUST123";
-    String modelName = "CustomerModel";
+    void testGetFeshehUtilityBaseUrl() {
+        when(configReader.getProperty("mdm.feesheh.client")).thenReturn("http://feesheh.com");
+        String result = mdmApisClient.getFeshehUtilityBaseUrl();
+        assertEquals("http://feesheh.com", result);
+    }
 
-    Map<String, String> headers = Map.of(
-            "role", "admin",
-            "user", "Zaid"
-    );
+    @Test
+    void testGetQIntegrationBaseUrl() {
+        when(configReader.getProperty("mdm.mq.integration.client")).thenReturn("http://integration.com");
+        String result = mdmApisClient.getQIntegrationBaseUrl();
+        assertEquals("http://integration.com", result);
+    }
 
-    // Simulate what the service would return
-    Map<String, Object> mockResponse = Map.of(
-            "id", identifier,
-            "model", modelName,
-            "status", "active"
-    );
+    @Test
+    void testGetDialCpuntryBaseUrl() {
+        when(configReader.getProperty("mdm.microservices.dial.country.client")).thenReturn("http://dialcountry.com");
+        String result = mdmApisClient.getDialCpuntryBaseUrl();
+        assertEquals("http://dialcountry.com", result);
+    }
 
-    when(mainService.getSpecificModel(eq(modelName), eq(identifier), anyMap()))
-            .thenReturn(mockResponse);
-
-    // Act
-    MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/parties/{identifier}/{modelName}", identifier, modelName)
-                    .header("role", "admin")
-                    .header("user", "Zaid")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .accept(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andReturn();
-
-    // Assert
-    String content = result.getResponse().getContentAsString();
-    JsonNode json = new ObjectMapper().readTree(content);
-
-    assertEquals(identifier, json.get("id").asText());
-    assertEquals(modelName, json.get("model").asText());
-    assertEquals("active", json.get("status").asText());
-
-    verify(mainService).getSpecificModel(eq(modelName), eq(identifier), anyMap());
-}
+    @Test
+    void testGetBrainBaseUrl() {
+        when(configReader.getProperty("mdm.microservices.brain")).thenReturn("http://brain.com");
+        String result = mdmApisClient.getBrainBaseUrl();
+        assertEquals("http://brain.com", result);
+    }
