@@ -1,54 +1,26 @@
+public BackendResponse callQueueIntegrationService(ABCustomerRequestHeader ABCustomerRequestHeader,
+																	 String fixedLengthString,
+																	 String correlationId) {
+		ResponseEntity<BackendResponse> response;
+		try {
+			log.info("callQueueIntegrationService()");
+			HttpHeaders headers = new HttpHeaders();
+			headers.set("requestName", ABCustomerRequestHeader.getRequestName());
+			headers.set("requestCountry", ABCustomerRequestHeader.getRequestCountry());
+			headers.set("requestChannel", ABCustomerRequestHeader.getRequestChannel());
+			headers.set("requestTimestamp", String.valueOf(ABCustomerRequestHeader.getRequestTimestamp()));
+			headers.set("requestReference", ABCustomerRequestHeader.getRequestReference());
+			headers.set("responseRequired", String.valueOf(ABCustomerRequestHeader.getResponseRequired()));
+			headers.set("uniqueReference", ABCustomerRequestHeader.getUniqeReference());
+			headers.set("authenticaiton", ABCustomerRequestHeader.getAuthentication());
+			headers.set("Content-Type", "application/json");
+			HttpEntity<String> entity = new HttpEntity<>(fixedLengthString, headers);
+			String url = getQIntegrationBaseUrl() + "/mdm/v2/orc/integration/send-be-req";
+			response = restTemplate.exchange(url, HttpMethod.POST, entity, BackendResponse.class);
+			log.info("/callQueueIntegrationService({})", response.getBody());
+			return response.getBody();
+		}catch (HttpClientErrorException.BadRequest ex){
+			throw new BadRequestException(ex.getMessage());
+		}
 
-    @Test
-    void testGetGlobalId() {
-        // Arrange
-        String prefix = "CUST";
-        String expectedGlobalId = "CUST12345";
-
-
-        String baseUrl = "http://localhost:8080";
-
-        String expectedUrl = baseUrl + "/mdm/v1/util/global-id/" + prefix;
-
-        MdmApisClient spyClient = spy(mdmApisClient);
-
-        doReturn(baseUrl).when(spyClient).getFeshehUtilityBaseUrl();
-
-        // Mock REST call
-        ResponseEntity<String> responseEntity = new ResponseEntity<>(expectedGlobalId, HttpStatus.OK);
-        when(restTemplate.getForEntity(eq(expectedUrl), eq(String.class))).thenReturn(responseEntity);
-
-        // Act
-        String actualGlobalId = mdmApisClient.getGlobalId(prefix);
-
-        // Assert
-        assertEquals(expectedGlobalId, actualGlobalId);
-        verify(restTemplate, times(1)).getForEntity(eq(expectedUrl), eq(String.class));
-    }
-
-
-org.mockito.exceptions.misusing.PotentialStubbingProblem: 
-Strict stubbing argument mismatch. Please check:
- - this invocation of 'getForEntity' method:
-    restTemplate.getForEntity(
-    "null/mdm/v1/util/global-id/CUST",
-    class java.lang.String
-);
-    -> at com.arabbank.client.MdmApisClient.getGlobalId(MdmApisClient.java:52)
- - has following stubbing(s) with different arguments:
-    1. restTemplate.getForEntity(null, null);
-      -> at com.arabbank.client.MdmApisClientTest.testGetGlobalId(MdmApisClientTest.java:90)
-Typically, stubbing argument mismatch indicates user mistake when writing tests.
-Mockito fails early so that you can debug potential problem easily.
-However, there are legit scenarios when this exception generates false negative signal:
-  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
-    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
-  - stubbed method is intentionally invoked with different arguments by code under test
-    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
-For more information see javadoc for PotentialStubbingProblem class.
-
-	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:420)
-	at com.arabbank.client.MdmApisClient.getGlobalId(MdmApisClient.java:52)
-	at com.arabbank.client.MdmApisClientTest.testGetGlobalId(MdmApisClientTest.java:93)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	}
