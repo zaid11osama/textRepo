@@ -1,20 +1,11 @@
-public class MdmApisClient {
-
-	private final ConfigReader configReader;
-	private final RestTemplate restTemplate;
-
-	public String getFeshehUtilityBaseUrl() {
-		return configReader.getProperty("mdm.feesheh.client");
-	}
-
-	public String getQIntegrationBaseUrl() {
-		return configReader.getProperty("mdm.mq.integration.client");
-	}
-
-	public String getDialCpuntryBaseUrl() {
-		return configReader.getProperty("mdm.microservices.dial.country.client");
-	}
-
-	public String getBrainBaseUrl() {
-		return configReader.getProperty("mdm.microservices.brain");
-	}
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'getForEntity' method:
+    restTemplate.getForEntity(
+    "null/mdm/v1/util/global-id/CUST",
+    class java.lang.String
+);
+    -> at com.arabbank.client.MdmApisClient.getGlobalId(MdmApisClient.java:52)
+ - has following stubbing(s) with different arguments:
+    1. restTemplate.getForEntity(null, null);
+      -> at com.arabbank.client.MdmApisClientTest.testGetGlobalId(MdmApisClientTest.java:86)
