@@ -1,4 +1,32 @@
 
+    @Test
+    void testGetGlobalId() {
+        // Arrange
+        String prefix = "CUST";
+        String expectedGlobalId = "CUST12345";
+
+
+        String baseUrl = "http://localhost:8080";
+
+        String expectedUrl = baseUrl + "/mdm/v1/util/global-id/" + prefix;
+
+        MdmApisClient spyClient = spy(mdmApisClient);
+
+        doReturn(baseUrl).when(spyClient).getFeshehUtilityBaseUrl();
+
+        // Mock REST call
+        ResponseEntity<String> responseEntity = new ResponseEntity<>(expectedGlobalId, HttpStatus.OK);
+        when(restTemplate.getForEntity(eq(expectedUrl), eq(String.class))).thenReturn(responseEntity);
+
+        // Act
+        String actualGlobalId = mdmApisClient.getGlobalId(prefix);
+
+        // Assert
+        assertEquals(expectedGlobalId, actualGlobalId);
+        verify(restTemplate, times(1)).getForEntity(eq(expectedUrl), eq(String.class));
+    }
+
+
 org.mockito.exceptions.misusing.PotentialStubbingProblem: 
 Strict stubbing argument mismatch. Please check:
  - this invocation of 'getForEntity' method:
