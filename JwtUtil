@@ -1,38 +1,43 @@
  @Test
-    void testGetCountryCodeByDialCountry_Success() {
+    void testUpdateCustomer_Success() throws Exception {
         // Arrange
-        String country = "Jordan";
-        String baseUrl = "http://dialcountry-service";
-        String expectedUrl = baseUrl + "/countryCodeCheck/" + country;
-        String expectedCode = "962";
+        String baseUrl = "http://brain-service";
+        String expectedUrl = baseUrl + "/brain/update-customer";
+        ResponseEntity<ResponseModel> mockResponse = new ResponseEntity<>(responseModel, HttpStatus.OK);
 
-        when(configReader.getProperty("mdm.microservices.dial.country.client")).thenReturn(baseUrl);
-        when(restTemplate.getForEntity(expectedUrl, String.class))
-                .thenReturn(ResponseEntity.ok(expectedCode));
+        when(configReader.getProperty("mdm.microservices.brain")).thenReturn(baseUrl);
+        when(restTemplate.exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(ResponseModel.class)))
+                .thenReturn(mockResponse);
+
+        // Spy the client to mock checkResponse()
+        MdmApisClient spyClient = Mockito.spy(mdmApisClient);
+        doNothing().when(spyClient).checkResponse(mockResponse);
 
         // Act
-        String result = mdmApisClient.getCountryCodeByDialCountry(country);
+        spyClient.updateCustomer(mainModel);
 
         // Assert
-        assertEquals(expectedCode, result);
-        verify(restTemplate, times(1)).getForEntity(expectedUrl, String.class);
+        verify(restTemplate, times(1))
+                .exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(ResponseModel.class));
+        verify(spyClient, times(1)).checkResponse(mockResponse);
     }
 
     @Test
-    void testGetCountryCodeByDialCountry_ExceptionHandled() {
+    void testUpdateCustomer_ExceptionHandledInFinally() throws Exception {
         // Arrange
-        String country = "Unknown";
-        String baseUrl = "http://dialcountry-service";
-        String expectedUrl = baseUrl + "/countryCodeCheck/" + country;
+        String baseUrl = "http://brain-service";
+        String expectedUrl = baseUrl + "/brain/update-customer";
+        when(configReader.getProperty("mdm.microservices.brain")).thenReturn(baseUrl);
+        when(restTemplate.exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(ResponseModel.class)))
+                .thenThrow(new RuntimeException("Server error"));
 
-        when(configReader.getProperty("mdm.microservices.dial.country.client")).thenReturn(baseUrl);
-        when(restTemplate.getForEntity(expectedUrl, String.class))
-                .thenThrow(new RuntimeException("Service unavailable"));
+        MdmApisClient spyClient = Mockito.spy(mdmApisClient);
+        doNothing().when(spyClient).checkResponse(any());
 
-        // Act
-        String result = mdmApisClient.getCountryCodeByDialCountry(country);
+        // Act & Assert
+        assertThrows(RuntimeException.class, () -> spyClient.updateCustomer(mainModel));
 
-        // Assert
-        assertNull(result);
-        verify(restTemplate, times(1)).getForEntity(expectedUrl, String.class);
+        verify(restTemplate, times(1))
+                .exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(ResponseModel.class));
     }
+
