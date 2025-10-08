@@ -1,43 +1,32 @@
- @Test
-    void testUpdateCustomer_Success() throws Exception {
+@Test
+    void testMapRow_Success() throws SQLException {
         // Arrange
-        String baseUrl = "http://brain-service";
-        String expectedUrl = baseUrl + "/brain/update-customer";
-        ResponseEntity<ResponseModel> mockResponse = new ResponseEntity<>(responseModel, HttpStatus.OK);
+        ResultSet rs = mock(ResultSet.class);
+        when(rs.getString("CHANNEL_REFERENCE")).thenReturn("REF123");
+        when(rs.getString("RESPONSE_MESSAGES")).thenReturn("Message content");
+        when(rs.getString("DATA")).thenReturn("Some data");
 
-        when(configReader.getProperty("mdm.microservices.brain")).thenReturn(baseUrl);
-        when(restTemplate.exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(ResponseModel.class)))
-                .thenReturn(mockResponse);
-
-        // Spy the client to mock checkResponse()
-        MdmApisClient spyClient = Mockito.spy(mdmApisClient);
-        doNothing().when(spyClient).checkResponse(mockResponse);
+        LogsChannelMapper mapper = new LogsChannelMapper();
 
         // Act
-        spyClient.updateCustomer(mainModel);
+        LogChannel result = mapper.mapRow(rs, 1);
 
         // Assert
-        verify(restTemplate, times(1))
-                .exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(ResponseModel.class));
-        verify(spyClient, times(1)).checkResponse(mockResponse);
+        assertNotNull(result);
+        assertEquals("REF123", result.getChannelReference());
+        assertEquals("Message content", result.getResponseMessages());
+        assertEquals("Some data", result.getData());
     }
 
     @Test
-    void testUpdateCustomer_ExceptionHandledInFinally() throws Exception {
+    void testMapRow_SQLExceptionThrown() throws SQLException {
         // Arrange
-        String baseUrl = "http://brain-service";
-        String expectedUrl = baseUrl + "/brain/update-customer";
-        when(configReader.getProperty("mdm.microservices.brain")).thenReturn(baseUrl);
-        when(restTemplate.exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(ResponseModel.class)))
-                .thenThrow(new RuntimeException("Server error"));
+        ResultSet rs = mock(ResultSet.class);
+        when(rs.getString(anyString())).thenThrow(new SQLException("Database error"));
 
-        MdmApisClient spyClient = Mockito.spy(mdmApisClient);
-        doNothing().when(spyClient).checkResponse(any());
+        LogsChannelMapper mapper = new LogsChannelMapper();
 
         // Act & Assert
-        assertThrows(RuntimeException.class, () -> spyClient.updateCustomer(mainModel));
-
-        verify(restTemplate, times(1))
-                .exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(ResponseModel.class));
+        SQLException exception = assertThrows(SQLException.class, () -> mapper.mapRow(rs, 1));
+        assertEquals("Database error", exception.getMessage());
     }
-
