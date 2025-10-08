@@ -1,8 +1,28 @@
-public String getGlobalId(String prefix) {
-		log.info("getGlobalId({}})", prefix);
-		String url = getFeshehUtilityBaseUrl() + "/mdm/v1/util/global-id/" + prefix;
-		ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-		log.info("generated GlobalId : {}", response.getBody().toString());
-		log.info("/getGlobalId({})", prefix);
-		return response.getBody().toString();
-	}
+  @Test
+    void testGetGlobalId() {
+        // Arrange
+        String prefix = "CUST";
+        String expectedGlobalId = "CUST12345";
+
+        // mock getFeshehUtilityBaseUrl() if it’s inside the same class
+        // or if it’s constant, you can hardcode it below.
+        String baseUrl = "http://localhost:8080"; 
+        // If getFeshehUtilityBaseUrl() is a private method, 
+        // you can use a spy to mock it:
+        // MainService mainServiceSpy = Mockito.spy(mainService);
+        // doReturn(baseUrl).when(mainServiceSpy).getFeshehUtilityBaseUrl();
+
+        // Construct the expected URL
+        String expectedUrl = baseUrl + "/mdm/v1/util/global-id/" + prefix;
+
+        // Mock REST call
+        ResponseEntity<String> responseEntity = new ResponseEntity<>(expectedGlobalId, HttpStatus.OK);
+        when(restTemplate.getForEntity(eq(expectedUrl), eq(String.class))).thenReturn(responseEntity);
+
+        // Act
+        String actualGlobalId = mainService.getGlobalId(prefix);
+
+        // Assert
+        assertEquals(expectedGlobalId, actualGlobalId);
+        verify(restTemplate, times(1)).getForEntity(eq(expectedUrl), eq(String.class));
+    }
