@@ -1,12 +1,51 @@
-public class LogsChannelMapper implements RowMapper<LogChannel> {
+ @Test
+    void testMapRow_Success() throws SQLException {
+        // Arrange
+        ResultSet rs = mock(ResultSet.class);
 
-	@Override
-	public LogChannel mapRow(ResultSet rs, int rowNum) throws SQLException {
-		LogChannel logChannel = new LogChannel();
-		logChannel.setChannelReference(rs.getString("CHANNEL_REFERENCE"));
-		logChannel.setResponseMessages(rs.getString("RESPONSE_MESSAGES"));
-		logChannel.setData(rs.getString("DATA"));
-		return logChannel;
-	}
+        when(rs.getInt("ID")).thenReturn(1);
+        when(rs.getString("REQUESTER_ID")).thenReturn("REQ123");
+        when(rs.getString("REQUESTER_KEY")).thenReturn("KEY123");
+        when(rs.getInt("REQUESTER_STATUS")).thenReturn(2);
+        when(rs.getDate("DATE_RECORD_CREATED")).thenReturn(Date.valueOf("2025-10-01"));
+        when(rs.getDate("DATE_LAST_UPDATED")).thenReturn(Date.valueOf("2025-10-05"));
+        when(rs.getInt("UPDATED_TODAY")).thenReturn(1);
+        when(rs.getString("UPDATE_PROGRAM")).thenReturn("ProgramA");
+        when(rs.getString("UPDATE_COUNTRY")).thenReturn("JO");
+        when(rs.getInt("IS_DELETED")).thenReturn(0);
+        when(rs.getDate("DATE_DELETED")).thenReturn(null);
+        when(rs.getTimestamp("UPDATE_TIMESTAMP")).thenReturn(Timestamp.valueOf("2025-10-07 10:00:00"));
 
-}
+        RequesterRawMapper mapper = new RequesterRawMapper();
+
+        // Act
+        Requester result = mapper.mapRow(rs, 1);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(1, result.getId());
+        assertEquals("REQ123", result.getRequesterId());
+        assertEquals("KEY123", result.getRequesterKey());
+        assertEquals(2, result.getRequesterStatus());
+        assertEquals(Date.valueOf("2025-10-01"), result.getDateRecordCreated());
+        assertEquals(Date.valueOf("2025-10-05"), result.getDateLastUpdated());
+        assertEquals(1, result.getUpdatedToday());
+        assertEquals("ProgramA", result.getUpdateProgram());
+        assertEquals("JO", result.getUpdateCountry());
+        assertEquals(0, result.getIsDeleted());
+        assertNull(result.getDateDeleted());
+        assertEquals(Timestamp.valueOf("2025-10-07 10:00:00"), result.getUpdateTimestamp());
+    }
+
+    @Test
+    void testMapRow_SQLExceptionThrown() throws SQLException {
+        // Arrange
+        ResultSet rs = mock(ResultSet.class);
+        when(rs.getInt(anyString())).thenThrow(new SQLException("Database error"));
+
+        RequesterRawMapper mapper = new RequesterRawMapper();
+
+        // Act & Assert
+        SQLException exception = assertThrows(SQLException.class, () -> mapper.mapRow(rs, 1));
+        assertEquals("Database error", exception.getMessage());
+    }
