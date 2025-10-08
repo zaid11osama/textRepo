@@ -1,47 +1,13 @@
-@Test
-    void testCallQueueIntegrationService_Success() {
-        // Arrange
-        String fixedString = "some-json-body";
-        String correlationId = "12345";
-        String baseUrl = "http://integration-service";
-        String expectedUrl = baseUrl + "/mdm/v2/orc/integration/send-be-req";
-
-        BackendResponse mockResponseBody = new BackendResponse();
-        ResponseEntity<BackendResponse> mockResponse = new ResponseEntity<>(mockResponseBody, HttpStatus.OK);
-
-        when(configReader.getProperty("mdm.mq.integration.client")).thenReturn(baseUrl);
-        when(restTemplate.exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(BackendResponse.class)))
-                .thenReturn(mockResponse);
-
-        // Mock requestHeader values
-        when(requestHeader.getRequestName()).thenReturn("TestName");
-        when(requestHeader.getRequestCountry()).thenReturn("JO");
-        when(requestHeader.getRequestChannel()).thenReturn("WEB");
-        when(requestHeader.getRequestTimestamp()).thenReturn(System.currentTimeMillis());
-        when(requestHeader.getRequestReference()).thenReturn("REF123");
-        when(requestHeader.getResponseRequired()).thenReturn(true);
-        when(requestHeader.getUniqeReference()).thenReturn("UNIQUE123");
-        when(requestHeader.getAuthentication()).thenReturn("token123");
-
-        // Act
-        BackendResponse result = mdmApisClient.callQueueIntegrationService(requestHeader, fixedString, correlationId);
-
-        // Assert
-        assertNotNull(result);
-        verify(restTemplate, times(1))
-                .exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(BackendResponse.class));
-    }
-
-    @Test
-    void testCallQueueIntegrationService_BadRequestException() {
-        // Arrange
-        when(configReader.getProperty("mdm.mq.integration.client")).thenReturn("http://integration-service");
-        when(restTemplate.exchange(anyString(), any(), any(), eq(BackendResponse.class)))
-                .thenThrow(HttpClientErrorException.BadRequest.create(
-                        HttpStatus.BAD_REQUEST, "Bad Request", HttpHeaders.EMPTY, new byte[0], null));
-
-        // Act & Assert
-        assertThrows(BadRequestException.class, () -> 
-            mdmApisClient.callQueueIntegrationService(requestHeader, "body", "correlationId")
-        );
-    }
+	public String getCountryCodeByDialCountry(String country) {
+		try {
+			log.info("getCountryCodeByDialCountry({}})", country);
+			String url = getDialCpuntryBaseUrl() + "/countryCodeCheck/" + country;
+			ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+			return response.getBody().toString();
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			return null;
+		} finally {
+			log.info("/getCountryCodeByDialCountry({})", country);
+		}
+	}
