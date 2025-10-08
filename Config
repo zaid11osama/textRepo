@@ -1,12 +1,8 @@
-	public void updateCustomer(MainModel mainModel) throws Exception {
-		try {
-			log.info("updateCustomer()");
-			String url = getBrainBaseUrl() + "/brain/update-customer";
-			HttpEntity<MainModel> entity = new HttpEntity<>(mainModel, new HttpHeaders());
-			ResponseEntity<ResponseModel> response = restTemplate.exchange(url, HttpMethod.POST, entity,
-					ResponseModel.class);
-			checkResponse(response);
-		} finally {
-			log.info("/updateCustomer()");
-		}
+	public void checkResponse(ResponseEntity<ResponseModel> response) throws Exception {
+		if (!ObjectUtils.isEmpty(response) && response.getBody().getStatus().equalsIgnoreCase("S"))
+			return;
+		else if (response.getBody().getStatus().equalsIgnoreCase("E"))
+			throw new BadRequestException(response.getBody().getDetails());
+		else
+			throw new Exception(response.getBody().getDetails());
 	}
