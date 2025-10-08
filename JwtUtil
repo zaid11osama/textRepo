@@ -1,32 +1,20 @@
-@Test
-    void testMapRow_Success() throws SQLException {
-        // Arrange
-        ResultSet rs = mock(ResultSet.class);
-        when(rs.getString("CHANNEL_REFERENCE")).thenReturn("REF123");
-        when(rs.getString("RESPONSE_MESSAGES")).thenReturn("Message content");
-        when(rs.getString("DATA")).thenReturn("Some data");
+public class RequesterRawMapper implements RowMapper<Requester> {
 
-        LogsChannelMapper mapper = new LogsChannelMapper();
-
-        // Act
-        LogChannel result = mapper.mapRow(rs, 1);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals("REF123", result.getChannelReference());
-        assertEquals("Message content", result.getResponseMessages());
-        assertEquals("Some data", result.getData());
-    }
-
-    @Test
-    void testMapRow_SQLExceptionThrown() throws SQLException {
-        // Arrange
-        ResultSet rs = mock(ResultSet.class);
-        when(rs.getString(anyString())).thenThrow(new SQLException("Database error"));
-
-        LogsChannelMapper mapper = new LogsChannelMapper();
-
-        // Act & Assert
-        SQLException exception = assertThrows(SQLException.class, () -> mapper.mapRow(rs, 1));
-        assertEquals("Database error", exception.getMessage());
-    }
+	@Override
+	public Requester mapRow(ResultSet rs, int rowNum) throws SQLException {
+		Requester requester = new Requester();
+		requester.setId(rs.getInt("ID"));
+		requester.setRequesterId(rs.getString("REQUESTER_ID"));
+		requester.setRequesterKey(rs.getString("REQUESTER_KEY"));
+		requester.setRequesterStatus(rs.getInt("REQUESTER_STATUS"));
+		requester.setDateRecordCreated(rs.getDate("DATE_RECORD_CREATED"));
+		requester.setDateLastUpdated(rs.getDate("DATE_LAST_UPDATED"));
+		requester.setUpdatedToday(rs.getInt("UPDATED_TODAY"));
+		requester.setUpdateProgram(rs.getString("UPDATE_PROGRAM"));
+		requester.setUpdateCountry(rs.getString("UPDATE_COUNTRY"));
+		requester.setIsDeleted(rs.getInt("IS_DELETED"));
+		requester.setDateDeleted(rs.getDate("DATE_DELETED"));
+		requester.setUpdateTimestamp(rs.getTimestamp("UPDATE_TIMESTAMP"));
+		return requester;
+	}
+	
