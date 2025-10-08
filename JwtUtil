@@ -1,5 +1,20 @@
-@GetMapping("/{identifier}/{modelName}")
-	public ResponseEntity<?> getSpecificModel(@PathVariable("identifier") String identifier,
-			@PathVariable("modelName") String modelName, @RequestHeader Map<String, String> headers) throws Exception {
-		return new ResponseEntity<Object>(mainService.getSpecificModel(modelName, identifier, headers), HttpStatus.OK);
+public class MdmApisClient {
+
+	private final ConfigReader configReader;
+	private final RestTemplate restTemplate;
+
+	public String getFeshehUtilityBaseUrl() {
+		return configReader.getProperty("mdm.feesheh.client");
+	}
+
+	public String getQIntegrationBaseUrl() {
+		return configReader.getProperty("mdm.mq.integration.client");
+	}
+
+	public String getDialCpuntryBaseUrl() {
+		return configReader.getProperty("mdm.microservices.dial.country.client");
+	}
+
+	public String getBrainBaseUrl() {
+		return configReader.getProperty("mdm.microservices.brain");
 	}
