@@ -1,7 +1,36 @@
-	public void insertTransactionLog(TransactionLogResponse transactionLogResponse) {
-		log.info("insertTransactionLog()");
-		String url = getGoldenUrl() + "/insert/transaction-log";
-		HttpEntity<TransactionLogResponse> entity = new HttpEntity<>(transactionLogResponse, new HttpHeaders());
-		restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
-		log.info("/insertTransactionLog()");
-	}
+@Test
+    void testInsertTransactionLog_Success() {
+        // Arrange
+        String baseUrl = "http://golden-service";
+        String expectedUrl = baseUrl + "/insert/transaction-log";
+
+        when(configReader.getProperty("mdm.golden.url")).thenReturn(baseUrl);
+        when(restTemplate.exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(String.class)))
+                .thenReturn(new ResponseEntity<>("Success", HttpStatus.OK));
+
+        // Act
+        assertDoesNotThrow(() -> mdmApisClient.insertTransactionLog(transactionLogResponse));
+
+        // Assert
+        verify(restTemplate, times(1))
+                .exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(String.class));
+    }
+
+    @Test
+    void testInsertTransactionLog_RestTemplateThrowsException() {
+        // Arrange
+        String baseUrl = "http://golden-service";
+        String expectedUrl = baseUrl + "/insert/transaction-log";
+
+        when(configReader.getProperty("mdm.golden.url")).thenReturn(baseUrl);
+        when(restTemplate.exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(String.class)))
+                .thenThrow(new RuntimeException("Service unavailable"));
+
+        // Act & Assert
+        RuntimeException exception = assertThrows(RuntimeException.class, () ->
+                mdmApisClient.insertTransactionLog(transactionLogResponse));
+
+        assertEquals("Service unavailable", exception.getMessage());
+        verify(restTemplate, times(1))
+                .exchange(eq(expectedUrl), eq(HttpMethod.POST), any(HttpEntity.class), eq(String.class));
+    }
