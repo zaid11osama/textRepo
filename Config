@@ -1,13 +1,12 @@
-	public String getCountryCodeByDialCountry(String country) {
+	public void updateCustomer(MainModel mainModel) throws Exception {
 		try {
-			log.info("getCountryCodeByDialCountry({}})", country);
-			String url = getDialCpuntryBaseUrl() + "/countryCodeCheck/" + country;
-			ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-			return response.getBody().toString();
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			return null;
+			log.info("updateCustomer()");
+			String url = getBrainBaseUrl() + "/brain/update-customer";
+			HttpEntity<MainModel> entity = new HttpEntity<>(mainModel, new HttpHeaders());
+			ResponseEntity<ResponseModel> response = restTemplate.exchange(url, HttpMethod.POST, entity,
+					ResponseModel.class);
+			checkResponse(response);
 		} finally {
-			log.info("/getCountryCodeByDialCountry({})", country);
+			log.info("/updateCustomer()");
 		}
 	}
