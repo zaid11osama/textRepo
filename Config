@@ -1,91 +1,95 @@
-public class HelperUtils {
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-	public static String generateReference() {
-		String uuid = UUID.randomUUID().toString().substring(0, 30);
-		return uuid;
-	}
+import java.util.HashMap;
+import java.util.Map;
 
-	
-	public static String populateHeadersValueWithDefaultValue(Map<String, String> headers, String value) {
-		if (!headers.containsKey(value) || headers.get(value).isEmpty()) {
-			return Constants.Others._BLANKS;
-		}
-		return headers.get(value);
-	}
+import javax.xml.soap.SOAPMessage;
 
-	////////////////////////////////////////////////////
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.*;
 
-	////////////////////////////////////////////////////
-	// TO-DO remove
-	public static boolean isEmpty(String text) {
-		if (text == null || text.equals(null) || text.isEmpty() || text.isBlank()) {
-			return true;
-		}
-		return false;
-	}
+import com.arabbank.model.NewPartyModel;
+import com.arabbank.model.RiskRating;
 
-	////////////////////////////////////////////////////
-	// TO-DO remove
-	public static boolean isEmpty(Collection<?> list) {
-		return list == null || list.isEmpty();
-	}
+class SoapRequestServiceTest {
 
+    @InjectMocks
+    private SoapRequestService soapRequestService;
 
+    @Mock
+    private ConfigReader configReader;
 
-	/**
-	 * @param translation
-	 * @return code
-	 */
+    @Spy
+    private SoapRequestService spyService; // for partial mocking of internal methods
 
-	public static String checkTranslation(Translation translation) {
-		if (translation != null)
-			return translation.getCode();
-		else
-			return null;
-	}
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
 
-	public static String checkDescription(Translation translation) {
-		if (translation != null)
-			return translation.getDescription();
-		else
-			return null;
-	}
+    @Test
+    void testGetRiskRating_Success() throws Exception {
+        // Arrange
+        NewPartyModel mockNewParty = mock(NewPartyModel.class);
+        Map<String, String> headers = new HashMap<>();
+        CheckCustomerDueDiligenceRulesRequest mockRequest = mock(CheckCustomerDueDiligenceRulesRequest.class);
+        SOAPMessage mockSoapMessage = mock(SOAPMessage.class);
+        RiskRating mockRiskRating = new RiskRating();
+        mockRiskRating.setRiskRating("High");
 
+        // Spy on the service to mock private/helper calls
+        SoapRequestService service = spy(new SoapRequestService(configReader));
 
+        doReturn(mockRequest).when(service).fillRequest(mockNewParty, headers);
+        doReturn(mockSoapMessage).when(service).createSoapRequest(mockRequest);
+        doReturn(mockRiskRating).when(service).sendSoapRequest(mockSoapMessage);
 
-	////////////////////////////////////////////////////
+        // Act
+        String result = service.getRiskRating(mockNewParty, headers);
 
-	public static RequestHeader populateRequestHeader(Map<String, String> headers) {
-		RequestHeader requestHeader = new RequestHeader();
+        // Assert
+        assertEquals("High", result);
+        verify(service).fillRequest(mockNewParty, headers);
+        verify(service).createSoapRequest(mockRequest);
+        verify(service).sendSoapRequest(mockSoapMessage);
+    }
 
-		String channelId = headers.get(MdmHeaderRequest.CHANNEL_ID);
-		requestHeader.setChannelId(channelId);
+    @Test
+    void testGetRiskRating_NullRiskRating() throws Exception {
+        // Arrange
+        NewPartyModel mockNewParty = mock(NewPartyModel.class);
+        Map<String, String> headers = new HashMap<>();
+        CheckCustomerDueDiligenceRulesRequest mockRequest = mock(CheckCustomerDueDiligenceRulesRequest.class);
+        SOAPMessage mockSoapMessage = mock(SOAPMessage.class);
 
-		String inputCountry = headers.get(MdmHeaderRequest.INPUT_COUNTRY);
-		requestHeader.setInputCountry(inputCountry);
+        SoapRequestService service = spy(new SoapRequestService(configReader));
 
-		String transactionReference = headers.get(MdmHeaderRequest.TRANSACTION_REFERENCE);
-		requestHeader.setTransactionReference(transactionReference);
+        doReturn(mockRequest).when(service).fillRequest(mockNewParty, headers);
+        doReturn(mockSoapMessage).when(service).createSoapRequest(mockRequest);
+        doReturn(null).when(service).sendSoapRequest(mockSoapMessage);
 
-		String inputTimestamp = headers.get(MdmHeaderRequest.INPUT_TIMESTAMP);
-		requestHeader.setInputTimestamp(inputTimestamp);
+        // Act
+        String result = service.getRiskRating(mockNewParty, headers);
 
-		String language = headers.get(MdmHeaderRequest.LANGUAGE);
-		requestHeader.setLanguage(language);
+        // Assert
+        assertNull(result);
+    }
 
-		String identifierType = headers.get(MdmHeaderRequest.IDENTIFIER_TYPE);
-		requestHeader.setIdentifirType(identifierType);
+    @Test
+    void testGetRiskRating_ThrowsException() throws Exception {
+        // Arrange
+        NewPartyModel mockNewParty = mock(NewPartyModel.class);
+        Map<String, String> headers = new HashMap<>();
+        SoapRequestService service = spy(new SoapRequestService(configReader));
 
-		String role = headers.get(MdmHeaderRequest.ROLE);
-		if (role !=null && !role.isEmpty())
-			requestHeader.setRole(role);
+        doThrow(new RuntimeException("SOAP error"))
+            .when(service)
+            .fillRequest(any(), any());
 
-		String withCustomerId = headers.get(MdmHeaderRequest.WITH_CUSTOMER_ID);
-		if (withCustomerId != null && !withCustomerId.isEmpty())
-			requestHeader.setWithCustomerId(withCustomerId);
-
-
-		return requestHeader;
-	}
-
-}
+        // Act & Assert
+        Exception ex = assertThrows(Exception.class, () -> service.getRiskRating(mockNewParty, headers));
+        assertTrue(ex.getMessage().contains("SOAP error"));
+    }
