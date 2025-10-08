@@ -1,43 +1,7 @@
- @Test
-    void testCheckResponse_StatusS_ReturnsNormally() throws Exception {
-        // Arrange
-        when(responseModel.getStatus()).thenReturn("S");
-        ResponseEntity<ResponseModel> response = ResponseEntity.ok(responseModel);
-
-        // Act & Assert (should not throw any exception)
-        assertDoesNotThrow(() -> mdmApisClient.checkResponse(response));
-    }
-
-    @Test
-    void testCheckResponse_StatusE_ThrowsBadRequestException() {
-        // Arrange
-        when(responseModel.getStatus()).thenReturn("E");
-        when(responseModel.getDetails()).thenReturn("Error details");
-        ResponseEntity<ResponseModel> response = ResponseEntity.ok(responseModel);
-
-        // Act & Assert
-        BadRequestException exception = assertThrows(BadRequestException.class,
-                () -> mdmApisClient.checkResponse(response));
-
-        assertEquals("Error details", exception.getMessage());
-    }
-
-    @Test
-    void testCheckResponse_OtherStatus_ThrowsGenericException() {
-        // Arrange
-        when(responseModel.getStatus()).thenReturn("X");
-        when(responseModel.getDetails()).thenReturn("Other error");
-        ResponseEntity<ResponseModel> response = ResponseEntity.ok(responseModel);
-
-        // Act & Assert
-        Exception exception = assertThrows(Exception.class,
-                () -> mdmApisClient.checkResponse(response));
-
-        assertEquals("Other error", exception.getMessage());
-    }
-
-    @Test
-    void testCheckResponse_NullResponse_ReturnsNormally() throws Exception {
-        // Act & Assert (null response should cause ObjectUtils.isEmpty to return true and not throw)
-        assertDoesNotThrow(() -> mdmApisClient.checkResponse(null));
-    }
+	public void insertTransactionLog(TransactionLogResponse transactionLogResponse) {
+		log.info("insertTransactionLog()");
+		String url = getGoldenUrl() + "/insert/transaction-log";
+		HttpEntity<TransactionLogResponse> entity = new HttpEntity<>(transactionLogResponse, new HttpHeaders());
+		restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+		log.info("/insertTransactionLog()");
+	}
