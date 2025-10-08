@@ -1,43 +1,91 @@
- @Test
-    void testMapRow_Success() throws SQLException {
-        // Arrange
-        ResultSet rs = mock(ResultSet.class);
+public class HelperUtils {
 
-        when(rs.getString("FILE_KEY")).thenReturn("fileKey123");
-        when(rs.getString("LANGUAGE")).thenReturn("EN");
-        when(rs.getString("FILTRATION_KEY1")).thenReturn("Filter1");
-        when(rs.getString("FILTRATION_KEY2")).thenReturn("Filter2");
-        when(rs.getString("FILTRATION_KEY3")).thenReturn("Filter3");
-        when(rs.getString("FILTRATION_KEY4")).thenReturn("Filter4");
-        when(rs.getString("FILTRATION_KEY5")).thenReturn("Filter5");
-        when(rs.getString("CODE")).thenReturn("Code123");
+	public static String generateReference() {
+		String uuid = UUID.randomUUID().toString().substring(0, 30);
+		return uuid;
+	}
 
-        TranslationAttributesMapper mapper = new TranslationAttributesMapper();
+	
+	public static String populateHeadersValueWithDefaultValue(Map<String, String> headers, String value) {
+		if (!headers.containsKey(value) || headers.get(value).isEmpty()) {
+			return Constants.Others._BLANKS;
+		}
+		return headers.get(value);
+	}
 
-        // Act
-        TranslationsAttribute result = mapper.mapRow(rs, 1);
+	////////////////////////////////////////////////////
 
-        // Assert
-        assertNotNull(result);
-        assertEquals("fileKey123", result.getFileKey());
-        assertEquals("EN", result.getLanguage());
-        assertEquals("Filter1", result.getFiltrationKey1());
-        assertEquals("Filter2", result.getFiltrationKey2());
-        assertEquals("Filter3", result.getFiltrationKey3());
-        assertEquals("Filter4", result.getFiltrationKey4());
-        assertEquals("Filter5", result.getFiltrationKey5());
-        assertEquals("Code123", result.getCode());
-    }
+	////////////////////////////////////////////////////
+	// TO-DO remove
+	public static boolean isEmpty(String text) {
+		if (text == null || text.equals(null) || text.isEmpty() || text.isBlank()) {
+			return true;
+		}
+		return false;
+	}
 
-    @Test
-    void testMapRow_SQLExceptionThrown() throws SQLException {
-        // Arrange
-        ResultSet rs = mock(ResultSet.class);
-        when(rs.getString(anyString())).thenThrow(new SQLException("Database error"));
+	////////////////////////////////////////////////////
+	// TO-DO remove
+	public static boolean isEmpty(Collection<?> list) {
+		return list == null || list.isEmpty();
+	}
 
-        TranslationAttributesMapper mapper = new TranslationAttributesMapper();
 
-        // Act & Assert
-        SQLException exception = assertThrows(SQLException.class, () -> mapper.mapRow(rs, 1));
-        assertEquals("Database error", exception.getMessage());
-    }
+
+	/**
+	 * @param translation
+	 * @return code
+	 */
+
+	public static String checkTranslation(Translation translation) {
+		if (translation != null)
+			return translation.getCode();
+		else
+			return null;
+	}
+
+	public static String checkDescription(Translation translation) {
+		if (translation != null)
+			return translation.getDescription();
+		else
+			return null;
+	}
+
+
+
+	////////////////////////////////////////////////////
+
+	public static RequestHeader populateRequestHeader(Map<String, String> headers) {
+		RequestHeader requestHeader = new RequestHeader();
+
+		String channelId = headers.get(MdmHeaderRequest.CHANNEL_ID);
+		requestHeader.setChannelId(channelId);
+
+		String inputCountry = headers.get(MdmHeaderRequest.INPUT_COUNTRY);
+		requestHeader.setInputCountry(inputCountry);
+
+		String transactionReference = headers.get(MdmHeaderRequest.TRANSACTION_REFERENCE);
+		requestHeader.setTransactionReference(transactionReference);
+
+		String inputTimestamp = headers.get(MdmHeaderRequest.INPUT_TIMESTAMP);
+		requestHeader.setInputTimestamp(inputTimestamp);
+
+		String language = headers.get(MdmHeaderRequest.LANGUAGE);
+		requestHeader.setLanguage(language);
+
+		String identifierType = headers.get(MdmHeaderRequest.IDENTIFIER_TYPE);
+		requestHeader.setIdentifirType(identifierType);
+
+		String role = headers.get(MdmHeaderRequest.ROLE);
+		if (role !=null && !role.isEmpty())
+			requestHeader.setRole(role);
+
+		String withCustomerId = headers.get(MdmHeaderRequest.WITH_CUSTOMER_ID);
+		if (withCustomerId != null && !withCustomerId.isEmpty())
+			requestHeader.setWithCustomerId(withCustomerId);
+
+
+		return requestHeader;
+	}
+
+}
