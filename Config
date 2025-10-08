@@ -1,11 +1,41 @@
+@Test
+void testGetSpecificModel() throws Exception {
+    // Arrange
+    String identifier = "CUST123";
+    String modelName = "CustomerModel";
 
-@GetMapping("/get-transaction/{customerId}/{transactionReference}")
-	public ResponseEntity<Object> CheckTransactionStatus(
-			@PathVariable("transactionReference") String transactionReference,
-			@PathVariable("customerId") String customerId, @RequestHeader Map<String, String> headers)
-			throws Exception {
-		return new ResponseEntity<Object>(mainService.getStatus(customerId, transactionReference, headers),
-				HttpStatus.OK);
-	}
+    Map<String, String> headers = Map.of(
+            "role", "admin",
+            "user", "Zaid"
+    );
 
-Optional<MdmLogCupTransaction> 
+    // Simulate what the service would return
+    Map<String, Object> mockResponse = Map.of(
+            "id", identifier,
+            "model", modelName,
+            "status", "active"
+    );
+
+    when(mainService.getSpecificModel(eq(modelName), eq(identifier), anyMap()))
+            .thenReturn(mockResponse);
+
+    // Act
+    MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/parties/{identifier}/{modelName}", identifier, modelName)
+                    .header("role", "admin")
+                    .header("user", "Zaid")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .accept(MediaType.APPLICATION_JSON))
+            .andDo(print())
+            .andExpect(status().isOk())
+            .andReturn();
+
+    // Assert
+    String content = result.getResponse().getContentAsString();
+    JsonNode json = new ObjectMapper().readTree(content);
+
+    assertEquals(identifier, json.get("id").asText());
+    assertEquals(modelName, json.get("model").asText());
+    assertEquals("active", json.get("status").asText());
+
+    verify(mainService).getSpecificModel(eq(modelName), eq(identifier), anyMap());
+}
