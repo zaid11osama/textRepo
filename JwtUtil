@@ -1,11 +1,38 @@
-org.mockito.exceptions.misusing.PotentialStubbingProblem: 
-Strict stubbing argument mismatch. Please check:
- - this invocation of 'getForEntity' method:
-    restTemplate.getForEntity(
-    "null/mdm/v1/util/global-id/CUST",
-    class java.lang.String
-);
-    -> at com.arabbank.client.MdmApisClient.getGlobalId(MdmApisClient.java:52)
- - has following stubbing(s) with different arguments:
-    1. restTemplate.getForEntity(null, null);
-      -> at com.arabbank.client.MdmApisClientTest.testGetGlobalId(MdmApisClientTest.java:86)
+ @Test
+    void testGetCountryCodeByDialCountry_Success() {
+        // Arrange
+        String country = "Jordan";
+        String baseUrl = "http://dialcountry-service";
+        String expectedUrl = baseUrl + "/countryCodeCheck/" + country;
+        String expectedCode = "962";
+
+        when(configReader.getProperty("mdm.microservices.dial.country.client")).thenReturn(baseUrl);
+        when(restTemplate.getForEntity(expectedUrl, String.class))
+                .thenReturn(ResponseEntity.ok(expectedCode));
+
+        // Act
+        String result = mdmApisClient.getCountryCodeByDialCountry(country);
+
+        // Assert
+        assertEquals(expectedCode, result);
+        verify(restTemplate, times(1)).getForEntity(expectedUrl, String.class);
+    }
+
+    @Test
+    void testGetCountryCodeByDialCountry_ExceptionHandled() {
+        // Arrange
+        String country = "Unknown";
+        String baseUrl = "http://dialcountry-service";
+        String expectedUrl = baseUrl + "/countryCodeCheck/" + country;
+
+        when(configReader.getProperty("mdm.microservices.dial.country.client")).thenReturn(baseUrl);
+        when(restTemplate.getForEntity(expectedUrl, String.class))
+                .thenThrow(new RuntimeException("Service unavailable"));
+
+        // Act
+        String result = mdmApisClient.getCountryCodeByDialCountry(country);
+
+        // Assert
+        assertNull(result);
+        verify(restTemplate, times(1)).getForEntity(expectedUrl, String.class);
+    }
