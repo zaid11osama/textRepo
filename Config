@@ -1,95 +1,87 @@
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
+@Primary
+@Component
+public class UtilityDataAccess {
+	
+	@Autowired
+	private ConfigReader configReader; 
+	
+	@Autowired
+	public SqlQueryReader queryReader;
+	
+	private Logger logger = LoggerFactory.getLogger(UtilityDataAccess.class);
+	private static JdbcTemplate jdbc;
+	
+	private static final String WHERE = " WHERE ";
+	private static final String AND = " AND ";
 
-import java.util.HashMap;
-import java.util.Map;
+	////////////////////////////////////////////////////////////////////////////////
+	@PostConstruct
+	public void init() {
+		logger.debug("connectDb()");
+		boolean flag = false;
+		try {
+			if (getJdbc() == null) {
+				flag = true;
+				setJdbc(new JdbcTemplate(new DataSourceConfig().getUtilityDataSource(configReader)));
+			}
+		} finally {
+			logger.debug("/connectDb({})", flag);
+		}
+	}
 
-import javax.xml.soap.SOAPMessage;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.*;
 
-import com.arabbank.model.NewPartyModel;
-import com.arabbank.model.RiskRating;
 
-class SoapRequestServiceTest {
 
-    @InjectMocks
-    private SoapRequestService soapRequestService;
 
-    @Mock
-    private ConfigReader configReader;
 
-    @Spy
-    private SoapRequestService spyService; // for partial mocking of internal methods
 
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.openMocks(this);
-    }
 
-    @Test
-    void testGetRiskRating_Success() throws Exception {
-        // Arrange
-        NewPartyModel mockNewParty = mock(NewPartyModel.class);
-        Map<String, String> headers = new HashMap<>();
-        CheckCustomerDueDiligenceRulesRequest mockRequest = mock(CheckCustomerDueDiligenceRulesRequest.class);
-        SOAPMessage mockSoapMessage = mock(SOAPMessage.class);
-        RiskRating mockRiskRating = new RiskRating();
-        mockRiskRating.setRiskRating("High");
 
-        // Spy on the service to mock private/helper calls
-        SoapRequestService service = spy(new SoapRequestService(configReader));
 
-        doReturn(mockRequest).when(service).fillRequest(mockNewParty, headers);
-        doReturn(mockSoapMessage).when(service).createSoapRequest(mockRequest);
-        doReturn(mockRiskRating).when(service).sendSoapRequest(mockSoapMessage);
+public DataSource getGoldenDataSource(ConfigReader configReader) {
+		try {
+			logger.info("getDataSource");
+			Properties hikariProparties = getHikariProparties(configReader);
+			HikariConfig config = new HikariConfig(hikariProparties);
+			config.setDriverClassName("oracle.jdbc.OracleDriver");
+			config.addDataSourceProperty("v$session.program", configReader.getAppName());
+			config.setConnectionTestQuery("SELECT * FROM DUAL");
+			config.setMaximumPoolSize(1);
+			config.setPassword(ApiUtil.decrypt(configReader.getProperty("hikari.password"),configReader.getProperty("encryption.key")));
+			return new HikariDataSource(config);
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			MsUtil.throww(e);
+			return null;
+		} finally {
+			logger.info("/getDataSource");
+		}
 
-        // Act
-        String result = service.getRiskRating(mockNewParty, headers);
+	}
 
-        // Assert
-        assertEquals("High", result);
-        verify(service).fillRequest(mockNewParty, headers);
-        verify(service).createSoapRequest(mockRequest);
-        verify(service).sendSoapRequest(mockSoapMessage);
-    }
 
-    @Test
-    void testGetRiskRating_NullRiskRating() throws Exception {
-        // Arrange
-        NewPartyModel mockNewParty = mock(NewPartyModel.class);
-        Map<String, String> headers = new HashMap<>();
-        CheckCustomerDueDiligenceRulesRequest mockRequest = mock(CheckCustomerDueDiligenceRulesRequest.class);
-        SOAPMessage mockSoapMessage = mock(SOAPMessage.class);
 
-        SoapRequestService service = spy(new SoapRequestService(configReader));
 
-        doReturn(mockRequest).when(service).fillRequest(mockNewParty, headers);
-        doReturn(mockSoapMessage).when(service).createSoapRequest(mockRequest);
-        doReturn(null).when(service).sendSoapRequest(mockSoapMessage);
+	/// ///////////////////////////////////////////////////////////////////////////////
+	public DataSource getUtilityDataSource(ConfigReader configReader) {
+		try {
+			logger.info("getUtilityDataSource");
+			HikariConfig config = new HikariConfig();
+			config.setJdbcUrl(configReader.getProperty("hikari.utility.jdbcUrl"));
+			config.setUsername(configReader.getProperty("hikari.utility.username"));
+			config.setPassword(ApiUtil.decrypt(configReader.getProperty("hikari.utility.password"),configReader.getProperty("encryption.key")));
 
-        // Act
-        String result = service.getRiskRating(mockNewParty, headers);
+			config.setDriverClassName("oracle.jdbc.OracleDriver");
+			config.addDataSourceProperty("", configReader.getAppName());
+			config.setMaximumPoolSize(100);
+			return new HikariDataSource(config);
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			MsUtil.throww(e);
+			return null;
+		} finally {
+			logger.info("/getUtilityDataSource");
+		}
 
-        // Assert
-        assertNull(result);
-    }
-
-    @Test
-    void testGetRiskRating_ThrowsException() throws Exception {
-        // Arrange
-        NewPartyModel mockNewParty = mock(NewPartyModel.class);
-        Map<String, String> headers = new HashMap<>();
-        SoapRequestService service = spy(new SoapRequestService(configReader));
-
-        doThrow(new RuntimeException("SOAP error"))
-            .when(service)
-            .fillRequest(any(), any());
-
-        // Act & Assert
-        Exception ex = assertThrows(Exception.class, () -> service.getRiskRating(mockNewParty, headers));
-        assertTrue(ex.getMessage().contains("SOAP error"));
-    }
+	}
