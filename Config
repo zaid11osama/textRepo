@@ -11,8 +11,7 @@ public class UtilityDataAccess {
 	private Logger logger = LoggerFactory.getLogger(UtilityDataAccess.class);
 	private static JdbcTemplate jdbc;
 	
-	private static final String WHERE = " WHERE ";
-	private static final String AND = " AND ";
+I have this class above I use it now to access  Utility database it was before to access GoldenDataSource in this code I get table or view not found cuz some tables are in the golden not utility so now I need to call both the utility and golden
 
 	////////////////////////////////////////////////////////////////////////////////
 	@PostConstruct
@@ -85,3 +84,5 @@ public DataSource getGoldenDataSource(ConfigReader configReader) {
 		}
 
 	}
+
+do you get it ?
