@@ -1,14 +1,4 @@
-@ComponentScan(
-    basePackages = {
-        "com.arabbank.hdf.mdmauth",
-        "com.arabbank.mdm.commons.lib.configuration.gitlab"
-    },
-    value = {"com.arabbank.hdf"},
-    excludeFilters = @ComponentScan.Filter(
-        type = FilterType.ASSIGNABLE_TYPE,
-        classes = {
-            com.arabbank.hdf.authservice.config.WebConfiguration.class,
-            com.arabbank.hdf.core.auth.SecurityConfig.class
-        }
-    )
-)
+org.springframework.core.annotation.AnnotationConfigurationException: Different @AliasFor mirror values for annotation [org.springframework.context.annotation.ComponentScan] declared on class com.arabbank.hdf.mdmauth.MdmAuthApplication; attribute 'basePackages' and its alias 'value' are declared with values of [{com.arabbank.hdf.mdmauth, com.arabbank.mdm.commons.lib.configuration.gitlab}] and [{com.arabbank.hdf}].
+	at org.springframework.core.annotation.AnnotationTypeMapping$MirrorSets$MirrorSet.resolve(AnnotationTypeMapping.java:782)
+	at org.springframework.core.annotation.AnnotationTypeMapping$MirrorSets.resolve(AnnotationTypeMapping.java:737)
+	at org.springframework.core.annotation.TypeMappedAnnotation.<init>(TypeMappedAnnotation.java:128)
