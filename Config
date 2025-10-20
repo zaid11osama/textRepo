@@ -1,10 +1,14 @@
-@ComponentScan(basePackageClasses = {"com.arabbank.hdf.mdmauth","com.arabbank.mdm.commons.lib.configuration.gitlab"}, // Incompatible types. Found: 'java.lang.String', required: 'java.lang.Class<?>'
-		value = {"com.arabbank.hdf"},
-		excludeFilters = @ComponentScan.Filter(
-				type = FilterType.ASSIGNABLE_TYPE,
-				classes = {
-						com.arabbank.hdf.authservice.config.WebConfiguration.class,
-						com.arabbank.hdf.core.auth.SecurityConfig.class
-				}
-		)
+@ComponentScan(
+    basePackages = {
+        "com.arabbank.hdf.mdmauth",
+        "com.arabbank.mdm.commons.lib.configuration.gitlab"
+    },
+    value = {"com.arabbank.hdf"},
+    excludeFilters = @ComponentScan.Filter(
+        type = FilterType.ASSIGNABLE_TYPE,
+        classes = {
+            com.arabbank.hdf.authservice.config.WebConfiguration.class,
+            com.arabbank.hdf.core.auth.SecurityConfig.class
+        }
+    )
 )
