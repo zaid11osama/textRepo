@@ -1,5 +1,8 @@
-Description:
+ o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: The following classes could not be excluded because they are not auto-configuration classes:
+	- com.arabbank.hdf.authservice.config.WebConfiguration
 
-The bean 'securityFilterChain', defined in class path resource [com/arabbank/hdf/core/auth/SecurityConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/arabbank/hdf/authservice/config/SecurityConfiguration.class] and overriding is disabled.
+2025-10-20 15:09:18 - [restartedMain] - [] - ERROR o.s.boot.SpringApplication.reportFailure - Application run failed
+java.lang.IllegalStateException: The following classes could not be excluded because they are not auto-configuration classes:
+	- com.arabbank.hdf.authservice.config.WebConfiguration
 
-Action:
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.handleInvalidExcludes(AutoConfigurationImportSelector.java:211)
