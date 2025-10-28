@@ -1,4 +1,13 @@
-org.springframework.core.annotation.AnnotationConfigurationException: Different @AliasFor mirror values for annotation [org.springframework.context.annotation.ComponentScan] declared on class com.arabbank.hdf.mdmauth.MdmAuthApplication; attribute 'basePackages' and its alias 'value' are declared with values of [{com.arabbank.hdf.mdmauth, com.arabbank.mdm.commons.lib.configuration.gitlab}] and [{com.arabbank.hdf}].
-	at org.springframework.core.annotation.AnnotationTypeMapping$MirrorSets$MirrorSet.resolve(AnnotationTypeMapping.java:782)
-	at org.springframework.core.annotation.AnnotationTypeMapping$MirrorSets.resolve(AnnotationTypeMapping.java:737)
-	at org.springframework.core.annotation.TypeMappedAnnotation.<init>(TypeMappedAnnotation.java:128)
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.arabbank.mdm.service.util.JobExecutionAuditService required a bean of type 'com.arabbank.mdm.repository.util.JobExecutionAuditRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.arabbank.mdm.repository.util.JobExecutionAuditRepository' in your configuration.
+
